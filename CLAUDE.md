@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
@@ -10,6 +14,7 @@ The Laravel Boost guidelines are specifically curated by Laravel maintainers for
 This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
 
 - php - 8.5
+- filament/filament (FILAMENT) - v5
 - laravel/fortify (FORTIFY) - v1
 - laravel/framework (LARAVEL) - v13
 - laravel/prompts (PROMPTS) - v0
@@ -173,3 +178,44 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - Do NOT delete tests without approval.
 
 </laravel-boost-guidelines>
+
+## Project Overview
+
+This app is a from-scratch Laravel + Filament rewrite of **queen-transport.com**, a WordPress theme for a luxury car-rental business ("Queen Transport", Surabaya/Jawa Timur). The `wordpress/` directory at the repo root is the **original WordPress theme, kept only as a design/content reference** — it is not built or executed as part of this app. It has its own `wordpress/CLAUDE.md` with a local instruction: read structure/markup from the PHP templates' class names, not from its CSS files, unless explicitly asked.
+
+The rewrite's goal: everything content-editable in WordPress admin (custom post types, options, popups) becomes a Filament resource/page at `/admin`, and every public template becomes a Blade view fed by Eloquent models instead of `WP_Query`.
+
+## Commands
+
+- `composer setup` — first-time project setup (install, `.env`, key, migrate, npm build).
+- `composer dev` — runs `php artisan dev` (serve + queue + vite concurrently) for local development.
+- `npm run dev` / `npm run build` — Vite dev server / production build. **Two separate Vite entry pairs exist** (see Frontend Architecture below) — a change to either CSS/JS entry requires a rebuild or the dev server running, or Blade's `@vite(...)` throws `Unable to locate file in Vite manifest`.
+- `composer lint` / `composer lint:check` — Pint format / check (also see the Boost pint rule above for the `--dirty --format agent` variant used mid-session).
+- `composer types:check` — Larastan/PHPStan static analysis.
+- `composer test` — full CI gate: config clear → lint:check → types:check → `artisan test`. Prefer `php artisan test --compact --filter=...` for iterating on a single test per the Boost Pest rule.
+- `php artisan storage:link` — required once per environment; all uploaded media (Filament `FileUpload`) is served from the `public` disk via this symlink.
+
+## Architecture
+
+**Two front ends share one Laravel app:**
+- **Public marketing site** (`/`, `/armada`, `/blog`, …) — plain Blade + Tailwind, dark "Queen Transport" theme (purple/cyan gradients on near-black), no Livewire/Alpine framework beyond the FAQ accordion.
+- **Admin CMS** (`/admin`) — Filament v5 panel (`App\Providers\Filament\AdminPanelProvider`) using Flux/Livewire. Registration is intentionally disabled (`Features::registration()` removed from `config/fortify.php`); there is no public sign-up.
+
+**Frontend build has two independent entry pairs** (`vite.config.js`):
+- `resources/css/app.css` + `resources/js/app.js` — Filament/Flux admin theme (its own `--color-accent` Tailwind token, unrelated to the public theme).
+- `resources/css/public.css` + `resources/js/public.js` — the public site's design tokens (`--color-bg`, `--color-primary`, `--color-accent`, `--gradient-cta`, `--radius-*`, etc., ported from the WordPress theme's `src/input.css`). Any new public page must `@vite(['resources/css/public.css', 'resources/js/public.js'])`, not `app.css`.
+
+**Public layout & view namespaces**: `resources/views/layouts/public.blade.php` is the shared shell (header/nav/WA-float-button/footer, SEO meta/OG tags). It's rendered via `<x-layouts::public>` — note the `::` namespace syntax, not dot syntax. `layouts` and `pages` are registered as Livewire component namespaces in `config/livewire.php` (`component_namespaces`), which is what makes `x-layouts::public`, `x-layouts::auth`, `pages::settings.profile` resolve to `resources/views/layouts/*` and `resources/views/pages/*`.
+
+**Domain models**, each with a matching Filament resource under `app/Filament/Resources/`:
+- `Armada` — the vehicle fleet (public: `/armada`, `/armada/{slug}`). Route-bound by `slug`.
+- `Galeri` — photo/video gallery items shown on the homepage.
+- `Pelanggan` — customer testimonials (name, jabatan/instansi, kutipan, 1–5 star rating).
+- `Post` + `Category` + `Tag` — the blog/CMS. **Permalink is `/blog/{year}/{month}/{slug}`, WordPress-style — `slug` is intentionally NOT unique in the database**; uniqueness comes from the year/month/slug combination (see `BlogController::show` and `Post::getUrlAttribute()`). SEO fields (`meta_title`, `meta_description`, `og_image`) fall back to `title`/`excerpt`/`featured_image` via the `seo_title`/`seo_description`/`seo_image` accessors on the model.
+- `Setting` — a single-row (`Setting::current()`, id=1) key/value-style settings record for site-wide media (currently the homepage hero video and "perawatan rutin" video), edited via the custom Filament page `App\Filament\Pages\ManageSettings`.
+
+**File uploads**: the app's default filesystem disk is `local` (not web-accessible), so every Filament `FileUpload`/`ImageColumn` **must explicitly call `->disk('public')`**, and Blade views must render URLs via `Storage::disk('public')->url($path)` (not the bare `Storage::url()` helper, which uses the default disk).
+
+**WhatsApp CTAs**: `App\Support\WhatsApp::link(string $message = '')` builds `wa.me` links from `config('site.php')` (`whatsapp_number`, brand name). Used throughout public views instead of hardcoding phone numbers/links.
+
+**Config**: `config/site.php` holds brand/tagline/WhatsApp number/Instagram URL (env-overridable via `SITE_*`), read by both the public layout and the `WhatsApp` helper.

@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+@source '../views';
+
+@theme {
+    --color-bg: #0a0c14;
+    --color-bg-2: #0f1220;
+    --color-surface: #141728;
+    --color-surface-2: #1a1f35;
+    --color-primary: #7c3aed;
+    --color-primary-glow: #9d5cff;
+    --color-accent: #22d3ee;
+    --color-accent-glow: #67e8f9;
+    --color-pink: #d946ef;
+    --color-text: #e2e8f0;
+    --color-muted: #94a3b8;
+    --color-light: #cbd5e1;
+
+    --font-display: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
+    --font-accent: 'Orbitron', 'Courier New', monospace;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 32px;
+}
+
+@layer base {
+    :root {
+        --color-border: rgba(108, 56, 197, 0.25);
+        --color-text-muted: #94a3b8;
+        --color-text-light: #cbd5e1;
+        --color-white: #ffffff;
+
+        --gradient-hero: linear-gradient(135deg, #0a0c14 0%, #1a1035 50%, #0f2030 100%);
+        --gradient-card: linear-gradient(145deg, #1a1f35, #0f1220);
+        --gradient-cta: linear-gradient(135deg, #7c3aed, #22d3ee);
+        --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #9d5cff 50%, #22d3ee 100%);
+
+        --shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.4);
+        --shadow-glow-cyan: 0 0 30px rgba(34, 211, 238, 0.3);
+        --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+        --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-body);
+        line-height: 1.6;
+    }
+
+    a {
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    a:hover {
+        color: var(--color-accent-glow);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        color: var(--color-white);
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    }
+}
+
+@keyframes pulse-wa {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+.wa-float::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.5);
+    animation: pulse-wa 2.5s infinite;
+}

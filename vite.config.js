@@ -12,6 +12,8 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/js/passkeys.js',
+                'resources/css/public.css',
+                'resources/js/public.js',
             ],
             refresh: true,
             fonts: [
