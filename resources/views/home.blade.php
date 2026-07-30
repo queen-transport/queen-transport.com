@@ -30,11 +30,7 @@
 
                 <div class="relative z-10 flex justify-center">
                     <div class="relative rounded-[var(--radius-xl)] overflow-hidden border-2 border-[rgba(124,58,237,0.3)] w-full max-w-[520px]">
-                        @if ($setting->hero_video)
-                            <video class="w-full h-auto block" src="{{ Storage::disk('public')->url($setting->hero_video) }}" autoplay loop muted playsinline></video>
-                        @else
-                            <div class="w-full aspect-video flex items-center justify-center text-6xl bg-[var(--color-surface)]">👑</div>
-                        @endif
+                        <video class="w-full h-auto block" src="{{ $setting->hero_video ? Storage::disk('public')->url($setting->hero_video) : asset('videos/Surabaya-Rental-Mobil-Mewah.mp4') }}" autoplay loop muted playsinline></video>
                     </div>
                 </div>
             </div>

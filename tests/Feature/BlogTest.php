@@ -21,7 +21,7 @@ test('blog show resolves by year, month and slug', function () {
         'published_at' => '2025-03-15 10:00:00',
     ]);
 
-    $response = $this->get('/blog/2025/03/'.$post->slug);
+    $response = $this->get('/2025/03/'.$post->slug);
 
     $response->assertOk();
     $response->assertSee('Tips Sewa Mobil Mewah');
@@ -33,7 +33,7 @@ test('blog show 404s for wrong month', function () {
         'published_at' => '2025-03-15 10:00:00',
     ]);
 
-    $response = $this->get('/blog/2025/04/'.$post->slug);
+    $response = $this->get('/2025/04/'.$post->slug);
 
     $response->assertNotFound();
 });
@@ -53,8 +53,8 @@ test('two posts can share the same slug in different months', function () {
         'published_at' => '2025-02-10 10:00:00',
     ]);
 
-    $this->get('/blog/2025/01/artikel-sama')->assertOk();
-    $this->get('/blog/2025/02/artikel-sama')->assertOk();
+    $this->get('/2025/01/artikel-sama')->assertOk();
+    $this->get('/2025/02/artikel-sama')->assertOk();
 
     expect($first->id)->not->toBe($second->id);
 });

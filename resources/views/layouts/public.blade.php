@@ -6,6 +6,9 @@
     <title>{{ $title ?? config('site.brand') }}</title>
     <meta name="description" content="{{ $description ?? config('site.tagline') }}">
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
     <meta property="og:title" content="{{ $title ?? config('site.brand') }}">
     <meta property="og:description" content="{{ $description ?? config('site.tagline') }}">
@@ -29,9 +32,8 @@
     <div class="max-w-[1200px] mx-auto px-6">
         <nav class="flex items-center justify-between gap-6">
             <a href="{{ route('home') }}" class="flex items-center gap-3 no-underline">
-                <div class="w-11 h-11 rounded-full border-2 border-[var(--color-primary)] shadow-[0_0_30px_rgba(124,58,237,0.4)] overflow-hidden bg-[var(--color-surface)] flex items-center justify-center font-[family-name:var(--font-display)] text-[1.2rem] text-[var(--color-accent)] font-bold">
-                    Q
-                </div>
+                <img src="{{ asset('apple-touch-icon.png') }}" alt="{{ config('site.brand') }}"
+                     class="w-11 h-11 rounded-full border-2 border-[var(--color-primary)] shadow-[0_0_30px_rgba(124,58,237,0.4)] object-cover bg-[var(--color-surface)]">
                 <div class="flex flex-col">
                     <span class="font-[family-name:var(--font-display)] text-[1rem] font-bold text-white leading-[1.1] tracking-[0.05em]">{{ config('site.brand') }}</span>
                     <span class="font-[family-name:var(--font-accent)] text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] uppercase">Premium Transport</span>
@@ -75,9 +77,8 @@
             <div class="grid grid-cols-[2fr_1fr_1fr] gap-12 max-md:grid-cols-1">
                 <div class="flex flex-col gap-5">
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full border-2 border-[var(--color-primary)] overflow-hidden bg-[var(--color-surface)] flex items-center justify-center text-[1.2rem] text-[var(--color-accent)] font-bold font-[family-name:var(--font-display)] flex-shrink-0">
-                            Q
-                        </div>
+                        <img src="{{ asset('apple-touch-icon.png') }}" alt="{{ config('site.brand') }}"
+                             class="w-12 h-12 rounded-full border-2 border-[var(--color-primary)] object-cover bg-[var(--color-surface)] flex-shrink-0">
                         <div>
                             <div class="font-[family-name:var(--font-display)] text-white font-bold text-[1rem] tracking-[0.05em]">{{ config('site.brand') }}</div>
                             <div class="font-[family-name:var(--font-accent)] text-[var(--color-accent)] text-[0.6rem] tracking-[0.2em] uppercase">{{ config('site.brand') }}</div>

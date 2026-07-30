@@ -11,7 +11,7 @@ Route::get('armada', [ArmadaController::class, 'index'])->name('armada.index');
 Route::get('armada/{armada:slug}', [ArmadaController::class, 'show'])->name('armada.show');
 
 Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('blog/{year}/{month}/{post}', [BlogController::class, 'show'])
+Route::get('{year}/{month}/{post}', [BlogController::class, 'show'])
     ->where(['year' => '[0-9]{4}', 'month' => '[0-9]{1,2}'])
     ->name('blog.show');
 
