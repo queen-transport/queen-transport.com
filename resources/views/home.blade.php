@@ -1,4 +1,7 @@
-<x-layouts::public :title="config('site.brand') . ' — ' . config('site.tagline')">
+<x-layouts::public
+    :title="config('site.brand') . ' — ' . config('site.tagline')"
+    description="Sewa mobil mewah dengan driver profesional di Surabaya dan seluruh Jawa Timur. Armada Alphard, Fortuner, Hiace, hingga Innova, tersedia harian dengan pelayanan sepanjang hari."
+>
     {{-- HERO --}}
     <section class="relative min-h-[90vh] flex items-center pt-10 pb-16 overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[1200px] mx-auto px-6 w-full">
