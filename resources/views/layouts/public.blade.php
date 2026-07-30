@@ -52,17 +52,24 @@
                 </a>
             </div>
 
-            <button class="flex md:hidden flex-col gap-[5px] p-2 rounded-[var(--radius-sm)] border border-[rgba(124,58,237,0.4)] bg-[rgba(124,58,237,0.08)]"
-                    id="navToggle" aria-label="Toggle Menu">
-                <span class="block w-6 h-[2px] bg-[var(--color-accent)] rounded-[2px]"></span>
-                <span class="block w-6 h-[2px] bg-[var(--color-accent)] rounded-[2px]"></span>
-                <span class="block w-6 h-[2px] bg-[var(--color-accent)] rounded-[2px]"></span>
+            <button class="group relative flex md:hidden flex-col items-center justify-center gap-[5px] w-11 h-11 shrink-0 rounded-[var(--radius-sm)] border border-[rgba(124,58,237,0.4)] bg-[rgba(124,58,237,0.08)]"
+                    id="navToggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navMenuMobile">
+                <span class="block w-6 h-[2px] bg-[var(--color-accent)] rounded-[2px] transition-transform duration-200 group-aria-expanded:translate-y-[7px] group-aria-expanded:rotate-45"></span>
+                <span class="block w-6 h-[2px] bg-[var(--color-accent)] rounded-[2px] transition-opacity duration-200 group-aria-expanded:opacity-0"></span>
+                <span class="block w-6 h-[2px] bg-[var(--color-accent)] rounded-[2px] transition-transform duration-200 group-aria-expanded:-translate-y-[7px] group-aria-expanded:-rotate-45"></span>
             </button>
         </nav>
 
-        <div class="hidden flex flex-col gap-3 mt-4 md:hidden" id="navMenuMobile">
-            <a href="{{ route('home') }}" class="text-sm text-[var(--color-light)] hover:text-white">Beranda</a>
-            <a href="{{ route('armada.index') }}" class="text-sm text-[var(--color-light)] hover:text-white">Armada</a>
+        <div class="hidden flex-col gap-1 mt-4 pb-2 md:hidden" id="navMenuMobile">
+            <a href="{{ route('home') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Beranda</a>
+            <a href="{{ route('armada.index') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Armada</a>
+            <a href="{{ route('home') }}#galeri" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Galeri</a>
+            <a href="{{ route('home') }}#faq" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">FAQ</a>
+            <a href="{{ \App\Support\WhatsApp::link() }}"
+               class="mt-2 px-5 py-3 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm text-center no-underline"
+               target="_blank" rel="noopener noreferrer">
+                📞 Hubungi Kami
+            </a>
         </div>
     </div>
 </header>

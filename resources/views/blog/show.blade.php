@@ -35,7 +35,7 @@
                                 </p>
                             </div>
 
-                            <div class="text-[var(--color-text-light)] leading-[1.9] [&>p]:mb-4 [&>h2]:mt-7 [&>h2]:mb-3 [&>h3]:mt-6 [&>h3]:mb-2 [&_a]:text-[var(--color-accent)] [&_img]:rounded-[var(--radius-md)] [&_img]:my-5">
+                            <div class="text-[var(--color-text-light)] leading-[1.9] [&>p]:mb-4 [&>h2]:mt-7 [&>h2]:mb-3 [&>h3]:mt-6 [&>h3]:mb-2 [&_a]:text-[var(--color-accent)] [&_img]:rounded-[var(--radius-md)] [&_img]:my-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_blockquote]:border-l-4 [&_blockquote]:border-[var(--color-primary)] [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-[var(--color-text-muted)] [&_blockquote]:my-5 [&_table]:block [&_table]:w-full [&_table]:overflow-x-auto [&_table]:my-5 [&_table]:border-collapse [&_table]:text-sm [&_th]:border [&_th]:border-[var(--color-border)] [&_th]:bg-[var(--color-surface)] [&_th]:text-white [&_th]:p-3 [&_th]:text-left [&_th]:font-semibold [&_td]:border [&_td]:border-[var(--color-border)] [&_td]:p-3 [&_tr:nth-child(even)_td]:bg-[rgba(255,255,255,0.03)]">
                                 {!! $post->content !!}
                             </div>
 

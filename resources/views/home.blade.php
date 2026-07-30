@@ -29,8 +29,9 @@
                 </div>
 
                 <div class="relative z-10 flex justify-center">
-                    <div class="relative rounded-[var(--radius-xl)] overflow-hidden border-2 border-[rgba(124,58,237,0.3)] w-full max-w-[520px]">
-                        <video class="w-full h-auto block" src="{{ $setting->hero_video ? Storage::disk('public')->url($setting->hero_video) : asset('videos/Surabaya-Rental-Mobil-Mewah.mp4') }}" autoplay loop muted playsinline></video>
+                    <div class="video-with-sound-toggle relative rounded-[var(--radius-xl)] overflow-hidden border-2 border-[rgba(124,58,237,0.3)] w-full max-w-[380px] aspect-[4/5]">
+                        <video class="w-full h-full object-cover block" src="{{ $setting->hero_video ? Storage::disk('public')->url($setting->hero_video) : asset('videos/Surabaya-Rental-Mobil-Mewah.mp4') }}" autoplay loop muted playsinline></video>
+                        <button type="button" class="sound-toggle absolute bottom-3 right-3 w-10 h-10 rounded-full bg-[rgba(0,0,0,0.55)] border border-[rgba(255,255,255,0.25)] text-white flex items-center justify-center text-lg backdrop-blur-sm" aria-label="Nyalakan suara video" aria-pressed="false">🔇</button>
                     </div>
                 </div>
             </div>
@@ -94,12 +95,9 @@
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="grid grid-cols-2 gap-16 items-center max-md:grid-cols-1">
                 <div class="relative">
-                    <div class="relative rounded-[var(--radius-xl)] overflow-hidden border-2 border-[rgba(34,211,238,0.2)] w-full">
-                        @if ($setting->perawatan_video)
-                            <video class="w-full h-auto block" src="{{ Storage::disk('public')->url($setting->perawatan_video) }}" autoplay loop muted playsinline></video>
-                        @else
-                            <div class="w-full aspect-video flex items-center justify-center text-6xl bg-[var(--color-surface)]">🔧</div>
-                        @endif
+                    <div class="video-with-sound-toggle relative rounded-[var(--radius-xl)] overflow-hidden border-2 border-[rgba(34,211,238,0.2)] w-full max-w-[440px] aspect-[4/5]">
+                        <video class="w-full h-full object-cover block" src="{{ $setting->perawatan_video ? Storage::disk('public')->url($setting->perawatan_video) : asset('videos/Perawatan-Rutin.mp4') }}" autoplay loop muted playsinline></video>
+                        <button type="button" class="sound-toggle absolute bottom-3 right-3 w-10 h-10 rounded-full bg-[rgba(0,0,0,0.55)] border border-[rgba(255,255,255,0.25)] text-white flex items-center justify-center text-lg backdrop-blur-sm" aria-label="Nyalakan suara video" aria-pressed="false">🔇</button>
                     </div>
                 </div>
 
@@ -397,15 +395,14 @@
                 <h2 class="text-[clamp(1.4rem,2.5vw,2rem)] font-bold">FAQ <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Sewa Mobil</span></h2>
             </div>
 
-            <div class="flex flex-col gap-3 mt-12 max-w-[760px] mx-auto" x-data="{ open: null }">
+            <div class="flex flex-col gap-3 mt-12 max-w-[760px] mx-auto" id="faqAccordion">
                 @foreach ($faqs as $i => $faq)
-                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-md)] overflow-hidden">
-                        <button type="button" @click="open = (open === {{ $i }} ? null : {{ $i }})"
-                                class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer">
+                    <div class="faq-item bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-md)] overflow-hidden">
+                        <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer">
                             <span class="text-white font-semibold text-sm flex-1">{{ $faq['q'] }}</span>
-                            <span class="w-7 h-7 rounded-full bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] flex items-center justify-center text-[var(--color-primary)] text-lg flex-shrink-0">+</span>
+                            <span class="faq-icon w-7 h-7 rounded-full bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] flex items-center justify-center text-[var(--color-primary)] text-lg flex-shrink-0">+</span>
                         </button>
-                        <div x-show="open === {{ $i }}" x-transition>
+                        <div class="faq-answer hidden">
                             <div class="px-6 pb-6 text-[var(--color-text-muted)] text-sm leading-relaxed">{{ $faq['a'] }}</div>
                         </div>
                     </div>
