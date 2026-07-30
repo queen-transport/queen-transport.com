@@ -37,7 +37,7 @@
                             @endforeach
                         </div>
                         <div class="mt-8 flex justify-center">
-                            {{ $posts->links() }}
+                            {{ $posts->links('pagination.queen-transport') }}
                         </div>
                     @else
                         <p class="text-center text-[var(--color-text-muted)] py-16">Tidak ada artikel ditemukan.</p>
