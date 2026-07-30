@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Database\Factories\ArmadaFactory;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -34,7 +35,6 @@ class Armada extends Model
      */
     protected $casts = [
         'features' => 'array',
-        'gallery' => 'array',
         'is_published' => 'boolean',
     ];
 
@@ -50,5 +50,36 @@ class Armada extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    /**
+     * Normalizes gallery storage to a flat array of file paths.
+     *
+     * Legacy/imported records may hold nested shapes like {"path": "..."} per
+     * item instead of a bare string; the FileUpload repeater and public views
+     * both expect plain path strings, so both directions are normalized here.
+     *
+     * @return Attribute<array<int, string>, array<int, string>|null>
+     */
+    protected function gallery(): Attribute
+    {
+        return Attribute::make(
+            get: fn (?string $value) => self::normalizeGalleryPaths(json_decode($value ?? '[]', true) ?: []),
+            set: fn (?array $value) => json_encode(self::normalizeGalleryPaths($value ?? [])),
+        );
+    }
+
+    /**
+     * @param  array<mixed>  $items
+     * @return array<int, string>
+     */
+    private static function normalizeGalleryPaths(array $items): array
+    {
+        $paths = array_map(
+            fn ($item) => is_array($item) ? ($item['path'] ?? $item['url'] ?? null) : $item,
+            $items,
+        );
+
+        return array_values(array_filter($paths, fn ($path) => is_string($path) && $path !== ''));
     }
 }

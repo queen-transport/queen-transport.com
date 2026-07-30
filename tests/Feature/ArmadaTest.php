@@ -47,3 +47,32 @@ test('admin can create armada from filament resource', function () {
 
     expect(Armada::where('slug', 'zenix-type-q-hybrid')->exists())->toBeTrue();
 });
+
+test('gallery normalizes legacy nested items to flat paths', function () {
+    $armada = Armada::factory()->create();
+
+    $armada->setRawAttributes(array_merge($armada->getAttributes(), [
+        'gallery' => json_encode([
+            ['path' => 'armada/gallery/one.jpg'],
+            ['url' => 'armada/gallery/two.jpg'],
+            'armada/gallery/three.jpg',
+        ]),
+    ]));
+
+    expect($armada->gallery)->toBe([
+        'armada/gallery/one.jpg',
+        'armada/gallery/two.jpg',
+        'armada/gallery/three.jpg',
+    ]);
+});
+
+test('gallery is persisted as a flat array of paths', function () {
+    $armada = Armada::factory()->create([
+        'gallery' => ['armada/gallery/a.jpg', 'armada/gallery/b.jpg'],
+    ]);
+
+    expect($armada->fresh()->gallery)->toBe([
+        'armada/gallery/a.jpg',
+        'armada/gallery/b.jpg',
+    ]);
+});
