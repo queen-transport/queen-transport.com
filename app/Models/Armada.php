@@ -12,6 +12,23 @@ class Armada extends Model
     /** @use HasFactory<ArmadaFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'car_type',
+        'car_badge',
+        'car_icon',
+        'features',
+        'description',
+        'cta_text',
+        'cta_url',
+        'featured_image',
+        'gallery',
+        'video',
+        'sort',
+        'is_published',
+    ];
+
     /**
      * @var array<string, string>
      */

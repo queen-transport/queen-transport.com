@@ -1,6 +1,9 @@
 <?php
 
+use App\Filament\Resources\Armadas\Pages\CreateArmada;
 use App\Models\Armada;
+use App\Models\User;
+use Livewire\Livewire;
 
 test('armada index lists only published armada', function () {
     Armada::factory()->create(['title' => 'Visible Car', 'is_published' => true]);
@@ -28,4 +31,19 @@ test('armada resolves by slug in route', function () {
     $response = $this->get('/armada/'.$armada->slug);
 
     $response->assertOk();
+});
+
+test('admin can create armada from filament resource', function () {
+    $admin = User::factory()->create(['email' => 'admin@queen-transport.com']);
+
+    Livewire::actingAs($admin)
+        ->test(CreateArmada::class)
+        ->fillForm([
+            'title' => 'Zenix Type Q Hybrid',
+            'slug' => 'zenix-type-q-hybrid',
+        ])
+        ->call('create')
+        ->assertHasNoFormErrors();
+
+    expect(Armada::where('slug', 'zenix-type-q-hybrid')->exists())->toBeTrue();
 });
