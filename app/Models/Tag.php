@@ -13,6 +13,11 @@ class Tag extends Model
     /** @use HasFactory<TagFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
+
     protected static function booted(): void
     {
         static::saving(function (Tag $tag): void {

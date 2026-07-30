@@ -13,6 +13,11 @@ class Category extends Model
     /** @use HasFactory<CategoryFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
+
     protected static function booted(): void
     {
         static::saving(function (Category $category): void {
