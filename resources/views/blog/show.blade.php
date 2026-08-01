@@ -26,15 +26,6 @@
 
                             <h1 class="text-[clamp(1.5rem,3vw,2.2rem)] mb-6 leading-[1.3]">{{ $post->title }}</h1>
 
-                            <div class="flex items-start gap-4 mb-8 p-5 rounded-[var(--radius-md)] bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.2)]">
-                                <span class="text-2xl flex-shrink-0">🛡️</span>
-                                <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                                    <strong class="text-white">Semua rental di sini wajib menggunakan driver dari kami.</strong>
-                                    {{ config('site.brand') }} tidak melayani sewa lepas kunci (self-drive) — setiap
-                                    armada wajib didampingi driver profesional demi keamanan dan kenyamanan perjalanan Anda.
-                                </p>
-                            </div>
-
                             <div class="text-[var(--color-text-light)] leading-[1.9] [&>p]:mb-4 [&>h2]:mt-7 [&>h2]:mb-3 [&>h3]:mt-6 [&>h3]:mb-2 [&_a]:text-[var(--color-accent)] [&_img]:rounded-[var(--radius-md)] [&_img]:my-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_blockquote]:border-l-4 [&_blockquote]:border-[var(--color-primary)] [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-[var(--color-text-muted)] [&_blockquote]:my-5 [&_table]:block [&_table]:w-full [&_table]:overflow-x-auto [&_table]:my-5 [&_table]:border-collapse [&_table]:text-sm [&_th]:border [&_th]:border-[var(--color-border)] [&_th]:bg-[var(--color-surface)] [&_th]:text-white [&_th]:p-3 [&_th]:text-left [&_th]:font-semibold [&_td]:border [&_td]:border-[var(--color-border)] [&_td]:p-3 [&_tr:nth-child(even)_td]:bg-[rgba(255,255,255,0.03)]">
                                 {!! $post->content !!}
                             </div>
