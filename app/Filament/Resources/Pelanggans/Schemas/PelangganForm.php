@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Pelanggans\Schemas;
 
+use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -66,6 +67,7 @@ class PelangganForm
                             ->image()
                             ->disk('public')
                             ->directory('pelanggan')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             ->columnSpanFull(),
                     ]),
             ]);

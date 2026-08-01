@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Galeris\Schemas;
 
+use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
@@ -45,6 +46,7 @@ class GaleriForm
                             ->image()
                             ->disk('public')
                             ->directory('galeri')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             ->columnSpanFull(),
                         Repeater::make('gallery')
                             ->label('Foto Tambahan')
@@ -53,6 +55,7 @@ class GaleriForm
                                     ->image()
                                     ->disk('public')
                                     ->directory('galeri/extra')
+                                    ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             )
                             ->columnSpanFull(),
                         FileUpload::make('video')
@@ -60,6 +63,7 @@ class GaleriForm
                             ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/quicktime'])
                             ->disk('public')
                             ->directory('galeri/video')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             ->columnSpanFull(),
                     ]),
             ]);

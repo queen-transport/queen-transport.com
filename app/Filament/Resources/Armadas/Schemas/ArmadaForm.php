@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Armadas\Schemas;
 
+use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -56,6 +57,7 @@ class ArmadaForm
                             ->image()
                             ->disk('public')
                             ->directory('armada')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             ->columnSpanFull(),
                         Repeater::make('gallery')
                             ->label('Foto Tambahan')
@@ -64,6 +66,7 @@ class ArmadaForm
                                     ->image()
                                     ->disk('public')
                                     ->directory('armada/gallery')
+                                    ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             )
                             ->columnSpanFull(),
                         FileUpload::make('video')
@@ -71,6 +74,7 @@ class ArmadaForm
                             ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/quicktime'])
                             ->disk('public')
                             ->directory('armada/video')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
                             ->columnSpanFull(),
                     ]),
 

@@ -16,6 +16,10 @@
     <meta property="og:site_name" content="{{ config('site.brand') }}">
     @isset($image)
         <meta property="og:image" content="{{ Storage::disk('public')->url($image) }}">
+        @if ($imageDimensions = @getimagesize(Storage::disk('public')->path($image)))
+            <meta property="og:image:width" content="{{ $imageDimensions[0] }}">
+            <meta property="og:image:height" content="{{ $imageDimensions[1] }}">
+        @endif
         <meta name="twitter:card" content="summary_large_image">
     @endisset
     @vite(['resources/css/public.css', 'resources/js/public.js'])

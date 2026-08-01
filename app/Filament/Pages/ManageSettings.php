@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 use App\Models\Setting;
+use App\Support\FileUploadCleanup;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
 use Filament\Notifications\Notification;
@@ -49,12 +50,14 @@ class ManageSettings extends Page implements HasSchemas
                             ->label('Video Hero')
                             ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/quicktime'])
                             ->disk('public')
-                            ->directory('settings'),
+                            ->directory('settings')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove()),
                         FileUpload::make('perawatan_video')
                             ->label('Video Perawatan Rutin')
                             ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/quicktime'])
                             ->disk('public')
-                            ->directory('settings'),
+                            ->directory('settings')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove()),
                     ]),
             ])
             ->statePath('data');

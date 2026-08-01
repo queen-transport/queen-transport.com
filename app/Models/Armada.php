@@ -6,6 +6,7 @@ use Database\Factories\ArmadaFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Armada extends Model
@@ -44,6 +45,14 @@ class Armada extends Model
             if (blank($armada->slug)) {
                 $armada->slug = Str::slug($armada->title);
             }
+        });
+
+        static::deleting(function (Armada $armada): void {
+            Storage::disk('public')->delete(array_filter([
+                $armada->featured_image,
+                $armada->video,
+                ...$armada->gallery,
+            ]));
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -62,9 +63,12 @@ class PostForm
                                 FileUpload::make('og_image')
                                     ->label('OG Image (Share Sosial Media)')
                                     ->image()
+                                    ->imageEditor()
+                                    ->imageEditorAspectRatios(['1.91:1', '16:9'])
                                     ->disk('public')
                                     ->directory('blog/og')
-                                    ->helperText('Kosongkan untuk pakai Foto Unggulan.')
+                                    ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                                    ->helperText('Kosongkan untuk pakai Foto Unggulan. Wajib landscape (mis. 1.91:1) agar preview link WhatsApp/Facebook muncul dengan benar.')
                                     ->columnSpanFull(),
                             ]),
                     ]),
@@ -75,8 +79,12 @@ class PostForm
                         FileUpload::make('featured_image')
                             ->label('Foto Unggulan')
                             ->image()
+                            ->imageEditor()
+                            ->imageEditorAspectRatios(['1.91:1', '16:9'])
                             ->disk('public')
                             ->directory('blog')
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->helperText('Wajib landscape (mis. 1.91:1) agar dipakai sebagai preview link WhatsApp/Facebook saat OG Image kosong.')
                             ->columnSpanFull(),
                         Select::make('category_id')
                             ->label('Kategori')

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Post extends Model
@@ -40,6 +41,13 @@ class Post extends Model
             if (blank($post->slug)) {
                 $post->slug = Str::slug($post->title);
             }
+        });
+
+        static::deleting(function (Post $post): void {
+            Storage::disk('public')->delete(array_filter([
+                $post->featured_image,
+                $post->og_image,
+            ]));
         });
     }
 
