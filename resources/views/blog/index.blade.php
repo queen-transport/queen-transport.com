@@ -1,4 +1,7 @@
-<x-layouts::public :title="'Blog — ' . config('site.brand')">
+<x-layouts::public
+    :title="'Blog — ' . config('site.brand')"
+    description="Queen Transport, solusi rental mobil mewah Surabaya. Armada premium, driver berpengalaman, layanan sepanjang hari — nyaman dan aman untuk kebutuhan transportasi mewah Anda."
+>
     <section class="py-16">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="grid grid-cols-[1fr_300px] gap-12 max-md:grid-cols-1">
