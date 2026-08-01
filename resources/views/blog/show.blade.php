@@ -6,7 +6,7 @@
     og-type="article"
 >
     <section class="py-16">
-        <div class="max-w-[1200px] mx-auto px-6">
+        <div class="max-w-[1200px] mx-auto px-6 max-md:px-2">
             <div class="grid grid-cols-[1fr_300px] gap-12 max-md:grid-cols-1">
                 <main>
                     <article class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] overflow-hidden">
