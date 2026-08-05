@@ -71,14 +71,12 @@
                 </main>
 
                 <aside class="flex flex-col gap-6">
-                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 text-center">
-                        <p class="text-[2rem] mb-2">💬</p>
-                        <h4 class="text-white mb-2 text-[1rem] font-bold">Sewa Mobil Mewah?</h4>
-                        <a href="{{ \App\Support\WhatsApp::link() }}"
-                           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-[32px] font-semibold text-[0.88rem] no-underline bg-gradient-to-br from-[#25d366] to-[#128c7e] text-white"
-                           target="_blank" rel="noopener noreferrer">
-                            Chat WhatsApp
-                        </a>
+                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
+                        <h4 class="text-white text-sm mb-4 pb-3 border-b border-[var(--color-border)] font-bold">Kontak Kami</h4>
+                        <div class="flex flex-col gap-3 text-sm text-[var(--color-text-muted)]">
+                            <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">📞 WhatsApp</a>
+                            <a href="{{ config('site.instagram_url') }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">📸 Instagram</a>
+                        </div>
                     </div>
 
                     @if ($others->isNotEmpty())
