@@ -20,3 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 require __DIR__.'/settings.php';
+
+// Catch-all for plain-permalink posts (/{slug}) — must stay last so it only
+// matches paths no other route above claimed.
+Route::get('{slug}', [BlogController::class, 'showPlain'])->name('blog.show-plain');

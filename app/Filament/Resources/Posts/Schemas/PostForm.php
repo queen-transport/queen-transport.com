@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Models\Post;
 use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -13,6 +15,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Illuminate\Validation\Rule;
 
 class PostForm
 {
@@ -31,10 +34,25 @@ class PostForm
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', str($state)->slug()))
                                     ->columnSpanFull(),
+                                Radio::make('permalink_type')
+                                    ->label('Tipe Permalink')
+                                    ->options([
+                                        'date' => 'Dengan tanggal — /tahun/bulan/slug',
+                                        'plain' => 'Tanpa tanggal — /slug',
+                                    ])
+                                    ->default('date')
+                                    ->required()
+                                    ->live()
+                                    ->columnSpanFull(),
                                 TextInput::make('slug')
                                     ->label('Slug')
                                     ->required()
-                                    ->helperText('Permalink: /blog/tahun/bulan/slug — slug tidak perlu unik karena tanggal publikasi membedakannya.')
+                                    ->helperText(fn (callable $get) => $get('permalink_type') === 'plain'
+                                        ? 'Permalink: /slug — slug harus unik karena dipakai langsung sebagai URL.'
+                                        : 'Permalink: /tahun/bulan/slug — slug tidak perlu unik karena tanggal publikasi membedakannya.')
+                                    ->rules(fn (callable $get, ?Post $record) => $get('permalink_type') === 'plain'
+                                        ? [Rule::unique('posts', 'slug')->where('permalink_type', 'plain')->ignore($record?->id)]
+                                        : [])
                                     ->columnSpanFull(),
                                 Textarea::make('excerpt')
                                     ->label('Ringkasan')
