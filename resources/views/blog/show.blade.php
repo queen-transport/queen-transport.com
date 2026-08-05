@@ -21,7 +21,9 @@
                                 @if ($post->category)
                                     <span class="px-3 py-1 rounded-[var(--radius-sm)] bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] text-[var(--color-primary)] text-xs font-semibold">{{ $post->category->name }}</span>
                                 @endif
-                                <span class="text-[var(--color-text-muted)] text-xs">{{ $post->published_at->translatedFormat('d M Y') }}</span>
+                                @if ($post->permalink_type !== 'plain')
+                                    <span class="text-[var(--color-text-muted)] text-xs">{{ $post->published_at->translatedFormat('d M Y') }}</span>
+                                @endif
                             </div>
 
                             <h1 class="text-[clamp(1.5rem,3vw,2.2rem)] mb-6 leading-[1.3]">{{ $post->title }}</h1>
