@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Queen Transport',
             'email' => 'admin@queen-transport.com',
         ]);
+
+        $this->call([
+            ArmadaSeeder::class,
+            GaleriSeeder::class,
+            ArtikelSeeder::class,
+        ]);
     }
 }
