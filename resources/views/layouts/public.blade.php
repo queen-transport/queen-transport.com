@@ -14,14 +14,16 @@
     <meta property="og:description" content="{{ $description ?? config('site.tagline') }}">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
     <meta property="og:site_name" content="{{ config('site.brand') }}">
-    @isset($image)
-        <meta property="og:image" content="{{ Storage::disk('public')->url($image) }}">
-        @if ($imageDimensions = @getimagesize(Storage::disk('public')->path($image)))
-            <meta property="og:image:width" content="{{ $imageDimensions[0] }}">
-            <meta property="og:image:height" content="{{ $imageDimensions[1] }}">
-        @endif
-        <meta name="twitter:card" content="summary_large_image">
-    @endisset
+    @php
+        $ogImageUrl = isset($image) ? Storage::disk('public')->url($image) : asset('og-image.png');
+        $ogImageDimensions = isset($image) ? @getimagesize(Storage::disk('public')->path($image)) : [1200, 630];
+    @endphp
+    <meta property="og:image" content="{{ $ogImageUrl }}">
+    @if ($ogImageDimensions)
+        <meta property="og:image:width" content="{{ $ogImageDimensions[0] }}">
+        <meta property="og:image:height" content="{{ $ogImageDimensions[1] }}">
+    @endif
+    <meta name="twitter:card" content="summary_large_image">
     @vite(['resources/css/public.css', 'resources/js/public.js'])
 </head>
 <body class="min-h-screen flex flex-col">
