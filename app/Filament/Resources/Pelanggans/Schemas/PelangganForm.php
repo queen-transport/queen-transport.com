@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Pelanggans\Schemas;
 
+use App\Filament\Support\MediaLibraryPicker;
 use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -68,6 +69,7 @@ class PelangganForm
                             ->disk('public')
                             ->directory('pelanggan')
                             ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('photo', 'pelanggan', 'image'))
                             ->columnSpanFull(),
                     ]),
             ]);

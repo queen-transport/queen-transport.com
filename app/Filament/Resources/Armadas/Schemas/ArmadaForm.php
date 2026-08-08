@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Armadas\Schemas;
 
+use App\Filament\Support\MediaLibraryPicker;
 use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -58,9 +59,11 @@ class ArmadaForm
                             ->disk('public')
                             ->directory('armada')
                             ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('featured_image', 'armada', 'image'))
                             ->columnSpanFull(),
                         Repeater::make('gallery')
                             ->label('Foto Tambahan')
+                            ->hintAction(MediaLibraryPicker::makeForRepeater('gallery', 'armada/gallery', 'image'))
                             ->simple(
                                 FileUpload::make('path')
                                     ->image()
@@ -75,6 +78,7 @@ class ArmadaForm
                             ->disk('public')
                             ->directory('armada/video')
                             ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('video', 'armada/video', 'video'))
                             ->columnSpanFull(),
                     ]),
 

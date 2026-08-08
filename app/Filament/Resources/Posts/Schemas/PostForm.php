@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Filament\Support\MediaLibraryPicker;
 use App\Models\Post;
 use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\DateTimePicker;
@@ -86,6 +87,7 @@ class PostForm
                                     ->disk('public')
                                     ->directory('blog/og')
                                     ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                                    ->hintAction(MediaLibraryPicker::make('og_image', 'blog/og', 'image'))
                                     ->helperText('Kosongkan untuk pakai Foto Unggulan. Wajib landscape (mis. 1.91:1) agar preview link WhatsApp/Facebook muncul dengan benar.')
                                     ->columnSpanFull(),
                             ]),
@@ -102,6 +104,7 @@ class PostForm
                             ->disk('public')
                             ->directory('blog')
                             ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('featured_image', 'blog', 'image'))
                             ->helperText('Wajib landscape (mis. 1.91:1) agar dipakai sebagai preview link WhatsApp/Facebook saat OG Image kosong.')
                             ->columnSpanFull(),
                         Select::make('category_id')

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Filament\Support\MediaLibraryPicker;
 use App\Models\Setting;
 use App\Support\FileUploadCleanup;
 use BackedEnum;
@@ -51,13 +52,15 @@ class ManageSettings extends Page implements HasSchemas
                             ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/quicktime'])
                             ->disk('public')
                             ->directory('settings')
-                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove()),
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('hero_video', 'settings', 'video')),
                         FileUpload::make('perawatan_video')
                             ->label('Video Perawatan Rutin')
                             ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/quicktime'])
                             ->disk('public')
                             ->directory('settings')
-                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove()),
+                            ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('perawatan_video', 'settings', 'video')),
                     ]),
             ])
             ->statePath('data');

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Galeris\Schemas;
 
+use App\Filament\Support\MediaLibraryPicker;
 use App\Support\FileUploadCleanup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -47,9 +48,11 @@ class GaleriForm
                             ->disk('public')
                             ->directory('galeri')
                             ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('featured_image', 'galeri', 'image'))
                             ->columnSpanFull(),
                         Repeater::make('gallery')
                             ->label('Foto Tambahan')
+                            ->hintAction(MediaLibraryPicker::makeForRepeater('gallery', 'galeri/extra', 'image'))
                             ->simple(
                                 FileUpload::make('path')
                                     ->image()
@@ -64,6 +67,7 @@ class GaleriForm
                             ->disk('public')
                             ->directory('galeri/video')
                             ->deleteUploadedFileUsing(FileUploadCleanup::deleteOnRemove())
+                            ->hintAction(MediaLibraryPicker::make('video', 'galeri/video', 'video'))
                             ->columnSpanFull(),
                     ]),
             ]);
