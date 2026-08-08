@@ -102,7 +102,7 @@
                     <div class="flex gap-3">
                         <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" title="WhatsApp"
                            class="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center text-lg">💬</a>
-                        <a href="{{ config('site.instagram_url') }}" target="_blank" rel="noopener noreferrer" title="Instagram"
+                        <a href="{{ config('site.instagram_url') }}" target="_blank" rel="nofollow noopener noreferrer" title="Instagram"
                            class="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center text-lg">📸</a>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                     <h4 class="text-white text-sm font-bold tracking-[0.08em] uppercase pb-3 border-b border-[var(--color-border)]">Kontak</h4>
                     <div class="flex flex-col gap-3 text-sm text-[var(--color-text-muted)]">
                         <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">📞 {{ config('site.whatsapp_number') }}</a>
-                        <a href="{{ config('site.instagram_url') }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">📸 Instagram</a>
+                        <a href="{{ config('site.instagram_url') }}" target="_blank" rel="nofollow noopener noreferrer" class="hover:text-[var(--color-accent)]">📸 Instagram</a>
                         <span>🕐 Siap Melayani Sepanjang Hari / 7 Hari</span>
                     </div>
                 </div>

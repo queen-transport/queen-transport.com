@@ -75,7 +75,7 @@
                         <h4 class="text-white text-sm mb-4 pb-3 border-b border-[var(--color-border)] font-bold">Kontak Kami</h4>
                         <div class="flex flex-col gap-3 text-sm text-[var(--color-text-muted)]">
                             <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">📞 WhatsApp</a>
-                            <a href="{{ config('site.instagram_url') }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">📸 Instagram</a>
+                            <a href="{{ config('site.instagram_url') }}" target="_blank" rel="nofollow noopener noreferrer" class="hover:text-[var(--color-accent)]">📸 Instagram</a>
                         </div>
                     </div>
 

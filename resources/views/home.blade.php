@@ -340,7 +340,7 @@
                        target="_blank" rel="noopener noreferrer">💬 Chat WhatsApp Sekarang</a>
                     <a href="{{ config('site.instagram_url') }}"
                        class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-2 border-[var(--color-accent)] text-[var(--color-accent)]"
-                       target="_blank" rel="noopener noreferrer">📸 Follow Instagram</a>
+                       target="_blank" rel="nofollow noopener noreferrer">📸 Follow Instagram</a>
                 </div>
             </div>
         </div>
