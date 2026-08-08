@@ -1,5 +1,5 @@
 <x-layouts::public
-    :title="$post->seo_title . ' — ' . config('site.brand')"
+    :title="$post->seo_title"
     :description="$post->seo_description"
     :image="$post->seo_image"
     :canonical="$post->url"
