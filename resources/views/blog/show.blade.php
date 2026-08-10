@@ -5,6 +5,15 @@
     :canonical="$post->url"
     og-type="article"
 >
+    @auth
+        @if (auth()->user()->canAccessPanel(\Filament\Facades\Filament::getPanel('admin')))
+            <a href="{{ \App\Filament\Resources\Posts\PostResource::getUrl('edit', ['record' => $post]) }}"
+               class="fixed top-[90px] right-6 z-[998] inline-flex items-center gap-2 px-4 py-2.5 rounded-[var(--radius-xl)] bg-[image:var(--gradient-btn)] text-white text-sm font-semibold no-underline shadow-lg">
+                ✏️ Edit Postingan
+            </a>
+        @endif
+    @endauth
+
     <section class="py-16">
         <div class="max-w-[1200px] mx-auto px-6 max-md:px-2">
             <div class="grid grid-cols-[1fr_300px] gap-12 max-md:grid-cols-1">
