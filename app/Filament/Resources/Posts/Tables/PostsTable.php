@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Posts\Tables;
 
+use App\Models\Post;
+use App\Support\SeoLength;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -29,6 +31,18 @@ class PostsTable
                 TextColumn::make('category.name')
                     ->label('Kategori')
                     ->badge(),
+                TextColumn::make('seo_title')
+                    ->label('SEO Judul')
+                    ->badge()
+                    ->state(fn (Post $record): string => SeoLength::title($record->seo_title)['label'])
+                    ->color(fn (Post $record): string => SeoLength::title($record->seo_title)['color'])
+                    ->tooltip('Panjang ideal judul untuk hasil pencarian Google: 50-60 karakter.'),
+                TextColumn::make('seo_description')
+                    ->label('SEO Deskripsi')
+                    ->badge()
+                    ->state(fn (Post $record): string => SeoLength::description($record->seo_description)['label'])
+                    ->color(fn (Post $record): string => SeoLength::description($record->seo_description)['color'])
+                    ->tooltip('Panjang ideal meta description untuk hasil pencarian Google: 120-160 karakter.'),
                 TextColumn::make('status')
                     ->label('Status')
                     ->badge()

@@ -27,7 +27,7 @@ class AttachmentsTable
                     ->label('')
                     ->state(fn (Attachment $record) => $record->isVideo())
                     ->icon(fn (bool $state) => $state ? 'heroicon-o-film' : null)
-                    ->visible(fn (Attachment $record) => $record->isVideo()),
+                    ->visible(fn (?Attachment $record) => $record?->isVideo() ?? true),
                 TextColumn::make('title')
                     ->label('Judul')
                     ->searchable()

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Posts\Schemas;
 use App\Filament\Support\MediaLibraryPicker;
 use App\Models\Post;
 use App\Support\FileUploadCleanup;
+use App\Support\SeoLength;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Radio;
@@ -34,6 +35,9 @@ class PostForm
                                     ->required()
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', str($state)->slug()))
+                                    ->hint(fn (?string $state) => SeoLength::title($state)['label'])
+                                    ->hintColor(fn (?string $state) => SeoLength::title($state)['color'])
+                                    ->helperText('Dipakai sebagai judul SEO jika Meta Title kosong. Panjang ideal: 50-60 karakter.')
                                     ->columnSpanFull(),
                                 Radio::make('permalink_type')
                                     ->label('Tipe Permalink')
@@ -58,6 +62,10 @@ class PostForm
                                 Textarea::make('excerpt')
                                     ->label('Ringkasan')
                                     ->rows(3)
+                                    ->live(onBlur: true)
+                                    ->hint(fn (?string $state) => SeoLength::description($state)['label'])
+                                    ->hintColor(fn (?string $state) => SeoLength::description($state)['color'])
+                                    ->helperText('Dipakai sebagai meta description jika Meta Description kosong. Panjang ideal: 120-160 karakter.')
                                     ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Konten')
@@ -70,14 +78,18 @@ class PostForm
                             ->schema([
                                 TextInput::make('meta_title')
                                     ->label('Meta Title')
-                                    ->maxLength(60)
-                                    ->helperText('Kosongkan untuk pakai judul artikel.')
+                                    ->live(onBlur: true)
+                                    ->hint(fn (?string $state, callable $get) => SeoLength::title($state ?: $get('title'))['label'])
+                                    ->hintColor(fn (?string $state, callable $get) => SeoLength::title($state ?: $get('title'))['color'])
+                                    ->helperText('Kosongkan untuk pakai judul artikel. Panjang ideal: 50-60 karakter.')
                                     ->columnSpanFull(),
                                 Textarea::make('meta_description')
                                     ->label('Meta Description')
                                     ->rows(3)
-                                    ->maxLength(160)
-                                    ->helperText('Kosongkan untuk pakai ringkasan artikel.')
+                                    ->live(onBlur: true)
+                                    ->hint(fn (?string $state, callable $get) => SeoLength::description($state ?: $get('excerpt'))['label'])
+                                    ->hintColor(fn (?string $state, callable $get) => SeoLength::description($state ?: $get('excerpt'))['color'])
+                                    ->helperText('Kosongkan untuk pakai ringkasan artikel. Panjang ideal: 120-160 karakter.')
                                     ->columnSpanFull(),
                                 FileUpload::make('og_image')
                                     ->label('OG Image (Share Sosial Media)')
