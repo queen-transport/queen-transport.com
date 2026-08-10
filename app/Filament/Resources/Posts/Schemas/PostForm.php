@@ -6,8 +6,10 @@ use App\Filament\Support\MediaLibraryPicker;
 use App\Models\Post;
 use App\Support\FileUploadCleanup;
 use App\Support\SeoLength;
+use Filament\Actions\Action;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -16,6 +18,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Validation\Rule;
 
@@ -49,6 +52,9 @@ class PostForm
                                     ->required()
                                     ->live()
                                     ->columnSpanFull(),
+                                Hidden::make('slug_unlocked')
+                                    ->default(false)
+                                    ->saved(false),
                                 TextInput::make('slug')
                                     ->label('Slug')
                                     ->required()
@@ -58,6 +64,16 @@ class PostForm
                                     ->rules(fn (callable $get, ?Post $record) => $get('permalink_type') === 'plain'
                                         ? [Rule::unique('posts', 'slug')->where('permalink_type', 'plain')->ignore($record?->id)]
                                         : [])
+                                    ->disabled(fn (?Post $record, callable $get) => $record !== null && ! $get('slug_unlocked'))
+                                    ->saved()
+                                    ->suffixAction(
+                                        Action::make('unlockSlug')
+                                            ->label('Edit Slug')
+                                            ->icon('heroicon-m-pencil')
+                                            ->color('gray')
+                                            ->visible(fn (?Post $record, callable $get) => $record !== null && ! $get('slug_unlocked'))
+                                            ->action(fn (Set $set) => $set('slug_unlocked', true))
+                                    )
                                     ->columnSpanFull(),
                                 Textarea::make('excerpt')
                                     ->label('Ringkasan')

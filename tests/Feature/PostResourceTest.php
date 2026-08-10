@@ -4,6 +4,7 @@ use App\Filament\Resources\Posts\Pages\CreatePost;
 use App\Filament\Resources\Posts\Pages\EditPost;
 use App\Models\Post;
 use App\Models\User;
+use Filament\Actions\Testing\TestAction;
 use Livewire\Livewire;
 
 beforeEach(function () {
@@ -36,6 +37,22 @@ test('date permalink allows duplicate slug', function () {
         ])
         ->call('create')
         ->assertHasNoFormErrors();
+});
+
+test('slug is locked by default when editing a post and unlocks via the edit slug action', function () {
+    $post = Post::factory()->create(['slug' => 'artikel-terkunci']);
+
+    Livewire::test(EditPost::class, ['record' => $post->getRouteKey()])
+        ->assertFormFieldDisabled('slug')
+        ->assertActionVisible(TestAction::make('unlockSlug')->schemaComponent('slug'))
+        ->callAction(TestAction::make('unlockSlug')->schemaComponent('slug'))
+        ->assertFormFieldEnabled('slug')
+        ->assertActionHidden(TestAction::make('unlockSlug')->schemaComponent('slug'));
+});
+
+test('slug is editable on the create page', function () {
+    Livewire::test(CreatePost::class)
+        ->assertFormFieldEnabled('slug');
 });
 
 test('editing a plain permalink post ignores its own slug in the unique check', function () {
