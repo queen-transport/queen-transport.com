@@ -45,9 +45,9 @@ class FrontPageController extends Controller
             ['name' => 'Hiace Premio Luxury', 'seat' => '9 Seat', 'price' => 2850000],
             ['name' => 'Fortuner New Legend', 'seat' => '7 Seat', 'price' => 2550000],
             ['name' => 'Fortuner Type GR', 'seat' => '7 Seat', 'price' => 2300000],
+            ['name' => 'Zenix Type Q Hybrid', 'seat' => '7 Seat', 'price' => 2250000],
             ['name' => 'Hiace Premio Standard', 'seat' => '14 Seat', 'price' => 1850000],
-            ['name' => 'Zenix Type Q Hybrid', 'seat' => '7 Seat', 'price' => 1850000],
-            ['name' => 'Zenix Type G Hybrid', 'seat' => '7 Seat', 'price' => 1750000],
+            ['name' => 'Zenix Type G Hybrid', 'seat' => '7 Seat', 'price' => 1850000],
             ['name' => 'Hiace Commuter', 'seat' => '14 Seat', 'price' => 1700000],
             ['name' => 'Innova Reborn', 'seat' => '7 Seat', 'price' => 1450000],
         ];
