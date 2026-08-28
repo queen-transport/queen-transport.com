@@ -13,6 +13,8 @@ class Pelanggan extends Model
     /** @use HasFactory<PelangganFactory> */
     use HasFactory;
 
+    protected $guarded = [];
+
     protected $casts = [
         'is_published' => 'boolean',
     ];

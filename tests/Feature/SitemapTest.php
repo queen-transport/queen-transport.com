@@ -15,6 +15,7 @@ test('sitemap includes static pages and published content', function () {
     $response->assertHeader('Content-Type', 'text/xml; charset=UTF-8');
     $response->assertSee(route('home'), false);
     $response->assertSee(route('armada.index'), false);
+    $response->assertSee(route('sewa-hiace-surabaya'), false);
     $response->assertSee(route('blog.index'), false);
     $response->assertSee(route('armada.show', $armada), false);
     $response->assertSee($post->url, false);
