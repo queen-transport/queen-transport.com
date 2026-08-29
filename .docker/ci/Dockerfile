@@ -13,8 +13,8 @@ RUN apk add --no-cache \
     icu-dev \
     libzip-dev
 
-# 2. Install & aktifkan ekstensi PHP intl & zip
-RUN docker-php-ext-install intl zip
+# 2. Install & aktifkan ekstensi PHP intl, zip, & exif
+RUN docker-php-ext-install intl zip exif
 
 # 3. Install Composer dari image resmi
 COPY --from=docker.io/library/composer:latest /usr/bin/composer /usr/bin/composer
