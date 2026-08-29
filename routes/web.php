@@ -4,6 +4,7 @@ use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FrontPageController;
 use App\Http\Controllers\SitemapController;
+use App\Livewire\SewaAlphardSurabaya;
 use App\Livewire\SewaHiaceSurabaya;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,8 @@ Route::get('sitemap.xml', SitemapController::class)->name('sitemap');
 
 Route::get('armada', [ArmadaController::class, 'index'])->name('armada.index');
 Route::get('sewa-hiace-surabaya', SewaHiaceSurabaya::class)->name('sewa-hiace-surabaya');
+Route::get('sewa-alphard-surabaya', SewaAlphardSurabaya::class)->name('sewa-alphard-surabaya');
+Route::get('sewa-alhpard-surabaya', SewaAlphardSurabaya::class)->name('sewa-alhpard-surabaya');
 Route::get('armada/{armada:slug}', [ArmadaController::class, 'show'])->name('armada.show');
 
 Route::get('blog', [BlogController::class, 'index'])->name('blog.index');

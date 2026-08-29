@@ -50,6 +50,7 @@
                 <a href="{{ route('home') }}" class="text-sm text-[var(--color-light)] hover:text-white">Beranda</a>
                 <a href="{{ route('armada.index') }}" class="text-sm text-[var(--color-light)] hover:text-white">Armada</a>
                 <a href="{{ route('sewa-hiace-surabaya') }}" class="text-sm text-[var(--color-light)] hover:text-white font-medium">Sewa Hiace</a>
+                <a href="{{ route('sewa-alphard-surabaya') }}" class="text-sm text-[var(--color-light)] hover:text-white font-medium">Sewa Alphard</a>
                 <a href="{{ route('home') }}#galeri" class="text-sm text-[var(--color-light)] hover:text-white">Galeri</a>
                 <a href="{{ route('home') }}#faq" class="text-sm text-[var(--color-light)] hover:text-white">FAQ</a>
                 <a href="{{ \App\Support\WhatsApp::link() }}"
@@ -71,6 +72,7 @@
             <a href="{{ route('home') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Beranda</a>
             <a href="{{ route('armada.index') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Armada</a>
             <a href="{{ route('sewa-hiace-surabaya') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Hiace Surabaya</a>
+            <a href="{{ route('sewa-alphard-surabaya') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Alphard Surabaya</a>
             <a href="{{ route('home') }}#galeri" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Galeri</a>
             <a href="{{ route('home') }}#faq" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">FAQ</a>
             <a href="{{ \App\Support\WhatsApp::link() }}"
@@ -117,6 +119,7 @@
                         <a href="{{ route('home') }}" class="text-[var(--color-text-muted)] hover:text-white">Beranda</a>
                         <a href="{{ route('armada.index') }}" class="text-[var(--color-text-muted)] hover:text-white">Armada Kami</a>
                         <a href="{{ route('sewa-hiace-surabaya') }}" class="text-[var(--color-text-muted)] hover:text-white">Sewa Hiace Surabaya</a>
+                        <a href="{{ route('sewa-alphard-surabaya') }}" class="text-[var(--color-text-muted)] hover:text-white">Sewa Alphard Surabaya</a>
                         <a href="{{ route('home') }}#galeri" class="text-[var(--color-text-muted)] hover:text-white">Galeri</a>
                         <a href="{{ route('home') }}#faq" class="text-[var(--color-text-muted)] hover:text-white">FAQ</a>
                     </div>
