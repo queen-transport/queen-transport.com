@@ -18,8 +18,9 @@ class SewaHiaceSurabayaService
         return Armada::query()
             ->where('is_published', true)
             ->where(function ($query) {
-                $query->where('title', 'like', '%Hiace%')
-                    ->orWhere('car_type', 'like', '%Hiace%');
+                $query->where('title', 'like', '%hiace%')
+                    ->orWhere('car_type', 'like', '%hiace%')
+                    ->orWhere('slug', 'like', '%hiace%');
             })
             ->orderBy('sort')
             ->orderBy('title')
