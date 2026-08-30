@@ -10,6 +10,10 @@ test('front page renders with no content seeded', function () {
 
     $response->assertOk();
     $response->assertSee(config('site.brand'));
+    $response->assertSee('Struktur');
+    $response->assertSee('Organisasi');
+    $response->assertSee('Pak Fauzan');
+    $response->assertSee('6282231037255');
 });
 
 test('front page renders armada, galeri, pelanggan and blog sections', function () {

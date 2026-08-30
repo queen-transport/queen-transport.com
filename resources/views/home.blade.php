@@ -93,6 +93,36 @@
         </div>
     </section>
 
+    {{-- STRUKTUR ORGANISASI --}}
+    <section class="py-[100px]" id="struktur-organisasi">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Manajemen &amp; Kepemimpinan</span>
+                <h2 class="text-[clamp(1.4rem,2.5vw,2rem)] font-bold">Struktur <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Organisasi</span></h2>
+                <p class="text-[var(--color-text-muted)] max-w-[600px] mx-auto mt-3">
+                    Komitmen layanan prima {{ config('site.brand') }} didukung oleh manajemen yang profesional dan berpengalaman.
+                </p>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 max-w-[380px] w-full text-center relative overflow-hidden flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full bg-[rgba(124,58,237,0.15)] border-2 border-[var(--color-accent)] flex items-center justify-center text-4xl mb-4 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+                        👔
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-[rgba(124,58,237,0.2)] border border-[rgba(124,58,237,0.4)] text-[var(--color-accent)] text-xs font-semibold uppercase tracking-wider mb-2">Direktur</span>
+                    <h3 class="text-white font-bold text-xl mb-1">Pak Fauzan</h3>
+                    <p class="text-[var(--color-text-muted)] text-xs mb-6">Direktur Utama {{ config('site.brand') }}</p>
+
+                    <a href="{{ \App\Support\WhatsApp::link('Halo Pak Fauzan, saya ingin berkonsultasi mengenai layanan '.config('site.brand'), '6282231037255') }}"
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm no-underline bg-gradient-to-br from-[#25d366] to-[#128c7e] text-white shadow-lg transition-transform hover:scale-[1.03]"
+                       target="_blank" rel="noopener noreferrer">
+                        💬 WhatsApp: 6282231037255
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- PERAWATAN RUTIN --}}
     <section class="relative py-[100px]" id="perawatan-rutin">
         <div class="max-w-[1200px] mx-auto px-6">
