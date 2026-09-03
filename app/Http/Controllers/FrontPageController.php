@@ -39,18 +39,35 @@ class FrontPageController extends Controller
             ->limit(3)
             ->get();
 
-        $priceList = [
-            ['name' => 'Alphard Type HV', 'seat' => '6 Seat', 'price' => 3950000],
-            ['name' => 'Alphard Type FL (Facelift)', 'seat' => '6 Seat', 'price' => 2950000],
-            ['name' => 'Hiace Premio Luxury', 'seat' => '9 Seat', 'price' => 2850000],
-            ['name' => 'Fortuner New Legend', 'seat' => '7 Seat', 'price' => 2550000],
-            ['name' => 'Fortuner Type GR', 'seat' => '7 Seat', 'price' => 2300000],
-            ['name' => 'Zenix Type Q Hybrid', 'seat' => '7 Seat', 'price' => 2250000],
-            ['name' => 'Hiace Premio Standard', 'seat' => '14 Seat', 'price' => 1850000],
-            ['name' => 'Zenix Type G Hybrid', 'seat' => '7 Seat', 'price' => 1850000],
-            ['name' => 'Hiace Commuter', 'seat' => '14 Seat', 'price' => 1700000],
-            ['name' => 'Innova Reborn', 'seat' => '7 Seat', 'price' => 1450000],
-        ];
+        $dbArmadasWithPrice = Armada::query()
+            ->where('is_published', true)
+            ->whereNotNull('price')
+            ->orderBy('sort')
+            ->orderBy('title')
+            ->get();
+
+        if ($dbArmadasWithPrice->isNotEmpty()) {
+            $priceList = $dbArmadasWithPrice->map(function (Armada $armada) {
+                return [
+                    'name' => $armada->title,
+                    'seat' => $armada->car_type ?: '6-7 Seat',
+                    'price' => $armada->price,
+                ];
+            })->toArray();
+        } else {
+            $priceList = [
+                ['name' => 'Alphard Type HV', 'seat' => '6 Seat', 'price' => 3950000],
+                ['name' => 'Alphard Type FL (Facelift)', 'seat' => '6 Seat', 'price' => 2950000],
+                ['name' => 'Hiace Premio Luxury', 'seat' => '9 Seat', 'price' => 2850000],
+                ['name' => 'Fortuner New Legend', 'seat' => '7 Seat', 'price' => 2550000],
+                ['name' => 'Fortuner Type GR', 'seat' => '7 Seat', 'price' => 2300000],
+                ['name' => 'Zenix Type Q Hybrid', 'seat' => '7 Seat', 'price' => 2250000],
+                ['name' => 'Hiace Premio Standard', 'seat' => '14 Seat', 'price' => 1850000],
+                ['name' => 'Zenix Type G Hybrid', 'seat' => '7 Seat', 'price' => 1850000],
+                ['name' => 'Hiace Commuter', 'seat' => '14 Seat', 'price' => 1700000],
+                ['name' => 'Innova Reborn', 'seat' => '7 Seat', 'price' => 1450000],
+            ];
+        }
 
         $faqs = [
             ['q' => 'Berapa tarif sewa mobil per hari?', 'a' => 'Tarif sewa bervariasi tergantung jenis armada dan durasi perjalanan. Silakan hubungi kami via WhatsApp untuk mendapatkan penawaran harga terbaik yang sesuai kebutuhan Anda.'],

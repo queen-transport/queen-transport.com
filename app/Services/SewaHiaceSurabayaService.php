@@ -61,7 +61,7 @@ class SewaHiaceSurabayaService
      */
     public function getHiacePrices(): array
     {
-        return [
+        $defaultPrices = [
             [
                 'name' => 'Hiace Commuter',
                 'badge' => 'Paling Populer',
@@ -90,6 +90,31 @@ class SewaHiaceSurabayaService
                 'features' => ['9 VIP Captain Seats', 'Kulit Premium & Legrest', 'Smart TV & Sound System', 'Ambience Light & Meja', 'Free Snack, Buah & Drink'],
             ],
         ];
+
+        $dbArmadas = $this->getHiaceArmadas();
+
+        if ($dbArmadas->isEmpty()) {
+            return $defaultPrices;
+        }
+
+        return $dbArmadas->map(function (Armada $armada) use ($defaultPrices) {
+            $matchingDefault = collect($defaultPrices)->first(function ($item) use ($armada) {
+                return str_contains(strtolower($armada->title), strtolower($item['name']))
+                    || str_contains(strtolower($item['name']), strtolower($armada->title));
+            });
+
+            $price = $armada->price ?? $matchingDefault['price'] ?? 0;
+
+            return [
+                'name' => $armada->title,
+                'badge' => $armada->car_badge ?: ($matchingDefault['badge'] ?? ''),
+                'seat' => $armada->car_type ?: ($matchingDefault['seat'] ?? '14 Seat'),
+                'price' => $price,
+                'price_label' => $price ? number_format($price, 0, ',', '.') : 'Tanya Harga',
+                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : ($matchingDefault['desc'] ?? ''),
+                'features' => ! empty($armada->features) ? $armada->features : ($matchingDefault['features'] ?? []),
+            ];
+        })->toArray();
     }
 
     /**

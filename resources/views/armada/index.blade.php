@@ -21,7 +21,12 @@
                         </div>
                         <div class="p-5">
                             <div class="text-white font-bold text-[0.95rem] mb-1">{{ $armada->title }}</div>
-                            <div class="text-[var(--color-text-muted)] text-xs mb-4">{{ $armada->car_type }}</div>
+                            <div class="text-[var(--color-text-muted)] text-xs mb-2">{{ $armada->car_type }}</div>
+                            @if ($armada->price)
+                                <div class="text-[var(--color-accent)] font-bold text-sm mb-3">
+                                    Rp {{ number_format($armada->price, 0, ',', '.') }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
+                                </div>
+                            @endif
                             <div class="border-t border-[var(--color-border)] pt-3">
                                 <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-sm font-medium no-underline">Lihat Detail →</a>
                             </div>

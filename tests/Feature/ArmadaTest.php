@@ -41,11 +41,15 @@ test('admin can create armada from filament resource', function () {
         ->fillForm([
             'title' => 'Zenix Type Q Hybrid',
             'slug' => 'zenix-type-q-hybrid',
+            'price' => 2250000,
         ])
         ->call('create')
         ->assertHasNoFormErrors();
 
-    expect(Armada::where('slug', 'zenix-type-q-hybrid')->exists())->toBeTrue();
+    $armada = Armada::where('slug', 'zenix-type-q-hybrid')->first();
+    expect($armada)->not->toBeNull();
+    expect($armada->price)->toBe(2250000);
+    expect($armada->formatted_price)->toBe('Rp 2.250.000');
 });
 
 test('gallery normalizes legacy nested items to flat paths', function () {

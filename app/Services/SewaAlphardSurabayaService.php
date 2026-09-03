@@ -63,7 +63,7 @@ class SewaAlphardSurabayaService
      */
     public function getAlphardPrices(): array
     {
-        return [
+        $defaultPrices = [
             [
                 'name' => 'Alphard Gen 2 / Facelift',
                 'badge' => 'Pilihan Ekonomis VIP',
@@ -92,6 +92,31 @@ class SewaAlphardSurabayaService
                 'features' => ['Executive Lounge Seats + Heater/Cooler', 'JBL Premium Sound & Wireless Charger', 'Performa Hybrid Senyap & Ramah Lingkungan', 'Driver Standar Protokol VVIP', 'Free Premium Amenities & Beverages'],
             ],
         ];
+
+        $dbArmadas = $this->getAlphardArmadas();
+
+        if ($dbArmadas->isEmpty()) {
+            return $defaultPrices;
+        }
+
+        return $dbArmadas->map(function (Armada $armada) use ($defaultPrices) {
+            $matchingDefault = collect($defaultPrices)->first(function ($item) use ($armada) {
+                return str_contains(strtolower($armada->title), strtolower($item['name']))
+                    || str_contains(strtolower($item['name']), strtolower($armada->title));
+            });
+
+            $price = $armada->price ?? $matchingDefault['price'] ?? 0;
+
+            return [
+                'name' => $armada->title,
+                'badge' => $armada->car_badge ?: ($matchingDefault['badge'] ?? ''),
+                'seat' => $armada->car_type ?: ($matchingDefault['seat'] ?? '6 VIP Seat'),
+                'price' => $price,
+                'price_label' => $price ? number_format($price, 0, ',', '.') : 'Tanya Harga',
+                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : ($matchingDefault['desc'] ?? ''),
+                'features' => ! empty($armada->features) ? $armada->features : ($matchingDefault['features'] ?? []),
+            ];
+        })->toArray();
     }
 
     /**

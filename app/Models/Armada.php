@@ -20,6 +20,7 @@ class Armada extends Model
         'car_type',
         'car_badge',
         'car_icon',
+        'price',
         'features',
         'description',
         'cta_text',
@@ -35,9 +36,22 @@ class Armada extends Model
      * @var array<string, string>
      */
     protected $casts = [
+        'price' => 'integer',
         'features' => 'array',
         'is_published' => 'boolean',
     ];
+
+    /**
+     * Get the formatted price string (e.g. "Rp 2.200.000").
+     *
+     * @return Attribute<string|null, void>
+     */
+    protected function formattedPrice(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->price ? 'Rp '.number_format((float) $this->price, 0, ',', '.') : null,
+        );
+    }
 
     protected static function booted(): void
     {

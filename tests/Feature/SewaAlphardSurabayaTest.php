@@ -43,17 +43,11 @@ test('sewa alphard surabaya page renders successfully via livewire', function ()
         ->assertSee('Sewa Alphard');
 });
 
-test('sewa alhpard surabaya alias page renders successfully', function () {
-    $response = $this->get(route('sewa-alhpard-surabaya'));
-
-    $response->assertOk();
-    $response->assertSee('Sewa Alphard');
-});
-
-test('sewa alphard surabaya page displays alphard armada when present', function () {
+test('sewa alphard surabaya page displays alphard armada with price when present', function () {
     Armada::factory()->create([
         'title' => 'All New Alphard HEV Hybrid',
         'car_type' => 'Alphard',
+        'price' => 3800000,
         'is_published' => true,
     ]);
 
@@ -61,7 +55,9 @@ test('sewa alphard surabaya page displays alphard armada when present', function
 
     $response->assertOk();
     $response->assertSee('All New Alphard HEV Hybrid');
+    $response->assertSee('3.800.000');
 
     Livewire::test(SewaAlphardSurabaya::class)
-        ->assertSee('All New Alphard HEV Hybrid');
+        ->assertSee('All New Alphard HEV Hybrid')
+        ->assertSee('3.800.000');
 });

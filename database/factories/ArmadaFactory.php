@@ -18,7 +18,7 @@ class ArmadaFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->unique()->words(3, true);
+        $title = (string) fake()->unique()->words(3, true);
 
         return [
             'title' => ucwords($title),
@@ -26,6 +26,7 @@ class ArmadaFactory extends Factory
             'car_type' => fake()->randomElement(['MPV Mewah', 'SUV Premium', 'Sedan Eksekutif', 'Alphard/Vellfire']),
             'car_badge' => fake()->randomElement(['Prestige', 'Populer', 'VIP', null]),
             'car_icon' => fake()->randomElement(['🚗', '🚙', '👑', '🚘']),
+            'price' => fake()->randomElement([1450000, 1700000, 1850000, 2200000, 2800000, 3800000]),
             'features' => fake()->randomElements([
                 'AC Double Blower', 'Kursi Elektrik', 'TV LCD', 'Sunroof', 'Kulkas Mini', 'Karaoke',
             ], 3),

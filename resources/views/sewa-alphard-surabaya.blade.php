@@ -196,7 +196,14 @@
                             </div>
                             <div class="p-6">
                                 <div class="text-white font-bold text-lg mb-1">{{ $armada->title }}</div>
-                                <div class="text-[var(--color-accent)] text-xs font-semibold mb-3">{{ $armada->car_type }}</div>
+                                <div class="text-[var(--color-accent)] text-xs font-semibold mb-2">{{ $armada->car_type }}</div>
+                                @if ($armada->price)
+                                    <div class="text-white font-bold text-base mb-3 flex items-baseline gap-1">
+                                        <span class="text-xs font-normal text-[var(--color-accent)]">Rp</span>
+                                        <span>{{ number_format($armada->price, 0, ',', '.') }}</span>
+                                        <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
+                                    </div>
+                                @endif
                                 <p class="text-[var(--color-text-muted)] text-sm line-clamp-2 mb-4">
                                     {{ $armada->description }}
                                 </p>

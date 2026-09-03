@@ -32,6 +32,10 @@ class ArmadasTable
                 TextColumn::make('car_badge')
                     ->label('Badge')
                     ->badge(),
+                TextColumn::make('price')
+                    ->label('Harga')
+                    ->money('IDR', locale: 'id')
+                    ->sortable(),
                 IconColumn::make('is_published')
                     ->label('Tampil')
                     ->boolean(),

@@ -68,6 +68,13 @@
                     @if ($armada->car_type)
                         <p class="text-[var(--color-text-muted)] text-sm">{{ $armada->car_icon }} {{ $armada->car_type }}</p>
                     @endif
+                    @if ($armada->price)
+                        <div class="text-white font-bold text-2xl mt-3 flex items-baseline gap-1">
+                            <span class="text-sm font-normal text-[var(--color-accent)]">Rp</span>
+                            <span>{{ number_format($armada->price, 0, ',', '.') }}</span>
+                            <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="my-6 border-t border-b border-[var(--color-border)] py-6">

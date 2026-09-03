@@ -41,6 +41,11 @@ class ArmadaForm
                         TextInput::make('car_icon')
                             ->label('Icon Emoji')
                             ->placeholder('👑'),
+                        TextInput::make('price')
+                            ->label('Harga per Hari (Rp)')
+                            ->numeric()
+                            ->prefix('Rp')
+                            ->placeholder('contoh: 2200000'),
                         TagsInput::make('features')
                             ->label('Fitur-Fitur')
                             ->placeholder('Tambah fitur lalu tekan Enter')

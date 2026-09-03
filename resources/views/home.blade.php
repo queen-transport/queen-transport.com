@@ -191,7 +191,12 @@
                         </div>
                         <div class="p-5">
                             <div class="text-white font-bold text-[0.95rem] mb-1">{{ $armada->title }}</div>
-                            <div class="text-[var(--color-text-muted)] text-xs mb-3">{{ $armada->car_type }}</div>
+                            <div class="text-[var(--color-text-muted)] text-xs mb-2">{{ $armada->car_type }}</div>
+                            @if ($armada->price)
+                                <div class="text-[var(--color-accent)] font-bold text-xs mb-3">
+                                    Rp {{ number_format($armada->price, 0, ',', '.') }} / hari
+                                </div>
+                            @endif
                             @if (!empty($armada->features))
                                 <div class="flex flex-wrap gap-1.5 mb-4">
                                     @foreach ($armada->features as $feature)
