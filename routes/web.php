@@ -8,11 +8,15 @@ use App\Livewire\SewaAlphardSurabaya;
 use App\Livewire\SewaHiaceSurabaya;
 use Illuminate\Support\Facades\Route;
 
+// ======
+// BASE
+// ======
 Route::controller(BaseController::class)
     ->group(function() {
         Route::get('/', 'index')->name('home');
         Route::get('sitemap.xml', 'sitemap')->name('sitemap');
     });
+
 // ======
 // ARMADA
 // ======
