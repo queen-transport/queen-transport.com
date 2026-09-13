@@ -3,7 +3,6 @@
 use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\FrontPageController;
 use App\Http\Controllers\SitemapController;
 use App\Livewire\SewaAlphardSurabaya;
 use App\Livewire\SewaHiaceSurabaya;
@@ -11,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(BaseController::class)
     ->group(function() {
-        Route::get('/', FrontPageController::class)->name('home');
-        Route::get('sitemap.xml', SitemapController::class)->name('sitemap');
+        Route::get('/', 'index')->name('home');
+        Route::get('sitemap.xml', 'sitemap')->name('sitemap');
     });
 // ======
 // ARMADA
