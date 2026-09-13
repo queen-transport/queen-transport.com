@@ -3,29 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Armada;
+use App\Services\ArmadaService;
 use Illuminate\View\View;
 
 class ArmadaController extends Controller
 {
-    public function index(): View
+    public function index(ArmadaService $armadaService): View
     {
-        $armadas = Armada::query()
-            ->where('is_published', true)
-            ->orderBy('sort')
-            ->orderBy('title')
-            ->get();
+        $armadas = $armadaService->getPublished();
 
         return view('armada.index', compact('armadas'));
     }
 
-    public function show(Armada $armada): View
+    public function show(Armada $armada, ArmadaService $armadaService): View
     {
-        $related = Armada::query()
-            ->where('is_published', true)
-            ->where('id', '!=', $armada->id)
-            ->orderBy('sort')
-            ->limit(4)
-            ->get();
+        $related = $armadaService->getRelated($armada);
 
         return view('armada.show', compact('armada', 'related'));
     }

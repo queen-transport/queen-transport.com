@@ -1,4 +1,21 @@
-<div>
+<?php
+
+use function Laravel\Folio\name;
+
+name('sewa-hiace-surabaya');
+?>
+
+@php
+use App\Services\ArmadaService;
+
+$armadaService = app(ArmadaService::class);
+extract($armadaService->getHiacePageData());
+
+$title = 'Sewa Hiace Surabaya Murah & Premio Luxury + Driver — ' . config('site.brand');
+$description = 'Sewa Hiace Surabaya termurah & terbaik (Commuter, Premio Standard, Premio Luxury 9-14 seat) include driver profesional. Layanan 24 jam untuk wisata, dinas, event & airport Juanda.';
+@endphp
+
+<x-layouts::public :title="$title" :description="$description">
     {{-- HERO SECTION --}}
     <section class="relative min-h-[75vh] flex items-center pt-12 pb-20 overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[1200px] mx-auto px-6 w-full relative z-10">
@@ -385,4 +402,4 @@
             </div>
         </div>
     </section>
-</div>
+</x-layouts::public>

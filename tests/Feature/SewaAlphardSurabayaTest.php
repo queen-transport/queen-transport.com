@@ -1,13 +1,11 @@
 <?php
 
-use App\Livewire\SewaAlphardSurabaya;
 use App\Models\Armada;
 use App\Models\Pelanggan;
-use App\Services\SewaAlphardSurabayaService;
-use Livewire\Livewire;
+use App\Services\ArmadaService;
 
-test('sewa alphard surabaya service returns expected data structure', function () {
-    $service = new SewaAlphardSurabayaService;
+test('armada service returns expected alphard page data structure', function () {
+    $service = new ArmadaService;
 
     Armada::factory()->create([
         'title' => 'Toyota Alphard Transformer Gen 3',
@@ -20,7 +18,7 @@ test('sewa alphard surabaya service returns expected data structure', function (
         'is_published' => true,
     ]);
 
-    $data = $service->getData();
+    $data = $service->getAlphardPageData();
 
     expect($data)->toHaveKeys(['alphardArmadas', 'allArmadas', 'pelanggans', 'alphardPrices', 'faqs']);
     expect($data['alphardArmadas']->count())->toBeGreaterThan(0);
@@ -30,17 +28,13 @@ test('sewa alphard surabaya service returns expected data structure', function (
     expect($data['faqs'])->toBeArray();
 });
 
-test('sewa alphard surabaya page renders successfully via livewire', function () {
+test('sewa alphard surabaya page renders successfully via folio', function () {
     $response = $this->get(route('sewa-alphard-surabaya'));
 
     $response->assertOk();
     $response->assertSee('Sewa Alphard');
     $response->assertSee('Surabaya');
     $response->assertSee(config('site.brand'));
-
-    Livewire::test(SewaAlphardSurabaya::class)
-        ->assertStatus(200)
-        ->assertSee('Sewa Alphard');
 });
 
 test('sewa alphard surabaya page displays alphard armada with price when present', function () {
@@ -56,8 +50,4 @@ test('sewa alphard surabaya page displays alphard armada with price when present
     $response->assertOk();
     $response->assertSee('All New Alphard HEV Hybrid');
     $response->assertSee('3.800.000');
-
-    Livewire::test(SewaAlphardSurabaya::class)
-        ->assertSee('All New Alphard HEV Hybrid')
-        ->assertSee('3.800.000');
 });

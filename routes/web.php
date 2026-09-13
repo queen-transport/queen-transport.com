@@ -4,8 +4,6 @@ use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SitemapController;
-use App\Livewire\SewaAlphardSurabaya;
-use App\Livewire\SewaHiaceSurabaya;
 use Illuminate\Support\Facades\Route;
 
 // ======
@@ -44,13 +42,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 
-
-// ======
-// OMPAGE
-// ======
-Route::get('sewa-hiace-surabaya', SewaHiaceSurabaya::class)->name('sewa-hiace-surabaya');
-Route::get('sewa-alphard-surabaya', SewaAlphardSurabaya::class)->name('sewa-alphard-surabaya');
-
-// Catch-all for plain-permalink posts (/{slug}) — must stay last so it only
-// matches paths no other route above claimed.
-Route::get('{slug}', [BlogController::class, 'showPlain'])->name('blog.show-plain');

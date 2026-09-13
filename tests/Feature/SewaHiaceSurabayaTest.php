@@ -1,13 +1,11 @@
 <?php
 
-use App\Livewire\SewaHiaceSurabaya;
 use App\Models\Armada;
 use App\Models\Pelanggan;
-use App\Services\SewaHiaceSurabayaService;
-use Livewire\Livewire;
+use App\Services\ArmadaService;
 
-test('sewa hiace surabaya service returns expected data structure', function () {
-    $service = new SewaHiaceSurabayaService;
+test('armada service returns expected hiace page data structure', function () {
+    $service = new ArmadaService;
 
     Armada::factory()->create([
         'title' => 'Toyota Hiace Commuter 14 Seat',
@@ -20,7 +18,7 @@ test('sewa hiace surabaya service returns expected data structure', function () 
         'is_published' => true,
     ]);
 
-    $data = $service->getData();
+    $data = $service->getHiacePageData();
 
     expect($data)->toHaveKeys(['hiaceArmadas', 'allArmadas', 'pelanggans', 'hiacePrices', 'faqs']);
     expect($data['hiaceArmadas']->count())->toBeGreaterThan(0);
@@ -30,17 +28,13 @@ test('sewa hiace surabaya service returns expected data structure', function () 
     expect($data['faqs'])->toBeArray();
 });
 
-test('sewa hiace surabaya page renders successfully via livewire', function () {
+test('sewa hiace surabaya page renders successfully via folio', function () {
     $response = $this->get(route('sewa-hiace-surabaya'));
 
     $response->assertOk();
     $response->assertSee('Sewa Hiace');
     $response->assertSee('Surabaya');
     $response->assertSee(config('site.brand'));
-
-    Livewire::test(SewaHiaceSurabaya::class)
-        ->assertStatus(200)
-        ->assertSee('Sewa Hiace');
 });
 
 test('sewa hiace surabaya page displays hiace armada when present', function () {
@@ -54,7 +48,4 @@ test('sewa hiace surabaya page displays hiace armada when present', function () 
 
     $response->assertOk();
     $response->assertSee('Hiace Premio Luxury VIP');
-
-    Livewire::test(SewaHiaceSurabaya::class)
-        ->assertSee('Hiace Premio Luxury VIP');
 });
