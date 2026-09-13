@@ -22,10 +22,16 @@ Route::controller(ArmadaController::class)
         Route::get('/{armada:slug}', 'show')->name('armada.show');
     });
 
-Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('{year}/{month}/{post}', [BlogController::class, 'show'])
-    ->where(['year' => '[0-9]{4}', 'month' => '[0-9]{1,2}'])
-    ->name('blog.show');
+// ======
+// ARTIKEL
+// ======
+Route::controller(BlogController::class)
+    ->group(function() {
+        Route::get('/blog', 'index')->name('blog.index');
+        Route::get('/{year}/{month}/{post}', 'show')
+            ->where(['year' => '[0-9]{4}', 'month' => '[0-9]{1,2}'])
+            ->name('blog.show');
+    });
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
