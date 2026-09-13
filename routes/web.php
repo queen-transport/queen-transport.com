@@ -12,10 +12,15 @@ Route::get('/', FrontPageController::class)->name('home');
 
 Route::get('sitemap.xml', SitemapController::class)->name('sitemap');
 
-Route::get('armada', [ArmadaController::class, 'index'])->name('armada.index');
-Route::get('sewa-hiace-surabaya', SewaHiaceSurabaya::class)->name('sewa-hiace-surabaya');
-Route::get('sewa-alphard-surabaya', SewaAlphardSurabaya::class)->name('sewa-alphard-surabaya');
-Route::get('armada/{armada:slug}', [ArmadaController::class, 'show'])->name('armada.show');
+// ======
+// ARMADA
+// ======
+Route::controller(ArmadaController::class)
+    ->prefix('armada')
+    ->group(function() {
+        Route::get('/', 'index')->name('armada.index');
+        Route::get('/{armada:slug}', 'show')->name('armada.show');
+    });
 
 Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('{year}/{month}/{post}', [BlogController::class, 'show'])
@@ -27,6 +32,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 require __DIR__.'/settings.php';
+
+
+// ======
+// OMPAGE
+// ======
+Route::get('sewa-hiace-surabaya', SewaHiaceSurabaya::class)->name('sewa-hiace-surabaya');
+Route::get('sewa-alphard-surabaya', SewaAlphardSurabaya::class)->name('sewa-alphard-surabaya');
 
 // Catch-all for plain-permalink posts (/{slug}) — must stay last so it only
 // matches paths no other route above claimed.
