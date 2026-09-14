@@ -21,7 +21,6 @@ class Post extends Model
         'user_id',
         'title',
         'slug',
-        'permalink_type',
         'excerpt',
         'content',
         'featured_image',
@@ -76,10 +75,6 @@ class Post extends Model
 
     public function getUrlAttribute(): string
     {
-        if ($this->permalink_type === 'plain') {
-            return route('blog.show-plain', ['slug' => $this->slug]);
-        }
-
         return route('blog.show', [
             'year' => $this->published_at?->format('Y') ?? now()->format('Y'),
             'month' => $this->published_at?->format('m') ?? now()->format('m'),

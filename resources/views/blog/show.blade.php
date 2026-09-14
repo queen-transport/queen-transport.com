@@ -30,7 +30,7 @@
                                 @if ($post->category)
                                     <span class="px-3 py-1 rounded-[var(--radius-sm)] bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] text-[var(--color-primary)] text-xs font-semibold">{{ $post->category->name }}</span>
                                 @endif
-                                @if ($post->permalink_type !== 'plain')
+                                @if ($post->published_at)
                                     <span class="text-[var(--color-text-muted)] text-xs">{{ $post->published_at->translatedFormat('d M Y') }}</span>
                                 @endif
                             </div>

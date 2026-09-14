@@ -59,8 +59,8 @@ test('two posts can share the same slug in different months', function () {
     expect($first->id)->not->toBe($second->id);
 });
 
-test('blog show resolves plain permalink by slug', function () {
-    $post = Post::factory()->plainPermalink()->create([
+test('plain permalink request redirects to date url', function () {
+    $post = Post::factory()->create([
         'title' => 'Tips Sewa Mobil Mewah',
         'slug' => 'tips-sewa-mobil-mewah',
         'status' => 'published',
@@ -69,43 +69,14 @@ test('blog show resolves plain permalink by slug', function () {
 
     $response = $this->get('/'.$post->slug);
 
-    $response->assertOk();
-    $response->assertSee('Tips Sewa Mobil Mewah');
-});
-
-test('date permalink post redirects to plain url after switching mode', function () {
-    $post = Post::factory()->plainPermalink()->create([
-        'slug' => 'artikel-pindah-mode',
-        'status' => 'published',
-        'published_at' => '2025-03-15 10:00:00',
-    ]);
-
-    $response = $this->get('/2025/03/artikel-pindah-mode');
-
     $response->assertRedirect($post->url);
     $response->assertStatus(301);
 });
 
-test('plain permalink post redirects to date url after switching mode', function () {
-    $post = Post::factory()->create([
-        'slug' => 'artikel-pindah-mode-lagi',
-        'status' => 'published',
-        'published_at' => '2025-03-15 10:00:00',
-    ]);
+test('post url attribute uses date permalink format', function () {
+    $post = Post::factory()->create(['slug' => 'date-post', 'published_at' => '2025-03-15']);
 
-    $response = $this->get('/'.$post->slug);
-
-    $response->assertRedirect($post->url);
-    $response->assertStatus(301);
-});
-
-test('post url attribute reflects permalink type', function () {
-    $datePost = Post::factory()->create(['slug' => 'date-post', 'published_at' => '2025-03-15']);
-    $plainPost = Post::factory()->plainPermalink()->create(['slug' => 'plain-post']);
-
-    expect($datePost->url)->toContain('/2025/03/date-post')
-        ->and($plainPost->url)->toContain('/plain-post')
-        ->and($plainPost->url)->not->toContain('/2025/');
+    expect($post->url)->toContain('/2025/03/date-post');
 });
 
 test('post exposes seo fallbacks when meta fields are empty', function () {

@@ -25,7 +25,6 @@ class PostFactory extends Factory
             'user_id' => null,
             'title' => rtrim($title, '.'),
             'slug' => Str::slug($title),
-            'permalink_type' => 'date',
             'excerpt' => fake()->sentence(20),
             'content' => collect(fake()->paragraphs(5))->map(fn ($p) => "<p>{$p}</p>")->implode(''),
             'featured_image' => null,
@@ -42,13 +41,6 @@ class PostFactory extends Factory
         return $this->state(fn () => [
             'status' => 'draft',
             'published_at' => null,
-        ]);
-    }
-
-    public function plainPermalink(): static
-    {
-        return $this->state(fn () => [
-            'permalink_type' => 'plain',
         ]);
     }
 }

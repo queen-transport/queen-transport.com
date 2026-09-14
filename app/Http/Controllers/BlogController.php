@@ -24,7 +24,7 @@ class BlogController extends Controller
         return view('blog.index', ['posts' => $posts, 'search' => $search]);
     }
 
-    public function show(string $year, string $month, string $slug): View|RedirectResponse
+    public function show(string $year, string $month, string $slug): View
     {
         $post = Post::query()
             ->published()
@@ -34,10 +34,6 @@ class BlogController extends Controller
             ->with(['category', 'tags'])
             ->firstOrFail();
 
-        if ($post->permalink_type === 'plain') {
-            return redirect()->to($post->url, 301);
-        }
-
         return $this->showPost($post);
     }
 
@@ -46,15 +42,18 @@ class BlogController extends Controller
         $post = Post::query()
             ->published()
             ->where('slug', $slug)
-            ->with(['category', 'tags'])
             ->orderByDesc('published_at')
-            ->firstOrFail();
+            ->first();
 
-        if ($post->permalink_type === 'date') {
+        if ($post) {
             return redirect()->to($post->url, 301);
         }
 
-        return $this->showPost($post);
+        if (view()->exists('onpage.' . $slug)) {
+            return view('onpage.' . $slug);
+        }
+
+        abort(404);
     }
 
     private function showPost(Post $post): View

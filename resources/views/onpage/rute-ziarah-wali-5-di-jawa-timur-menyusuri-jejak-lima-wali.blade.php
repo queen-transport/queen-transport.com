@@ -6,10 +6,10 @@ name('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali');
 ?>
 
 @php
-use App\Services\ArmadaService;
+use App\Services\ZiarahService;
 
-$armadaService = app(ArmadaService::class);
-extract($armadaService->getZiarahPageData());
+$ziarahService = app(ZiarahService::class);
+extract($ziarahService->getZiarahPageData());
 
 $title = 'Rute Ziarah Wali 5 di Jawa Timur: Menyusuri Jejak Lima Wali — ' . config('site.brand');
 $description = 'Panduan lengkap rute ziarah Wali 5 di Jawa Timur (Sunan Ampel, Sunan Giri, Sunan Maulana Malik Ibrahim, Sunan Drajat, Sunan Bonang). Lengkap dengan estimasi waktu, peta urutan rute & sewa Hiace/Innova include driver.';
@@ -267,7 +267,7 @@ $canonical = url()->current();
                             <div class="flex items-center gap-6 text-xs text-[var(--color-accent)] font-semibold flex-wrap">
                                 <span>✦ Masjid Bersejarah Berusia Ratusan Tahun</span>
                                 <span>✦ Parkiran Bus/Van Ampel Pegirian</span>
-                                <span>✦ Buka 24 Jam</span>
+                                <span>✦ Buka Sepanjang Hari</span>
                             </div>
                         </div>
                     </div>
@@ -500,8 +500,33 @@ $canonical = url()->current();
         </div>
     </section>
 
-    {{-- SECTION 4: ARMADA REKOMENDASI UNTUK ZIARAH --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]" id="pilihan-armada">
+    {{-- SECTION 4: FAQ SECTION (DIPINDAHKAN KE ATAS SEBELUM PENAWARAN RENTAL MOBIL) --}}
+    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]" id="faq">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
+                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                    FAQ Ziarah Wali 5 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Jawa Timur</span>
+                </h2>
+            </div>
+
+            <div class="max-w-[900px] mx-auto flex flex-col gap-4">
+                @foreach ($faqs as $faq)
+                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
+                    <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
+                        <span class="text-[var(--color-accent)]">❓</span> {{ $faq['q'] }}
+                    </h3>
+                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed pl-8">
+                        {{ $faq['a'] }}
+                    </p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- SECTION 5: ARMADA REKOMENDASI UNTUK ZIARAH --}}
+    <section class="py-[90px] border-t border-[var(--color-border)]" id="pilihan-armada">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transportasi Ziarah</span>
@@ -513,6 +538,23 @@ $canonical = url()->current();
                 </p>
             </div>
 
+            @php
+                $findArmadaPrice = function($keywords) use ($allArmadas) {
+                    $armada = $allArmadas->first(function($item) use ($keywords) {
+                        foreach ((array)$keywords as $keyword) {
+                            if (\Illuminate\Support\Str::contains(strtolower($item->title), strtolower($keyword))) {
+                                return true;
+                            }
+                        }
+                        return false;
+                    });
+                    return $armada && $armada->price ? 'Rp ' . number_format($armada->price, 0, ',', '.') : null;
+                };
+
+                $hiaceCommuterPrice = $findArmadaPrice('commuter') ?? 'Rp 1.700.000';
+                $hiacePremioPrice = $findArmadaPrice(['premio standard', 'premio']) ?? 'Rp 1.850.000';
+                $innovaPrice = $findArmadaPrice(['reborn', 'innova', 'zenix']) ?? 'Rp 1.450.000';
+            @endphp
             <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
                 {{-- HIACE COMMUTER --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:border-[var(--color-accent)] hover:-translate-y-2">
@@ -530,7 +572,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">Rp 1.700.000 <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
+                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $hiaceCommuterPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
                         <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Toyota Hiace Commuter untuk Ziarah Wali 5 Jatim') }}"
                            target="_blank" rel="noopener noreferrer"
                            class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
@@ -555,7 +597,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">Rp 1.850.000 <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
+                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $hiacePremioPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
                         <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Toyota Hiace Premio untuk Ziarah Wali 5 Jatim') }}"
                            target="_blank" rel="noopener noreferrer"
                            class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
@@ -580,7 +622,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">Rp 1.450.000 <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
+                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $innovaPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
                         <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Innova Zenix / Reborn untuk Ziarah Wali 5 Jatim') }}"
                            target="_blank" rel="noopener noreferrer"
                            class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
@@ -592,9 +634,9 @@ $canonical = url()->current();
         </div>
     </section>
 
-    {{-- SECTION 5: TESTIMONI PELANGGAN --}}
+    {{-- SECTION 6: TESTIMONI PELANGGAN --}}
     @if ($pelanggans->isNotEmpty())
-    <section class="py-[90px]">
+    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pengalaman Peziarah</span>
@@ -625,31 +667,6 @@ $canonical = url()->current();
     </section>
     @endif
 
-    {{-- SECTION 6: FAQ SECTION --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]" id="faq">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
-                    FAQ Ziarah Wali 5 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Jawa Timur</span>
-                </h2>
-            </div>
-
-            <div class="max-w-[900px] mx-auto flex flex-col gap-4">
-                @foreach ($faqs as $faq)
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
-                    <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
-                        <span class="text-[var(--color-accent)]">❓</span> {{ $faq['q'] }}
-                    </h3>
-                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed pl-8">
-                        {{ $faq['a'] }}
-                    </p>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
     {{-- SECTION 7: FINAL CTA BANNER --}}
     <section class="py-20 relative overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[1000px] mx-auto px-6 text-center relative z-10">
@@ -668,7 +685,7 @@ $canonical = url()->current();
                 <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi & sewa armada Ziarah Wali 5 Jawa Timur') }}"
                    class="inline-flex items-center gap-2 px-10 py-4 rounded-[32px] font-bold text-base no-underline border-0 bg-[image:var(--gradient-btn)] text-white shadow-[0_4px_30px_rgba(124,58,237,0.5)] transition-all hover:scale-105"
                    target="_blank" rel="noopener noreferrer">
-                    💬 Hubungi CS via WhatsApp (24 Jam)
+                    💬 Hubungi CS via WhatsApp (Sepanjang Hari)
                 </a>
             </div>
         </div>

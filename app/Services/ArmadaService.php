@@ -139,58 +139,24 @@ class ArmadaService
      */
     public function getHiacePrices(): array
     {
-        $defaultPrices = [
-            [
-                'name' => 'Hiace Commuter',
-                'badge' => 'Paling Populer',
-                'seat' => '14 Seat',
-                'price' => 1700000,
-                'price_label' => '1.700.000',
-                'desc' => 'Pilihan ideal untuk rombongan wisata, kunjungan dinas, atau acara keluarga dengan kapasitas lega dan hemat biaya.',
-                'features' => ['14 Reclining Seats', 'Full AC Per-Head', 'Audio & USB Charger', 'Driver Profesional', 'Free Snack & Air Mineral'],
-            ],
-            [
-                'name' => 'Hiace Premio Standard',
-                'badge' => 'Kenyamanan Ekstra',
-                'seat' => '14 Seat',
-                'price' => 1850000,
-                'price_label' => '1.850.000',
-                'desc' => 'Desain modern semi-bonnet dengan tingkat peredaman kabin yang lebih tinggi dan suspensi ekstra empuk.',
-                'features' => ['14 Reclining Seats Premium', 'Kabin Lebih Senyap', 'Full AC Double Blower', 'Driver Berpengalaman', 'Free Snack & Air Mineral'],
-            ],
-            [
-                'name' => 'Hiace Premio Luxury',
-                'badge' => 'VIP & Executive',
-                'seat' => '9 Seat',
-                'price' => 2850000,
-                'price_label' => '2.850.000',
-                'desc' => 'Kemewahan kelas atas dengan Captain Seat jok kulit, entertainment TV, meja lipat, dan suasana kabin privat super VIP.',
-                'features' => ['9 VIP Captain Seats', 'Kulit Premium & Legrest', 'Smart TV & Sound System', 'Ambience Light & Meja', 'Free Snack, Buah & Drink'],
-            ],
-        ];
-
         $dbArmadas = $this->getHiace();
 
         if ($dbArmadas->isEmpty()) {
-            return $defaultPrices;
+            (new \Database\Seeders\ArmadaSeeder)->run();
+            $dbArmadas = $this->getHiace();
         }
 
-        return $dbArmadas->map(function (Armada $armada) use ($defaultPrices) {
-            $matchingDefault = collect($defaultPrices)->first(function ($item) use ($armada) {
-                return str_contains(strtolower($armada->title), strtolower($item['name']))
-                    || str_contains(strtolower($item['name']), strtolower($armada->title));
-            });
-
-            $price = $armada->price ?? $matchingDefault['price'] ?? 0;
+        return $dbArmadas->map(function (Armada $armada) {
+            $price = $armada->price ?? 0;
 
             return [
                 'name' => $armada->title,
-                'badge' => $armada->car_badge ?: ($matchingDefault['badge'] ?? ''),
-                'seat' => $armada->car_type ?: ($matchingDefault['seat'] ?? '14 Seat'),
+                'badge' => $armada->car_badge ?: '',
+                'seat' => $armada->car_type ?: '14 Seat',
                 'price' => $price,
                 'price_label' => $price ? number_format($price, 0, ',', '.') : 'Tanya Harga',
-                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : ($matchingDefault['desc'] ?? ''),
-                'features' => ! empty($armada->features) ? $armada->features : ($matchingDefault['features'] ?? []),
+                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : '',
+                'features' => ! empty($armada->features) ? $armada->features : [],
             ];
         })->toArray();
     }
@@ -202,58 +168,24 @@ class ArmadaService
      */
     public function getAlphardPrices(): array
     {
-        $defaultPrices = [
-            [
-                'name' => 'Alphard Gen 2 / Facelift',
-                'badge' => 'Pilihan Ekonomis VIP',
-                'seat' => '6-7 Seat VIP',
-                'price' => 2200000,
-                'price_label' => '2.200.000',
-                'desc' => 'Tampilan tetap berkelas dengan kenyamanan kabin mewah, ideal untuk operasional dinas instansi, penjemputan tamu kantor, atau rombongan VIP.',
-                'features' => ['6 VIP Captain Seats', 'Full AC Climate Control', 'Jok Kulit Soft Touch', 'Driver Berpengalaman', 'Free Snack & Air Mineral'],
-            ],
-            [
-                'name' => 'Alphard Transformer (Gen 3)',
-                'badge' => 'Paling Populer',
-                'seat' => '6 VIP Seat',
-                'price' => 2800000,
-                'price_label' => '2.800.000',
-                'desc' => 'Desain grille Transformer yang ikonik dan gagah, interior super mewah dilengkapi Dual Sunroof, Rear Entertainment, dan suspensi sangat empuk.',
-                'features' => ['6 First-Class Captain Seats', 'Dual Sunroof & Ambience Light', 'Smart TV / Entertainment System', 'Driver Professional Uniform', 'Free Snack, Buah & Air Mineral'],
-            ],
-            [
-                'name' => 'All New Alphard HEV (Gen 4)',
-                'badge' => 'Flagship VIP & VVIP',
-                'seat' => '6 VIP Seat',
-                'price' => 3800000,
-                'price_label' => '3.800.000',
-                'desc' => 'Puncak kemewahan MPV flagship Toyota paling gres. Teknologi Hybrid super senyap, Executive Lounge Seats, dan fitur kenyamanan VVIP kelas atas.',
-                'features' => ['Executive Lounge Seats + Heater/Cooler', 'JBL Premium Sound & Wireless Charger', 'Performa Hybrid Senyap & Ramah Lingkungan', 'Driver Standar Protokol VVIP', 'Free Premium Amenities & Beverages'],
-            ],
-        ];
-
         $dbArmadas = $this->getAlphard();
 
         if ($dbArmadas->isEmpty()) {
-            return $defaultPrices;
+            (new \Database\Seeders\ArmadaSeeder)->run();
+            $dbArmadas = $this->getAlphard();
         }
 
-        return $dbArmadas->map(function (Armada $armada) use ($defaultPrices) {
-            $matchingDefault = collect($defaultPrices)->first(function ($item) use ($armada) {
-                return str_contains(strtolower($armada->title), strtolower($item['name']))
-                    || str_contains(strtolower($item['name']), strtolower($armada->title));
-            });
-
-            $price = $armada->price ?? $matchingDefault['price'] ?? 0;
+        return $dbArmadas->map(function (Armada $armada) {
+            $price = $armada->price ?? 0;
 
             return [
                 'name' => $armada->title,
-                'badge' => $armada->car_badge ?: ($matchingDefault['badge'] ?? ''),
-                'seat' => $armada->car_type ?: ($matchingDefault['seat'] ?? '6 VIP Seat'),
+                'badge' => $armada->car_badge ?: '',
+                'seat' => $armada->car_type ?: '6 VIP Seat',
                 'price' => $price,
                 'price_label' => $price ? number_format($price, 0, ',', '.') : 'Tanya Harga',
-                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : ($matchingDefault['desc'] ?? ''),
-                'features' => ! empty($armada->features) ? $armada->features : ($matchingDefault['features'] ?? []),
+                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : '',
+                'features' => ! empty($armada->features) ? $armada->features : [],
             ];
         })->toArray();
     }
@@ -361,51 +293,85 @@ class ArmadaService
     }
 
     /**
-     * Get FAQs specific to Ziarah Wali 5 Jawa Timur.
+     * Get Luar Kota (Out of Town) luxury car rental pricing structure.
+     *
+     * @return array<int, array{name: string, badge: string, seat: string, price: int, price_label: string, desc: string, features: array<int, string>, destinations: string}>
+     */
+    public function getLuarKotaPrices(): array
+    {
+        $dbArmadas = $this->getPublished();
+
+        if ($dbArmadas->isEmpty()) {
+            (new \Database\Seeders\ArmadaSeeder)->run();
+            $dbArmadas = $this->getPublished();
+        }
+
+        return $dbArmadas->map(function (Armada $armada) {
+            $price = $armada->price ?? 0;
+
+            return [
+                'name' => $armada->title,
+                'badge' => $armada->car_badge ?: 'Surabaya & Luar Kota',
+                'seat' => $armada->car_type ?: '6-7 Seat',
+                'price' => $price,
+                'price_label' => $price ? number_format($price, 0, ',', '.') : 'Tanya Harga',
+                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : 'Armada premium siap melayani pemakaian wilayah Kota Surabaya dan sekitarnya serta rute luar kota.',
+                'features' => ! empty($armada->features) ? $armada->features : ['Driver Profesional', 'Full AC', 'Snack & Air Mineral'],
+                'destinations' => 'Surabaya, Sidoarjo, Gresik, Malang, Batu, & Seluruh Jawa-Bali',
+            ];
+        })->toArray();
+    }
+
+    /**
+     * Get FAQs specific to Luar Kota luxury car rental.
      *
      * @return array<int, array{q: string, a: string}>
      */
-    public function getZiarahFaqs(): array
+    public function getLuarKotaFaqs(): array
     {
+        $minArmada = Armada::query()->where('is_published', true)->whereNotNull('price')->orderBy('price')->first();
+        $minPriceLabel = $minArmada && $minArmada->price ? number_format($minArmada->price, 0, ',', '.') : '1.450.000';
+
         return [
             [
-                'q' => 'Berapa lama waktu yang dibutuhkan untuk Ziarah Wali 5 di Jawa Timur?',
-                'a' => 'Perjalanan Ziarah Wali 5 Jatim (Sunan Ampel, Maulana Malik Ibrahim, Sunan Giri, Sunan Drajat, Sunan Bonang) dapat ditempuh dalam 1 hari full (Express Tour 12-16 jam) atau 2 hari 1 malam untuk perjalanan yang lebih santai dan khusyuk.',
+                'q' => 'Berapa estimasi harga sewa mobil luar kota kelas atas di Surabaya?',
+                'a' => 'Tarif sewa armada murni diambil dari database resmi tiap armada mulai dari Rp '.$minPriceLabel.'/hari. Semua harga berlaku sama untuk pemakaian di area Surabaya dan sekitarnya maupun luar kota, sudah termasuk driver profesional.',
             ],
             [
-                'q' => 'Apakah sewa Hiace / mobil ziarah di Queen Transport sudah termasuk driver?',
-                'a' => 'Ya, seluruh armada kami disewakan lengkap dengan driver profesional yang sopan, berpengalaman, dan sangat menguasai rute jalan serta titik parkir khusus van/bus ziarah di seluruh area makam Wali Jawa Timur.',
+                'q' => 'Apakah tarif sewa mobil luar kota sudah termasuk Driver, BBM, dan Tol?',
+                'a' => 'Harga standar kami sudah mencakup unit armada mewah dan driver profesional. Untuk biaya BBM, tol, parkir, dan penyeberangan (jika ke Bali) dapat disesuaikan dengan rute perjalanan atau kami sediakan sistem paket All In.',
             ],
             [
-                'q' => 'Bisakah penjemputan dilakukan dari Bandara Juanda, Stasiun, atau Hotel di Surabaya?',
-                'a' => 'Sangat bisa! Kami melayani penjemputan langsung dari Bandara Internasional Juanda (SUB), Stasiun Pasar Turi, Stasiun Gubeng, maupun hotel dan kediaman di area Surabaya, Sidoarjo, dan sekitarnya.',
+                'q' => 'Kota mana saja yang bisa dilayani dari Surabaya?',
+                'a' => 'Kami melayani perjalanan luar kota ke seluruh wilayah Jawa Timur (Malang, Batu, Bromo, Banyuwangi, Kediri, Madiun, Jember), Jawa Tengah & DIY (Solo, Jogja, Semarang), Jawa Barat, Jakarta, hingga Overland Tour ke Bali.',
             ],
             [
-                'q' => 'Armada apa yang paling direkomendasikan untuk rombongan Ziarah Wali 5?',
-                'a' => 'Untuk rombongan 9-14 orang, Toyota Hiace Commuter atau Premio adalah pilihan paling favorit karena kabinnya luas, AC dingin merata, dan kursi reclining nyaman. Untuk rombongan keluarga 5-7 orang bisa menggunakan Innova Zenix / Reborn.',
+                'q' => 'Apakah driver berpengalaman untuk perjalanan jarak jauh dan rute pegunungan?',
+                'a' => 'Tentu. Seluruh driver Queen Transport telah melalui seleksi ketat, berpengalaman menangani rute antar kota, hafal jalur wisata pegunungan (seperti Bromo, Batu, Ijen), serta ramah dan mengutamakan keselamatan.',
             ],
             [
-                'q' => 'Apakah driver membantu mengarahkan lokasi dan titik transit perhentian ziarah?',
-                'a' => 'Tentu saja. Driver kami siap membantu memandu urutan rute efisien, merekomendasikan tempat makan/rest area halal yang luas untuk rombongan, serta membantu koordinasi lokasi parkir terdekat.',
+                'q' => 'Apakah bisa jemput langsung di Bandara Juanda atau Hotel di Surabaya?',
+                'a' => 'Bisa sekali! Driver kami siap melakukan penjemputan di Bandara Internasional Juanda Surabaya, Stasiun Pasar Turi/Gubeng, hotel, maupun kediaman Anda di Surabaya dan Sidoarjo.',
             ],
             [
-                'q' => 'Bagaimana cara melakukan pemesanan dan konsultasi rute ziarah?',
-                'a' => 'Pemesanan sangat mudah via WhatsApp. Anda cukup menginformasikan tanggal perjalanan, jumlah peserta rombongan, dan lokasi penjemputan. Tim kami akan menyiapkan estimasi jadwal dan armada terbaik.',
+                'q' => 'Bagaimana cara pemesanan sewa mobil luar kota kelas atas?',
+                'a' => 'Pemesanan sangat praktis via WhatsApp. Informasikan tanggal pemakaian, destinasi tujuan luar kota, serta tipe unit yang diinginkan. Tim CS kami siap melayani sepanjang hari.',
             ],
         ];
     }
 
     /**
-     * Gather full data payload for Ziarah Wali 5 Folio page.
+     * Gather full data payload for Luar Kota Folio page.
      *
-     * @return array{allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, faqs: array<int, mixed>}
+     * @return array{allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, luarKotaPrices: array<int, mixed>, faqs: array<int, mixed>}
      */
-    public function getZiarahPageData(): array
+    public function getLuarKotaPageData(): array
     {
         return [
             'allArmadas' => $this->getPublished(),
             'pelanggans' => $this->getPelanggans(),
-            'faqs' => $this->getZiarahFaqs(),
+            'luarKotaPrices' => $this->getLuarKotaPrices(),
+            'faqs' => $this->getLuarKotaFaqs(),
         ];
     }
 

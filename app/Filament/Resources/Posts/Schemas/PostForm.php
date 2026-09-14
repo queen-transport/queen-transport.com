@@ -42,28 +42,13 @@ class PostForm
                                     ->hintColor(fn (?string $state) => SeoLength::title($state)['color'])
                                     ->helperText('Dipakai sebagai judul SEO jika Meta Title kosong. Panjang ideal: 50-60 karakter.')
                                     ->columnSpanFull(),
-                                Radio::make('permalink_type')
-                                    ->label('Tipe Permalink')
-                                    ->options([
-                                        'date' => 'Dengan tanggal — /tahun/bulan/slug',
-                                        'plain' => 'Tanpa tanggal — /slug',
-                                    ])
-                                    ->default('date')
-                                    ->required()
-                                    ->live()
-                                    ->columnSpanFull(),
                                 Hidden::make('slug_unlocked')
                                     ->default(false)
                                     ->saved(false),
                                 TextInput::make('slug')
                                     ->label('Slug')
                                     ->required()
-                                    ->helperText(fn (callable $get) => $get('permalink_type') === 'plain'
-                                        ? 'Permalink: /slug — slug harus unik karena dipakai langsung sebagai URL.'
-                                        : 'Permalink: /tahun/bulan/slug — slug tidak perlu unik karena tanggal publikasi membedakannya.')
-                                    ->rules(fn (callable $get, ?Post $record) => $get('permalink_type') === 'plain'
-                                        ? [Rule::unique('posts', 'slug')->where('permalink_type', 'plain')->ignore($record?->id)]
-                                        : [])
+                                    ->helperText('Permalink: /tahun/bulan/slug — slug tidak perlu unik karena tanggal publikasi membedakannya.')
                                     ->disabled(fn (?Post $record, callable $get) => $record !== null && ! $get('slug_unlocked'))
                                     ->saved()
                                     ->suffixAction(

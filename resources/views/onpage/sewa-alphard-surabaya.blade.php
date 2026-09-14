@@ -12,7 +12,7 @@ $armadaService = app(ArmadaService::class);
 extract($armadaService->getAlphardPageData());
 
 $title = 'Sewa Alphard Surabaya Murah & Transformer VIP + Driver — ' . config('site.brand');
-$description = 'Sewa Alphard Surabaya termurah & paling mewah (Alphard Transformer, All New Alphard Hybrid VIP) include driver profesional. Layanan 24 jam untuk dinas, event, pernikahan & airport Juanda.';
+$description = 'Sewa Alphard Surabaya termurah & paling mewah (Alphard Transformer, All New Alphard Hybrid VIP) include driver profesional. Layanan sepanjang hari untuk dinas, event, pernikahan & airport Juanda.';
 @endphp
 
 <x-layouts::public :title="$title" :description="$description">
@@ -73,7 +73,7 @@ $description = 'Sewa Alphard Surabaya termurah & paling mewah (Alphard Transform
                                 <div class="text-[var(--color-text-muted)] text-xs">Include Driver</div>
                             </div>
                             <div class="p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
-                                <div class="text-[var(--color-accent)] font-bold text-lg mb-0.5">24/7</div>
+                                <div class="text-[var(--color-accent)] font-bold text-base mb-0.5">Sepanjang Hari</div>
                                 <div class="text-[var(--color-text-muted)] text-xs">Respon Cepat</div>
                             </div>
                             <div class="p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
@@ -403,7 +403,7 @@ $description = 'Sewa Alphard Surabaya termurah & paling mewah (Alphard Transform
                     <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin booking Sewa Alphard di Surabaya.') }}"
                        class="inline-flex items-center gap-2 px-9 py-4 rounded-[32px] font-bold text-base no-underline border-0 bg-[image:var(--gradient-btn)] text-white shadow-[0_4px_25px_rgba(124,58,237,0.5)] transition-transform hover:scale-105"
                        target="_blank" rel="noopener noreferrer">
-                        💬 Hubungi via WhatsApp (24 Jam)
+                        💬 Hubungi via WhatsApp (Sepanjang Hari)
                     </a>
                 </div>
             </div>

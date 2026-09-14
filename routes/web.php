@@ -42,3 +42,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 
+Route::get('/{slug}', [BlogController::class, 'showPlain'])->name('blog.show-plain');
+
