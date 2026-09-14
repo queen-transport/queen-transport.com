@@ -60,6 +60,7 @@
                         <a href="{{ route('sewa-alphard-surabaya') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Sewa Alphard Surabaya</a>
                         <a href="{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Sewa Mobil Luar Kota VIP</a>
                         <a href="{{ route('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Ziarah Wali 5 Jatim</a>
+                        <a href="{{ route('air-mancur-menari-surabaya-perjalanan-mewah') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Air Mancur Menari VIP</a>
                     </div>
                 </div>
 
@@ -88,6 +89,7 @@
             <a href="{{ route('sewa-alphard-surabaya') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Alphard Surabaya</a>
             <a href="{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Luar Kota VIP</a>
             <a href="{{ route('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Ziarah Wali 5 Jatim</a>
+            <a href="{{ route('air-mancur-menari-surabaya-perjalanan-mewah') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Air Mancur Menari VIP</a>
             <a href="{{ route('blog.index') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Blog / Artikel</a>
             <a href="{{ route('home') }}#faq" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">FAQ</a>
             <a href="{{ \App\Support\WhatsApp::link() }}"

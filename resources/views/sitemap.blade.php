@@ -26,6 +26,21 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>{{ route('air-mancur-menari-surabaya-perjalanan-mewah') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>{{ route('makam-sunan-ampel-keistimewaan') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>{{ route('blog.index') }}</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
