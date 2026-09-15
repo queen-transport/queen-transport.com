@@ -2,10 +2,12 @@
 
 namespace App\Services;
 
+use App\Contracts\ArmadaServiceInterface;
+
 class AirMancurMenariService
 {
     public function __construct(
-        protected ArmadaService $armadaService
+        protected ArmadaServiceInterface $armadaService
     ) {}
 
     /**

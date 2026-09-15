@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\ArmadaServiceInterface;
 use App\Models\Armada;
-use App\Services\ArmadaService;
 use Illuminate\View\View;
 
 class ArmadaController extends Controller
 {
-    public function index(ArmadaService $armadaService): View
+    public function index(ArmadaServiceInterface $armadaService): View
     {
         $armadas = $armadaService->getPublished();
 
         return view('armada.index', compact('armadas'));
     }
 
-    public function show(Armada $armada, ArmadaService $armadaService): View
+    public function show(Armada $armada, ArmadaServiceInterface $armadaService): View
     {
         $related = $armadaService->getRelated($armada);
 

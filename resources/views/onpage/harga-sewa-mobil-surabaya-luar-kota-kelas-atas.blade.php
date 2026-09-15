@@ -9,7 +9,7 @@ name('harga-sewa-mobil-surabaya-luar-kota-kelas-atas');
 use App\Services\ArmadaService;
 
 $armadaService = app(ArmadaService::class);
-extract($armadaService->getLuarKotaPageData());
+extract($armadaService->getKelasAtasPageData());
 
 $title = 'Harga Sewa Mobil Surabaya Luar Kota Kelas Atas & Premium VIP — ' . config('site.brand');
 $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surabaya (Alphard Transformer, Hiace Premio Luxury, Fortuner, Innova Zenix Hybrid). Driver profesional, nyaman & aman untuk perjalanan antar kota Jawa-Bali.';
@@ -34,7 +34,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                     </p>
 
                     <p class="text-[var(--color-text-light)] text-base leading-relaxed max-w-[540px]">
-                        Layanan rental mobil mewah dan eksklusif di Surabaya khusus perjalanan luar kota. Ideal untuk kunjungan dinas instansi, tamu VIP eksekutif, perjalanan keluarga premium, hingga destinasi wisata seluruh Jawa &amp; Bali.
+                        Layanan rental mobil mewah dan eksklusif di Surabaya. Semua tarif armada transparan dan menggunakan tarif resmi yang sama dengan keterangan untuk <strong>Surabaya dan sekitarnya</strong>, siap melayani perjalanan luar kota seluruh Jawa &amp; Bali.
                     </p>
 
                     <div class="flex gap-4 flex-wrap mt-2">
@@ -122,24 +122,24 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
             </div>
         </div>
     </section>
-
+<!-- 
     {{-- DAFTAR HARGA SECTION --}}
     <section id="daftar-harga" class="py-20">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[700px] mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
-                    ✦ Transparan &amp; Kompetitif
+                    ✦ Tarif Resmi &amp; Transparan
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
                     Harga Sewa Mobil Luar Kota Kelas Atas
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                    Pilihan armada premium dari Surabaya untuk perjalanan antar kota dengan standar kenyamanan eksekutif terbaik.
+                    Daftar tarif resmi rental mobil. Semua harga di bawah ini menggunakan tarif standar yang sama dengan keterangan berlaku untuk <strong class="text-white">Surabaya dan sekitarnya</strong>.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                @foreach($luarKotaPrices as $index => $item)
+                @foreach($kelasAtasPrices as $index => $item)
                     <div class="relative bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between hover:border-[rgba(124,58,237,0.5)] transition-all hover:-translate-y-1 shadow-lg">
                         @if(!empty($item['badge']))
                             <div class="absolute -top-3.5 right-6 px-4 py-1 rounded-full bg-[image:var(--gradient-btn)] text-white text-xs font-bold shadow-md">
@@ -162,8 +162,8 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                                     <span class="text-white text-2xl font-extrabold">Rp {{ $item['price_label'] }}</span>
                                     <span class="text-[var(--color-text-muted)] text-xs">/ hari</span>
                                 </div>
-                                <div class="text-[var(--color-accent)] text-[0.75rem] mt-1 font-medium">
-                                    📍 Rute: {{ $item['destinations'] }}
+                                <div class="text-[var(--color-accent)] text-[0.75rem] mt-2 font-semibold flex items-center gap-1.5">
+                                    <span>📍</span> <span>Keterangan: Surabaya dan sekitarnya</span>
                                 </div>
                             </div>
 
@@ -177,7 +177,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                             </ul>
                         </div>
 
-                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin pesan '.$item['name'].' untuk perjalanan luar kota dari Surabaya') }}"
+                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin pesan '.$item['name'].' (Surabaya & sekitarnya / luar kota)') }}"
                            class="w-full py-3 px-4 rounded-[var(--radius-lg)] bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.4)] text-white font-semibold text-sm text-center no-underline hover:bg-[image:var(--gradient-btn)] hover:border-transparent transition-all">
                             Pesan Unit Ini
                         </a>
@@ -185,7 +185,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- DESTINASI LUAR KOTA POPULER --}}
     <section class="py-16 bg-[var(--color-bg-2)] border-y border-[var(--color-border)]">

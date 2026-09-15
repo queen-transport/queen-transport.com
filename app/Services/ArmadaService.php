@@ -2,12 +2,13 @@
 
 namespace App\Services;
 
+use App\Contracts\ArmadaServiceInterface;
 use App\Models\Armada;
 use App\Models\Pelanggan;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
-class ArmadaService
+class ArmadaService implements ArmadaServiceInterface
 {
     /**
      * Get all published armadas sorted by priority and title.
@@ -211,7 +212,7 @@ class ArmadaService
                 'a' => 'Hiace Premio menggunakan mesin dan moncong depan (semi-bonnet) terbaru yang membuat kabin jauh lebih senyap, suspensi lebih nyaman, dan jarak antar kursi lebih lega dibanding Hiace Commuter.',
             ],
             [
-                'q' => 'Apakah melayani penjemputan Bandara Juanda (SUB) dan perjalanan luar kota?',
+                'q' => 'Apakah melayani penjemputan Bandara Juanda (SUB) dan perjalanan antar kota?',
                 'a' => 'Sangat bisa! Kami melayani drop-off / pick-up Bandara Juanda Surabaya, tour wisata (Bromo, Malang, Batu, Banyuwangi, Bali), perjalanan dinas kantor, maupun acara pernikahan.',
             ],
             [
@@ -293,11 +294,11 @@ class ArmadaService
     }
 
     /**
-     * Get Luar Kota (Out of Town) luxury car rental pricing structure.
+     * Get luxury car rental pricing structure for Surabaya and surrounding areas.
      *
-     * @return array<int, array{name: string, badge: string, seat: string, price: int, price_label: string, desc: string, features: array<int, string>, destinations: string}>
+     * @return array<int, array{name: string, badge: string, seat: string, price: int, price_label: string, desc: string, features: array<int, string>, destinations: string, note: string}>
      */
-    public function getLuarKotaPrices(): array
+    public function getKelasAtasPrices(): array
     {
         $dbArmadas = $this->getPublished();
 
@@ -311,67 +312,72 @@ class ArmadaService
 
             return [
                 'name' => $armada->title,
-                'badge' => $armada->car_badge ?: 'Surabaya & Luar Kota',
+                'badge' => $armada->car_badge ?: 'Surabaya & Sekitarnya',
                 'seat' => $armada->car_type ?: '6-7 Seat',
                 'price' => $price,
                 'price_label' => $price ? number_format($price, 0, ',', '.') : 'Tanya Harga',
-                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : 'Armada premium siap melayani pemakaian wilayah Kota Surabaya dan sekitarnya serta rute luar kota.',
+                'desc' => ! empty($armada->description) ? strip_tags($armada->description) : 'Armada premium dengan tarif resmi berlaku untuk wilayah Surabaya & sekitarnya.',
                 'features' => ! empty($armada->features) ? $armada->features : ['Driver Profesional', 'Full AC', 'Snack & Air Mineral'],
-                'destinations' => 'Surabaya, Sidoarjo, Gresik, Malang, Batu, & Seluruh Jawa-Bali',
+                'destinations' => 'Surabaya & Sekitarnya (Gresik, Sidoarjo, Malang & Sekitarnya)',
+                'note' => 'Surabaya dan sekitarnya',
             ];
         })->toArray();
     }
 
     /**
-     * Get FAQs specific to Luar Kota luxury car rental.
+     * Get FAQs specific to luxury car rental in Surabaya and surrounding areas.
      *
      * @return array<int, array{q: string, a: string}>
      */
-    public function getLuarKotaFaqs(): array
+    public function getKelasAtasFaqs(): array
     {
         $minArmada = Armada::query()->where('is_published', true)->whereNotNull('price')->orderBy('price')->first();
         $minPriceLabel = $minArmada && $minArmada->price ? number_format($minArmada->price, 0, ',', '.') : '1.450.000';
 
         return [
             [
-                'q' => 'Berapa estimasi harga sewa mobil luar kota kelas atas di Surabaya?',
-                'a' => 'Tarif sewa armada murni diambil dari database resmi tiap armada mulai dari Rp '.$minPriceLabel.'/hari. Semua harga berlaku sama untuk pemakaian di area Surabaya dan sekitarnya maupun luar kota, sudah termasuk driver profesional.',
+                'q' => 'Berapa harga sewa mobil kelas atas di Surabaya?',
+                'a' => 'Harga sewa armada kami diambil resmi dari database tiap unit mulai dari Rp '.$minPriceLabel.'/hari. Semua harga berlaku sama dengan keterangan untuk Surabaya dan sekitarnya.',
             ],
             [
-                'q' => 'Apakah tarif sewa mobil luar kota sudah termasuk Driver, BBM, dan Tol?',
-                'a' => 'Harga standar kami sudah mencakup unit armada mewah dan driver profesional. Untuk biaya BBM, tol, parkir, dan penyeberangan (jika ke Bali) dapat disesuaikan dengan rute perjalanan atau kami sediakan sistem paket All In.',
+                'q' => 'Apakah tarif sewa mobil sudah mencakup seluruh layanan?',
+                'a' => 'Tarif dasar sewa armada kami adalah sama dengan tarif Surabaya dan sekitarnya. Untuk perjalanan antar kota atau kebutuhan operasional khusus, penyesuaian hanya berlaku pada BBM, tol, dan penginapan driver jika menginap.',
             ],
             [
-                'q' => 'Kota mana saja yang bisa dilayani dari Surabaya?',
-                'a' => 'Kami melayani perjalanan luar kota ke seluruh wilayah Jawa Timur (Malang, Batu, Bromo, Banyuwangi, Kediri, Madiun, Jember), Jawa Tengah & DIY (Solo, Jogja, Semarang), Jawa Barat, Jakarta, hingga Overland Tour ke Bali.',
+                'q' => 'Apakah tarif sewa sudah termasuk Driver, BBM, dan Tol?',
+                'a' => 'Harga tertera adalah tarif rental armada per hari (Surabaya dan sekitarnya) yang sudah termasuk driver profesional. Untuk BBM, tol, parkir, dan penyeberangan dapat disesuaikan rute atau memilih paket All In.',
+            ],
+            [
+                'q' => 'Kota mana saja yang dapat dilayani dari Surabaya?',
+                'a' => 'Kami melayani perjalanan ke seluruh wilayah Jawa Timur (Malang, Batu, Bromo, Banyuwangi, Kediri, Madiun, Jember), Jawa Tengah & DIY (Solo, Jogja, Semarang), Jawa Barat, Jakarta, hingga Overland Tour ke Bali.',
             ],
             [
                 'q' => 'Apakah driver berpengalaman untuk perjalanan jarak jauh dan rute pegunungan?',
-                'a' => 'Tentu. Seluruh driver Queen Transport telah melalui seleksi ketat, berpengalaman menangani rute antar kota, hafal jalur wisata pegunungan (seperti Bromo, Batu, Ijen), serta ramah dan mengutamakan keselamatan.',
+                'a' => 'Tentu. Seluruh driver Queen Transport telah melalui seleksi ketat, berpengalaman menangani berbagai rute, hafal jalur wisata pegunungan (seperti Bromo, Batu, Ijen), serta ramah dan mengutamakan keselamatan.',
             ],
             [
                 'q' => 'Apakah bisa jemput langsung di Bandara Juanda atau Hotel di Surabaya?',
                 'a' => 'Bisa sekali! Driver kami siap melakukan penjemputan di Bandara Internasional Juanda Surabaya, Stasiun Pasar Turi/Gubeng, hotel, maupun kediaman Anda di Surabaya dan Sidoarjo.',
             ],
             [
-                'q' => 'Bagaimana cara pemesanan sewa mobil luar kota kelas atas?',
-                'a' => 'Pemesanan sangat praktis via WhatsApp. Informasikan tanggal pemakaian, destinasi tujuan luar kota, serta tipe unit yang diinginkan. Tim CS kami siap melayani sepanjang hari.',
+                'q' => 'Bagaimana cara pemesanan sewa mobil kelas atas?',
+                'a' => 'Pemesanan sangat praktis via WhatsApp. Informasikan tanggal pemakaian, destinasi tujuan, serta tipe unit yang diinginkan. Tim CS kami siap melayani sepanjang hari.',
             ],
         ];
     }
 
     /**
-     * Gather full data payload for Luar Kota Folio page.
+     * Gather full data payload for luxury car rental Folio page.
      *
-     * @return array{allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, luarKotaPrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, kelasAtasPrices: array<int, mixed>, faqs: array<int, mixed>}
      */
-    public function getLuarKotaPageData(): array
+    public function getKelasAtasPageData(): array
     {
         return [
             'allArmadas' => $this->getPublished(),
             'pelanggans' => $this->getPelanggans(),
-            'luarKotaPrices' => $this->getLuarKotaPrices(),
-            'faqs' => $this->getLuarKotaFaqs(),
+            'kelasAtasPrices' => $this->getKelasAtasPrices(),
+            'faqs' => $this->getKelasAtasFaqs(),
         ];
     }
 

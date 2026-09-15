@@ -80,3 +80,20 @@ test('armada service retrieves armada by slug and related armadas', function () 
     expect($related->pluck('id'))->toContain($armada2->id);
     expect($related->pluck('id'))->not->toContain($armada1->id);
 });
+
+test('armada service provides kelas atas page data with surabaya prices and faqs', function () {
+    $service = new ArmadaService;
+
+    Armada::factory()->create([
+        'title' => 'Toyota Alphard Gen 3',
+        'car_type' => 'Luxury MPV',
+        'price' => 2800000,
+        'is_published' => true,
+    ]);
+
+    $data = $service->getKelasAtasPageData();
+
+    expect($data)->toHaveKeys(['allArmadas', 'pelanggans', 'kelasAtasPrices', 'faqs']);
+    expect($data['kelasAtasPrices'])->not->toBeEmpty();
+    expect($data['kelasAtasPrices'][0]['note'])->toBe('Surabaya dan sekitarnya');
+});
