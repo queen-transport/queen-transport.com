@@ -547,46 +547,13 @@ $canonical = url()->current();
         </div>
     </section>
 
-    <x-armada-list 
+    <x-armada-list
         subtitle="Transportasi Ziarah"
         title="Pilihan Armada Terbaik <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Rute Ziarah Wali 5</span>"
         description="Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda."
         wa-text="untuk Ziarah Wali 5 Jatim"
         :limit="6"
     />
-
-    {{-- SECTION 6: TESTIMONI PELANGGAN --}}
-    @if ($pelanggans->isNotEmpty())
-    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pengalaman Peziarah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
-                    Kata Mereka Tentang <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Layanan Queen Transport</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
-                @foreach ($pelanggans->take(3) as $pelanggan)
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between">
-                    <p class="text-[var(--color-text-light)] text-sm italic mb-6 leading-relaxed">
-                        &ldquo;{{ $pelanggan->content }}&rdquo;
-                    </p>
-                    <div class="flex items-center gap-3 border-t border-[var(--color-border)] pt-4">
-                        <div class="w-10 h-10 rounded-full bg-[rgba(124,58,237,0.3)] border border-[var(--color-primary)] flex items-center justify-center font-bold text-white text-sm">
-                            {{ substr($pelanggan->name, 0, 1) }}
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-sm">{{ $pelanggan->name }}</h4>
-                            <p class="text-[var(--color-text-muted)] text-xs">{{ $pelanggan->title ?? 'Peziarah Rombongan' }}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    @endif
 
     {{-- SECTION 7: FINAL CTA BANNER --}}
     <section class="py-20 relative overflow-hidden" style="background:var(--gradient-hero);">
