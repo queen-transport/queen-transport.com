@@ -6,10 +6,35 @@ name('sewa-alphard-surabaya');
 ?>
 
 @php
-use App\Services\ArmadaService;
+$faqs = [
+    [
+        'q' => 'Berapa kapasitas penumpang Sewa Alphard di Surabaya?',
+        'a' => 'Toyota Alphard didesain untuk kenyamanan eksklusif 6 hingga 7 penumpang dengan baris kedua menggunakan Captain Seats yang sangat lapang dan elegan.',
+    ],
+    [
+        'q' => 'Apakah sewa Alphard di Surabaya sudah termasuk driver?',
+        'a' => 'Ya, seluruh layanan sewa Toyota Alphard di Queen Transport sudah termasuk driver profesional yang rapi, ramah, dan berpengalaman melayani tamu eksekutif, pejabat, serta VIP.',
+    ],
+    [
+        'q' => 'Varian Toyota Alphard apa saja yang tersedia?',
+        'a' => 'Kami menyediakan Toyota Alphard Gen 2, Alphard Transformer (Gen 3), hingga All New Alphard Hybrid (Gen 4) dengan kondisi unit selalu bersih dan rutin dirawat.',
+    ],
+    [
+        'q' => 'Apakah melayani paket Sewa Alphard Wedding Car (Mobil Pengantin) di Surabaya?',
+        'a' => 'Tentu saja! Kami menyediakan paket khusus mobil pengantin Alphard lengkap dengan dekorasi bunga eksklusif, pita, dan driver berpenampilan formal untuk hari istimewa Anda.',
+    ],
+    [
+        'q' => 'Apakah melayani penjemputan VIP di Bandara Juanda (SUB)?',
+        'a' => 'Sangat bisa. Tim driver kami siap melakukan penjemputan (transfer in/out) di Bandara Internasional Juanda Surabaya secara tepat waktu dengan papan nama penjemputan jika diperlukan.',
+    ],
+    [
+        'q' => 'Bagaimana cara pemesanan dan syarat sewa Alphard?',
+        'a' => 'Pemesanan dapat dilakukan langsung via WhatsApp. Anda cukup menginformasikan jadwal, rute, dan lokasi penjemputan. Tim kami akan menyiapkan konfirmasi pemesanan dan nomor rekening resmi untuk DP.',
+    ],
+];
 
-$armadaService = app(ArmadaService::class);
-extract($armadaService->getAlphardPageData());
+$armadaService = app(\App\Contracts\ArmadaServiceInterface::class);
+$alphardPrices = $armadaService->getAlphardPrices();
 
 $title = 'Sewa Alphard Surabaya Murah & Transformer VIP + Driver — ' . config('site.brand');
 $description = 'Sewa Alphard Surabaya termurah & paling mewah (Alphard Transformer, All New Alphard Hybrid VIP) include driver profesional. Layanan sepanjang hari untuk dinas, event, pernikahan & airport Juanda.';
@@ -189,58 +214,13 @@ $description = 'Sewa Alphard Surabaya termurah & paling mewah (Alphard Transform
         </div>
     </section>
 
-    {{-- ALPHARD FLEET FROM DATABASE IF AVAILABLE --}}
-    @if ($alphardArmadas->isNotEmpty())
-        <section class="py-[80px] bg-[var(--color-bg-2)]">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <div class="text-center mb-12">
-                    <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Katalog Armada</span>
-                    <h2 class="text-white text-2xl font-bold">Detail Unit Toyota Alphard Ready</h2>
-                </div>
-
-                <div class="grid grid-cols-3 gap-6 max-md:grid-cols-1">
-                    @foreach ($alphardArmadas as $armada)
-                        <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] overflow-hidden transition-all hover:-translate-y-1 hover:border-[rgba(124,58,237,0.4)]">
-                            <div class="relative h-52 overflow-hidden bg-[var(--color-surface)] flex items-center justify-center text-5xl">
-                                @if ($armada->featured_image)
-                                    <img src="{{ Storage::disk('public')->url($armada->featured_image) }}" alt="{{ $armada->title }}" class="w-full h-full object-cover">
-                                @else
-                                    <span>🚘</span>
-                                @endif
-                                @if ($armada->car_badge)
-                                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[rgba(124,58,237,0.8)] text-white text-xs font-semibold">{{ $armada->car_badge }}</span>
-                                @endif
-                            </div>
-                            <div class="p-6">
-                                <div class="text-white font-bold text-lg mb-1">{{ $armada->title }}</div>
-                                <div class="text-[var(--color-accent)] text-xs font-semibold mb-2">{{ $armada->car_type }}</div>
-                                @if ($armada->price)
-                                    <div class="text-white font-bold text-base mb-3 flex items-baseline gap-1">
-                                        <span class="text-xs font-normal text-[var(--color-accent)]">Rp</span>
-                                        <span>{{ number_format($armada->price, 0, ',', '.') }}</span>
-                                        <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
-                                    </div>
-                                @endif
-                                <p class="text-[var(--color-text-muted)] text-sm line-clamp-2 mb-4">
-                                    {{ $armada->description }}
-                                </p>
-                                <div class="border-t border-[var(--color-border)] pt-4 flex items-center justify-between">
-                                    <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-sm font-medium no-underline hover:underline">
-                                        Lihat Spesifikasi →
-                                    </a>
-                                    <a href="{{ \App\Support\WhatsApp::link('Halo, saya ingin pesan armada ' . $armada->title) }}"
-                                       class="px-4 py-2 bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] border border-[rgba(34,211,238,0.3)] rounded-full text-xs font-semibold no-underline"
-                                       target="_blank" rel="noopener noreferrer">
-                                        Booking
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
+    <x-armada-list 
+        keyword="alphard"
+        subtitle="Katalog Armada Ready"
+        title="Detail Unit Toyota Alphard Surabaya"
+        description="Pilihan Toyota Alphard &amp; Vellfire termurah dan paling lengkap di Surabaya include driver profesional."
+        wa-text="di Surabaya"
+    />
 
     {{-- WHY US & SERVICES SECTION --}}
     <section class="py-[90px]" id="layanan">

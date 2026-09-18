@@ -6,10 +6,32 @@ name('air-mancur-kenjeran');
 ?>
 
 @php
-use App\Services\AirMancurKenjeranService;
-
-$service = app(AirMancurKenjeranService::class);
-extract($service->getAirMancurKenjeranPageData());
+$faqs = [
+    [
+        'q' => 'Kapan jadwal pertunjukan Air Mancur Kenjeran (Air Mancur Menari Jembatan Suroboyo)?',
+        'a' => 'Pertunjukan Air Mancur Menari di Jembatan Suroboyo Kenjeran secara umum berlangsung setiap akhir pekan (Sabtu & Minggu malam) mulai pukul 18.30 WIB hingga 21.00 WIB. Terdapat beberapa sesi atraksi menari dengan sorotan lampu sorot LED warna-warni yang diiringi musik khas Surabaya.',
+    ],
+    [
+        'q' => 'Berapa harga tiket masuk untuk melihat Air Mancur Kenjeran?',
+        'a' => 'Sore hingga malam hari di Jembatan Suroboyo Kenjeran tidak dikenakan biaya tiket masuk alias gratis untuk seluruh pengunjung. Pengunjung hanya perlu membayar biaya retribusi parkir jika membawa kendaraan pribadi.',
+    ],
+    [
+        'q' => 'Mengapa disarankan menggunakan layanan rental mobil include driver dari Queen Transport?',
+        'a' => 'Kawasan Kenjeran dan Jembatan Suroboyo sangat ramai pada malam akhir pekan. Dengan layanan rental mobil VIP Queen Transport, Anda tidak perlu pusing mencari lokasi parkir atau terjebak kemacetan. Driver kami akan mengantarkan Anda door-to-door hingga titik drop-off paling strategis.',
+    ],
+    [
+        'q' => 'Destinasi wisata apa saja yang bisa dikunjungi di sekitar Air Mancur Kenjeran?',
+        'a' => 'Anda bisa mengombinasikan kunjungan ke Air Mancur Kenjeran dengan Klenteng Sanggar Agung (Patung Guan Yin laut), Taman Suroboyo (Patung Ikan Suro & Boyo raksasa), Pantai Ria Kenjeran, hingga Sentra Ikan Bulak untuk wisata kuliner seafood.',
+    ],
+    [
+        'q' => 'Pilihan mobil apa yang paling direkomendasikan untuk rombongan ke Kenjeran?',
+        'a' => 'Untuk rombongan keluarga atau kantor (8–12 orang), Toyota Hiace Premio Luxury atau Captain Seat adalah pilihan terbaik. Sementara untuk tamu VIP (2–4 orang), Toyota Alphard Transformer atau All New Zenix Hybrid menawarkan kenyamanan kelas atas.',
+    ],
+    [
+        'q' => 'Apakah sewa mobil di Queen Transport sudah termasuk BBM dan Sopir?',
+        'a' => 'Ya, kami menyediakan paket sewa lengkap include armada steril, driver profesional yang ramah dan paham rute Surabaya, serta fasilitas buah segar, snack, dan air mineral gratis pada hari pertama sewa.',
+    ],
+];
 
 $title = 'Air Mancur Kenjeran Surabaya: Jadwal, Lokasi & Rental Mobil VIP — ' . config('site.brand');
 $description = 'Panduan lengkap wisata Air Mancur Kenjeran (Air Mancur Menari Jembatan Suroboyo). Cek jadwal pertunjukan, lokasi, daya tarik & layanan rental mobil VIP Alphard, Hiace & Zenix include driver.';
@@ -357,48 +379,13 @@ $canonical = url()->current();
     </section>
 
     {{-- SECTION 4: ARMADA RENTAL MOBIL QUEEN TRANSPORT --}}
-    <section class="py-20 bg-[var(--color-bg-2)] border-t border-[var(--color-border)]">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center max-w-[760px] mx-auto mb-16">
-                <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Layanan Sewa Mobil Terpercaya</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Pilihan Armada Mewah Untuk Wisata Kenjeran</h2>
-                <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
-                    Setiap unit armada kami selalu terjaga kebersihannya, berperforma prima, dan didampingi driver profesional yang siap melayani seluruh kebutuhan perjalanan Anda.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-8 max-md:grid-cols-1">
-                @foreach ($allArmadas->take(6) as $armada)
-                    <div class="rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)] overflow-hidden flex flex-col justify-between hover:border-[rgba(124,58,237,0.5)] transition-all">
-                        <div class="p-6">
-                            @if ($armada->image_url)
-                                <img src="{{ $armada->image_url }}" alt="{{ $armada->title }}" class="w-full h-48 object-cover rounded-[var(--radius-md)] mb-4">
-                            @else
-                                <div class="w-full h-48 bg-[var(--color-bg)] rounded-[var(--radius-md)] mb-4 flex items-center justify-center text-4xl">🚘</div>
-                            @endif
-                            <h3 class="text-white font-bold text-xl mb-1">{{ $armada->title }}</h3>
-                            <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">{{ $armada->car_type ?? 'Luxury Car' }} &bull; Include Driver</p>
-                            <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
-                                {{ Str::limit($armada->description, 100) }}
-                            </p>
-                            @if ($armada->formatted_price)
-                                <div class="text-lg font-bold text-white mb-2">
-                                    {{ $armada->formatted_price }} <span class="text-xs text-[var(--color-text-muted)] font-normal">/ hari</span>
-                                </div>
-                            @endif
-                        </div>
-                        <div class="p-6 pt-0">
-                            <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya ketersediaan sewa '.$armada->title.' untuk wisata Kenjeran') }}"
-                               class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[var(--radius-md)] font-semibold text-sm bg-[image:var(--gradient-btn)] text-white no-underline hover:opacity-95"
-                               target="_blank" rel="noopener noreferrer">
-                                💬 Sewa {{ $armada->title }}
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+    <x-armada-list 
+        subtitle="Layanan Sewa Mobil Terpercaya"
+        title="Pilihan Armada Mewah Untuk Wisata Kenjeran"
+        description="Setiap unit armada kami selalu terjaga kebersihannya, berperforma prima, dan didampingi driver profesional yang siap melayani seluruh kebutuhan perjalanan Anda."
+        wa-text="untuk wisata Kenjeran"
+        :limit="6"
+    />
 
     {{-- SECTION 5: FAQ ACCORDION --}}
     <section id="faq" class="py-20 border-t border-[var(--color-border)]">

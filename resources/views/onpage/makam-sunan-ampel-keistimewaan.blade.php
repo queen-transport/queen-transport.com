@@ -6,10 +6,32 @@ name('makam-sunan-ampel-keistimewaan');
 ?>
 
 @php
-use App\Services\SunanAmpelService;
-
-$sunanAmpelService = app(SunanAmpelService::class);
-extract($sunanAmpelService->getSunanAmpelPageData());
+$faqs = [
+    [
+        'q' => 'Apa keistimewaan utama Makam Sunan Ampel dibanding makam penyebar Islam lainnya?',
+        'a' => 'Makam Sunan Ampel memiliki keistimewaan sebagai kompleks pemakaman tokoh utama pembina para Wali Songo. Makam Raden Rahmat terlindung oleh pagar ukir bersejarah dan dikelilingi makam tokoh-tokoh fenomenal seperti Mbah Sholeh (yang terkenal dengan 9 nisan makamnya) dan Mbah Bolong (ahli kiblat), serta sumur peninggalan berkah abad ke-15 yang airnya jernih mirip air Zam-Zam.',
+    ],
+    [
+        'q' => 'Dimana lokasi persis posisi Makam Sunan Ampel di dalam kompleks?',
+        'a' => 'Makam Sunan Ampel (Raden Rahmat) terletak di sebelah barat Masjid Agung Ampel, Kota Surabaya. Posisi makam beliau berada di pelataran halaman barat masjid, berdampingan langsung dengan makam istri beliau, Dewi Candrawati (Nyai Ageng Manila).',
+    ],
+    [
+        'q' => 'Mengapa di kompleks Makam Sunan Ampel terdapat 9 nisan makam Mbah Sholeh?',
+        'a' => 'Mbah Sholeh adalah murid Sunan Ampel yang bertugas merawat kebersihan Masjid Ampel. Dikisahkan setiap kali Mbah Sholeh wafat, Sunan Ampel berangan-angan memiliki pembersih masjid seperti Mbah Sholeh. Atas izin Allah, Mbah Sholeh hidup kembali hingga 9 kali wafat berturut-turut, sehingga tercipta 9 deretan nisan makam Mbah Sholeh di kompleks makam tersebut.',
+    ],
+    [
+        'q' => 'Apakah kawasan Makam Sunan Ampel buka sepanjang hari untuk peziarah?',
+        'a' => 'Ya, Kompleks Makam Sunan Ampel terbuka sepanjang hari nonstop setiap hari. Peziarah dapat melakukan ibadah shalat, membaca Yasin, Tahlil, serta iktikaf kapan saja.',
+    ],
+    [
+        'q' => 'Bagaimana akses parkir kendaraan dan rombongan sewa Hiace / Bus ke Makam Sunan Ampel?',
+        'a' => 'Untuk kendaraan jenis MPV, SUV, dan Van Toyota Hiace tersedia kantong parkir Pegirian & Nyamplungan yang sangat dekat dengan pintu masuk makam. Untuk bus besar rombongan disediakan Terminal Bus Pegirian. Driver Queen Transport akan mengantarkan rombongan hingga titik drop-off terdekat.',
+    ],
+    [
+        'q' => 'Apakah Queen Transport menyediakan armada rental khusus untuk Ziarah Sunan Ampel?',
+        'a' => 'Ya, Queen Transport menyediakan armada sewa Avanza, Innova Reborn/Zenix, Toyota Hiace Commuter/Premio, hingga Bus Pariwisata include driver yang sangat berpengalaman memandu rute dan parkir kawasan Ziarah Ampel & Wali Songo Jatim.',
+    ],
+];
 
 $title = 'Keistimewaan Makam Sunan Ampel Surabaya: Sejarah, Tata Letak & Panduan Ziarah Lengkap — ' . config('site.brand');
 $description = 'Ulasan lengkap keistimewaan Makam Sunan Ampel Surabaya. Sejarah Raden Rahmat, tata letak makam utama & Nyai Ageng Manila, karomah 9 makam Mbah Sholeh, Mbah Bolong, 5 gapura, sumur berkah & sewa mobil ziarah.';
@@ -545,113 +567,13 @@ $canonical = url()->current();
     </section>
 
     {{-- SECTION 7: ARMADA REKOMENDASI UNTUK ZIARAH --}}
-    <section class="py-[90px] border-t border-[var(--color-border)]" id="pilihan-armada">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transportasi Ziarah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
-                    Pilihan Armada Sewa Mobil <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ziarah Sunan Ampel</span>
-                </h2>
-                <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
-                    Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda.
-                </p>
-            </div>
-
-            @php
-                $findArmadaPrice = function($keywords) use ($allArmadas) {
-                    $armada = $allArmadas->first(function($item) use ($keywords) {
-                        foreach ((array)$keywords as $keyword) {
-                            if (\Illuminate\Support\Str::contains(strtolower($item->title), strtolower($keyword))) {
-                                return true;
-                            }
-                        }
-                        return false;
-                    });
-                    return $armada && $armada->price ? 'Rp ' . number_format($armada->price, 0, ',', '.') : null;
-                };
-
-                $hiaceCommuterPrice = $findArmadaPrice('commuter') ?? 'Rp 1.700.000';
-                $hiacePremioPrice = $findArmadaPrice(['premio standard', 'premio']) ?? 'Rp 1.850.000';
-                $innovaPrice = $findArmadaPrice(['reborn', 'innova', 'zenix']) ?? 'Rp 1.450.000';
-            @endphp
-            <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
-                {{-- HIACE COMMUTER --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:border-[var(--color-accent)] hover:-translate-y-2">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-4 inline-block">Favorit Rombongan (14 Seat)</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Hiace Commuter</h3>
-                        <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
-                            Pilihan paling ekonomis dan ideal untuk majelis taklim, pengajian, atau rombongan keluarga hingga 14 orang.
-                        </p>
-                        <ul class="flex flex-col gap-2.5 text-sm text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2">✓ 14 Reclining Seats</li>
-                            <li class="flex items-center gap-2">✓ AC Double Blower Per-Head</li>
-                            <li class="flex items-center gap-2">✓ Driver Berpengalaman Rute Ampel</li>
-                            <li class="flex items-center gap-2">✓ Bagasi Luas untuk Barang &amp; Oleh-oleh</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $hiaceCommuterPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Toyota Hiace Commuter untuk Ziarah Sunan Ampel Surabaya') }}"
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
-                            💬 Pesan Hiace Commuter
-                        </a>
-                    </div>
-                </div>
-
-                {{-- HIACE PREMIO --}}
-                <div class="bg-[var(--gradient-card)] border-2 border-[var(--color-primary)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-[0_0_30px_rgba(124,58,237,0.3)]">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-[image:var(--gradient-btn)] text-white text-xs font-bold tracking-wider uppercase mb-4 inline-block">Ekstra Senyap &amp; Empuk</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Hiace Premio</h3>
-                        <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
-                            Kabin lebih kedap suara dengan moncong depan semi-bonnet, suspensi sangat nyaman untuk perjalanan luar kota.
-                        </p>
-                        <ul class="flex flex-col gap-2.5 text-sm text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2">✓ 14 Premium Reclining Seats</li>
-                            <li class="flex items-center gap-2">✓ Kabin Sangat Senyap &amp; Dingin</li>
-                            <li class="flex items-center gap-2">✓ Audio &amp; USB Charger di Tiap Baris</li>
-                            <li class="flex items-center gap-2">✓ Driver Berpengalaman Ziarah</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $hiacePremioPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Toyota Hiace Premio untuk Ziarah Sunan Ampel Surabaya') }}"
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
-                            💬 Pesan Hiace Premio
-                        </a>
-                    </div>
-                </div>
-
-                {{-- INNOVA ZENIX --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:border-[var(--color-accent)] hover:-translate-y-2">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-4 inline-block">Keluarga Kecil (6-7 Seat)</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Innova Reborn / Zenix</h3>
-                        <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
-                            Pilihan pas untuk ziarah keluarga inti 5 hingga 7 penumpang yang mengutamakan kelincahan dan kenyamanan mobil MPV.
-                        </p>
-                        <ul class="flex flex-col gap-2.5 text-sm text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2">✓ 6 - 7 Seats Legar</li>
-                            <li class="flex items-center gap-2">✓ Performa Tangguh &amp; Hybrid Senyap</li>
-                            <li class="flex items-center gap-2">✓ Full AC Triple Zone</li>
-                            <li class="flex items-center gap-2">✓ Driver Ramah &amp; Sopan</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $innovaPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Innova Zenix / Reborn untuk Ziarah Sunan Ampel Surabaya') }}"
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
-                            💬 Pesan Innova Zenix
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-armada-list 
+        subtitle="Transportasi Ziarah"
+        title="Pilihan Armada Sewa Mobil <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Ziarah Sunan Ampel</span>"
+        description="Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda."
+        wa-text="untuk Ziarah Sunan Ampel Surabaya"
+        :limit="6"
+    />
 
     {{-- SECTION 8: TESTIMONI PELANGGAN --}}
     @if ($pelanggans->isNotEmpty())

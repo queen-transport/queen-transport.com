@@ -6,10 +6,35 @@ name('sewa-hiace-surabaya');
 ?>
 
 @php
-use App\Services\ArmadaService;
+$faqs = [
+    [
+        'q' => 'Berapa kapasitas penumpang Sewa Hiace di Surabaya?',
+        'a' => 'Toyota Hiace Commuter dan Hiace Premio Standard berkapasitas hingga 14 penumpang. Sedangkan untuk varian Hiace Premio Luxury / VIP berkapasitas 9 penumpang dengan konfigurasi Captain Seat yang sangat mewah.',
+    ],
+    [
+        'q' => 'Apakah sewa Hiace di Surabaya sudah termasuk driver?',
+        'a' => 'Ya, seluruh penawaran sewa Hiace kami sudah termasuk driver profesional yang berpengalaman, sopan, dan sangat menguasai rute jalan di Surabaya serta destinasi wisata di seluruh Jawa Timur.',
+    ],
+    [
+        'q' => 'Apa perbedaan antara Hiace Commuter dan Hiace Premio?',
+        'a' => 'Hiace Premio menggunakan mesin dan moncong depan (semi-bonnet) terbaru yang membuat kabin jauh lebih senyap, suspensi lebih nyaman, dan jarak antar kursi lebih lega dibanding Hiace Commuter.',
+    ],
+    [
+        'q' => 'Apakah melayani penjemputan Bandara Juanda (SUB) dan perjalanan antar kota?',
+        'a' => 'Sangat bisa! Kami melayani drop-off / pick-up Bandara Juanda Surabaya, tour wisata (Bromo, Malang, Batu, Banyuwangi, Bali), perjalanan dinas kantor, maupun acara pernikahan.',
+    ],
+    [
+        'q' => 'Fasilitas apa saja yang didapatkan selama perjalanan?',
+        'a' => 'Setiap unit Hiace kami dalam kondisi bersih & terawat, Full AC dingin per-kepala, reclining seat, charger HP, serta gratis snack, buah segar, dan air mineral di hari pertama pemesanan.',
+    ],
+    [
+        'q' => 'Bagaimana cara pemesanan dan pembayaran sewa Hiace?',
+        'a' => 'Pemesanan dapat dilakukan dengan mudah via WhatsApp. Anda cukup menginformasikan tanggal pemakaian, lokasi penjemputan, dan tipe Hiace yang diinginkan. Tim kami akan mengonfirmasi ketersediaan dan memberikan petunjuk DP.',
+    ],
+];
 
-$armadaService = app(ArmadaService::class);
-extract($armadaService->getHiacePageData());
+$armadaService = app(\App\Contracts\ArmadaServiceInterface::class);
+$hiacePrices = $armadaService->getHiacePrices();
 
 $title = 'Sewa Hiace Surabaya Murah & Premio Luxury + Driver — ' . config('site.brand');
 $description = 'Sewa Hiace Surabaya termurah & terbaik (Commuter, Premio Standard, Premio Luxury 9-14 seat) include driver profesional. Layanan sepanjang hari untuk wisata, dinas, event & airport Juanda.';
@@ -189,51 +214,13 @@ $description = 'Sewa Hiace Surabaya termurah & terbaik (Commuter, Premio Standar
         </div>
     </section>
 
-    {{-- HIACE FLEET FROM DATABASE IF AVAILABLE --}}
-    @if ($hiaceArmadas->isNotEmpty())
-        <section class="py-[80px] bg-[var(--color-bg-2)]">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <div class="text-center mb-12">
-                    <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Katalog Armada</span>
-                    <h2 class="text-white text-2xl font-bold">Detail Unit Toyota Hiace Ready</h2>
-                </div>
-
-                <div class="grid grid-cols-3 gap-6 max-md:grid-cols-1">
-                    @foreach ($hiaceArmadas as $armada)
-                        <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] overflow-hidden transition-all hover:-translate-y-1 hover:border-[rgba(124,58,237,0.4)]">
-                            <div class="relative h-52 overflow-hidden bg-[var(--color-surface)] flex items-center justify-center text-5xl">
-                                @if ($armada->featured_image)
-                                    <img src="{{ Storage::disk('public')->url($armada->featured_image) }}" alt="{{ $armada->title }}" class="w-full h-full object-cover">
-                                @else
-                                    <span>🚐</span>
-                                @endif
-                                @if ($armada->car_badge)
-                                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[rgba(124,58,237,0.8)] text-white text-xs font-semibold">{{ $armada->car_badge }}</span>
-                                @endif
-                            </div>
-                            <div class="p-6">
-                                <div class="text-white font-bold text-lg mb-1">{{ $armada->title }}</div>
-                                <div class="text-[var(--color-accent)] text-xs font-semibold mb-3">{{ $armada->car_type }}</div>
-                                <p class="text-[var(--color-text-muted)] text-sm line-clamp-2 mb-4">
-                                    {{ $armada->description }}
-                                </p>
-                                <div class="border-t border-[var(--color-border)] pt-4 flex items-center justify-between">
-                                    <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-sm font-medium no-underline hover:underline">
-                                        Lihat Spesifikasi →
-                                    </a>
-                                    <a href="{{ \App\Support\WhatsApp::link('Halo, saya ingin pesan armada ' . $armada->title) }}"
-                                       class="px-4 py-2 bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] border border-[rgba(34,211,238,0.3)] rounded-full text-xs font-semibold no-underline"
-                                       target="_blank" rel="noopener noreferrer">
-                                        Booking
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
+    <x-armada-list 
+        keyword="hiace"
+        subtitle="Katalog Armada Ready"
+        title="Detail Unit Toyota Hiace Surabaya"
+        description="Pilihan Toyota Hiace Commuter, Premio Standard &amp; Premio Luxury 9 Captain Seat include driver profesional."
+        wa-text="di Surabaya"
+    />
 
     {{-- WHY US & SERVICES SECTION --}}
     <section class="py-[90px]" id="layanan">

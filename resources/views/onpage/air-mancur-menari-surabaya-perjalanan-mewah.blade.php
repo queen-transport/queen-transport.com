@@ -6,10 +6,32 @@ name('air-mancur-menari-surabaya-perjalanan-mewah');
 ?>
 
 @php
-use App\Services\AirMancurMenariService;
-
-$airMancurService = app(AirMancurMenariService::class);
-extract($airMancurService->getAirMancurPageData());
+$faqs = [
+    [
+        'q' => 'Kapan jadwal pertunjukan Air Mancur Menari Jembatan Suroboyo berlangsung?',
+        'a' => 'Pertunjukan Air Mancur Menari di Jembatan Suroboyo (Kenjeran) umumnya berlangsung setiap malam akhir pekan (Sabtu & Minggu) mulai pukul 18.30 WIB hingga 21.00 WIB dengan beberapa sesi pertunjukan warna-warni yang diiringi musik khas Surabaya.',
+    ],
+    [
+        'q' => 'Mengapa disarankan menggunakan layanan rental mobil mewah VIP ke Jembatan Suroboyo?',
+        'a' => 'Area Kenjeran dan Jembatan Suroboyo ramai dipadati pengunjung pada malam pertunjukan. Layanan VIP Queen Transport memastikan Anda tiba dengan nyaman tanpa pusing mencari tempat parkir, dijemput door-to-door dengan armada steril seperti Toyota Alphard atau Hiace Premio Luxury, dan didampingi driver yang siap menunggu.',
+    ],
+    [
+        'q' => 'Pilihan armada apa saja yang paling direkomendasikan untuk paket Surabaya Night Tour ini?',
+        'a' => 'Untuk pasangan atau tamu eksekutif (2-4 orang), Toyota Alphard Transformer atau All New Alphard Hybrid adalah pilihan utama. Untuk rombongan keluarga atau kolega bisnis (6-12 orang), Hiace Premio Luxury / Captain Seat memberikan kelapangan dan kenyamanan maksimal.',
+    ],
+    [
+        'q' => 'Apakah paket perjalanan ini bisa disesuaikan (custom itinerary) dengan tempat kuliner malam di Surabaya?',
+        'a' => 'Sangat bisa! Anda dapat mengombinasikan kunjungan ke Air Mancur Menari Jembatan Suroboyo dengan makan malam fine dining di Surabaya Pusat/Barat, menyusuri Kya-Kya Wisata Pecinan, hingga santai malam di Surabaya North Quay (SNQ).',
+    ],
+    [
+        'q' => 'Apakah sewa armada di Queen Transport sudah termasuk fasilitas driver dan BBM?',
+        'a' => 'Ya, kami menyediakan paket all-in (armada, pengemudi profesional, BBM, dan tol/parkir) sehingga Anda tinggal duduk manis menikmati pesona keindahan malam Kota Surabaya.',
+    ],
+    [
+        'q' => 'Bagaimana cara reservasi paket perjalanan mewah Air Mancur Menari Surabaya?',
+        'a' => 'Anda cukup mengklik tombol reservasi WhatsApp di situs ini, pilih armada favorit dan tanggal kunjungan. Customer service kami beroperasi sepanjang hari dan siap mengatur penjemputan dari lokasi manapun di Surabaya/Sidoarjo.',
+    ],
+];
 
 $title = 'Air Mancur Menari Surabaya: Pesona Wisata Malam & Perjalanan Mewah VIP — ' . config('site.brand');
 $description = 'Nikmati keindahan pertunjukan Air Mancur Menari Jembatan Suroboyo Kenjeran dengan layanan rental mobil mewah VIP Surabaya. Sewa Alphard Transformer, Hiace Premio Luxury & Zenix include driver profesional.';
@@ -304,95 +326,13 @@ $canonical = url()->current();
     </section>
 
     {{-- SECTION 3: PILIHAN ARMADA MEWAH --}}
-    <section class="py-20" id="armada-mewah">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center max-w-[700px] mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
-                    ✦ Pilihan Kendaraan Utama
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Armada Rental Mobil Mewah Pilihan
-                </h2>
-                <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                    Setiap unit dipelihara secara presisi, rutin disterilisasi, dan dikemudikan oleh driver berseragam resmi yang santun.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
-                {{-- Alphard Transformer --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between hover:border-[var(--color-accent)] transition-all shadow-lg">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">Executive Class</span>
-                            <span class="text-xl">🚘</span>
-                        </div>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Alphard Transformer / Hybrid</h3>
-                        <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-6">
-                            Simbol kemewahan tertinggi. Sangat cocok untuk tamu eksekutif, pasangan, atau keluarga kecil yang menginginkan kenyamanan eksklusif tak tertandingi.
-                        </p>
-                        <ul class="flex flex-col gap-3 text-xs text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Executive Captain Seat &amp; Ottoman Legrest</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Dual Power Sunroof &amp; Ambient Lighting</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Kabin Ultra Senyap &amp; Audio High-End</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Kapasitas 6 &ndash; 7 Penumpang</li>
-                        </ul>
-                    </div>
-                    <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin reservasi Sewa Alphard untuk tour Air Mancur Menari Surabaya') }}"
-                       class="w-full py-3 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-sm text-center no-underline hover:opacity-90 transition-opacity">
-                        Pesan Toyota Alphard
-                    </a>
-                </div>
-
-                {{-- Hiace Premio Luxury --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between hover:border-[var(--color-accent)] transition-all shadow-lg">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">VIP Group Class</span>
-                            <span class="text-xl">🚐</span>
-                        </div>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Hiace Premio Luxury</h3>
-                        <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-6">
-                            Solusi kemewahan untuk rombongan keluarga besar atau delegasi bisnis. Dilengkapi dengan interior mewah modifikasi karoseri eksklusif.
-                        </p>
-                        <ul class="flex flex-col gap-3 text-xs text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> 8 &ndash; 10 Luxury Pilot Seats</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Smart TV Android &amp; Karaoke System</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Space Atap Tinggi &amp; Kaca Panoramic</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> AC Ducting Dingin Merata Sampai Belakang</li>
-                        </ul>
-                    </div>
-                    <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin pesan Hiace Premio Luxury untuk rombongan ke Air Mancur Menari Surabaya') }}"
-                       class="w-full py-3 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-sm text-center no-underline hover:opacity-90 transition-opacity">
-                        Pesan Hiace Premio Luxury
-                    </a>
-                </div>
-
-                {{-- Innova Zenix Hybrid --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between hover:border-[var(--color-accent)] transition-all shadow-lg">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">Modern Comfort</span>
-                            <span class="text-xl">🚘</span>
-                        </div>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Innova Zenix Hybrid</h3>
-                        <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-6">
-                            Kombinasi efisiensi mesin hybrid canggih, suspensi lembut TNGA, serta interior modern yang sangat nyaman untuk perjalanan santai malam hari.
-                        </p>
-                        <ul class="flex flex-col gap-3 text-xs text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Panoramic Retractable Roof</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Mesin Hybrid Halus &amp; Ramah Lingkungan</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Kapasitas 6 &ndash; 7 Penumpang</li>
-                            <li class="flex items-center gap-2"><span class="text-[var(--color-accent)]">✓</span> Kabin Nyaman Berteknologi Modern</li>
-                        </ul>
-                    </div>
-                    <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya berminat rental Innova Zenix Hybrid untuk tour malam di Surabaya') }}"
-                       class="w-full py-3 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-sm text-center no-underline hover:opacity-90 transition-opacity">
-                        Pesan Innova Zenix Hybrid
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-armada-list 
+        subtitle="Pilihan Kendaraan Utama"
+        title="Armada Rental Mobil Mewah Pilihan"
+        description="Setiap unit dipelihara secara presisi, rutin disterilisasi, dan dikemudikan oleh driver berseragam resmi yang santun."
+        wa-text="untuk tour Air Mancur Menari Surabaya"
+        :limit="6"
+    />
 
     {{-- SECTION 4: ITINERARY REKOMENDASI NIGHT TOUR SURABAYA --}}
     <section class="py-20 bg-[var(--color-bg-2)] border-y border-[var(--color-border)]">

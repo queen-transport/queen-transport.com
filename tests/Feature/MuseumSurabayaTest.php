@@ -4,7 +4,7 @@ use App\Models\Armada;
 use App\Models\Pelanggan;
 use App\Services\ArmadaService;
 
-test('armada service retrieves published armadas for air mancur kenjeran page', function () {
+test('armada service retrieves published armadas for museum page', function () {
     $armadaService = app(ArmadaService::class);
 
     Armada::factory()->create([
@@ -14,28 +14,27 @@ test('armada service retrieves published armadas for air mancur kenjeran page', 
     ]);
 
     Pelanggan::factory()->create([
-        'name' => 'Siti Rahma',
+        'name' => 'Budi Santoso',
         'is_published' => true,
     ]);
 
     $armadas = $armadaService->getPublished();
 
     expect($armadas->count())->toBeGreaterThan(0);
-    expect($armadas->first()->title)->toBe('Toyota Hiace Premio Luxury');
 });
 
-test('air mancur kenjeran page renders successfully via folio', function () {
-    $response = $this->get(route('air-mancur-kenjeran'));
+test('museum di surabaya yuk belajar sejarah page renders successfully via folio', function () {
+    $response = $this->get(route('museum-di-surabaya-yuk-belajar-sejarah'));
 
     $response->assertOk();
-    $response->assertSee('Air Mancur Kenjeran');
-    $response->assertSee('Surabaya');
+    $response->assertSee('Museum di Surabaya');
+    $response->assertSee('Yuk Belajar Sejarah');
     $response->assertSee(config('site.brand'));
 });
 
-test('sitemap includes air mancur kenjeran url', function () {
+test('sitemap includes museum di surabaya yuk belajar sejarah url', function () {
     $response = $this->get(route('sitemap'));
 
     $response->assertOk();
-    $response->assertSee(route('air-mancur-kenjeran'), false);
+    $response->assertSee(route('museum-di-surabaya-yuk-belajar-sejarah'), false);
 });

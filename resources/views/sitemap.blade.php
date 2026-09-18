@@ -41,6 +41,11 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>{{ route('museum-di-surabaya-yuk-belajar-sejarah') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>

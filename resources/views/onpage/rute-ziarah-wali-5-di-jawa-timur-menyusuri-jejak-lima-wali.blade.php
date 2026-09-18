@@ -6,10 +6,32 @@ name('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali');
 ?>
 
 @php
-use App\Services\ZiarahService;
-
-$ziarahService = app(ZiarahService::class);
-extract($ziarahService->getZiarahPageData());
+$faqs = [
+    [
+        'q' => 'Berapa lama waktu yang dibutuhkan untuk Ziarah Wali 5 di Jawa Timur?',
+        'a' => 'Perjalanan Ziarah Wali 5 Jatim (Sunan Ampel, Maulana Malik Ibrahim, Sunan Giri, Sunan Drajat, Sunan Bonang) dapat ditempuh dalam 1 hari full (Express Tour 12-16 jam) atau 2 hari 1 malam untuk perjalanan yang lebih santai dan khusyuk.',
+    ],
+    [
+        'q' => 'Apakah sewa Hiace / mobil ziarah di Queen Transport sudah termasuk driver?',
+        'a' => 'Ya, seluruh armada kami disewakan lengkap dengan driver profesional yang sopan, berpengalaman, dan sangat menguasai rute jalan serta titik parkir khusus van/bus ziarah di seluruh area makam Wali Jawa Timur.',
+    ],
+    [
+        'q' => 'Bisakah penjemputan dilakukan dari Bandara Juanda, Stasiun, atau Hotel di Surabaya?',
+        'a' => 'Sangat bisa! Kami melayani penjemputan langsung dari Bandara Internasional Juanda (SUB), Stasiun Pasar Turi, Stasiun Gubeng, maupun hotel dan kediaman di area Surabaya, Sidoarjo, dan sekitarnya.',
+    ],
+    [
+        'q' => 'Armada apa yang paling direkomendasikan untuk rombongan Ziarah Wali 5?',
+        'a' => 'Untuk rombongan 9-14 orang, Toyota Hiace Commuter atau Premio adalah pilihan paling favorit karena kabinnya luas, AC dingin merata, dan kursi reclining nyaman. Untuk rombongan keluarga 5-7 orang bisa menggunakan Innova Zenix / Reborn.',
+    ],
+    [
+        'q' => 'Apakah driver membantu mengarahkan lokasi dan titik transit perhentian ziarah?',
+        'a' => 'Tentu saja. Driver kami siap membantu memandu urutan rute efisien, merekomendasikan tempat makan/rest area halal yang luas untuk rombongan, serta membantu koordinasi lokasi parkir terdekat.',
+    ],
+    [
+        'q' => 'Bagaimana cara melakukan pemesanan dan konsultasi rute ziarah?',
+        'a' => 'Pemesanan sangat mudah via WhatsApp. Anda cukup menginformasikan tanggal perjalanan, jumlah peserta rombongan, dan lokasi penjemputan. Tim kami akan menyiapkan estimasi jadwal dan armada terbaik.',
+    ],
+];
 
 $title = 'Rute Ziarah Wali 5 di Jawa Timur: Menyusuri Jejak Lima Wali — ' . config('site.brand');
 $description = 'Panduan lengkap rute ziarah Wali 5 di Jawa Timur (Sunan Ampel, Sunan Giri, Sunan Maulana Malik Ibrahim, Sunan Drajat, Sunan Bonang). Lengkap dengan estimasi waktu, peta urutan rute & sewa Hiace/Innova include driver.';
@@ -525,114 +547,13 @@ $canonical = url()->current();
         </div>
     </section>
 
-    {{-- SECTION 5: ARMADA REKOMENDASI UNTUK ZIARAH --}}
-    <section class="py-[90px] border-t border-[var(--color-border)]" id="pilihan-armada">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transportasi Ziarah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
-                    Pilihan Armada Terbaik <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Rute Ziarah Wali 5</span>
-                </h2>
-                <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
-                    Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda.
-                </p>
-            </div>
-
-            @php
-                $findArmadaPrice = function($keywords) use ($allArmadas) {
-                    $armada = $allArmadas->first(function($item) use ($keywords) {
-                        foreach ((array)$keywords as $keyword) {
-                            if (\Illuminate\Support\Str::contains(strtolower($item->title), strtolower($keyword))) {
-                                return true;
-                            }
-                        }
-                        return false;
-                    });
-                    return $armada && $armada->price ? 'Rp ' . number_format($armada->price, 0, ',', '.') : null;
-                };
-
-                $hiaceCommuterPrice = $findArmadaPrice('commuter') ?? 'Rp 1.700.000';
-                $hiacePremioPrice = $findArmadaPrice(['premio standard', 'premio']) ?? 'Rp 1.850.000';
-                $innovaPrice = $findArmadaPrice(['reborn', 'innova', 'zenix']) ?? 'Rp 1.450.000';
-            @endphp
-            <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
-                {{-- HIACE COMMUTER --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:border-[var(--color-accent)] hover:-translate-y-2">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-4 inline-block">Favorit Rombongan (14 Seat)</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Hiace Commuter</h3>
-                        <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
-                            Pilihan paling ekonomis dan ideal untuk majelis taklim, rombongan keluarga besar, atau pengajian hingga 14 orang.
-                        </p>
-                        <ul class="flex flex-col gap-2.5 text-sm text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2">✓ 14 Reclining Seats</li>
-                            <li class="flex items-center gap-2">✓ AC Double Blower Per-Head</li>
-                            <li class="flex items-center gap-2">✓ Driver Berpengalaman Rute Ziarah</li>
-                            <li class="flex items-center gap-2">✓ Bagasi Luas untuk Barang &amp; Oleh-oleh</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $hiaceCommuterPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Toyota Hiace Commuter untuk Ziarah Wali 5 Jatim') }}"
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
-                            💬 Pesan Hiace Commuter
-                        </a>
-                    </div>
-                </div>
-
-                {{-- HIACE PREMIO STANDARD --}}
-                <div class="bg-[var(--gradient-card)] border-2 border-[var(--color-primary)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-[0_0_30px_rgba(124,58,237,0.3)]">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-[image:var(--gradient-btn)] text-white text-xs font-bold tracking-wider uppercase mb-4 inline-block">Ekstra Senyap &amp; Empuk</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Toyota Hiace Premio</h3>
-                        <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
-                            Kabin lebih kedap suara dengan moncong depan semi-bonnet, suspensi sangat nyaman untuk perjalanan luar kota.
-                        </p>
-                        <ul class="flex flex-col gap-2.5 text-sm text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2">✓ 14 Premium Reclining Seats</li>
-                            <li class="flex items-center gap-2">✓ Kabin Sangat Senyap &amp; Dingin</li>
-                            <li class="flex items-center gap-2">✓ Audio &amp; USB Charger di Tiap Baris</li>
-                            <li class="flex items-center gap-2">✓ Driver Berpengalaman Ziarah</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $hiacePremioPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Toyota Hiace Premio untuk Ziarah Wali 5 Jatim') }}"
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
-                            💬 Pesan Hiace Premio
-                        </a>
-                    </div>
-                </div>
-
-                {{-- INNOVA ZENIX / REBORN --}}
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all hover:border-[var(--color-accent)] hover:-translate-y-2">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-4 inline-block">Keluarga Kecil (6-7 Seat)</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Innova Reborn / Zenix</h3>
-                        <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
-                            Pilihan pas untuk ziarah keluarga inti 5 hingga 7 penumpang yang mengutamakan kelincahan dan kenyamanan mobil MPV.
-                        </p>
-                        <ul class="flex flex-col gap-2.5 text-sm text-[var(--color-text-light)] mb-8">
-                            <li class="flex items-center gap-2">✓ 6 - 7 Seats Legar</li>
-                            <li class="flex items-center gap-2">✓ Performa Tangguh &amp; Bensin/Hybrid Senyap</li>
-                            <li class="flex items-center gap-2">✓ Full AC Triple Zone</li>
-                            <li class="flex items-center gap-2">✓ Driver Ramah &amp; Sopan</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[var(--color-accent)] font-bold text-2xl mb-4">{{ $innovaPrice }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span></div>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo Queen Transport, saya ingin sewa Innova Zenix / Reborn untuk Ziarah Wali 5 Jatim') }}"
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 rounded-[var(--radius-md)] bg-[image:var(--gradient-btn)] text-white font-semibold text-center block no-underline shadow-md">
-                            💬 Pesan Innova Zenix
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-armada-list 
+        subtitle="Transportasi Ziarah"
+        title="Pilihan Armada Terbaik <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Rute Ziarah Wali 5</span>"
+        description="Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda."
+        wa-text="untuk Ziarah Wali 5 Jatim"
+        :limit="6"
+    />
 
     {{-- SECTION 6: TESTIMONI PELANGGAN --}}
     @if ($pelanggans->isNotEmpty())
