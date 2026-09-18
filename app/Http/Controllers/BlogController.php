@@ -49,8 +49,8 @@ class BlogController extends Controller
             return redirect()->to($post->url, 301);
         }
 
-        if (view()->exists('onpage.' . $slug)) {
-            return view('onpage.' . $slug);
+        if (view()->exists('onpage.'.$slug)) {
+            return view('onpage.'.$slug);
         }
 
         abort(404);

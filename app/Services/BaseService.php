@@ -7,6 +7,7 @@ use App\Models\Galeri;
 use App\Models\Pelanggan;
 use App\Models\Post;
 use App\Models\Setting;
+use Database\Seeders\ArmadaSeeder;
 use Illuminate\Http\Response;
 
 class BaseService
@@ -52,7 +53,7 @@ class BaseService
             ->get();
 
         if ($dbArmadasWithPrice->isEmpty()) {
-            (new \Database\Seeders\ArmadaSeeder)->run();
+            (new ArmadaSeeder)->run();
             $dbArmadasWithPrice = Armada::query()
                 ->where('is_published', true)
                 ->whereNotNull('price')
@@ -97,4 +98,3 @@ class BaseService
         return response($xml, 200)->header('Content-Type', 'text/xml');
     }
 }
-

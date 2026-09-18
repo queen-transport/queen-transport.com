@@ -51,6 +51,10 @@
                         <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">📞 {{ config('site.whatsapp_number') }} (CS)</a>
                         <a href="{{ \App\Support\WhatsApp::link('Halo Pak Fauzan, saya ingin menghubungi Anda melalui website', '6282231037255') }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">💬 6282231037255 (Direktur - Pak Fauzan)</a>
                         <a href="{{ config('site.instagram_url') }}" target="_blank" rel="nofollow noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">📸 Instagram</a>
+                        <div class="flex items-start gap-2">
+                            <span class="flex-shrink-0">📍</span>
+                            <span>{{ config('site.address') }}</span>
+                        </div>
                         <span>🕐 Layanan Sepanjang Hari</span>
                     </div>
                 </div>

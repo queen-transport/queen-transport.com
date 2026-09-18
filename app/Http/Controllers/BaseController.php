@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\BaseService;
-use Illuminate\View\View;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class BaseController extends Controller
 {

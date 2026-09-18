@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Contracts\ArmadaServiceInterface;
 use App\Models\Armada;
 use App\Models\Pelanggan;
+use Database\Seeders\ArmadaSeeder;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -143,7 +144,7 @@ class ArmadaService implements ArmadaServiceInterface
         $dbArmadas = $this->getHiace();
 
         if ($dbArmadas->isEmpty()) {
-            (new \Database\Seeders\ArmadaSeeder)->run();
+            (new ArmadaSeeder)->run();
             $dbArmadas = $this->getHiace();
         }
 
@@ -172,7 +173,7 @@ class ArmadaService implements ArmadaServiceInterface
         $dbArmadas = $this->getAlphard();
 
         if ($dbArmadas->isEmpty()) {
-            (new \Database\Seeders\ArmadaSeeder)->run();
+            (new ArmadaSeeder)->run();
             $dbArmadas = $this->getAlphard();
         }
 
@@ -303,7 +304,7 @@ class ArmadaService implements ArmadaServiceInterface
         $dbArmadas = $this->getPublished();
 
         if ($dbArmadas->isEmpty()) {
-            (new \Database\Seeders\ArmadaSeeder)->run();
+            (new ArmadaSeeder)->run();
             $dbArmadas = $this->getPublished();
         }
 

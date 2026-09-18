@@ -31,6 +31,11 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>{{ route('air-mancur-kenjeran') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>{{ route('makam-sunan-ampel-keistimewaan') }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>

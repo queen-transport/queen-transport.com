@@ -3,14 +3,13 @@
 use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 // ======
 // BASE
 // ======
 Route::controller(BaseController::class)
-    ->group(function() {
+    ->group(function () {
         Route::get('/', 'index')->name('home');
         Route::get('sitemap.xml', 'sitemap')->name('sitemap');
     });
@@ -20,7 +19,7 @@ Route::controller(BaseController::class)
 // ======
 Route::controller(ArmadaController::class)
     ->prefix('armada')
-    ->group(function() {
+    ->group(function () {
         Route::get('/', 'index')->name('armada.index');
         Route::get('/{armada:slug}', 'show')->name('armada.show');
     });
@@ -29,7 +28,7 @@ Route::controller(ArmadaController::class)
 // ARTIKEL
 // ======
 Route::controller(BlogController::class)
-    ->group(function() {
+    ->group(function () {
         Route::get('/blog', 'index')->name('blog.index');
         Route::get('/{year}/{month}/{post}', 'show')
             ->where(['year' => '[0-9]{4}', 'month' => '[0-9]{1,2}'])
@@ -43,4 +42,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
 require __DIR__.'/settings.php';
 
 Route::get('/{slug}', [BlogController::class, 'showPlain'])->name('blog.show-plain');
-
