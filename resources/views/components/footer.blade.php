@@ -40,6 +40,7 @@
                     <div class="flex flex-col gap-2 text-sm">
                         <a href="{{ route('sewa-hiace-surabaya') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Sewa Hiace Surabaya</a>
                         <a href="{{ route('sewa-alphard-surabaya') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Sewa Alphard Surabaya</a>
+                        <a href="{{ route('sewa-mobil-mewah-surabaya') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Sewa Mobil Mewah Surabaya</a>
                         <a href="{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Sewa Luar Kota VIP</a>
                         <a href="{{ route('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Rute Ziarah Wali 5 Jatim</a>
                     </div>

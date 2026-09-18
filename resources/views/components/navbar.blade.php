@@ -21,6 +21,7 @@
                     <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-64 py-2 bg-[var(--color-bg-2)] border border-[var(--color-border)] rounded-xl shadow-2xl z-50">
                         <a href="{{ route('sewa-hiace-surabaya') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Sewa Hiace Surabaya</a>
                         <a href="{{ route('sewa-alphard-surabaya') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Sewa Alphard Surabaya</a>
+                        <a href="{{ route('sewa-mobil-mewah-surabaya') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Sewa Mobil Mewah Surabaya</a>
                         <a href="{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Sewa Mobil Luar Kota VIP</a>
                         <a href="{{ route('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Ziarah Wali 5 Jatim</a>
                         <a href="{{ route('air-mancur-menari-surabaya-perjalanan-mewah') }}" class="px-4 py-2.5 text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.15)] transition-colors">Air Mancur Menari VIP</a>
@@ -49,6 +50,7 @@
             <a href="{{ route('armada.index') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Armada</a>
             <a href="{{ route('sewa-hiace-surabaya') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Hiace Surabaya</a>
             <a href="{{ route('sewa-alphard-surabaya') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Alphard Surabaya</a>
+            <a href="{{ route('sewa-mobil-mewah-surabaya') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Mobil Mewah Surabaya</a>
             <a href="{{ url('/harga-sewa-mobil-surabaya-luar-kota-kelas-atas') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Sewa Luar Kota VIP</a>
             <a href="{{ route('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Ziarah Wali 5 Jatim</a>
             <a href="{{ route('air-mancur-menari-surabaya-perjalanan-mewah') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Air Mancur Menari VIP</a>

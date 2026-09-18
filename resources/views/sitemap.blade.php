@@ -21,6 +21,11 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>{{ route('sewa-mobil-mewah-surabaya') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>{{ route('rute-ziarah-wali-5-di-jawa-timur-menyusuri-jejak-lima-wali') }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
