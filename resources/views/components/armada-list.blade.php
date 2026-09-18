@@ -54,7 +54,7 @@
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between hover:border-[var(--color-accent)] transition-all shadow-lg hover:-translate-y-1">
                     <div>
                         @if ($armada->featured_image)
-                            <img src="{{ $armada->featured_image }}" alt="{{ $armada->title }}" class="w-full h-48 object-cover rounded-[var(--radius-md)] mb-4">
+                            <img src="{{ \Illuminate\Support\Str::startsWith($armada->featured_image, ['http://', 'https://']) ? $armada->featured_image : \Illuminate\Support\Facades\Storage::disk('public')->url($armada->featured_image) }}" alt="{{ $armada->title }}" class="w-full h-48 object-cover rounded-[var(--radius-md)] mb-4">
                         @else
                             <div class="w-full h-48 bg-[var(--color-bg)] rounded-[var(--radius-md)] mb-4 flex items-center justify-center text-4xl">🚘</div>
                         @endif
