@@ -12,8 +12,6 @@ class ArtikelSeeder extends Seeder
      */
     public function run(): void
     {
-        Post::factory()->count(10)->create();
-
-        Post::factory()->plainPermalink()->count(10)->create();
+        Post::factory()->count(20)->create();
     }
 }
