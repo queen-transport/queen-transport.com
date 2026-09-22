@@ -52,4 +52,3 @@ test('sitemap includes air mancur kenjeran url', function () {
     $response->assertOk();
     $response->assertSee(route('air-mancur-kenjeran'), false);
 });
-

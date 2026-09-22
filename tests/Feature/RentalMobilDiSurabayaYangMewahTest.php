@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Armada;
-use App\Models\Pelanggan;
 
 test('rental mobil di surabaya yang mewah page renders successfully via folio', function () {
     $response = $this->get(route('rental-mobil-di-surabaya-yang-mewah'));
