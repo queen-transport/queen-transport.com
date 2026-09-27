@@ -105,4 +105,44 @@ class Armada extends Model
 
         return array_values(array_filter($paths, fn ($path) => is_string($path) && $path !== ''));
     }
+
+    public function getUrlAttribute(): string
+    {
+        return route('armada.show', $this);
+    }
+
+    public function getSeoTitleAttribute(): string
+    {
+        return $this->title.' — '.config('site.brand');
+    }
+
+    public function getSeoDescriptionAttribute(): string
+    {
+        if ($this->description) {
+            $plain = trim(preg_replace('/\s+/', ' ', strip_tags($this->description)));
+            if (! empty($plain)) {
+                return Str::limit($plain, 160);
+            }
+        }
+
+        $parts = array_filter([
+            $this->title,
+            $this->car_type,
+            $this->price ? 'mulai Rp '.number_format($this->price, 0, ',', '.').'/hari' : null,
+            config('site.brand'),
+        ]);
+
+        return 'Sewa '.implode(' - ', $parts).'. Layanan rental mobil mewah profesional & terpercaya.';
+    }
+
+    public function getSeoImageAttribute(): ?string
+    {
+        if ($this->featured_image) {
+            return $this->featured_image;
+        }
+
+        $gallery = $this->gallery ?? [];
+
+        return ! empty($gallery[0]) ? $gallery[0] : null;
+    }
 }

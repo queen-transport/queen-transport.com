@@ -16,13 +16,24 @@ test('armada index lists only published armada', function () {
     $response->assertDontSee('Hidden Car');
 });
 
-test('armada show displays the armada detail', function () {
-    $armada = Armada::factory()->create(['title' => 'Alphard Prestige']);
+test('armada show displays the armada detail and seo tags', function () {
+    $armada = Armada::factory()->create([
+        'title' => 'Alphard Prestige',
+        'description' => 'Layanan sewa Alphard mewah terbaik.',
+        'featured_image' => 'armada/test-alphard.jpg',
+    ]);
+
+    Storage::disk('public')->put('armada/test-alphard.jpg', 'dummy');
 
     $response = $this->get(route('armada.show', $armada));
 
     $response->assertOk();
     $response->assertSee('Alphard Prestige');
+    $response->assertSee('<meta property="og:title" content="Alphard Prestige — '.config('site.brand').'">', false);
+    $response->assertSee('<meta property="og:description" content="Layanan sewa Alphard mewah terbaik.">', false);
+    $response->assertSee(Storage::disk('public')->url('armada/test-alphard.jpg'));
+
+    Storage::disk('public')->delete('armada/test-alphard.jpg');
 });
 
 test('armada resolves by slug in route', function () {

@@ -6,7 +6,12 @@
     $ctaText = $armada->cta_text ?: 'Tanya Harga via WhatsApp';
     $ctaUrl = $armada->cta_url ?: \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya harga sewa '.$armada->title);
 @endphp
-<x-layouts::public :title="$armada->title . ' — ' . config('site.brand')" :description="$armada->car_type">
+<x-layouts::public
+    :title="$armada->seo_title"
+    :description="$armada->seo_description"
+    :image="$armada->seo_image"
+    :canonical="$armada->url"
+>
     <section class="py-[100px]">
         <div class="max-w-[1200px] mx-auto px-6">
 
