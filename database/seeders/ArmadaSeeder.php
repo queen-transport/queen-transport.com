@@ -156,6 +156,19 @@ class ArmadaSeeder extends Seeder
                 'sort' => 11,
                 'is_published' => true,
             ],
+            [
+                'title' => 'Mitsubishi Xpander Ultimate',
+                'slug' => 'mitsubishi-xpander-ultimate',
+                'car_type' => '7 Seat MPV',
+                'car_badge' => 'Favorit Keluarga & Dinas',
+                'car_icon' => '🚗',
+                'price' => 1100000,
+                'features' => ['Kabin Senyap 7-Seater Luas', 'Cruise Control & Electric Parking Brake', 'AC Digital Double Blower Dingin', 'Audio Touchscreen Modern', 'Driver Profesional, Bersih & Wangi'],
+                'description' => 'MPV premium tipe tertinggi dari Mitsubishi dengan suspensi ekstra empuk, ground clearance tinggi, dan efisiensi bahan bakar maksimal untuk perjalanan dinas maupun liburan keluarga.',
+                'cta_text' => 'Tanya Harga via WhatsApp',
+                'sort' => 12,
+                'is_published' => true,
+            ],
         ];
 
         foreach ($armadas as $data) {

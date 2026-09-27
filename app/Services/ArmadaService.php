@@ -99,6 +99,16 @@ class ArmadaService implements ArmadaServiceInterface
     }
 
     /**
+     * Get published Mitsubishi Xpander armadas.
+     *
+     * @return Collection<int, Armada>
+     */
+    public function getXpander(): Collection
+    {
+        return $this->getByKeyword(['xpander', 'expander']);
+    }
+
+    /**
      * Find a published armada by slug.
      */
     public function getBySlug(string $slug): ?Armada

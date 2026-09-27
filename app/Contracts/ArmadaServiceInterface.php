@@ -59,6 +59,13 @@ interface ArmadaServiceInterface
     public function getInnova(): Collection;
 
     /**
+     * Get published Mitsubishi Xpander armadas.
+     *
+     * @return Collection<int, Armada>
+     */
+    public function getXpander(): Collection;
+
+    /**
      * Find a published armada by slug.
      */
     public function getBySlug(string $slug): ?Armada;

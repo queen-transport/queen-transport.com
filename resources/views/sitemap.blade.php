@@ -26,6 +26,11 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>{{ route('sewa-mobil-expander-ultimate') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>{{ route('rental-mobil-di-surabaya-yang-mewah') }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
