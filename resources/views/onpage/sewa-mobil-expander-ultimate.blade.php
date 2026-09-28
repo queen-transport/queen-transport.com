@@ -62,16 +62,6 @@ $description = 'Sewa mobil Mitsubishi Xpander Ultimate di Surabaya termurah incl
                         Layanan sewa mobil <strong class="text-white">Mitsubishi Xpander Ultimate</strong> terbaik di Surabaya. Nikmati kenyamanan MPV keluarga kelas atas dengan suspensi empuk ala SUV tangguh, kabin senyap 7 penumpang, AC dingin double blower, dan driver profesional berpengalaman.
                     </p>
 
-                    <div class="flex items-baseline gap-3 my-1">
-                        <span class="text-xs text-[var(--color-text-muted)] uppercase tracking-wider font-semibold">Tarif Sewa Mulai:</span>
-                        <div class="text-white text-3xl font-extrabold flex items-baseline gap-1">
-                            <span class="text-sm font-medium text-[var(--color-accent)]">Rp</span>
-                            <span>650.000</span>
-                            <span class="text-xs font-normal text-[var(--color-text-muted)]">/ 12 Jam</span>
-                        </div>
-                        <span class="px-2.5 py-0.5 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-semibold">Unit Ready</span>
-                    </div>
-
                     <div class="flex gap-4 flex-wrap mt-2">
                         <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi & pesan Sewa Mobil Xpander Ultimate di Surabaya.') }}"
                            class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-0 bg-[image:var(--gradient-btn)] text-white shadow-[0_4px_25px_rgba(124,58,237,0.4)] transition-all hover:scale-105"
@@ -114,12 +104,12 @@ $description = 'Sewa mobil Mitsubishi Xpander Ultimate di Surabaya termurah incl
                                 <div class="text-[var(--color-text-muted)] text-xs">Include Driver Handal</div>
                             </div>
                             <div class="p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
-                                <div class="text-[var(--color-accent)] font-bold text-lg mb-0.5">220 mm</div>
-                                <div class="text-[var(--color-text-muted)] text-xs">Ground Clearance Tinggi</div>
+                                <div class="text-[var(--color-accent)] font-bold text-lg mb-0.5">Cemilan Gratis</div>
+                                <div class="text-[var(--color-text-muted)] text-xs">Awal Perjalanan Kami Berikan Cemilan</div>
                             </div>
                             <div class="p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
-                                <div class="text-[var(--color-accent)] font-bold text-lg mb-0.5">EPB + BAH</div>
-                                <div class="text-[var(--color-text-muted)] text-xs">Electric Parking Brake</div>
+                                <div class="text-[var(--color-accent)] font-bold text-lg mb-0.5">Kartu Anggota</div>
+                                <div class="text-[var(--color-text-muted)] text-xs">Gratis Kartu Anggota dari Kami</div>
                             </div>
                         </div>
 
@@ -340,7 +330,7 @@ $description = 'Sewa mobil Mitsubishi Xpander Ultimate di Surabaya termurah incl
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Prosedur Praktis</span>
-                <h2 class="text-white text-2xl font-bold">4 Langkah Mudah Sewa Expander Ultimate</h2>
+                <h2 class="text-white text-2xl font-bold">3 Langkah Mudah Sewa Expander Ultimate</h2>
                 <p class="text-[var(--color-text-muted)] text-sm max-w-[500px] mx-auto mt-2">Pemesanan online cepat via WhatsApp tanpa proses berbelit-belit.</p>
             </div>
 
@@ -354,20 +344,13 @@ $description = 'Sewa mobil Mitsubishi Xpander Ultimate di Surabaya termurah incl
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">02</span>
-                    <div class="text-2xl mb-4">📝</div>
-                    <h3 class="text-white font-bold text-base mb-2">Pilih Paket Sewa</h3>
-                    <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Tentukan pilihan paket: 12 Jam, Full Day Harian, Paket All-In, atau Drop Bandara Juanda.</p>
-                </div>
-
-                <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
-                    <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">03</span>
                     <div class="text-2xl mb-4">💳</div>
                     <h3 class="text-white font-bold text-base mb-2">Konfirmasi &amp; DP</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Lakukan konfirmasi pemesanan dan pembayaran uang muka (DP) aman ke rekening resmi Queen Transport.</p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
-                    <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">04</span>
+                    <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">03</span>
                     <div class="text-2xl mb-4">🚀</div>
                     <h3 class="text-white font-bold text-base mb-2">Driver Siap Menjemput</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Driver profesional bersama unit Xpander Ultimate kinclong dan wangi tiba tepat waktu di lokasi Anda.</p>
