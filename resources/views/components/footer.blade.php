@@ -29,6 +29,7 @@
                         <a href="{{ route('home') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Beranda</a>
                         <a href="{{ route('armada.index') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Armada Kami</a>
                         <a href="{{ route('blog.index') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Blog / Artikel</a>
+                        <a href="{{ route('kontak') }}" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Kontak</a>
                         <a href="{{ route('home') }}#struktur-organisasi" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Struktur Organisasi</a>
                         <a href="{{ route('home') }}#galeri" class="text-[var(--color-text-muted)] hover:text-white transition-colors">Galeri</a>
                         <a href="{{ route('home') }}#faq" class="text-[var(--color-text-muted)] hover:text-white transition-colors">FAQ</a>

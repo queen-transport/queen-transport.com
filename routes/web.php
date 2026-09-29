@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(BaseController::class)
     ->group(function () {
         Route::get('/', 'index')->name('home');
+        Route::get('/kontak', 'kontak')->name('kontak');
         Route::get('sitemap.xml', 'sitemap')->name('sitemap');
     });
 

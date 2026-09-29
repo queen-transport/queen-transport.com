@@ -29,12 +29,12 @@
                     </div>
                 </div>
 
-                <a href="{{ route('blog.index') }}" class="text-sm text-[var(--color-light)] hover:text-white transition-colors">Blog</a>
+                <a href="{{ route('blog.index') }}" class="text-sm text-[var(--color-light)] hover:text-white transition-colors {{ request()->routeIs('blog.*') ? 'text-white font-semibold' : '' }}">Blog</a>
                 <a href="{{ route('home') }}#faq" class="text-sm text-[var(--color-light)] hover:text-white transition-colors">FAQ</a>
+                <a href="{{ route('kontak') }}" class="text-sm text-[var(--color-light)] hover:text-white transition-colors {{ request()->routeIs('kontak') ? 'text-white font-semibold' : '' }}">Kontak</a>
 
-                <a href="{{ \App\Support\WhatsApp::link() }}"
-                   class="px-5 py-2.5 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm no-underline hover:opacity-95 transition-opacity"
-                   target="_blank" rel="noopener noreferrer">
+                <a href="{{ route('kontak') }}"
+                   class="px-5 py-2.5 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm no-underline hover:opacity-95 transition-opacity">
                     📞 Hubungi Kami
                 </a>
             </div>
@@ -58,9 +58,9 @@
             <a href="{{ route('air-mancur-menari-surabaya-perjalanan-mewah') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Air Mancur Menari VIP</a>
             <a href="{{ route('blog.index') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Blog / Artikel</a>
             <a href="{{ route('home') }}#faq" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">FAQ</a>
-            <a href="{{ \App\Support\WhatsApp::link() }}"
-               class="mt-2 px-5 py-3 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm text-center no-underline"
-               target="_blank" rel="noopener noreferrer">
+            <a href="{{ route('kontak') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)] {{ request()->routeIs('kontak') ? 'text-white font-semibold bg-[rgba(124,58,237,0.15)]' : '' }}">Kontak</a>
+            <a href="{{ route('kontak') }}"
+               class="mt-2 px-5 py-3 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm text-center no-underline">
                 📞 Hubungi Kami
             </a>
         </div>

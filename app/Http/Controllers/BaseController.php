@@ -17,6 +17,11 @@ class BaseController extends Controller
         return view('home', $this->baseService->getDataForLandingPage());
     }
 
+    public function kontak(): View
+    {
+        return view('kontak');
+    }
+
     public function sitemap(): Response
     {
         return $this->baseService->getSitemap();
