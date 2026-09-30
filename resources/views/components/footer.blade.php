@@ -51,7 +51,7 @@
                 <div class="flex flex-col gap-4">
                     <h4 class="text-white text-sm font-bold tracking-[0.08em] uppercase pb-3 border-b border-[var(--color-border)]">Kontak</h4>
                     <div class="flex flex-col gap-3 text-sm text-[var(--color-text-muted)]">
-                        <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">📞 {{ config('site.whatsapp_number') }} (CS)</a>
+                        <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">📞 {{ \App\Support\WhatsApp::primaryNumber() }} (CS)</a>
                         <a href="{{ \App\Support\WhatsApp::link('Halo Pak Fauzan, saya ingin menghubungi Anda melalui website', '6282231037255') }}" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">💬 6282231037255 (Direktur - Pak Fauzan)</a>
                         <a href="{{ config('site.instagram_url') }}" target="_blank" rel="nofollow noopener noreferrer" class="hover:text-[var(--color-accent)] transition-colors">📸 Instagram</a>
                         <div class="flex items-start gap-2">

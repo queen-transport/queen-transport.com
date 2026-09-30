@@ -55,9 +55,9 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-<a href="{{ request()->routeIs('kontak') ? \App\Support\WhatsApp::link() : route('kontak') }}"
+<a href="{{ \App\Support\WhatsApp::link() }}"
    class="wa-float fixed bottom-7 right-7 z-[9999] w-[60px] h-[60px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128c7e] flex items-center justify-center text-[1.8rem] text-white shadow-[0_4px_20px_rgba(37,211,102,0.45)] transition-all no-underline hover:scale-[1.1] hover:-translate-y-[3px]"
-   @if(request()->routeIs('kontak')) target="_blank" rel="noopener noreferrer" aria-label="Hubungi via WhatsApp" @else aria-label="Halaman Kontak Kami" @endif>
+   target="_blank" rel="noopener noreferrer" aria-label="Hubungi via WhatsApp">
     💬
 </a>
 

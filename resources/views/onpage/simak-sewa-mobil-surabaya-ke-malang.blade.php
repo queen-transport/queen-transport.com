@@ -64,7 +64,7 @@ $canonical = url()->current();
             "@type": "LocalBusiness",
             "name": "{{ config('site.brand') }}",
             "url": "{{ route('home') }}",
-            "telephone": "+{{ config('site.whatsapp_number') }}",
+            "telephone": "+{{ \App\Support\WhatsApp::primaryNumber() }}",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "{{ config('site.address') }}",

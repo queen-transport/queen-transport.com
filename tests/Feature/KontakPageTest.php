@@ -5,7 +5,7 @@ test('kontak page returns successful response and displays contact information',
 
     $response->assertOk();
     $response->assertSee(config('site.brand'));
-    $response->assertSee(config('site.whatsapp_number'));
+    $response->assertSee(\App\Support\WhatsApp::primaryNumber());
     $response->assertSee('Pak Fauzan');
     $response->assertSee('6282231037255');
     $response->assertSee(config('site.address'));
@@ -20,11 +20,11 @@ test('navbar links to kontak page', function () {
     $response->assertSee(route('kontak'));
 });
 
-test('floating whatsapp button links to kontak on landing page', function () {
+test('floating whatsapp button links directly to whatsapp on landing page', function () {
     $response = $this->get(route('home'));
 
     $response->assertOk();
-    $response->assertSee('href="'.route('kontak').'"', false);
+    $response->assertSee('href="https://wa.me/', false);
 });
 
 test('sitemap contains kontak page', function () {

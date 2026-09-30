@@ -63,7 +63,7 @@ $canonical = url()->current();
           "name": "Rental Mobil Mewah Jawa Timur — {{ config('site.brand') }}",
           "description": "{{ $description }}",
           "url": "{{ $canonical }}",
-          "telephone": "+{{ config('site.whatsapp_number') }}",
+          "telephone": "+{{ \App\Support\WhatsApp::primaryNumber() }}",
           "priceRange": "Rp 1.450.000 - Rp 3.800.000",
           "image": "{{ asset('og-image.png') }}",
           "address": {
@@ -102,7 +102,7 @@ $canonical = url()->current();
             "@type": "LocalBusiness",
             "name": "{{ config('site.brand') }}",
             "url": "{{ route('home') }}",
-            "telephone": "+{{ config('site.whatsapp_number') }}",
+            "telephone": "+{{ \App\Support\WhatsApp::primaryNumber() }}",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "{{ config('site.address') }}",

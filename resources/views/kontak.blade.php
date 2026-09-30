@@ -40,7 +40,7 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-white font-mono text-sm font-semibold tracking-wide">
-                            +{{ config('site.whatsapp_number') }}
+                            +{{ \App\Support\WhatsApp::primaryNumber() }}
                         </div>
                         <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi dan tanya sewa armada') }}"
                            class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-sm no-underline bg-gradient-to-r from-[#25d366] to-[#128c7e] text-white shadow-lg transition-opacity hover:opacity-95"
