@@ -6,74 +6,21 @@ name('sewa-mobil-double-cabin-surabaya-perjalanan-mewah');
 ?>
 
 @php
-$doubleCabinTypes = [
-    [
-        'emoji'       => '🏔️',
-        'name'        => 'Toyota Hilux Double Cabin',
-        'tag'         => 'Pick-up Premium 4WD',
-        'badge'       => 'Paling Diminati',
-        'seat'        => '4–5 Penumpang',
-        'desc'        => 'Raja pick-up double cabin di Indonesia. Mesin diesel 2.4L bertenaga besar, suspensi tangguh, ground clearance tinggi — siap menaklukkan segala medan dari jalanan kota hingga trek off-road Jawa Timur.',
-        'features'    => [
-            'Mesin Diesel 2.4L / 2.8L Turbo Bertenaga',
-            '4WD — Mampu Segala Medan',
-            'Ground Clearance Tinggi',
-            'Kabin AC Dingin & Nyaman',
-            'Bak Belakang Luas untuk Logistik',
-            'Driver Profesional Berpengalaman',
-        ],
-        'best_for'    => ['Wisata alam & off-road', 'Survei lapangan & pertambangan', 'Ekspedisi & adventure tour', 'Angkutan logistik + penumpang'],
-    ],
-    [
-        'emoji'       => '🦁',
-        'name'        => 'Mitsubishi Triton Double Cabin',
-        'tag'         => 'Pick-up Tangguh & Stylish',
-        'badge'       => '',
-        'seat'        => '4–5 Penumpang',
-        'desc'        => 'Mitsubishi Triton hadir dengan desain agresif dan teknologi Super Select 4WD terdepan di kelasnya. Perpaduan sempurna antara tampilan sporty, kenyamanan kabin, dan kemampuan off-road yang luar biasa.',
-        'features'    => [
-            'Super Select 4WD II — 2H/4H/4HLc/4LLc',
-            'Desain Eksterior Agresif & Modern',
-            'Kabin Lega dengan Material Premium',
-            'Suspensi Multi-Link Rear Lebih Halus',
-            'Bak Belakang Fleksibel',
-            'Driver Profesional Terlatih',
-        ],
-        'best_for'    => ['Perjalanan bisnis & korporasi', 'Trekking gunung & alam', 'Site visit tambang & perkebunan', 'Hunting foto & videografi alam'],
-    ],
-    [
-        'emoji'       => '🐃',
-        'name'        => 'Ford Ranger Double Cabin',
-        'tag'         => 'Pick-up Teknologi Canggih',
-        'badge'       => '',
-        'seat'        => '4–5 Penumpang',
-        'desc'        => 'Ford Ranger adalah simbol pick-up modern dengan teknologi berkelas. Fitur lengkap, kabin berstandar SUV, dan kemampuan 4WD mumpuni menjadikannya pilihan premium untuk perjalanan mewah sekaligus petualangan.',
-        'features'    => [
-            'Teknologi Canggih & Fitur Modern',
-            'Kabin Berstandar SUV — Nyaman & Lega',
-            'Sistem 4WD Elektronik Presisi',
-            'Towing Capacity Besar',
-            'Safety Feature Lengkap',
-            'Driver Profesional Berpengalaman',
-        ],
-        'best_for'    => ['Perjalanan VIP ke area terpencil', 'Corporate outdoor event', 'Ekspedisi wisata alam premium', 'Transportasi peralatan profesional'],
-    ],
-];
-
 $destinasiAdventure = [
-    ['🌋', 'Gunung Bromo & Tengger', '~3–4 jam dari Surabaya', 'Medan berbatu & pasir — Double Cabin wajib untuk akses Savana & viewpoint terbaik'],
-    ['🏔️', 'Kawah Ijen, Banyuwangi', '~5 jam dari Surabaya', 'Jalur menanjak ke kawah — Double Cabin 4WD paling aman untuk malam hari'],
-    ['🌊', 'Pantai Pulau Merah & G-Land', '~5 jam dari Surabaya', 'Akses pantai & jalur hutan — memerlukan ground clearance tinggi'],
-    ['🌿', 'Taman Nasional Baluran', '~5 jam dari Surabaya', '"Afrika-nya Jawa" — jalur savana terbuka terbaik dijelajahi dengan double cabin'],
-    ['⛰️', 'Gunung Semeru Base Camp', '~4 jam ke Malang', 'Trek menuju Ranu Pane — keandalan off-road Double Cabin tak tertandingi'],
-    ['🏞️', 'Air Terjun & Area Pegunungan Malang', '~2–2,5 jam dari Surabaya', 'Coban Rondo, Coban Pelangi, Wendit — akses jalur tanah terjal & berbatu'],
+    ['🌋', 'Gunung Bromo & Tengger', '~3–4 jam dari Surabaya', 'Medan berbatu & pasir — Double Cabin 4WD paling aman untuk akses Savana & viewpoint terbaik'],
+    ['🏔️', 'Kawah Ijen, Banyuwangi', '~5 jam dari Surabaya', 'Jalur menanjak ke kawah — kendaraan bertenaga tinggi & ground clearance tinggi sangat dibutuhkan'],
+    ['🌊', 'Pantai Pulau Merah & G-Land', '~5 jam dari Surabaya', 'Akses pantai & jalur hutan — memerlukan kendaraan bertenaga &  ground clearance tinggi'],
+    ['🌿', 'Taman Nasional Baluran', '~5 jam dari Surabaya', '"Afrika-nya Jawa" — jalur savana terbuka paling nyaman dijelajahi dengan kendaraan off-road'],
+    ['⛰️', 'Gunung Semeru Base Camp', '~4 jam ke Malang', 'Trek menuju Ranu Pane — keandalan off-road kendaraan bertenaga tak tertandingi'],
+    ['🏞️', 'Air Terjun & Pegunungan Malang', '~2–2,5 jam dari Surabaya', 'Coban Rondo, Coban Pelangi — akses jalur tanah terjal & berbatu lebih aman dengan double cabin'],
 ];
 
 $armadaService = app(\App\Contracts\ArmadaServiceInterface::class);
+$allArmadas    = $armadaService->getPublished();
 $pelanggans    = $armadaService->getPelanggans();
 
 $title       = 'Sewa Mobil Double Cabin Surabaya untuk Perjalanan Mewah & Petualangan — ' . config('site.brand');
-$description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Triton, Ford Ranger ✓ 4WD off-road & perjalanan mewah ✓ Include driver profesional ✓ Bromo, Ijen, Baluran & seluruh Jatim. Pesan sekarang!';
+$description = 'Sewa mobil double cabin Surabaya ✓ 4WD off-road & perjalanan mewah ✓ Include driver profesional berpengalaman ✓ Bromo, Ijen, Baluran & seluruh Jatim. Tanya ketersediaan sekarang!';
 @endphp
 
 <x-layouts::public :title="$title" :description="$description">
@@ -92,22 +39,22 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                     </h1>
 
                     <p class="text-[var(--color-accent)] text-[0.8rem] tracking-[0.2em] uppercase font-semibold">
-                        ✦ Toyota Hilux &bull; Mitsubishi Triton &bull; Ford Ranger &bull; 4WD Off-Road
+                        ✦ Pick-Up 4WD &bull; Kabin Mewah &bull; Bak Luas &bull; Driver Profesional
                     </p>
 
                     <p class="text-[var(--color-text-light)] text-base leading-relaxed max-w-[540px]">
-                        Perpaduan sempurna antara kemewahan dan ketangguhan — mobil double cabin 4WD dengan driver profesional berpengalaman. Cocok untuk perjalanan wisata alam, ekspedisi off-road, survei lapangan, kunjungan korporasi ke area terpencil, hingga petualangan ke Bromo, Ijen, dan seluruh penjuru Jawa Timur.
+                        Perpaduan sempurna antara kemewahan dan ketangguhan — mobil double cabin 4WD dengan driver profesional berpengalaman. Cocok untuk wisata alam, ekspedisi off-road, survei lapangan, kunjungan korporasi ke area terpencil, hingga petualangan ke Bromo, Ijen, dan seluruh penjuru Jawa Timur.
                     </p>
 
                     <div class="flex gap-4 flex-wrap mt-2">
-                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya & pesan Sewa Mobil Double Cabin di Surabaya untuk perjalanan mewah') }}"
+                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya ketersediaan & harga Sewa Mobil Double Cabin di Surabaya untuk perjalanan mewah / adventure') }}"
                            class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-0 bg-[image:var(--gradient-btn)] text-white shadow-[0_4px_25px_rgba(124,58,237,0.4)] transition-all hover:scale-105"
                            target="_blank" rel="noopener noreferrer">
-                            💬 Pesan Double Cabin Sekarang
+                            💬 Tanya Ketersediaan Sekarang
                         </a>
-                        <a href="#tipe-double-cabin"
+                        <a href="#tentang-double-cabin"
                            class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-2 border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[rgba(34,211,238,0.1)] transition-all">
-                            🏔️ Lihat Tipe Armada
+                            🏔️ Selengkapnya
                         </a>
                     </div>
                 </div>
@@ -163,8 +110,8 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💺</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Kabin Mewah & Nyaman</h4>
-                        <p class="text-[var(--color-text-muted)] text-xs">AC dingin, audio premium</p>
+                        <h4 class="text-white font-bold text-sm">Kabin Mewah &amp; Nyaman</h4>
+                        <p class="text-[var(--color-text-muted)] text-xs">AC dingin, kursi empuk</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
@@ -178,7 +125,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                     <span class="text-3xl">📦</span>
                     <div>
                         <h4 class="text-white font-bold text-sm">Bak Belakang Luas</h4>
-                        <p class="text-[var(--color-text-muted)] text-xs">Muat logistik & perlengkapan</p>
+                        <p class="text-[var(--color-text-muted)] text-xs">Muat logistik &amp; perlengkapan</p>
                     </div>
                 </div>
             </div>
@@ -186,7 +133,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
     </section>
 
     {{-- APA ITU DOUBLE CABIN --}}
-    <section class="py-[90px]">
+    <section class="py-[90px]" id="tentang-double-cabin">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="grid grid-cols-2 gap-16 items-center max-md:grid-cols-1">
                 <div>
@@ -204,9 +151,9 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                     <div class="flex flex-col gap-4">
                         @foreach ([
                             ['🏔️', 'Kemampuan Off-Road Superior', 'Dengan sistem 4WD, ground clearance tinggi, dan ban berukuran besar, double cabin mampu melewati medan berlumpur, berbatu, menanjak curam, dan jalur tak beraspal.'],
-                            ['💺', 'Kabin Nyaman Setara SUV', 'Berbeda dari pick-up biasa, kabin double cabin modern dirancang dengan standar kenyamanan tinggi — jok empuk, AC dingin, audio sistem, dan ruang kaki yang lega.'],
-                            ['📦', 'Bak Belakang Serbaguna', 'Bak terbuka di belakang menjadi nilai lebih untuk membawa perlengkapan camping, kamera profesional, alat survei lapangan, atau bagasi bervolume besar.'],
-                            ['⛽', 'Mesin Diesel Bertenaga & Efisien', 'Mesin diesel turbo double cabin memberikan torsi besar yang dibutuhkan untuk medan berat, sekaligus efisiensi BBM yang baik untuk perjalanan jarak jauh.'],
+                            ['💺', 'Kabin Nyaman Setara SUV', 'Kabin double cabin modern dirancang dengan standar kenyamanan tinggi — jok empuk, AC dingin, dan ruang kaki yang lega untuk 4–5 penumpang.'],
+                            ['📦', 'Bak Belakang Serbaguna', 'Bak terbuka di belakang untuk membawa perlengkapan camping, kamera profesional, alat survei lapangan, atau bagasi bervolume besar.'],
+                            ['⛽', 'Mesin Diesel Bertenaga & Efisien', 'Mesin diesel turbo memberikan torsi besar untuk medan berat sekaligus efisiensi BBM yang baik untuk perjalanan jarak jauh.'],
                         ] as [$icon, $title, $desc])
                             <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                                 <div class="text-2xl flex-shrink-0 w-11 h-11 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] flex items-center justify-center">{{ $icon }}</div>
@@ -256,11 +203,11 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                         </div>
 
                         <div class="mt-6 p-4 rounded-[var(--radius-md)] bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.2)] text-center">
-                            <span class="text-[var(--color-accent)] font-semibold text-sm block mb-2">Ingin konsultasi armada yang tepat?</span>
-                            <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi pilihan armada Double Cabin yang tepat untuk perjalanan saya.') }}"
+                            <span class="text-[var(--color-accent)] font-semibold text-sm block mb-2">Tanya ketersediaan unit double cabin</span>
+                            <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya ketersediaan armada Double Cabin untuk perjalanan saya dari Surabaya.') }}"
                                class="inline-block py-2.5 px-5 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-xs no-underline"
                                target="_blank" rel="noopener noreferrer">
-                                💬 Konsultasi via WhatsApp
+                                💬 Tanya via WhatsApp
                             </a>
                         </div>
                     </div>
@@ -269,83 +216,50 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
         </div>
     </section>
 
-    {{-- TIPE DOUBLE CABIN --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)]" id="tipe-double-cabin">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pilihan Armada</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
-                    Tipe <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Double Cabin</span> yang Tersedia di Surabaya
-                </h2>
-                <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
-                    Semua unit dalam kondisi prima, terawat, dan siap menghadapi medan tersulit sekalipun — lengkap dengan driver berpengalaman di jalur off-road Jawa Timur.
+    {{-- KONFIRMASI KETERSEDIAAN DOUBLE CABIN --}}
+    <section class="py-[90px] bg-[var(--color-bg-2)]" id="ketersediaan">
+        <div class="max-w-[900px] mx-auto px-6">
+            <div class="bg-[var(--gradient-card)] border-2 border-[rgba(124,58,237,0.35)] rounded-[var(--radius-xl)] p-10 text-center">
+                <span class="text-5xl block mb-4">🏔️</span>
+                <h2 class="text-white text-2xl font-bold mb-4">Ketersediaan Unit Double Cabin</h2>
+                <p class="text-[var(--color-text-muted)] text-sm leading-relaxed max-w-[600px] mx-auto mb-6">
+                    Unit mobil double cabin adalah armada spesial dengan ketersediaan terbatas. Stok dan tipe yang tersedia (pick-up 4WD, kabin ganda diesel) bergantung pada jadwal &amp; armada aktif kami saat ini.
+                    <strong class="text-white block mt-3">Hubungi tim kami langsung via WhatsApp untuk konfirmasi unit yang tersedia, spesifikasi, dan harga terkini.</strong>
                 </p>
-            </div>
 
-            <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
-                @foreach ($doubleCabinTypes as $dc)
-                    <div class="relative bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:border-[var(--color-accent)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.25)]">
-                        @if ($dc['badge'])
-                            <span class="absolute -top-3.5 right-6 px-4 py-1 rounded-full bg-[image:var(--gradient-btn)] text-white text-xs font-bold shadow-md">
-                                {{ $dc['badge'] }}
-                            </span>
-                        @endif
-
-                        <div>
-                            <div class="text-4xl mb-4">{{ $dc['emoji'] }}</div>
-                            <h3 class="text-white text-xl font-bold mb-1">{{ $dc['name'] }}</h3>
-                            <div class="flex gap-2 mb-4 flex-wrap">
-                                <span class="inline-block px-3 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">{{ $dc['tag'] }}</span>
-                                <span class="inline-block px-3 py-0.5 rounded-full bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] text-[var(--color-text-light)] text-xs">{{ $dc['seat'] }}</span>
-                            </div>
-
-                            <p class="text-[var(--color-text-muted)] text-sm mb-5 leading-relaxed">{{ $dc['desc'] }}</p>
-
-                            <div class="mb-5">
-                                <p class="text-[var(--color-text-muted)] text-xs uppercase tracking-wider font-semibold mb-3">Fitur Unggulan:</p>
-                                <ul class="flex flex-col gap-2">
-                                    @foreach ($dc['features'] as $feat)
-                                        <li class="flex items-center gap-2.5 text-[var(--color-text-light)] text-xs">
-                                            <span class="text-[var(--color-accent)] font-bold">✓</span>
-                                            <span>{{ $feat }}</span>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-
-                            <div class="mb-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.06)] border border-[rgba(124,58,237,0.2)]">
-                                <p class="text-[var(--color-text-muted)] text-xs uppercase tracking-wider font-semibold mb-2">Terbaik untuk:</p>
-                                <div class="flex flex-wrap gap-2">
-                                    @foreach ($dc['best_for'] as $use)
-                                        <span class="px-2 py-1 rounded bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs">{{ $use }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
+                <div class="grid grid-cols-3 gap-4 mb-8 max-sm:grid-cols-1">
+                    @foreach ([
+                        ['📋', 'Konfirmasi Tipe Unit', 'Kami informasikan tipe & spesifikasi double cabin yang tersedia hari ini'],
+                        ['💰', 'Harga Transparan', 'Tarif sewa harian disampaikan langsung tanpa biaya tersembunyi'],
+                        ['📅', 'Cek Jadwal', 'Konfirmasi ketersediaan tanggal yang Anda butuhkan'],
+                    ] as [$icon, $title, $desc])
+                        <div class="p-4 rounded-[var(--radius-lg)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
+                            <div class="text-2xl mb-2">{{ $icon }}</div>
+                            <div class="text-white font-semibold text-sm mb-1">{{ $title }}</div>
+                            <div class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</div>
                         </div>
+                    @endforeach
+                </div>
 
-                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya ketersediaan & harga Sewa '.$dc['name'].' di Surabaya.') }}"
-                           class="w-full text-center py-3.5 rounded-[var(--radius-xl)] font-semibold text-sm no-underline bg-[image:var(--gradient-btn)] text-white shadow-md hover:opacity-95 transition-opacity"
-                           target="_blank" rel="noopener noreferrer">
-                            💬 Tanya Harga {{ $dc['name'] }}
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-
-            <div class="mt-10 p-6 rounded-[var(--radius-xl)] bg-[rgba(124,58,237,0.06)] border border-[rgba(124,58,237,0.2)] text-center">
-                <p class="text-white font-semibold text-base mb-2">Tidak menemukan tipe yang dicari?</p>
-                <p class="text-[var(--color-text-muted)] text-sm mb-4">Ketersediaan armada double cabin tergantung stok dan jadwal. Hubungi kami langsung untuk konfirmasi unit yang tersedia serta tipe lain yang mungkin ada.</p>
-                <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya ketersediaan armada Double Cabin di Surabaya.') }}"
-                   class="inline-flex items-center gap-2 px-7 py-3 rounded-[32px] font-semibold text-sm no-underline bg-[image:var(--gradient-btn)] text-white"
+                <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya ketersediaan & harga Sewa Mobil Double Cabin dari Surabaya. Tolong info unit yang tersedia.') }}"
+                   class="inline-flex items-center gap-2 px-9 py-4 rounded-[32px] font-bold text-base no-underline bg-[image:var(--gradient-btn)] text-white shadow-[0_4px_25px_rgba(124,58,237,0.5)] hover:scale-105 transition-all"
                    target="_blank" rel="noopener noreferrer">
-                    💬 Tanya Ketersediaan via WhatsApp
+                    💬 Tanya Ketersediaan Double Cabin
                 </a>
             </div>
         </div>
     </section>
 
+    {{-- ARMADA LAIN YANG TERSEDIA --}}
+    <x-armada-list
+        subtitle="Armada Tersedia di Queen Transport"
+        title="Pilihan Armada Lain yang Bisa Anda Sewa"
+        description="Selain double cabin, kami juga menyediakan berbagai armada premium untuk perjalanan wisata alam, dinas, dan adventure — semuanya include driver profesional."
+        wa-text="sewa mobil untuk perjalanan di Surabaya"
+    />
+
     {{-- DESTINASI ADVENTURE --}}
-    <section class="py-[90px]" id="destinasi">
+    <section class="py-[90px] bg-[var(--color-bg-2)]" id="destinasi">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Destinasi Favorit</span>
@@ -353,7 +267,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                     Destinasi Petualangan dari Surabaya <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Terbaik dengan Double Cabin</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
-                    Armada double cabin 4WD kami telah menjelajahi semua medan ini. Driver kami hafal setiap tikungan, jalur alternatif, dan waktu terbaik untuk berkunjung.
+                    Driver kami hafal setiap rute, jalur alternatif, dan waktu terbaik untuk berkunjung ke destinasi-destinasi alam Jawa Timur berikut.
                 </p>
             </div>
 
@@ -369,7 +283,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
             </div>
 
             <div class="mt-10 text-center">
-                <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin sewa mobil Double Cabin dari Surabaya untuk destinasi wisata alam.') }}"
+                <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin sewa mobil double cabin / armada 4WD dari Surabaya untuk destinasi wisata alam.') }}"
                    class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-sm no-underline bg-[image:var(--gradient-btn)] text-white shadow-[0_4px_20px_rgba(124,58,237,0.4)] transition-all hover:scale-105"
                    target="_blank" rel="noopener noreferrer">
                     🗺️ Rencanakan Perjalanan via WhatsApp
@@ -379,7 +293,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
     </section>
 
     {{-- USE CASES --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)]" id="peruntukan">
+    <section class="py-[90px]" id="peruntukan">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Peruntukan Layanan</span>
@@ -390,21 +304,18 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
 
             <div class="grid grid-cols-2 gap-6 max-md:grid-cols-1">
                 @foreach ([
-                    ['🧗', 'Ekspedisi & Wisata Alam Ekstrem', 'Bromo sunrise jeep, trekking Ijen, Semeru base camp, Baluran safari — medan berat yang hanya bisa ditaklukkan oleh armada 4WD bertenaga tinggi.', 'Toyota Hilux / Triton 4WD'],
-                    ['🏗️', 'Survei Lapangan & Site Visit Korporasi', 'Kunjungan ke area tambang, perkebunan, proyek konstruksi, atau lokasi terpencil yang tidak bisa dijangkau kendaraan biasa.', 'Semua Tipe Double Cabin'],
-                    ['📸', 'Photography & Videografi Alam Profesional', 'Membawa peralatan kamera, drone, tripod, dan perlengkapan studio — bak belakang double cabin adalah solusi terbaik.', 'Ford Ranger / Triton'],
-                    ['🎿', 'Adventure Tour & Outdoor Team Building', 'Sewa armada double cabin untuk kegiatan outbound korporasi, team building outdoor, atau adventure tour eksklusif.', 'Toyota Hilux / Triton'],
-                    ['🚜', 'Transportasi Logistik + Penumpang', 'Kombinasi unik double cabin: 4–5 penumpang di kabin + muatan di bak belakang untuk operasional lapangan yang efisien.', 'Semua Tipe Double Cabin'],
-                    ['🌿', 'Eco-Tourism & Agro-Wisata', 'Kunjungan ke kebun teh, kebun kopi, agro-wisata, atau area konservasi alam di seluruh Jawa Timur.', 'Toyota Hilux / Triton'],
-                ] as [$icon, $title, $desc, $note])
+                    ['🧗', 'Ekspedisi & Wisata Alam Ekstrem', 'Bromo sunrise, trekking Ijen, Baluran safari — medan berat yang memerlukan kendaraan bertenaga tinggi dengan ground clearance tinggi.'],
+                    ['🏗️', 'Survei Lapangan & Site Visit Korporasi', 'Kunjungan ke area tambang, perkebunan, proyek konstruksi, atau lokasi terpencil yang tidak bisa dijangkau kendaraan biasa.'],
+                    ['📸', 'Photography & Videografi Alam Profesional', 'Membawa peralatan kamera, drone, tripod, dan perlengkapan — bak belakang double cabin adalah solusi angkut terbaik.'],
+                    ['🎿', 'Adventure Tour & Outdoor Team Building', 'Sewa armada untuk kegiatan outbound korporasi, team building outdoor, atau adventure tour eksklusif rombongan kecil.'],
+                    ['🚜', 'Transportasi Logistik + Penumpang', 'Kombinasi unik: 4–5 penumpang di kabin nyaman + muatan di bak belakang untuk operasional lapangan yang efisien.'],
+                    ['🌿', 'Eco-Tourism & Agro-Wisata', 'Kunjungan ke kebun teh, kebun kopi, agro-wisata, atau area konservasi alam di seluruh Jawa Timur.'],
+                ] as [$icon, $title, $desc])
                     <div class="flex items-start gap-5 p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[rgba(124,58,237,0.4)] transition-all duration-300">
                         <div class="text-3xl flex-shrink-0 w-14 h-14 rounded-[var(--radius-lg)] bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] flex items-center justify-center">{{ $icon }}</div>
                         <div>
                             <h3 class="text-white font-bold text-base mb-2">{{ $title }}</h3>
-                            <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-3">{{ $desc }}</p>
-                            <span class="inline-block px-3 py-1 rounded-full bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.2)] text-[var(--color-accent)] text-xs">
-                                🚗 {{ $note }}
-                            </span>
+                            <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -412,8 +323,8 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
         </div>
     </section>
 
-    {{-- KEUNGGULAN & STANDAR LAYANAN --}}
-    <section class="py-[90px]" id="keunggulan">
+    {{-- KEUNGGULAN --}}
+    <section class="py-[90px] bg-[var(--color-bg-2)]" id="keunggulan">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="grid grid-cols-2 gap-16 items-start max-md:grid-cols-1">
                 <div>
@@ -428,9 +339,9 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                     <div class="flex flex-col gap-4 text-sm">
                         @foreach ([
                             ['01.', 'Driver Berpengalaman Off-Road Jatim', 'Driver kami bukan hanya hafal jalan — mereka berpengalaman melewati medan ekstrem Bromo, Ijen, Semeru, dan seluruh jalur alam Jawa Timur dengan aman.'],
-                            ['02.', 'Armada Siap Medan Berat', 'Setiap unit double cabin melalui pengecekan 4WD, ban, rem, mesin diesel, dan ground clearance sebelum keberangkatan — tidak ada kompromi soal keamanan.'],
-                            ['03.', 'Perlengkapan Emergency Tersedia', 'Unit dilengkapi dongkrak, ban serep, tali derek, dan kotak P3K sebagai standar perlengkapan perjalanan off-road yang bertanggung jawab.'],
-                            ['04.', 'Fleksibel untuk Semua Kebutuhan', 'Dari perjalanan harian wisata hingga ekspedisi multi-hari — kami menyediakan paket yang bisa disesuaikan sepenuhnya dengan kebutuhan Anda.'],
+                            ['02.', 'Armada Selalu Prima & Terawat', 'Setiap unit melalui pengecekan sistem 4WD, ban, rem, dan mesin sebelum keberangkatan — tidak ada kompromi soal keamanan.'],
+                            ['03.', 'Perlengkapan Emergency Tersedia', 'Unit dilengkapi dongkrak, ban serep, dan kotak P3K sebagai standar perlengkapan perjalanan off-road yang bertanggung jawab.'],
+                            ['04.', 'Fleksibel untuk Semua Kebutuhan', 'Dari perjalanan harian wisata hingga ekspedisi multi-hari — kami menyediakan paket yang bisa disesuaikan dengan kebutuhan Anda.'],
                         ] as [$num, $title, $desc])
                             <div class="flex items-start gap-3 pb-4 border-b border-[var(--color-border)] last:border-0 last:pb-0">
                                 <span class="text-[var(--color-accent)] font-bold text-lg flex-shrink-0">{{ $num }}</span>
@@ -444,19 +355,18 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                 </div>
 
                 <div class="flex flex-col gap-6">
-                    {{-- Fasilitas card --}}
                     <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-7">
                         <h3 class="text-white font-bold text-base mb-5">Fasilitas Standar Armada Double Cabin</h3>
                         <div class="grid grid-cols-1 gap-3">
                             @foreach ([
                                 ['🔩', 'Sistem 4WD — Siap Segala Medan'],
-                                ['❄️', 'AC Kabin Penuh — Dingin & Nyaman'],
+                                ['❄️', 'AC Kabin Penuh — Dingin &amp; Nyaman'],
                                 ['💺', 'Jok Empuk Kabin Ganda (4–5 Penumpang)'],
-                                ['📦', 'Bak Belakang Luas — Muat Logistik & Koper'],
-                                ['⛽', 'Mesin Diesel Bertenaga Besar & Efisien'],
+                                ['📦', 'Bak Belakang Luas — Muat Logistik &amp; Koper'],
+                                ['⛽', 'Mesin Diesel Bertenaga &amp; Efisien'],
                                 ['🛡️', 'Perlengkapan Emergency Off-Road'],
                                 ['👨‍✈️', 'Driver Off-Road Expert Berpengalaman'],
-                                ['🍎', 'Gratis Air Mineral & Snack (Hari Pertama)'],
+                                ['🍎', 'Gratis Air Mineral &amp; Snack (Hari Pertama)'],
                             ] as [$icon, $feat])
                                 <div class="flex items-center gap-3 text-[var(--color-text-light)] text-sm">
                                     <span class="text-lg">{{ $icon }}</span>
@@ -466,12 +376,11 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                         </div>
                     </div>
 
-                    {{-- CTA consultation card --}}
                     <div class="bg-[var(--gradient-card)] border border-[rgba(34,211,238,0.25)] rounded-[var(--radius-xl)] p-7 text-center">
                         <span class="text-4xl block mb-3">🏔️</span>
                         <h3 class="text-white font-bold text-base mb-2">Siap Rencanakan Ekspedisi Anda?</h3>
-                        <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-5">Tim kami siap membantu merencanakan rute, memilih unit terbaik, dan memastikan perjalanan adventure Anda aman &amp; berkesan.</p>
-                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi rencana perjalanan dengan sewa Double Cabin dari Surabaya.') }}"
+                        <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-5">Tim kami siap membantu merencanakan rute, mengkonfirmasi ketersediaan unit double cabin, dan memastikan perjalanan adventure Anda aman &amp; berkesan.</p>
+                        <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi rencana perjalanan adventure dengan sewa Double Cabin dari Surabaya.') }}"
                            class="block py-3.5 rounded-[var(--radius-xl)] font-bold text-sm no-underline bg-[image:var(--gradient-btn)] text-white shadow-lg hover:opacity-95 transition-opacity"
                            target="_blank" rel="noopener noreferrer">
                             💬 Konsultasi Gratis via WhatsApp
@@ -483,7 +392,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
     </section>
 
     {{-- HOW TO BOOK --}}
-    <section class="py-[80px] bg-[var(--color-bg-2)]">
+    <section class="py-[80px]">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Cara Pemesanan</span>
@@ -501,8 +410,8 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">02</span>
                     <div class="text-2xl mb-4">🏔️</div>
-                    <h3 class="text-white font-bold text-base mb-2">Pilih Tipe Double Cabin</h3>
-                    <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Tentukan unit: Hilux, Triton, atau Ranger — tim kami bantu pilih sesuai medan, kapasitas, dan kebutuhan Anda.</p>
+                    <h3 class="text-white font-bold text-base mb-2">Konfirmasi Unit</h3>
+                    <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Tim kami konfirmasi ketersediaan unit double cabin yang sesuai dengan medan, kapasitas, dan kebutuhan Anda.</p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
@@ -524,7 +433,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
 
     {{-- TESTIMONIALS --}}
     @if ($pelanggans->isNotEmpty())
-    <section class="py-[90px] border-t border-[var(--color-border)]">
+    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Ulasan Pelanggan</span>
@@ -571,27 +480,23 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                     ],
                     [
                         'q' => 'Apakah sewa double cabin di Surabaya sudah include driver?',
-                        'a' => 'Ya, 100% include driver profesional berpengalaman. Driver kami tidak hanya hafal rute Surabaya, tetapi juga berpengalaman mengoperasikan kendaraan 4WD di medan off-road Jawa Timur seperti Bromo, Ijen, dan jalur pegunungan lainnya.',
+                        'a' => 'Ya, 100% include driver profesional berpengalaman. Driver kami berpengalaman mengoperasikan kendaraan 4WD di medan off-road Jawa Timur seperti Bromo, Ijen, Semeru, dan jalur pegunungan lainnya.',
                     ],
                     [
                         'q' => 'Apakah double cabin bisa digunakan untuk medan off-road berat seperti Bromo?',
-                        'a' => 'Tentu. Itulah kelebihan utama double cabin dibanding kendaraan biasa — sistem 4WD dengan pengunci diferensial, ground clearance tinggi, mesin diesel bertorsi besar, dan ban khusus menjadikan armada ini pilihan terbaik untuk medan berbatu, berpasir, berlumpur, dan menanjak tajam.',
+                        'a' => 'Itulah kelebihan utama double cabin dibanding kendaraan biasa — sistem 4WD dengan pengunci diferensial, ground clearance tinggi, mesin diesel bertorsi besar, dan ban khusus menjadikan armada ini pilihan terbaik untuk medan berbatu, berpasir, berlumpur, dan menanjak tajam.',
                     ],
                     [
                         'q' => 'Berapa kapasitas penumpang dan bagasi mobil double cabin?',
-                        'a' => 'Kabin double cabin menampung 4–5 penumpang dengan nyaman (termasuk driver). Untuk bagasi, selain ruang kabin, bak belakang yang luas dapat memuat koper besar, perlengkapan camping, peralatan fotografi, atau logistik lapangan sesuai kebutuhan.',
+                        'a' => 'Kabin double cabin menampung 4–5 penumpang (termasuk driver). Untuk bagasi, bak belakang yang luas dapat memuat koper besar, perlengkapan camping, peralatan fotografi, atau logistik lapangan sesuai kebutuhan.',
                     ],
                     [
-                        'q' => 'Destinasi mana saja yang direkomendasikan menggunakan double cabin dari Surabaya?',
-                        'a' => 'Destinasi paling populer: Gunung Bromo (lewat jalur Tosari/Coban), Kawah Ijen Banyuwangi, Taman Nasional Baluran, Pantai Pulau Merah, jalur agro-wisata Malang-Batu, dan berbagai area konservasi alam di Jawa Timur yang memerlukan kendaraan bertenaga tinggi.',
+                        'q' => 'Bagaimana cara cek ketersediaan unit double cabin di Surabaya?',
+                        'a' => 'Ketersediaan unit double cabin bersifat terbatas dan bergantung pada jadwal aktif. Hubungi kami langsung via WhatsApp — tim kami akan mengkonfirmasi unit yang tersedia, spesifikasi, dan harga terkini secara cepat.',
                     ],
                     [
                         'q' => 'Apakah tersedia paket sewa double cabin multi-hari untuk ekspedisi panjang?',
-                        'a' => 'Tersedia. Kami menyediakan paket 1 hari, 2 hari, hingga seminggu atau lebih untuk ekspedisi panjang. Harga per hari paket multi-hari biasanya lebih kompetitif. Hubungi kami via WhatsApp untuk simulasi biaya dan rute perjalanan Anda.',
-                    ],
-                    [
-                        'q' => 'Bagaimana cara pesan sewa mobil double cabin di Surabaya?',
-                        'a' => 'Cukup hubungi kami via WhatsApp — sampaikan tanggal keberangkatan, tujuan perjalanan, jumlah penumpang, dan muatan yang dibawa. Tim kami akan merekomendasikan unit terbaik, konfirmasi ketersediaan, dan detail harga secara transparan.',
+                        'a' => 'Tersedia. Kami menyediakan paket 1 hari hingga seminggu atau lebih untuk ekspedisi panjang. Tarif per hari paket multi-hari biasanya lebih kompetitif. Hubungi kami via WhatsApp untuk simulasi biaya dan rute perjalanan Anda.',
                     ],
                 ] as $faq)
                     <details class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 transition-all hover:border-[rgba(124,58,237,0.4)]">
@@ -618,7 +523,7 @@ $description = 'Sewa mobil double cabin Surabaya ✓ Toyota Hilux, Mitsubishi Tr
                 Siap Sewa Mobil Double Cabin di Surabaya?
             </h2>
             <p class="text-[var(--color-text-muted)] text-base mb-8 max-w-[620px] mx-auto leading-relaxed">
-                Dari jalanan kota Surabaya hingga medan off-road paling menantang di Jawa Timur — armada double cabin &amp; driver expert kami siap menemani setiap perjalanan Anda.
+                Dari jalanan kota Surabaya hingga medan off-road paling menantang di Jawa Timur — hubungi tim kami untuk konfirmasi ketersediaan unit &amp; harga terbaik hari ini.
             </p>
 
             <div class="flex justify-center gap-4 flex-wrap">
