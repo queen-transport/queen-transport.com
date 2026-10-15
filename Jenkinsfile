@@ -1,4 +1,4 @@
-@Library('laravel-cpanel-pipeline@main') _
+@Library('jenkins-shared-library@main') _
 
 laravelCpanelDeploy(
     remoteAppPath : 'queen-transport.com',
