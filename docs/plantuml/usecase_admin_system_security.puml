@@ -1,0 +1,96 @@
+@startuml usecase_admin_system_security
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Helvetica", "Arial", sans-serif
+skinparam roundCorner 10
+skinparam shadowing true
+skinparam packageStyle rectangle
+
+skinparam actor {
+    BackgroundColor #F8FAFC
+    BorderColor #334155
+    FontColor #0F172A
+    FontSize 13
+}
+
+skinparam usecase {
+    BackgroundColor #EFF6FF
+    BorderColor #2563EB
+    FontColor #1E3A8A
+    FontSize 12
+    ArrowColor #475569
+    ArrowFontSize 11
+}
+
+title **Diagram Use Case - Panel Admin: Sistem, Keamanan & Pengaturan**\n(queen-transport.com)
+
+left to right direction
+
+actor "Administrator" as Admin << Human >>
+actor "Staff / Pengguna Terdaftar" as User << Human >>
+
+Admin --|> User : <<specialization>>
+
+rectangle "Panel Admin & Konfigurasi Sistem" {
+
+    package "Autentikasi & Keamanan Akun" {
+        usecase "Login ke Panel Admin" as UC_Login
+        usecase "Verifikasi Two-Factor Authentication (2FA)" as UC_2FA
+        usecase "Autentikasi via Passkeys / WebAuthn" as UC_PasskeyAuth
+        usecase "Konfirmasi Password Tindakan Sensitif" as UC_ConfirmPwd
+        usecase "Logout dari Sistem" as UC_Logout
+    }
+
+    package "Pengaturan Profil & Preferensi" {
+        usecase "Mengubah Profil (Nama & Email)" as UC_EditProfile
+        usecase "Mengubah Kata Sandi (Password)" as UC_ChangePwd
+        usecase "Mendaftarkan Perangkat Passkey" as UC_EnrollPasskey
+        usecase "Mengatur Tampilan Antarmuka (Tema Gelap/Terang)" as UC_Appearance
+    }
+
+    package "Dashboard & Analitik Bisnis" {
+        usecase "Melihat Widget Ringkasan Bisnis (Overview)" as UC_DashOverview
+        usecase "Melihat Grafik Tren Postingan per Bulan" as UC_DashChart
+        usecase "Memantau Daftar Artikel Terbaru" as UC_DashLatest
+    }
+
+    package "Pengaturan Situs (Site Settings)" {
+        usecase "Mengonfigurasi Video Hero Utama" as UC_SetHeroVideo
+        usecase "Mengonfigurasi Video Perawatan Rutin" as UC_SetCareVideo
+        usecase "Mengatur Informasi WhatsApp & Kontak Reservasi" as UC_SetContact
+        usecase "Mengatur Tautan Media Sosial & Identitas Brand" as UC_SetBrand
+    }
+
+    package "Pemeliharaan & Kebersihan Sistem" {
+        usecase "Pembersihan Otomatis Berkas Upload Yatim" as UC_FileCleanup
+        usecase "Backup Database & Penyimpanan Berkas" as UC_Backup
+    }
+}
+
+' Relasi Pengguna & Autentikasi
+User --> UC_Login
+User --> UC_Logout
+User --> UC_EditProfile
+User --> UC_ChangePwd
+User --> UC_EnrollPasskey
+User --> UC_Appearance
+
+UC_2FA ..> UC_Login : <<extend>>
+UC_PasskeyAuth ..> UC_Login : <<extend>>
+UC_ConfirmPwd ..> UC_ChangePwd : <<include>>
+UC_ConfirmPwd ..> UC_EnrollPasskey : <<include>>
+
+' Relasi Administrator
+Admin --> UC_DashOverview
+Admin --> UC_DashChart
+Admin --> UC_DashLatest
+Admin --> UC_SetHeroVideo
+Admin --> UC_SetCareVideo
+Admin --> UC_SetContact
+Admin --> UC_SetBrand
+Admin --> UC_Backup
+
+' Relasi Sistem Maintenance
+UC_FileCleanup ..> UC_SetHeroVideo : <<include>>
+UC_FileCleanup ..> UC_SetCareVideo : <<include>>
+
+@enduml

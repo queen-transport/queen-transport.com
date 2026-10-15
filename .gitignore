@@ -22,3 +22,5 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+docs/plantuml/*.png
+docs/plantuml/*.svg

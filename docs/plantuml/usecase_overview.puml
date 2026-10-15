@@ -1,0 +1,92 @@
+@startuml usecase_overview
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Helvetica", "Arial", sans-serif
+skinparam roundCorner 10
+skinparam shadowing true
+skinparam packageStyle rectangle
+
+skinparam actor {
+    BackgroundColor #F8FAFC
+    BorderColor #334155
+    FontColor #0F172A
+    FontSize 13
+}
+
+skinparam usecase {
+    BackgroundColor #EFF6FF
+    BorderColor #2563EB
+    FontColor #1E3A8A
+    FontSize 12
+    ArrowColor #475569
+    ArrowFontSize 11
+}
+
+title **Diagram Use Case - Overview Sistem Queen Transport**\n(queen-transport.com)
+
+left to right direction
+
+actor "Pengunjung / Calon Pelanggan" as Visitor << Human >>
+actor "Administrator" as Admin << Human >>
+actor "Layanan WhatsApp" as WhatsApp << External System >>
+actor "Mesin Pencari (Search Engine)" as Crawler << External System >>
+
+rectangle "Sistem Queen Transport" {
+
+    package "Website Publik" {
+        usecase "UC-01: Melihat Beranda &\nVideo Showcase Armada" as UC_Beranda
+        usecase "UC-02: Menjelajahi Katalog\n& Spesifikasi Armada" as UC_Katalog
+        usecase "UC-03: Reservasi / Sewa Mobil\nvia WhatsApp" as UC_Reservasi
+        usecase "UC-04: Melihat Galeri Layanan\n& Klien VIP" as UC_Galeri
+        usecase "UC-05: Membaca Artikel &\nBerita Blog" as UC_Blog
+        usecase "UC-06: Melihat Informasi Kontak\n& Lokasi Kantor" as UC_Kontak
+        usecase "UC-07: Mengakses Sitemap XML" as UC_Sitemap
+    }
+
+    package "Panel Admin (Filament CMS)" {
+        usecase "UC-08: Login & Autentikasi Aman\n(2FA / Passkey)" as UC_Login
+        usecase "UC-09: Memantau Dashboard\n& Statistik Bisnis" as UC_Dashboard
+        usecase "UC-10: Mengelola Data Armada\n(CRUD & Media)" as UC_KelolaArmada
+        usecase "UC-11: Mengelola Artikel, Kategori\n& Tag Blog" as UC_KelolaBlog
+        usecase "UC-12: Import Artikel dari\nWordPress (WXR XML)" as UC_ImportWP
+        usecase "UC-13: Mengelola Galeri &\nDokumentasi" as UC_KelolaGaleri
+        usecase "UC-14: Mengelola Portofolio\nPelanggan / Klien" as UC_KelolaPelanggan
+        usecase "UC-15: Mengonfigurasi Pengaturan Situs\n(Site Settings & Video Hero)" as UC_KelolaSettings
+        usecase "UC-16: Mengelola Profil &\nKeamanan Akun" as UC_Profil
+    }
+}
+
+' Relasi Pengunjung
+Visitor --> UC_Beranda
+Visitor --> UC_Katalog
+Visitor --> UC_Reservasi
+Visitor --> UC_Galeri
+Visitor --> UC_Blog
+Visitor --> UC_Kontak
+
+' Relasi Sistem Eksternal
+UC_Reservasi ..> UC_Katalog : <<include>>
+UC_Reservasi --> WhatsApp : "Mengarahkan pesan chat"
+Crawler --> UC_Sitemap : "Crawling / Indexing"
+Crawler --> UC_Blog : "Indexing artikel SEO"
+
+' Relasi Administrator
+Admin --> UC_Login
+Admin --> UC_Dashboard
+Admin --> UC_KelolaArmada
+Admin --> UC_KelolaBlog
+Admin --> UC_KelolaGaleri
+Admin --> UC_KelolaPelanggan
+Admin --> UC_KelolaSettings
+Admin --> UC_Profil
+
+' Relasi Dependensi Admin (Include / Extend)
+UC_Dashboard ..> UC_Login : <<include>>
+UC_KelolaArmada ..> UC_Login : <<include>>
+UC_KelolaBlog ..> UC_Login : <<include>>
+UC_KelolaGaleri ..> UC_Login : <<include>>
+UC_KelolaPelanggan ..> UC_Login : <<include>>
+UC_KelolaSettings ..> UC_Login : <<include>>
+UC_Profil ..> UC_Login : <<include>>
+UC_ImportWP ..> UC_KelolaBlog : <<extend>>
+
+@enduml

@@ -1,0 +1,95 @@
+@startuml usecase_admin_content_management
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Helvetica", "Arial", sans-serif
+skinparam roundCorner 10
+skinparam shadowing true
+skinparam packageStyle rectangle
+
+skinparam actor {
+    BackgroundColor #F8FAFC
+    BorderColor #334155
+    FontColor #0F172A
+    FontSize 13
+}
+
+skinparam usecase {
+    BackgroundColor #EFF6FF
+    BorderColor #2563EB
+    FontColor #1E3A8A
+    FontSize 12
+    ArrowColor #475569
+    ArrowFontSize 11
+}
+
+title **Diagram Use Case - Panel Admin: Manajemen Konten & Media**\n(queen-transport.com)
+
+left to right direction
+
+actor "Administrator\n(Content Manager)" as Admin << Human >>
+actor "Sumber Data WordPress\n(WXR XML Export)" as WP << External Data >>
+
+rectangle "Panel Admin Filament v5 (CMS)" {
+
+    package "Manajemen Armada (Fleet)" {
+        usecase "Melihat Daftar & Tabel Armada" as UC_ArmadaIndex
+        usecase "Menambah Armada Baru" as UC_ArmadaCreate
+        usecase "Mengedit Data & Spesifikasi Armada" as UC_ArmadaEdit
+        usecase "Menghapus Data Armada" as UC_ArmadaDelete
+        usecase "Mengatur Urutan Tampil (Sorting Order)" as UC_ArmadaSort
+        usecase "Mengatur Status Visibilitas (Published/Draft)" as UC_ArmadaToggle
+        usecase "Mengunggah Foto & Galeri Armada" as UC_ArmadaMedia
+    }
+
+    package "Manajemen Blog & Artikel" {
+        usecase "Melihat Daftar Artikel Postingan" as UC_PostIndex
+        usecase "Membuat Artikel Baru (Rich Editor)" as UC_PostCreate
+        usecase "Mengedit Artikel & Konten" as UC_PostEdit
+        usecase "Menghapus Artikel" as UC_PostDelete
+        usecase "Mengatur Meta SEO & OpenGraph Image" as UC_PostSEO
+        usecase "Mengelola Kategori Artikel (CRUD)" as UC_CategoryCRUD
+        usecase "Mengelola Tag Artikel (CRUD)" as UC_TagCRUD
+        usecase "Mengimpor Artikel dari WordPress" as UC_PostImport
+        usecase "Otomatisasi Pembuatan Kategori & Tag Baru" as UC_AutoTagCat
+    }
+
+    package "Manajemen Media & Reputasi" {
+        usecase "Mengelola Galeri Foto & Video Layanan" as UC_GaleriCRUD
+        usecase "Mengelola Berkas Lampiran (Attachments)" as UC_AttachCRUD
+        usecase "Mengelola Data Pelanggan & Klien Korporat" as UC_PelangganCRUD
+    }
+}
+
+' Hubungan Admin ke Manajemen Armada
+Admin --> UC_ArmadaIndex
+Admin --> UC_ArmadaCreate
+Admin --> UC_ArmadaEdit
+Admin --> UC_ArmadaDelete
+Admin --> UC_ArmadaSort
+Admin --> UC_ArmadaToggle
+
+UC_ArmadaMedia ..> UC_ArmadaCreate : <<extend>>
+UC_ArmadaMedia ..> UC_ArmadaEdit : <<extend>>
+
+' Hubungan Admin ke Blog
+Admin --> UC_PostIndex
+Admin --> UC_PostCreate
+Admin --> UC_PostEdit
+Admin --> UC_PostDelete
+Admin --> UC_CategoryCRUD
+Admin --> UC_TagCRUD
+Admin --> UC_PostImport
+
+UC_PostSEO ..> UC_PostCreate : <<extend>>
+UC_PostSEO ..> UC_PostEdit : <<extend>>
+UC_PostCreate ..> UC_CategoryCRUD : <<include>>
+UC_PostCreate ..> UC_TagCRUD : <<include>>
+
+UC_PostImport ..> UC_AutoTagCat : <<include>>
+WP --> UC_PostImport : "Menyediakan file export XML"
+
+' Hubungan Admin ke Galeri & Pelanggan
+Admin --> UC_GaleriCRUD
+Admin --> UC_AttachCRUD
+Admin --> UC_PelangganCRUD
+
+@enduml
