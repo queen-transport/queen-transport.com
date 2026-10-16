@@ -51,6 +51,22 @@
 
 @layer base {
     :root {
+        --color-border: rgba(124, 58, 237, 0.15);
+        --color-text-muted: #64748b;
+        --color-text-light: #475569;
+        --color-white: #ffffff;
+
+        --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #f5f3ff 50%, #e0f2fe 100%);
+        --gradient-card: linear-gradient(145deg, #ffffff, #f8fafc);
+        --gradient-cta: linear-gradient(135deg, #7c3aed, #0284c7);
+        --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #9333ea 50%, #0284c7 100%);
+
+        --shadow-glow-purple: 0 4px 20px rgba(124, 58, 237, 0.12);
+        --shadow-glow-cyan: 0 4px 20px rgba(2, 132, 199, 0.12);
+        --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+    }
+
+    .dark {
         --color-border: rgba(108, 56, 197, 0.25);
         --color-text-muted: #94a3b8;
         --color-text-light: #cbd5e1;
@@ -86,7 +102,7 @@
 input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
-    @apply outline-hidden ring-2 ring-purple-500/60 ring-offset-2 ring-offset-[#0a0c14];
+    @apply outline-hidden ring-2 ring-purple-500/60 ring-offset-2 ring-offset-white dark:ring-offset-[#0a0c14];
 }
 
 /* \[:where(&)\]:size-4 {

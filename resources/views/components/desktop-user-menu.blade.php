@@ -7,7 +7,7 @@
         data-test="sidebar-menu-button"
     />
 
-    <flux:menu class="border border-purple-500/20 bg-[#0f1220]/95 backdrop-blur-xl">
+    <flux:menu class="border border-purple-500/15 dark:border-purple-500/20 bg-white/95 dark:bg-[#0f1220]/95 backdrop-blur-xl">
         <div class="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
             <flux:avatar
                 :name="auth()->user()->name"
@@ -16,7 +16,7 @@
             />
             <div class="grid flex-1 text-start text-sm leading-tight">
                 <flux:heading class="truncate">{{ auth()->user()->name }}</flux:heading>
-                <flux:text class="truncate text-zinc-400">{{ auth()->user()->email }}</flux:text>
+                <flux:text class="truncate text-zinc-500 dark:text-zinc-400">{{ auth()->user()->email }}</flux:text>
             </div>
         </div>
         <flux:menu.separator />

@@ -5,7 +5,7 @@
                 {{ __('pagination.previous') }}
             </span>
         @else
-            <a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] no-underline hover:border-[var(--color-primary)] transition-colors">
+            <a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-900 dark:text-white bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] no-underline hover:border-[var(--color-primary)] transition-colors">
                 {{ __('pagination.previous') }}
             </a>
         @endif
@@ -21,7 +21,7 @@
                         @if ($page == $paginator->currentPage())
                             <span class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-[image:var(--gradient-btn)] rounded-[var(--radius-sm)]">{{ $page }}</span>
                         @else
-                            <a href="{{ $url }}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] no-underline hover:border-[var(--color-primary)] transition-colors">{{ $page }}</a>
+                            <a href="{{ $url }}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-900 dark:text-white bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] no-underline hover:border-[var(--color-primary)] transition-colors">{{ $page }}</a>
                         @endif
                     @endforeach
                 @endif
@@ -29,7 +29,7 @@
         </span>
 
         @if ($paginator->hasMorePages())
-            <a href="{{ $paginator->nextPageUrl() }}" rel="next" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] no-underline hover:border-[var(--color-primary)] transition-colors">
+            <a href="{{ $paginator->nextPageUrl() }}" rel="next" class="inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-900 dark:text-white bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] no-underline hover:border-[var(--color-primary)] transition-colors">
                 {{ __('pagination.next') }}
             </a>
         @else

@@ -14,7 +14,7 @@
 
             <div class="relative flex items-center justify-center my-1">
                 <div class="border-t border-purple-500/25 w-full"></div>
-                <span class="bg-[#0f1220] px-3 text-xs text-zinc-400 uppercase font-medium tracking-wider">atau masuk dengan email</span>
+                <span class="bg-white dark:bg-[#0f1220] px-3 text-xs text-zinc-500 dark:text-zinc-400 uppercase font-medium tracking-wider">atau masuk dengan email</span>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
                 />
 
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="absolute top-0 text-xs end-0 text-cyan-400 hover:text-cyan-300 transition-colors no-underline font-medium" wire:navigate>
+                    <a href="{{ route('password.request') }}" class="absolute top-0 text-xs end-0 text-purple-600 dark:text-cyan-400 hover:text-purple-700 dark:hover:text-cyan-300 transition-colors no-underline font-medium" wire:navigate>
                         {{ __('Lupa sandi?') }}
                     </a>
                 @endif
@@ -68,9 +68,9 @@
             </div>
         </form>
 
-        <div class="text-center text-sm text-zinc-400 pt-2 border-t border-purple-500/20">
+        <div class="text-center text-sm text-zinc-500 dark:text-zinc-400 pt-2 border-t border-purple-500/20">
             <span>{{ __('Belum memiliki akun?') }}</span>
-            <a href="{{ route('register') }}" class="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors no-underline ml-1" wire:navigate>
+            <a href="{{ route('register') }}" class="text-purple-600 dark:text-cyan-400 hover:text-purple-700 dark:hover:text-cyan-300 font-semibold transition-colors no-underline ml-1" wire:navigate>
                 {{ __('Daftar sekarang') }}
             </a>
         </div>

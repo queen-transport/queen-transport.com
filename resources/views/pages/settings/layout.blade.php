@@ -1,4 +1,4 @@
-<div class="bg-[#0f1220]/90 border border-purple-500/25 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-[0_16px_50px_rgba(0,0,0,0.6)]">
+<div class="bg-white/95 dark:bg-[#0f1220]/90 border border-purple-500/15 dark:border-purple-500/25 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-sm dark:shadow-[0_16px_50px_rgba(0,0,0,0.6)]">
     <div class="flex items-start max-md:flex-col gap-6">
         <div class="w-full pb-4 md:w-[220px] shrink-0">
             <flux:navlist aria-label="{{ __('Settings') }}" class="space-y-1">
@@ -8,12 +8,12 @@
             </flux:navlist>
         </div>
 
-        <div class="hidden md:block w-px self-stretch bg-purple-500/20"></div>
-        <div class="md:hidden w-full h-px bg-purple-500/20 my-2"></div>
+        <div class="hidden md:block w-px self-stretch bg-purple-500/15 dark:bg-purple-500/20"></div>
+        <div class="md:hidden w-full h-px bg-purple-500/15 dark:bg-purple-500/20 my-2"></div>
 
         <div class="flex-1 self-stretch min-w-0">
-            <h2 class="text-lg font-bold text-white font-['Cinzel',serif] tracking-wide">{{ $heading ?? '' }}</h2>
-            <p class="text-sm text-zinc-400 mt-0.5">{{ $subheading ?? '' }}</p>
+            <h2 class="text-lg font-bold text-zinc-900 dark:text-white font-['Cinzel',serif] tracking-wide">{{ $heading ?? '' }}</h2>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">{{ $subheading ?? '' }}</p>
 
             <div class="mt-6 w-full max-w-xl">
                 {{ $slot }}

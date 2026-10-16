@@ -10,7 +10,7 @@
                 {{ $code }}
             </div>
 
-            <h1 class="text-white text-[1.75rem] font-bold mb-4 max-sm:text-[1.4rem]">{{ $title }}</h1>
+            <h1 class="text-zinc-900 dark:text-white text-[1.75rem] font-bold mb-4 max-sm:text-[1.4rem]">{{ $title }}</h1>
 
             <p class="text-[var(--color-text-muted)] text-base leading-relaxed mb-10 max-w-[520px] mx-auto">
                 {{ $message }}
@@ -22,7 +22,7 @@
                     🏠 Kembali ke Beranda
                 </a>
                 <a href="{{ \App\Support\WhatsApp::link() }}" target="_blank" rel="noopener noreferrer"
-                   class="px-6 py-3 border border-[var(--color-border)] text-[var(--color-light)] rounded-[var(--radius-xl)] font-semibold text-sm no-underline hover:text-white">
+                   class="px-6 py-3 border border-[var(--color-border)] text-zinc-700 dark:text-zinc-200 rounded-[var(--radius-xl)] font-semibold text-sm no-underline hover:text-zinc-900 dark:hover:text-white">
                     💬 Hubungi Kami
                 </a>
             </div>

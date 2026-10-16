@@ -1,4 +1,37 @@
+// Automatically sync theme with user's device / system preferences (Dark/Light)
+function syncWithDeviceTheme() {
+    if (window.matchMedia) {
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }
+}
+
+// Clear any previous manual overrides so the device theme is strictly respected
+try {
+    localStorage.removeItem('theme');
+    localStorage.removeItem('flux.appearance');
+} catch (e) {}
+
+// Apply initial device theme
+syncWithDeviceTheme();
+
+// Listen in real-time to changes in device/OS theme preference
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        if (e.matches) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+
     const toggle = document.getElementById('navToggle');
     const menu = document.getElementById('navMenuMobile');
 

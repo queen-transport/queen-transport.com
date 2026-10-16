@@ -39,7 +39,7 @@
                     <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold block mb-2">{{ $subtitle }}</span>
                 @endif
                 @if ($title)
-                    <h2 class="text-white text-3xl font-bold">{!! $title !!}</h2>
+                    <h2 class="text-zinc-900 dark:text-white text-3xl font-bold">{!! $title !!}</h2>
                 @endif
                 @if ($description)
                     <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -62,7 +62,7 @@
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">{{ $armada->car_badge ?: 'Luxury Class' }}</span>
                             <span class="text-xs text-[var(--color-text-muted)]">{{ $armada->car_type ?? '6-7 Seat' }}</span>
                         </div>
-                        <h3 class="text-white text-xl font-bold mb-2">{{ $armada->title }}</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">{{ $armada->title }}</h3>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                             {{ Str::limit(strip_tags($armada->description), 110) }}
                         </p>
@@ -74,7 +74,7 @@
                             </ul>
                         @endif
                         @if ($armada->formatted_price)
-                            <div class="text-lg font-bold text-white mb-4">
+                            <div class="text-lg font-bold text-zinc-900 dark:text-white mb-4">
                                 {{ $armada->formatted_price }} <span class="text-xs text-[var(--color-text-muted)] font-normal">/ hari</span>
                             </div>
                         @endif

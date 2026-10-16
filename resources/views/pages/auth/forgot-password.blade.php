@@ -31,9 +31,9 @@
             </div>
         </form>
 
-        <div class="text-center text-sm text-zinc-400 pt-2 border-t border-purple-500/20">
+        <div class="text-center text-sm text-zinc-500 dark:text-zinc-400 pt-2 border-t border-purple-500/20">
             <span>{{ __('Ingat kata sandi Anda?') }}</span>
-            <a href="{{ route('login') }}" class="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors no-underline ml-1" wire:navigate>
+            <a href="{{ route('login') }}" class="text-purple-600 dark:text-cyan-400 hover:text-purple-700 dark:hover:text-cyan-300 font-semibold transition-colors no-underline ml-1" wire:navigate>
                 {{ __('Kembali untuk masuk') }}
             </a>
         </div>

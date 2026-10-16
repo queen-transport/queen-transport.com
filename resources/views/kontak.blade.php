@@ -9,7 +9,7 @@
                 ✦ LAYANAN SEPANJANG HARI
             </div>
 
-            <h1 class="text-[clamp(2rem,4vw,3.2rem)] font-bold text-white leading-[1.2] mb-4">
+            <h1 class="text-[clamp(2rem,4vw,3.2rem)] font-bold text-zinc-900 dark:text-white leading-[1.2] mb-4">
                 Hubungi <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">{{ config('site.brand') }}</span>
             </h1>
 
@@ -32,14 +32,14 @@
                             </span>
                             <span class="px-3 py-1 rounded-full bg-[rgba(37,211,102,0.15)] text-[#25d366] text-xs font-semibold">Sepanjang Hari</span>
                         </div>
-                        <h3 class="text-white font-bold text-lg mb-1">Customer Service</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-1">Customer Service</h3>
                         <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Reservasi &amp; Tanya Harga</p>
                         <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6">
                             Respon cepat untuk cek jadwal armada, rute, biaya sewa harian, dan konsultasi kebutuhan Anda.
                         </p>
                     </div>
                     <div class="space-y-3">
-                        <div class="text-white font-mono text-sm font-semibold tracking-wide">
+                        <div class="text-zinc-900 dark:text-white font-mono text-sm font-semibold tracking-wide">
                             +{{ \App\Support\WhatsApp::primaryNumber() }}
                         </div>
                         <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi dan tanya sewa armada') }}"
@@ -59,14 +59,14 @@
                             </span>
                             <span class="px-3 py-1 rounded-full bg-[rgba(124,58,237,0.2)] text-[var(--color-accent)] text-xs font-semibold">Direktur Utama</span>
                         </div>
-                        <h3 class="text-white font-bold text-lg mb-1">Pak Fauzan</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-1">Pak Fauzan</h3>
                         <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Manajemen &amp; Kerjasama VIP</p>
                         <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6">
                             Khusus kebutuhan sewa armada korporat, kontrak bulanan, kedinasan kenegaraan, atau kemitraan.
                         </p>
                     </div>
                     <div class="space-y-3">
-                        <div class="text-white font-mono text-sm font-semibold tracking-wide">
+                        <div class="text-zinc-900 dark:text-white font-mono text-sm font-semibold tracking-wide">
                             +6282231037255
                         </div>
                         <a href="{{ \App\Support\WhatsApp::link('Halo Pak Fauzan, saya ingin berkonsultasi mengenai layanan '.config('site.brand'), '6282231037255') }}"
@@ -85,7 +85,7 @@
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[700px] mx-auto mb-12">
                 <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Reservasi Cepat</span>
-                <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white mb-4">
+                <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-zinc-900 dark:text-white mb-4">
                     Pilih Kebutuhan Perjalanan <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Anda</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
@@ -99,7 +99,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-primary)]">
                     <div class="text-3xl mb-3">🚐</div>
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Toyota Hiace</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Toyota Hiace</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Pilihan tepat untuk rombongan keluarga besar, tour rombongan ziarah, kantor, dan tamu kehormatan.
                     </p>
@@ -113,7 +113,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-primary)]">
                     <div class="text-3xl mb-3">👑</div>
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Toyota Alphard VIP</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Toyota Alphard VIP</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Kenyamanan kelas satu dengan captain seat mewah untuk tamu VVIP, direksi, pengantin, dan acara kenegaraan.
                     </p>
@@ -127,7 +127,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-primary)]">
                     <div class="text-3xl mb-3">🚗</div>
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Xpander Ultimate</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Xpander Ultimate</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         MPV modern nan elegan, suspensi empuk, dan irit bahan bakar untuk mobilitas praktis di dalam &amp; luar kota.
                     </p>
@@ -141,7 +141,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-primary)]">
                     <div class="text-3xl mb-3">✈️</div>
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Antar-Jemput Bandara Juanda</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Antar-Jemput Bandara Juanda</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Penjemputan tepat waktu langsung di Terminal 1 atau Terminal 2 Juanda dengan driver ramah dan berseragam rapi.
                     </p>
@@ -155,7 +155,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-primary)]">
                     <div class="text-3xl mb-3">🕌</div>
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Paket Ziarah Wali 5 Jatim</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Paket Ziarah Wali 5 Jatim</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Rute ziarah komplit ke Sunan Ampel, Sunan Giri, Sunan Maulana Malik Ibrahim, Sunan Drajat, dan Sunan Bonang.
                     </p>
@@ -169,7 +169,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-primary)]">
                     <div class="text-3xl mb-3">🌄</div>
-                    <h3 class="text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Luar Kota &amp; Wisata</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 group-hover:text-[var(--color-accent)] transition-colors">Sewa Luar Kota &amp; Wisata</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Perjalanan bisnis atau wisata ke Malang, Batu, Bromo, Nganjuk, Madiun, Jember, hingga Banyuwangi dengan driver handal.
                     </p>
@@ -189,7 +189,7 @@
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 flex flex-col justify-between">
                     <div>
                         <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Lokasi Pool &amp; Garasi</span>
-                        <h2 class="text-white font-bold text-2xl mb-4">Kunjungi Kantor Kami</h2>
+                        <h2 class="text-zinc-900 dark:text-white font-bold text-2xl mb-4">Kunjungi Kantor Kami</h2>
                         <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6">
                             Garasi dan operasional kami berlokasi di area Ganting, Gedangan, Sidoarjo &mdash; lokasi yang sangat strategis dengan akses cepat menuju jalan tol dan Bandara Internasional Juanda.
                         </p>
@@ -198,21 +198,21 @@
                             <div class="flex items-start gap-3">
                                 <span class="text-xl">📍</span>
                                 <div>
-                                    <strong class="text-white block">Alamat Garasi:</strong>
+                                    <strong class="text-zinc-900 dark:text-white block">Alamat Garasi:</strong>
                                     <span>{{ config('site.address') }}</span>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="text-xl">🕐</span>
                                 <div>
-                                    <strong class="text-white block">Jam Operasional:</strong>
+                                    <strong class="text-zinc-900 dark:text-white block">Jam Operasional:</strong>
                                     <span>Layanan Sepanjang Hari</span>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="text-xl">🛡️</span>
                                 <div>
-                                    <strong class="text-white block">Fasilitas Unit:</strong>
+                                    <strong class="text-zinc-900 dark:text-white block">Fasilitas Unit:</strong>
                                     <span>Armada wangi, AC dingin, full audio, snack &amp; mineral water gratis hari pertama.</span>
                                 </div>
                             </div>
@@ -228,26 +228,26 @@
         <div class="max-w-[800px] mx-auto px-6">
             <div class="text-center mb-10">
                 <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Bantuan Cepat</span>
-                <h2 class="text-2xl font-bold text-white">Pertanyaan Seputar Pemesanan</h2>
+                <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Pertanyaan Seputar Pemesanan</h2>
             </div>
 
             <div class="space-y-4">
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-md)] p-6">
-                    <h3 class="text-white font-semibold text-base mb-2">Berapa lama waktu yang dibutuhkan untuk konfirmasi reservasi?</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-semibold text-base mb-2">Berapa lama waktu yang dibutuhkan untuk konfirmasi reservasi?</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Konfirmasi sangat cepat melalui WhatsApp. Dalam hitungan menit, tim customer service kami akan mengonfirmasi ketersediaan unit beserta detail driver yang bertugas.
                     </p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-md)] p-6">
-                    <h3 class="text-white font-semibold text-base mb-2">Apakah bisa memesan mobil secara mendadak atau dini hari?</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-semibold text-base mb-2">Apakah bisa memesan mobil secara mendadak atau dini hari?</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Bisa. Kami beroperasi sepanjang hari. Anda dapat menghubungi nomor WhatsApp Customer Service kami kapan pun saat membutuhkan armada mendesak.
                     </p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-md)] p-6">
-                    <h3 class="text-white font-semibold text-base mb-2">Bagaimana tata cara pembayaran sewa mobil?</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-semibold text-base mb-2">Bagaimana tata cara pembayaran sewa mobil?</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Pembayaran dapat dilakukan melalui transfer bank resmi atau tunai. Detail invoice dan nomor rekening akan dikirimkan langsung oleh CS setelah detail reservasi disepakati.
                     </p>

@@ -50,10 +50,20 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title ?? config('site.brand') }}">
     <meta name="twitter:description" content="{{ $description ?? config('site.tagline') }}">
-    <meta name="twitter:image" content="{{ $ogImageUrl }}">
+    <script>
+        (function () {
+            try {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
     @vite(['resources/css/public.css', 'resources/js/public.js'])
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-200">
 
 <a href="{{ \App\Support\WhatsApp::link() }}"
    class="wa-float fixed bottom-7 right-7 z-[9999] w-[60px] h-[60px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128c7e] flex items-center justify-center text-[1.8rem] text-white shadow-[0_4px_20px_rgba(37,211,102,0.45)] transition-all no-underline hover:scale-[1.1] hover:-translate-y-[3px]"

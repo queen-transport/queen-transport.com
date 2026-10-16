@@ -18,11 +18,11 @@
             @if ($thumbs->isNotEmpty())
                 <div class="mb-12">
                     <div class="text-center mb-6">
-                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Lihat Lebih Dekat</span>
-                        <h2 class="text-white text-[1.8rem] font-bold">Galeri Foto</h2>
+                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block font-semibold">Lihat Lebih Dekat</span>
+                        <h2 class="text-zinc-900 dark:text-white text-[1.8rem] font-bold">Galeri Foto</h2>
                     </div>
 
-                    <div class="relative rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface)] mb-4 flex items-center justify-center border border-[var(--color-border)]" style="max-height:520px; min-height:280px;">
+                    <div class="relative rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface)] mb-4 flex items-center justify-center border border-[var(--color-border)] shadow-sm" style="max-height:520px; min-height:280px;">
                         <img id="armada-viewer-img"
                              src="{{ Storage::disk('public')->url($thumbs->first()) }}"
                              alt="{{ $armada->title }}"
@@ -52,10 +52,10 @@
             @if ($armada->video)
                 <div class="mb-12">
                     <div class="text-center mb-6">
-                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Tonton Langsung</span>
-                        <h2 class="text-white text-[1.8rem] font-bold">Video Armada</h2>
+                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block font-semibold">Tonton Langsung</span>
+                        <h2 class="text-zinc-900 dark:text-white text-[1.8rem] font-bold">Video Armada</h2>
                     </div>
-                    <div class="rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-surface)] border border-[var(--color-border)]">
+                    <div class="rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm">
                         <video controls preload="metadata" playsinline class="w-full h-full object-cover">
                             <source src="{{ Storage::disk('public')->url($armada->video) }}">
                             Browser Anda tidak mendukung video.
@@ -64,17 +64,17 @@
                 </div>
             @endif
 
-            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-10 max-md:p-6">
+            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-10 max-md:p-6 shadow-sm">
                 <div class="mb-6">
                     @if ($armada->car_badge)
-                        <span class="inline-block px-4 py-1.5 rounded-full bg-[rgba(124,58,237,0.2)] border border-[rgba(124,58,237,0.4)] text-[var(--color-primary)] text-xs uppercase mb-4">{{ $armada->car_badge }}</span>
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-purple-500/15 border border-purple-500/30 text-[var(--color-primary)] text-xs uppercase mb-4 font-semibold">{{ $armada->car_badge }}</span>
                     @endif
-                    <h1 class="text-white text-[2rem] font-bold mb-2">{{ $armada->title }}</h1>
+                    <h1 class="text-zinc-900 dark:text-white text-[2rem] font-bold mb-2">{{ $armada->title }}</h1>
                     @if ($armada->car_type)
                         <p class="text-[var(--color-text-muted)] text-sm">{{ $armada->car_icon }} {{ $armada->car_type }}</p>
                     @endif
                     @if ($armada->price)
-                        <div class="text-white font-bold text-2xl mt-3 flex items-baseline gap-1">
+                        <div class="text-zinc-900 dark:text-white font-bold text-2xl mt-3 flex items-baseline gap-1">
                             <span class="text-sm font-normal text-[var(--color-accent)]">Rp</span>
                             <span>{{ number_format($armada->price, 0, ',', '.') }}</span>
                             <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
@@ -85,10 +85,10 @@
                 <div class="my-6 border-t border-b border-[var(--color-border)] py-6">
                     @if (!empty($armada->features))
                         <div class="mb-6">
-                            <h3 class="text-white text-sm mb-3 font-bold">Fitur Unggulan</h3>
+                            <h3 class="text-zinc-900 dark:text-white text-sm mb-3 font-bold">Fitur Unggulan</h3>
                             <div class="flex flex-wrap gap-2">
                                 @foreach ($armada->features as $feature)
-                                    <span class="px-3 py-1.5 rounded-[var(--radius-sm)] bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs">{{ $feature }}</span>
+                                    <span class="px-3 py-1.5 rounded-[var(--radius-sm)] bg-cyan-500/10 dark:bg-[rgba(34,211,238,0.08)] border border-cyan-500/20 dark:border-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-medium">{{ $feature }}</span>
                                 @endforeach
                             </div>
                         </div>
@@ -122,29 +122,29 @@
             <div class="mt-[72px] pt-[48px] border-t border-[var(--color-border)]">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                     <div>
-                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-2 block">Pengalaman Nyata</span>
-                        <h2 class="text-white text-[1.8rem] font-bold flex items-center gap-3">
+                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-2 block font-semibold">Pengalaman Nyata</span>
+                        <h2 class="text-zinc-900 dark:text-white text-[1.8rem] font-bold flex items-center gap-3">
                             <span>⭐</span> Ulasan Pelanggan
                             @if ($armada->approvedReviews->isNotEmpty())
                                 @php
                                     $avgRating = round($armada->approvedReviews->avg('rating'), 1);
                                 @endphp
-                                <span class="text-sm font-semibold px-3 py-1 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                                <span class="text-sm font-semibold px-3 py-1 rounded-full bg-amber-500/15 text-amber-500 dark:text-amber-400 border border-amber-500/30">
                                     ★ {{ number_format($avgRating, 1) }} / 5.0 ({{ $armada->approvedReviews->count() }} ulasan)
                                 </span>
                             @endif
                         </h2>
                     </div>
 
-                    <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[image:var(--gradient-btn)] text-white text-sm font-semibold shadow-[0_0_15px_rgba(124,58,237,0.4)] transition no-underline self-start sm:self-auto hover:opacity-95">
+                    <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[image:var(--gradient-btn)] text-white text-sm font-semibold shadow-xs transition no-underline self-start sm:self-auto hover:opacity-95">
                         ✍️ Tulis Ulasan untuk {{ $armada->title }}
                     </a>
                 </div>
 
                 @if ($armada->approvedReviews->isEmpty())
-                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 text-center max-w-lg mx-auto">
+                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 text-center max-w-lg mx-auto shadow-sm">
                         <span class="text-3xl block mb-2">🚗✨</span>
-                        <p class="text-white font-semibold">Belum ada ulasan untuk {{ $armada->title }}</p>
+                        <p class="text-zinc-900 dark:text-white font-semibold">Belum ada ulasan untuk {{ $armada->title }}</p>
                         <p class="text-[var(--color-text-muted)] text-sm mt-1 mb-4">Pernah menyewa kendaraan ini? Bagikan pengalaman Anda kepada pelanggan lain.</p>
                         <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold no-underline transition">
                             Tulis Ulasan Sekarang
@@ -153,24 +153,24 @@
                 @else
                     <div class="grid grid-cols-2 gap-6 max-md:grid-cols-1">
                         @foreach ($armada->approvedReviews as $rev)
-                            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 flex flex-col justify-between gap-4">
+                            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 flex flex-col justify-between gap-4 shadow-sm">
                                 <div class="space-y-3">
                                     <div class="flex items-center justify-between gap-2">
                                         <div class="flex items-center gap-3">
                                             @if ($rev->user?->avatar)
                                                 <img src="{{ $rev->user->avatar }}" alt="{{ $rev->user->name }}" class="w-10 h-10 rounded-full object-cover border border-purple-500/40">
                                             @else
-                                                <div class="w-10 h-10 rounded-full bg-purple-900/50 border border-purple-500/30 text-purple-200 text-xs font-bold flex items-center justify-center">
+                                                <div class="w-10 h-10 rounded-full bg-purple-500/10 dark:bg-purple-900/50 border border-purple-500/30 text-purple-700 dark:text-purple-200 text-xs font-bold flex items-center justify-center">
                                                     {{ $rev->user ? $rev->user->initials() : 'P' }}
                                                 </div>
                                             @endif
                                             <div>
-                                                <h4 class="text-white font-semibold text-sm leading-tight">{{ $rev->user?->name ?? 'Pelanggan Queen' }}</h4>
+                                                <h4 class="text-zinc-900 dark:text-white font-semibold text-sm leading-tight">{{ $rev->user?->name ?? 'Pelanggan Queen' }}</h4>
                                                 <span class="text-[0.7rem] text-[var(--color-text-muted)]">{{ $rev->created_at?->translatedFormat('d M Y') }}</span>
                                             </div>
                                         </div>
 
-                                        <div class="flex text-amber-400 text-sm">
+                                        <div class="flex text-amber-500 dark:text-amber-400 text-sm">
                                             @for ($s = 1; $s <= 5; $s++)
                                                 <span>{{ $s <= $rev->rating ? '★' : '☆' }}</span>
                                             @endfor
@@ -178,7 +178,7 @@
                                     </div>
 
                                     @if ($rev->title)
-                                        <h5 class="text-white font-medium text-sm">{{ $rev->title }}</h5>
+                                        <h5 class="text-zinc-900 dark:text-white font-medium text-sm">{{ $rev->title }}</h5>
                                     @endif
 
                                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed">{{ $rev->comment }}</p>
@@ -217,12 +217,12 @@
             @if ($related->isNotEmpty())
                 <div class="mt-[72px]">
                     <div class="text-center mb-8">
-                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Pilihan Lainnya</span>
-                        <h2 class="text-white text-[1.8rem] font-bold">Armada Lainnya</h2>
+                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block font-semibold">Pilihan Lainnya</span>
+                        <h2 class="text-zinc-900 dark:text-white text-[1.8rem] font-bold">Armada Lainnya</h2>
                     </div>
                     <div class="grid grid-cols-4 gap-6 max-md:grid-cols-2 max-sm:grid-cols-1">
                         @foreach ($related as $r)
-                            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] overflow-hidden">
+                            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] overflow-hidden shadow-sm">
                                 <div class="relative h-48 overflow-hidden bg-[var(--color-surface)] flex items-center justify-center text-5xl">
                                     @if ($r->featured_image)
                                         <img src="{{ Storage::disk('public')->url($r->featured_image) }}" alt="{{ $r->title }}" class="w-full h-full object-cover">
@@ -231,7 +231,7 @@
                                     @endif
                                 </div>
                                 <div class="p-5">
-                                    <div class="text-white font-bold text-[0.95rem] mb-1">{{ $r->title }}</div>
+                                    <div class="text-zinc-900 dark:text-white font-bold text-[0.95rem] mb-1">{{ $r->title }}</div>
                                     <div class="text-[var(--color-text-muted)] text-xs mb-4">{{ $r->car_type }}</div>
                                     <div class="border-t border-[var(--color-border)] pt-3">
                                         <a href="{{ route('armada.show', $r) }}" class="text-[var(--color-accent)] text-sm font-medium no-underline">Lihat Detail →</a>

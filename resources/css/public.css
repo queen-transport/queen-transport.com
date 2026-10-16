@@ -2,20 +2,9 @@
 
 @source '../views';
 
-@theme {
-    --color-bg: #0a0c14;
-    --color-bg-2: #0f1220;
-    --color-surface: #141728;
-    --color-surface-2: #1a1f35;
-    --color-primary: #7c3aed;
-    --color-primary-glow: #9d5cff;
-    --color-accent: #22d3ee;
-    --color-accent-glow: #67e8f9;
-    --color-pink: #d946ef;
-    --color-text: #e2e8f0;
-    --color-muted: #94a3b8;
-    --color-light: #cbd5e1;
+@custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
     --font-display: 'Cinzel', 'Georgia', serif;
     --font-body: 'Inter', 'Segoe UI', sans-serif;
     --font-accent: 'Orbitron', 'Courier New', monospace;
@@ -26,25 +15,63 @@
     --radius-xl: 32px;
 }
 
+:root {
+    --color-bg: #f8fafc;
+    --color-bg-2: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-2: #f1f5f9;
+    --color-primary: #7c3aed;
+    --color-primary-glow: #6d28d9;
+    --color-accent: #0284c7;
+    --color-accent-glow: #0ea5e9;
+    --color-pink: #c026d3;
+    --color-text: #334155;
+    --color-text-muted: #64748b;
+    --color-text-light: #475569;
+    --color-heading: #0f172a;
+    --color-border: rgba(124, 58, 237, 0.15);
+    --color-white: #ffffff;
+
+    --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #f5f3ff 50%, #e0f2fe 100%);
+    --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    --gradient-cta: linear-gradient(135deg, #7c3aed, #0284c7);
+    --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #9333ea 50%, #0284c7 100%);
+
+    --shadow-glow-purple: 0 4px 20px rgba(124, 58, 237, 0.12);
+    --shadow-glow-cyan: 0 4px 20px rgba(2, 132, 199, 0.12);
+    --shadow-card: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+    --color-bg: #0a0c14;
+    --color-bg-2: #0f1220;
+    --color-surface: #141728;
+    --color-surface-2: #1a1f35;
+    --color-primary: #7c3aed;
+    --color-primary-glow: #9d5cff;
+    --color-accent: #22d3ee;
+    --color-accent-glow: #67e8f9;
+    --color-pink: #d946ef;
+    --color-text: #e2e8f0;
+    --color-text-muted: #94a3b8;
+    --color-text-light: #cbd5e1;
+    --color-heading: #ffffff;
+    --color-border: rgba(108, 56, 197, 0.25);
+    --color-white: #ffffff;
+
+    --gradient-hero: linear-gradient(135deg, #0a0c14 0%, #1a1035 50%, #0f2030 100%);
+    --gradient-card: linear-gradient(145deg, #1a1f35, #0f1220);
+    --gradient-cta: linear-gradient(135deg, #7c3aed, #22d3ee);
+    --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #9d5cff 50%, #22d3ee 100%);
+
+    --shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.4);
+    --shadow-glow-cyan: 0 0 30px rgba(34, 211, 238, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
 @layer base {
-    :root {
-        --color-border: rgba(108, 56, 197, 0.25);
-        --color-text-muted: #94a3b8;
-        --color-text-light: #cbd5e1;
-        --color-white: #ffffff;
-
-        --gradient-hero: linear-gradient(135deg, #0a0c14 0%, #1a1035 50%, #0f2030 100%);
-        --gradient-card: linear-gradient(145deg, #1a1f35, #0f1220);
-        --gradient-cta: linear-gradient(135deg, #7c3aed, #22d3ee);
-        --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #9d5cff 50%, #22d3ee 100%);
-
-        --shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.4);
-        --shadow-glow-cyan: 0 0 30px rgba(34, 211, 238, 0.3);
-        --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
-
-        --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
     html {
         scroll-behavior: smooth;
     }
@@ -54,6 +81,7 @@
         color: var(--color-text);
         font-family: var(--font-body);
         line-height: 1.6;
+        transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     a {
@@ -68,9 +96,37 @@
 
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-display);
-        color: var(--color-white);
+        color: var(--color-heading);
         line-height: 1.2;
         letter-spacing: 0.02em;
+    }
+
+    /* Prevent white text on headings in light mode */
+    html:not(.dark) h1.text-white,
+    html:not(.dark) h2.text-white,
+    html:not(.dark) h3.text-white,
+    html:not(.dark) h4.text-white,
+    html:not(.dark) h5.text-white,
+    html:not(.dark) h6.text-white,
+    html:not(.dark) h1 .text-white,
+    html:not(.dark) h2 .text-white,
+    html:not(.dark) h3 .text-white,
+    html:not(.dark) h4 .text-white,
+    html:not(.dark) h5 .text-white,
+    html:not(.dark) h6 .text-white {
+        color: var(--color-heading);
+    }
+
+    /* Non-button text links that have text-white in light mode */
+    html:not(.dark) a.text-white:not([class*="bg-"]):not([class*="gradient"]) {
+        color: var(--color-heading);
+    }
+
+    /* In light mode, ensure table headings and cells are dark */
+    html:not(.dark) th.text-white,
+    html:not(.dark) td.text-white,
+    html:not(.dark) th {
+        color: var(--color-heading);
     }
 }
 
