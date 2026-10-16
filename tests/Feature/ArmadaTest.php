@@ -2,6 +2,7 @@
 
 use App\Filament\Resources\Armadas\Pages\CreateArmada;
 use App\Models\Armada;
+use App\Models\Review;
 use App\Models\User;
 use Livewire\Livewire;
 
@@ -90,4 +91,24 @@ test('gallery is persisted as a flat array of paths', function () {
         'armada/gallery/a.jpg',
         'armada/gallery/b.jpg',
     ]);
+});
+
+test('armada show displays approved reviews for that armada', function () {
+    $armada = Armada::factory()->create(['title' => 'Innova Zenix']);
+    $user = User::factory()->create(['name' => 'Pak Bambang']);
+
+    $review = Review::factory()->create([
+        'user_id' => $user->id,
+        'title' => 'Perjalanan Luar Kota Menyenangkan',
+        'comment' => 'Mobil bersih dan nyaman untuk keluarga.',
+        'status' => Review::STATUS_APPROVED,
+    ]);
+    $review->armadas()->attach($armada);
+
+    $response = $this->get(route('armada.show', $armada));
+
+    $response->assertOk()
+        ->assertSee('Ulasan Pelanggan')
+        ->assertSee('Pak Bambang')
+        ->assertSee('Perjalanan Luar Kota Menyenangkan');
 });

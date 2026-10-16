@@ -204,11 +204,16 @@
                                     @endforeach
                                 </div>
                             @endif
-                            <div class="border-t border-[var(--color-border)] pt-3 flex gap-3 flex-wrap">
-                                <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-xs font-medium no-underline">Lihat Detail →</a>
-                                <a href="{{ $armada->cta_url ?: \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya harga '.$armada->title) }}"
-                                   class="text-[#25d366] text-xs font-medium no-underline" target="_blank" rel="noopener noreferrer">
-                                    {{ $armada->cta_text ?: 'Tanya Harga' }}
+                            <div class="border-t border-[var(--color-border)] pt-3 flex items-center justify-between gap-2 flex-wrap">
+                                <div class="flex gap-3 items-center">
+                                    <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-xs font-semibold no-underline hover:underline">Lihat Detail →</a>
+                                    <a href="{{ $armada->cta_url ?: \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin tanya harga '.$armada->title) }}"
+                                       class="text-[#25d366] text-xs font-medium no-underline hover:underline" target="_blank" rel="noopener noreferrer">
+                                        {{ $armada->cta_text ?: 'Tanya Harga' }}
+                                    </a>
+                                </div>
+                                <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-1 text-xs text-amber-400 hover:text-amber-300 font-medium no-underline transition px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40">
+                                    <span>⭐</span> Ulas
                                 </a>
                             </div>
                         </div>

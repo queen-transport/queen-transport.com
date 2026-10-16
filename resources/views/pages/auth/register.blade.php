@@ -1,69 +1,95 @@
-<x-layouts::auth :title="__('Register')">
+<x-layouts::auth :title="__('Daftar Akun')">
     <div class="flex flex-col gap-6">
-        <x-auth-header :title="__('Create an account')" :description="__('Enter your details below to create your account')" />
+        <x-auth-header :title="__('Buat Akun Baru')" :description="__('Daftarkan diri Anda untuk pengalaman sewa transportasi terbaik')" />
 
         <!-- Session Status -->
-        <x-auth-session-status class="text-center" :status="session('status')" />
+        <x-auth-session-status :status="session('status')" />
 
-        <form method="POST" action="{{ route('register.store') }}" class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
+            <x-google-button>
+                {{ __('Daftar dengan Akun Google') }}
+            </x-google-button>
+
+            <div class="relative flex items-center justify-center my-1">
+                <div class="border-t border-purple-500/25 w-full"></div>
+                <span class="bg-[#0f1220] px-3 text-xs text-zinc-400 uppercase font-medium tracking-wider">atau daftar dengan email</span>
+            </div>
+        </div>
+
+        <form method="POST" action="{{ route('register.store') }}" class="flex flex-col gap-5">
             @csrf
+
             <!-- Name -->
-            <flux:input
-                name="name"
-                :label="__('Name')"
-                :value="old('name')"
-                type="text"
-                required
-                autofocus
-                autocomplete="name"
-                :placeholder="__('Full name')"
-            />
+            <div>
+                <flux:input
+                    name="name"
+                    :label="__('Nama Lengkap')"
+                    :value="old('name')"
+                    type="text"
+                    required
+                    autofocus
+                    autocomplete="name"
+                    :placeholder="__('Nama lengkap Anda')"
+                />
+            </div>
 
             <!-- Email Address -->
-            <flux:input
-                name="email"
-                :label="__('Email address')"
-                :value="old('email')"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="email@example.com"
-            />
+            <div>
+                <flux:input
+                    name="email"
+                    :label="__('Alamat Email')"
+                    :value="old('email')"
+                    type="email"
+                    required
+                    autocomplete="email"
+                    placeholder="nama@email.com"
+                />
+            </div>
 
             <!-- Password -->
-            <flux:input
-                name="password"
-                :label="__('Password')"
-                type="password"
-                required
-                autocomplete="new-password"
-                :placeholder="__('Password')"
-                passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
-                viewable
-            />
+            <div>
+                <flux:input
+                    name="password"
+                    :label="__('Kata Sandi')"
+                    type="password"
+                    required
+                    autocomplete="new-password"
+                    :placeholder="__('Buat kata sandi aman')"
+                    passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
+                    viewable
+                />
+            </div>
 
             <!-- Confirm Password -->
-            <flux:input
-                name="password_confirmation"
-                :label="__('Confirm password')"
-                type="password"
-                required
-                autocomplete="new-password"
-                :placeholder="__('Confirm password')"
-                passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
-                viewable
-            />
+            <div>
+                <flux:input
+                    name="password_confirmation"
+                    :label="__('Konfirmasi Kata Sandi')"
+                    type="password"
+                    required
+                    autocomplete="new-password"
+                    :placeholder="__('Ulangi kata sandi')"
+                    passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
+                    viewable
+                />
+            </div>
 
-            <div class="flex items-center justify-end">
-                <flux:button type="submit" variant="primary" class="w-full" data-test="register-user-button">
-                    {{ __('Create account') }}
-                </flux:button>
+            <div class="pt-2">
+                <button
+                    type="submit"
+                    class="w-full py-3 px-4 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 shadow-[0_4px_20px_rgba(124,58,237,0.4)] hover:shadow-[0_4px_25px_rgba(34,211,238,0.4)] transition-all cursor-pointer"
+                    data-test="register-user-button"
+                >
+                    {{ __('Daftar Sekarang') }}
+                </button>
             </div>
         </form>
 
-        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-400">
-            <span>{{ __('Already have an account?') }}</span>
-            <flux:link :href="route('login')" wire:navigate>{{ __('Log in') }}</flux:link>
+        <div class="text-center text-sm text-zinc-400 pt-2 border-t border-purple-500/20">
+            <span>{{ __('Sudah memiliki akun?') }}</span>
+            <a href="{{ route('login') }}" class="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors no-underline ml-1" wire:navigate>
+                {{ __('Masuk di sini') }}
+            </a>
         </div>
     </div>
 </x-layouts::auth>

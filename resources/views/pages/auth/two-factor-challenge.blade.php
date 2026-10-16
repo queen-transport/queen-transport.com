@@ -79,13 +79,12 @@
                         @enderror
                     </div>
 
-                    <flux:button
-                        variant="primary"
+                    <button
                         type="submit"
-                        class="w-full"
+                        class="w-full py-3 px-4 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 shadow-[0_4px_20px_rgba(124,58,237,0.4)] transition-all cursor-pointer"
                     >
-                        {{ __('Continue') }}
-                    </flux:button>
+                        {{ __('Lanjutkan') }}
+                    </button>
                 </div>
 
                 <div class="mt-5 space-x-0.5 text-sm leading-5 text-center">

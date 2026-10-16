@@ -107,11 +107,111 @@
                        target="_blank" rel="noopener noreferrer">
                         💬 {{ $ctaText }}
                     </a>
+                    <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}"
+                       class="inline-flex items-center gap-2 px-6 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 transition">
+                        ⭐ Beri Ulasan
+                    </a>
                     <a href="{{ route('armada.index') }}"
                        class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-2 border-[var(--color-accent)] text-[var(--color-accent)]">
                         ← Lihat Armada Lain
                     </a>
                 </div>
+            </div>
+
+            {{-- ULASAN PELANGGAN UNTUK ARMADA INI --}}
+            <div class="mt-[72px] pt-[48px] border-t border-[var(--color-border)]">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+                    <div>
+                        <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-2 block">Pengalaman Nyata</span>
+                        <h2 class="text-white text-[1.8rem] font-bold flex items-center gap-3">
+                            <span>⭐</span> Ulasan Pelanggan
+                            @if ($armada->approvedReviews->isNotEmpty())
+                                @php
+                                    $avgRating = round($armada->approvedReviews->avg('rating'), 1);
+                                @endphp
+                                <span class="text-sm font-semibold px-3 py-1 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                                    ★ {{ number_format($avgRating, 1) }} / 5.0 ({{ $armada->approvedReviews->count() }} ulasan)
+                                </span>
+                            @endif
+                        </h2>
+                    </div>
+
+                    <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[image:var(--gradient-btn)] text-white text-sm font-semibold shadow-[0_0_15px_rgba(124,58,237,0.4)] transition no-underline self-start sm:self-auto hover:opacity-95">
+                        ✍️ Tulis Ulasan untuk {{ $armada->title }}
+                    </a>
+                </div>
+
+                @if ($armada->approvedReviews->isEmpty())
+                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 text-center max-w-lg mx-auto">
+                        <span class="text-3xl block mb-2">🚗✨</span>
+                        <p class="text-white font-semibold">Belum ada ulasan untuk {{ $armada->title }}</p>
+                        <p class="text-[var(--color-text-muted)] text-sm mt-1 mb-4">Pernah menyewa kendaraan ini? Bagikan pengalaman Anda kepada pelanggan lain.</p>
+                        <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold no-underline transition">
+                            Tulis Ulasan Sekarang
+                        </a>
+                    </div>
+                @else
+                    <div class="grid grid-cols-2 gap-6 max-md:grid-cols-1">
+                        @foreach ($armada->approvedReviews as $rev)
+                            <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 flex flex-col justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="flex items-center gap-3">
+                                            @if ($rev->user?->avatar)
+                                                <img src="{{ $rev->user->avatar }}" alt="{{ $rev->user->name }}" class="w-10 h-10 rounded-full object-cover border border-purple-500/40">
+                                            @else
+                                                <div class="w-10 h-10 rounded-full bg-purple-900/50 border border-purple-500/30 text-purple-200 text-xs font-bold flex items-center justify-center">
+                                                    {{ $rev->user ? $rev->user->initials() : 'P' }}
+                                                </div>
+                                            @endif
+                                            <div>
+                                                <h4 class="text-white font-semibold text-sm leading-tight">{{ $rev->user?->name ?? 'Pelanggan Queen' }}</h4>
+                                                <span class="text-[0.7rem] text-[var(--color-text-muted)]">{{ $rev->created_at?->translatedFormat('d M Y') }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex text-amber-400 text-sm">
+                                            @for ($s = 1; $s <= 5; $s++)
+                                                <span>{{ $s <= $rev->rating ? '★' : '☆' }}</span>
+                                            @endfor
+                                        </div>
+                                    </div>
+
+                                    @if ($rev->title)
+                                        <h5 class="text-white font-medium text-sm">{{ $rev->title }}</h5>
+                                    @endif
+
+                                    <p class="text-[var(--color-text-light)] text-sm leading-relaxed">{{ $rev->comment }}</p>
+
+                                    @php
+                                        $revPhotos = $rev->getMedia('photos');
+                                        $revVideos = $rev->getMedia('videos');
+                                    @endphp
+
+                                    @if ($revPhotos->isNotEmpty())
+                                        <div class="flex flex-wrap gap-2 pt-2">
+                                            @foreach ($revPhotos as $p)
+                                                <a href="{{ $p->getUrl() }}" target="_blank" class="w-16 h-16 rounded-lg overflow-hidden border border-[var(--color-border)] hover:border-purple-400 transition block">
+                                                    <img src="{{ $p->getUrl() }}" alt="Foto ulasan" class="w-full h-full object-cover">
+                                                </a>
+                                            @endforeach
+                                        </div>
+                                    @endif
+
+                                    @if ($revVideos->isNotEmpty())
+                                        <div class="pt-2">
+                                            @foreach ($revVideos as $v)
+                                                <div class="w-full max-w-xs rounded-lg overflow-hidden border border-[var(--color-border)] bg-black">
+                                                    <video src="{{ $v->getUrl() }}" controls class="w-full h-32 object-contain"></video>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
 
             @if ($related->isNotEmpty())

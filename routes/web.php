@@ -1,9 +1,18 @@
 <?php
 
 use App\Http\Controllers\ArmadaController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
+
+// ======
+// GOOGLE AUTH
+// ======
+Route::prefix('auth/google')->group(function () {
+    Route::get('/', [GoogleAuthController::class, 'redirect'])->name('auth.google');
+    Route::get('/callback', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');
+});
 
 // ======
 // BASE

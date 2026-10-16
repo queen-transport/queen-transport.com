@@ -9,6 +9,7 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
@@ -21,8 +22,10 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string|null $google_id
+ * @property string|null $avatar
  * @property Carbon|null $email_verified_at
- * @property string $password
+ * @property string|null $password
  * @property string|null $two_factor_secret
  * @property string|null $two_factor_recovery_codes
  * @property Carbon|null $two_factor_confirmed_at
@@ -30,7 +33,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'password', 'google_id', 'avatar', 'email_verified_at'])]
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
 class User extends Authenticatable implements FilamentUser, PasskeyUser
 {
@@ -51,6 +54,14 @@ class User extends Authenticatable implements FilamentUser, PasskeyUser
     }
 
     /**
+     * Relation to reviews made by this user.
+     */
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    /**
      * Get the user's initials
      */
     public function initials(): string
@@ -62,8 +73,13 @@ class User extends Authenticatable implements FilamentUser, PasskeyUser
             : $initials;
     }
 
-    public function canAccessPanel(Panel $panel): bool
+    public function isAdmin(): bool
     {
         return $this->email === 'admin@queen-transport.com';
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->isAdmin();
     }
 }

@@ -12,6 +12,7 @@ Direktori ini berisi spesifikasi berkas diagram Use Case berbasis **PlantUML** u
 | 2 | [`usecase_public_website.puml`](usecase_public_website.puml) | [PNG](usecase_public_website.png) \| [SVG](usecase_public_website.svg) | **Website Publik & Customer Journey**: Alur eksplorasi armada, video showcase, blog SEO, galeri portofolio, dan alur booking WhatsApp. |
 | 3 | [`usecase_admin_content_management.puml`](usecase_admin_content_management.puml) | [PNG](usecase_admin_content_management.png) \| [SVG](usecase_admin_content_management.svg) | **Panel Admin (Manajemen Konten)**: Pengelolaan armada, blog post, kategori, tag, import WordPress (WXR XML), galeri & pelanggan. |
 | 4 | [`usecase_admin_system_security.puml`](usecase_admin_system_security.puml) | [PNG](usecase_admin_system_security.png) \| [SVG](usecase_admin_system_security.svg) | **Panel Admin (Keamanan & Sistem)**: Otentikasi Fortify 2FA, Passkeys / WebAuthn, widget analitik, pengaturan situs, dan backup. |
+| 5 | [`usecase_auth_review_dashboard.puml`](usecase_auth_review_dashboard.puml) | [PNG](usecase_auth_review_dashboard.png) \| [SVG](usecase_auth_review_dashboard.svg) | **Autentikasi, Dashboard & Sistem Ulasan**: Registrasi/login lokal & Google OAuth, portal dashboard, pembuatan ulasan bintang (1-5) + foto & video, relasi armada, pembatasan edit 24 jam, dan moderasi admin Filament. |
 
 ---
 

@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Contracts\ArmadaServiceInterface;
+use App\Contracts\ReviewServiceInterface;
 use App\Services\ArmadaService;
+use App\Services\ReviewService;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(ArmadaServiceInterface::class, ArmadaService::class);
+        $this->app->bind(ReviewServiceInterface::class, ReviewService::class);
     }
 
     /**

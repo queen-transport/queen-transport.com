@@ -1,0 +1,116 @@
+@startuml usecase_auth_review_dashboard
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Helvetica", "Arial", sans-serif
+skinparam roundCorner 10
+skinparam shadowing true
+skinparam packageStyle rectangle
+
+skinparam actor {
+    BackgroundColor #F8FAFC
+    BorderColor #334155
+    FontColor #0F172A
+    FontSize 13
+}
+
+skinparam usecase {
+    BackgroundColor #EFF6FF
+    BorderColor #2563EB
+    FontColor #1E3A8A
+    FontSize 12
+    ArrowColor #475569
+    ArrowFontSize 11
+}
+
+title **Diagram Use Case - Autentikasi, Dashboard & Sistem Ulasan Armada**\nQueen Transport (queen-transport.com)
+
+left to right direction
+
+actor "Pelanggan / Pengguna" as User << Human >>
+actor "Administrator" as Admin << Human >>
+actor "Google OAuth Service" as Google << External System >>
+
+rectangle "Sistem Queen Transport" {
+
+    package "Subsistem Autentikasi (Auth & Identity)" {
+        usecase "UC-A01: Registrasi Akun Baru\n(Email & Password)" as UC_Register
+        usecase "UC-A02: Masuk / Login Akun\n(Kredensial Lokal / Passkey)" as UC_Login
+        usecase "UC-A03: Autentikasi via Google OAuth\n(SSO Login / Register)" as UC_GoogleAuth
+        usecase "UC-A04: Permintaan Reset Sandi\n(Lupa Password via Email)" as UC_ForgotPassword
+        usecase "UC-A05: Mengatur Ulang Sandi\n(Reset Password via Token)" as UC_ResetPassword
+        usecase "UC-A06: Verifikasi Alamat Email" as UC_VerifyEmail
+        usecase "UC-A07: Keluar / Logout Akun" as UC_Logout
+    }
+
+    package "Subsistem User Dashboard" {
+        usecase "UC-D01: Mengakses Dashboard Pengguna" as UC_ViewDashboard
+        usecase "UC-D02: Melihat Statistik Ulasan Pribadi\n(Total, Approved, Pending)" as UC_Stats
+        usecase "UC-D03: Mengelola Profil, Kata Sandi\n& Keamanan Akun" as UC_Settings
+    }
+
+    package "Subsistem Komentar & Ulasan (Reviews & Ratings)" {
+        usecase "UC-R01: Membuat Ulasan & Rating Bintang\n(UUID Primary Key, 1-5 Bintang)" as UC_CreateReview
+        usecase "UC-R02: Mengaitkan Ulasan ke Armada\n(Opsional, Many-to-Many)" as UC_LinkArmada
+        usecase "UC-R03: Mengunggah Foto & Video Ulasan\n(Spatie Media Library)" as UC_UploadMedia
+        usecase "UC-R04: Akses Cepat Buat Ulasan\ndari Halaman Armada (URL Parameter)" as UC_QuickReview
+        usecase "UC-R05: Mengedit Ulasan Pribadi\n(Batas Waktu <= 24 Jam)" as UC_EditReview
+        usecase "UC-R06: Menghapus Ulasan Pribadi\n(Batas Waktu <= 24 Jam)" as UC_DeleteReview
+        usecase "UC-R07: Melihat Ulasan Publik &\nRating Rata-rata pada Detail Armada" as UC_ViewPublicReview
+    }
+
+    package "Panel Admin (Moderasi & Kelola Ulasan)" {
+        usecase "UC-M01: Meninjau Seluruh Ulasan Masuk\n(Filter: Status, Rating, Armada)" as UC_ReviewList
+        usecase "UC-M02: Menyetujui Ulasan (Approve)\nuntuk Tayang ke Publik" as UC_ApproveReview
+        usecase "UC-M03: Menolak Ulasan (Reject)" as UC_RejectReview
+        usecase "UC-M04: Menginput Ulasan Baru\nLangsung oleh Admin" as UC_AdminCreateReview
+        usecase "UC-M05: Mengedit / Menghapus Ulasan\n(Bypass Batas 24 Jam)" as UC_AdminManageReview
+    }
+}
+
+' ===================================
+' RELASI PENGGUNA / PELANGGAN
+' ===================================
+User --> UC_Register
+User --> UC_Login
+User --> UC_GoogleAuth
+User --> UC_ForgotPassword
+User --> UC_ResetPassword
+User --> UC_VerifyEmail
+User --> UC_Logout
+
+User --> UC_ViewDashboard
+User --> UC_Stats
+User --> UC_Settings
+
+User --> UC_CreateReview
+User --> UC_QuickReview
+User --> UC_EditReview
+User --> UC_DeleteReview
+User --> UC_ViewPublicReview
+
+' ===================================
+' RELASI GOOGLE OAUTH
+' ===================================
+UC_GoogleAuth ..> Google : <<communicate>>
+
+' ===================================
+' RELASI EXTEND & INCLUDE
+' ===================================
+UC_CreateReview ..> UC_LinkArmada : <<include>>
+UC_CreateReview <.. UC_UploadMedia : <<extend>>
+UC_QuickReview ..> UC_CreateReview : <<include>>
+
+UC_ViewDashboard <.. UC_CreateReview : <<extend>>
+UC_ViewDashboard <.. UC_EditReview : <<extend>>
+UC_ViewDashboard <.. UC_DeleteReview : <<extend>>
+
+' ===================================
+' RELASI ADMINISTRATOR
+' ===================================
+Admin --> UC_ReviewList
+Admin --> UC_ApproveReview
+Admin --> UC_RejectReview
+Admin --> UC_AdminCreateReview
+Admin --> UC_AdminManageReview
+Admin ..> UC_ViewDashboard : <<bypass>>
+
+@enduml

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ArmadaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -8,8 +9,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 // Get all armadas
-Route::controller(\App\Http\Controllers\Api\ArmadaController::class)
+Route::controller(ArmadaController::class)
     ->prefix('armadas')
     ->group(function () {
         Route::get('/', 'index');
-});
+    });

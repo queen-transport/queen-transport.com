@@ -1,11 +1,13 @@
 <?php
 
+use App\Support\WhatsApp;
+
 test('kontak page returns successful response and displays contact information', function () {
     $response = $this->get(route('kontak'));
 
     $response->assertOk();
     $response->assertSee(config('site.brand'));
-    $response->assertSee(\App\Support\WhatsApp::primaryNumber());
+    $response->assertSee(WhatsApp::primaryNumber());
     $response->assertSee('Pak Fauzan');
     $response->assertSee('6282231037255');
     $response->assertSee(config('site.address'));

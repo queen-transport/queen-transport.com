@@ -32,6 +32,21 @@
                 <a href="{{ route('blog.index') }}" class="text-sm text-[var(--color-light)] hover:text-white transition-colors {{ request()->routeIs('blog.*') ? 'text-white font-semibold' : '' }}">Blog</a>
                 <a href="{{ route('home') }}#faq" class="text-sm text-[var(--color-light)] hover:text-white transition-colors">FAQ</a>
                 <a href="{{ route('kontak') }}" class="text-sm text-[var(--color-light)] hover:text-white transition-colors {{ request()->routeIs('kontak') ? 'text-white font-semibold' : '' }}">Kontak</a>
+                <a href="{{ route('dashboard') }}" class="text-sm text-[var(--color-accent)] hover:text-white transition-colors font-medium {{ request()->routeIs('dashboard') ? 'text-white font-bold' : '' }}">
+                    📊 Dashboard
+                </a>
+
+                @auth
+                    <a href="{{ route('dashboard') }}"
+                       class="px-4 py-2 bg-gradient-to-r from-purple-600/30 to-indigo-600/30 border border-[var(--color-primary)] text-white hover:bg-purple-600/50 rounded-[var(--radius-xl)] font-semibold text-sm no-underline transition shadow-[0_0_15px_rgba(124,58,237,0.3)]">
+                        👤 {{ \Illuminate\Support\Str::limit(auth()->user()->name, 14) }}
+                    </a>
+                @else
+                    <a href="{{ route('login') }}"
+                       class="text-sm text-[var(--color-light)] hover:text-white transition-colors font-medium">
+                        Masuk / Daftar
+                    </a>
+                @endauth
 
                 <a href="{{ route('kontak') }}"
                    class="px-5 py-2.5 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm no-underline hover:opacity-95 transition-opacity">
@@ -59,6 +74,18 @@
             <a href="{{ route('blog.index') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">Blog / Artikel</a>
             <a href="{{ route('home') }}#faq" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">FAQ</a>
             <a href="{{ route('kontak') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)] {{ request()->routeIs('kontak') ? 'text-white font-semibold bg-[rgba(124,58,237,0.15)]' : '' }}">Kontak</a>
+            <a href="{{ route('dashboard') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-accent)] font-semibold hover:text-white hover:bg-[rgba(124,58,237,0.1)] flex items-center gap-2">
+                <span>📊</span> <span>Dashboard Pengguna</span>
+            </a>
+            @auth
+                <a href="{{ route('dashboard') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-zinc-300 font-medium hover:text-white hover:bg-[rgba(124,58,237,0.1)]">
+                    👤 Profil: {{ auth()->user()->name }}
+                </a>
+            @else
+                <a href="{{ route('login') }}" class="px-4 py-3 rounded-[var(--radius-sm)] text-sm text-[var(--color-light)] hover:text-white hover:bg-[rgba(124,58,237,0.1)]">
+                    🔑 Masuk / Daftar
+                </a>
+            @endauth
             <a href="{{ route('kontak') }}"
                class="mt-2 px-5 py-3 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm text-center no-underline">
                 📞 Hubungi Kami

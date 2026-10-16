@@ -18,6 +18,11 @@ class ArmadaController extends Controller
     public function show(Armada $armada, ArmadaServiceInterface $armadaService): View
     {
         $related = $armadaService->getRelated($armada);
+        $armada->load([
+            'approvedReviews' => fn ($q) => $q->latest(),
+            'approvedReviews.user',
+            'approvedReviews.media',
+        ]);
 
         return view('armada.show', compact('armada', 'related'));
     }

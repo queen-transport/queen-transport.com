@@ -2,18 +2,53 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
         @include('partials.head')
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=cinzel:600,700,800|orbitron:500,600,700" rel="stylesheet" />
+        <style>
+            :root {
+                --color-primary: #7c3aed;
+                --color-accent: #22d3ee;
+            }
+        </style>
     </head>
-    <body class="min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
-        <div class="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-            <div class="flex w-full max-w-sm flex-col gap-2">
-                <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 font-medium" wire:navigate>
-                    <span class="flex h-9 w-9 mb-1 items-center justify-center rounded-md">
-                        <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
-                    </span>
-                    <span class="sr-only">{{ config('app.name', 'Laravel') }}</span>
+    <body class="min-h-screen bg-[#0a0c14] text-zinc-100 antialiased relative overflow-x-hidden selection:bg-purple-600 selection:text-white">
+        {{-- AMBIENT GLOW EFFECTS --}}
+        <div class="fixed top-[-150px] left-[-150px] w-[500px] h-[500px] rounded-full bg-purple-600/20 blur-[130px] pointer-events-none"></div>
+        <div class="fixed bottom-[-150px] right-[-150px] w-[500px] h-[500px] rounded-full bg-cyan-500/15 blur-[130px] pointer-events-none"></div>
+
+        <div class="relative z-10 flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+            <div class="flex w-full max-w-md flex-col items-center gap-6">
+                {{-- LOGO BRANDING --}}
+                <a href="{{ route('home') }}" class="group flex flex-col items-center gap-2.5 no-underline transition-transform hover:scale-[1.02]">
+                    <img
+                        src="{{ asset('apple-touch-icon.png') }}"
+                        alt="{{ config('site.brand') }}"
+                        class="w-14 h-14 rounded-full border-2 border-purple-500 shadow-[0_0_25px_rgba(124,58,237,0.5)] object-cover bg-[#141728] transition-shadow group-hover:shadow-[0_0_35px_rgba(124,58,237,0.8)]"
+                    >
+                    <div class="flex flex-col items-center text-center">
+                        <span class="font-['Cinzel',serif] text-lg font-bold text-white tracking-[0.1em] leading-tight">
+                            {{ config('site.brand') }}
+                        </span>
+                        <span class="font-['Orbitron',sans-serif] text-[0.62rem] text-cyan-400 tracking-[0.2em] uppercase mt-0.5">
+                            ✦ Premium Transport Service
+                        </span>
+                    </div>
                 </a>
-                <div class="flex flex-col gap-6">
+
+                {{-- LUXURY AUTH CARD --}}
+                <div class="w-full rounded-[28px] border border-purple-500/30 bg-[#0f1220]/95 backdrop-blur-2xl p-7 sm:p-9 shadow-[0_16px_50px_rgba(0,0,0,0.7)]">
                     {{ $slot }}
+                </div>
+
+                {{-- KEMBALI KE WEBSITE --}}
+                <div class="flex items-center justify-center gap-4 text-xs text-zinc-400">
+                    <a href="{{ route('home') }}" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5 no-underline">
+                        <span>←</span> Kembali ke Beranda
+                    </a>
+                    <span class="text-zinc-600">•</span>
+                    <a href="{{ route('kontak') }}" class="hover:text-cyan-400 transition-colors no-underline">
+                        Bantuan / Kontak
+                    </a>
                 </div>
             </div>
         </div>

@@ -27,8 +27,13 @@
                                     Rp {{ number_format($armada->price, 0, ',', '.') }} <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
                                 </div>
                             @endif
-                            <div class="border-t border-[var(--color-border)] pt-3">
-                                <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-sm font-medium no-underline">Lihat Detail →</a>
+                            <div class="border-t border-[var(--color-border)] pt-3 flex items-center justify-between gap-2">
+                                <a href="{{ route('armada.show', $armada) }}" class="text-[var(--color-accent)] text-xs font-semibold no-underline hover:underline">
+                                    Lihat Detail →
+                                </a>
+                                <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-1 text-xs text-amber-400 hover:text-amber-300 font-medium no-underline transition px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40">
+                                    <span>⭐</span> Ulas Mobil
+                                </a>
                             </div>
                         </div>
                     </div>

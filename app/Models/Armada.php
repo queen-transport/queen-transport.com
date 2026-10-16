@@ -6,6 +6,7 @@ use Database\Factories\ArmadaFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -144,5 +145,23 @@ class Armada extends Model
         $gallery = $this->gallery ?? [];
 
         return ! empty($gallery[0]) ? $gallery[0] : null;
+    }
+
+    /**
+     * Reviews related to this armada.
+     */
+    public function reviews(): BelongsToMany
+    {
+        return $this->belongsToMany(Review::class, 'armada_review')->withTimestamps();
+    }
+
+    /**
+     * Approved reviews related to this armada.
+     */
+    public function approvedReviews(): BelongsToMany
+    {
+        return $this->belongsToMany(Review::class, 'armada_review')
+            ->where('reviews.status', Review::STATUS_APPROVED)
+            ->withTimestamps();
     }
 }

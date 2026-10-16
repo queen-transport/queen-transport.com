@@ -15,19 +15,21 @@
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
+
+                    <flux:sidebar.item icon="truck" :href="route('armada.index')" target="_blank">
+                        {{ __('Lihat Armada') }}
+                    </flux:sidebar.item>
+
+                    <flux:sidebar.item icon="globe-alt" :href="route('home')" target="_blank">
+                        {{ __('Website Queen') }}
+                    </flux:sidebar.item>
+
+                    @if (auth()->user()?->isAdmin())
+                        <flux:sidebar.item icon="cog-6-tooth" href="/admin">
+                            {{ __('Filament Admin') }}
+                        </flux:sidebar.item>
+                    @endif
                 </flux:sidebar.group>
-            </flux:sidebar.nav>
-
-            <flux:spacer />
-
-            <flux:sidebar.nav>
-                <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                    {{ __('Repository') }}
-                </flux:sidebar.item>
-
-                <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                    {{ __('Documentation') }}
-                </flux:sidebar.item>
             </flux:sidebar.nav>
 
             <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />
