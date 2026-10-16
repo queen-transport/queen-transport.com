@@ -250,7 +250,7 @@ class ReviewManager extends Component
         $availableArmadas = Armada::where('is_published', true)
             ->orderBy('sort')
             ->orderBy('title')
-            ->get(['id', 'title', 'car_type']);
+            ->get(['id', 'title', 'slug', 'car_type', 'car_badge', 'car_icon', 'price', 'featured_image', 'gallery']);
 
         $editingReview = $this->editingReviewId
             ? Review::with('media')->find($this->editingReviewId)

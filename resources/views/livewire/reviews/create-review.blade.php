@@ -24,34 +24,37 @@
     @endif
 
     {{-- HEADER HALAMAN --}}
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-950/60 via-zinc-900 to-zinc-900 border border-purple-500/20 p-6 md:p-8">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0a0c14] via-[#1a1035] to-[#0f2030] border border-purple-500/30 p-6 md:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-purple-600/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none"></div>
+
         <div class="relative z-10 space-y-2">
-            <div class="flex flex-wrap items-center gap-2">
-                <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2.5">
+                <h1 class="text-2xl font-bold text-white flex items-center gap-2 font-['Cinzel',serif] tracking-wide">
                     <span>✍️</span> Tulis Ulasan &amp; Pengalaman Sewa
                 </h1>
                 @if ($preselectedArmada)
-                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 border border-purple-500/40 text-purple-300">
+                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 border border-purple-400/40 text-purple-300 font-['Orbitron',sans-serif] tracking-wider uppercase">
                         🚗 {{ $preselectedArmada->title }} Otomatis Terpilih
                     </span>
                 @endif
             </div>
-            <p class="text-sm text-zinc-400 max-w-2xl">
+            <p class="text-sm text-zinc-400 max-w-2xl leading-relaxed">
                 Bagikan pengalaman nyata Anda selama menyewa armada dan layanan di Queen Transport. Ulasan Anda sangat berharga bagi kami dan calon pelanggan lain.
             </p>
         </div>
     </div>
 
     {{-- FORM ULASAN --}}
-    <div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-8 backdrop-blur-sm shadow-xl">
+    <div class="bg-[#0f1220]/95 border border-purple-500/25 rounded-3xl p-6 sm:p-8 space-y-8 backdrop-blur-2xl shadow-[0_16px_50px_rgba(0,0,0,0.7)]">
         <form wire:submit.prevent="submit" class="space-y-8">
             {{-- 1. PENILAIAN BINTANG --}}
-            <div class="space-y-3 pb-6 border-b border-zinc-800">
+            <div class="space-y-3 pb-6 border-b border-purple-500/20">
                 <label class="block text-sm font-semibold text-zinc-200">
                     Penilaian Bintang <span class="text-rose-400">*</span>
                 </label>
                 <div class="flex items-center gap-2 flex-wrap">
-                    <div class="flex items-center gap-1 bg-zinc-950 px-4 py-2 rounded-xl border border-zinc-800">
+                    <div class="flex items-center gap-1 bg-[#0a0c14] px-4 py-2 rounded-xl border border-purple-500/25 shadow-inner">
                         @for ($star = 1; $star <= 5; $star++)
                             <button
                                 type="button"
@@ -87,58 +90,83 @@
                 @error('rating') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
             </div>
 
-            {{-- 2. PILIH ARMADA --}}
-            <div class="space-y-3 pb-6 border-b border-zinc-800">
+            {{-- 2. PILIH ARMADA (DENGAN TAMPILAN FOTO TIAP ARMADA) --}}
+            <div class="space-y-3 pb-6 border-b border-purple-500/20">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                     <div>
                         <label class="block text-sm font-semibold text-zinc-200">
                             Pilih Armada yang Digunakan (Opsional)
                         </label>
                         <p class="text-xs text-zinc-400 mt-0.5">
-                            Armada yang diarahkan sudah dipilih otomatis. Anda tetap dapat memilih armada lain atau memilih lebih dari satu kendaraan:
+                            Pilih satu atau beberapa armada kendaraan yang Anda sewa:
                         </p>
                     </div>
-                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-purple-300 shrink-0 self-start sm:self-auto">
+                    <span class="text-xs font-medium px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/40 text-purple-300 shrink-0 self-start sm:self-auto shadow-sm">
                         {{ count($selectedArmadas) }} Armada Terpilih
                     </span>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
                     @foreach ($availableArmadas as $car)
                         @php
                             $isSelected = in_array($car->id, $selectedArmadas);
+                            $photoUrl = $car->photo_url;
                         @endphp
                         <div
                             wire:click="toggleArmada({{ $car->id }})"
-                            class="group relative flex items-center gap-3 p-3.5 rounded-xl border transition-all cursor-pointer {{ $isSelected ? 'bg-purple-950/40 border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.15)] ring-1 ring-purple-500/50' : 'bg-zinc-950/80 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/60' }}"
+                            class="group relative flex flex-col rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden {{ $isSelected ? 'bg-gradient-to-b from-purple-950/70 to-[#0f1220] border-purple-500 shadow-[0_0_25px_rgba(124,58,237,0.35)] ring-2 ring-purple-500/70 -translate-y-0.5' : 'bg-[#141728]/80 border-purple-500/20 hover:border-purple-500/50 hover:bg-[#1a1f35]/90 hover:-translate-y-0.5 shadow-md' }}"
                         >
-                            {{-- Checkbox --}}
-                            <div class="w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-colors {{ $isSelected ? 'bg-purple-600 border-purple-500 text-white' : 'border-zinc-700 bg-zinc-900 text-transparent group-hover:border-zinc-600' }}">
-                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
-                                </svg>
+                            {{-- Foto Armada Bila Ada --}}
+                            <div class="relative w-full h-36 bg-[#0a0c14] overflow-hidden">
+                                @if ($photoUrl)
+                                    <img
+                                        src="{{ $photoUrl }}"
+                                        alt="{{ $car->title }}"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        loading="lazy"
+                                    >
+                                @else
+                                    <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#141728] to-[#0a0c14] text-zinc-500">
+                                        <span class="text-4xl mb-1 group-hover:scale-110 transition-transform duration-300">{{ $car->car_icon ?: '🚗' }}</span>
+                                        <span class="text-[10px] text-zinc-500 font-medium tracking-wider uppercase font-['Orbitron',sans-serif]">Armada Queen</span>
+                                    </div>
+                                @endif
+
+                                {{-- Badge Pojok Kanan Atas Foto --}}
+                                @if ($car->car_badge)
+                                    <span class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-950/85 border border-purple-400/40 text-purple-200 backdrop-blur-md shadow-sm">
+                                        {{ $car->car_badge }}
+                                    </span>
+                                @endif
+
+                                {{-- Checkbox / Indicator Pojok Kiri Atas Foto --}}
+                                <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all backdrop-blur-md {{ $isSelected ? 'bg-purple-600 text-white shadow-[0_0_12px_rgba(124,58,237,0.8)] border border-purple-400/50' : 'bg-[#0a0c14]/75 text-zinc-400 border border-purple-500/20 group-hover:text-white' }}">
+                                    <span class="w-3.5 h-3.5 rounded-full flex items-center justify-center text-[10px] {{ $isSelected ? 'bg-white text-purple-600 font-black' : 'border border-zinc-500' }}">
+                                        @if ($isSelected) ✓ @endif
+                                    </span>
+                                    <span>{{ $isSelected ? 'Terpilih' : 'Pilih' }}</span>
+                                </div>
                             </div>
 
-                            {{-- Gambar Armada (Thumbnail) --}}
-                            @if ($car->featured_image)
-                                <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-zinc-800 bg-zinc-900">
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($car->featured_image) }}" alt="{{ $car->title }}" class="w-full h-full object-cover">
-                                </div>
-                            @else
-                                <div class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-xl shrink-0">
-                                    🚗
-                                </div>
-                            @endif
-
                             {{-- Info Armada --}}
-                            <div class="flex-1 min-w-0">
-                                <h4 class="text-xs font-semibold truncate {{ $isSelected ? 'text-white' : 'text-zinc-200' }}">
-                                    {{ $car->title }}
-                                </h4>
-                                @if ($car->car_type)
-                                    <span class="text-[10px] text-zinc-400 truncate block">
-                                        {{ $car->car_type }}
-                                    </span>
+                            <div class="p-3.5 flex flex-col justify-between flex-1 gap-2">
+                                <div>
+                                    <h4 class="text-sm font-bold leading-snug transition-colors {{ $isSelected ? 'text-white' : 'text-zinc-100 group-hover:text-cyan-300' }}">
+                                        {{ $car->title }}
+                                    </h4>
+                                    @if ($car->car_type)
+                                        <p class="text-xs text-zinc-400 mt-0.5 flex items-center gap-1">
+                                            <span>{{ $car->car_icon ?: '🚗' }}</span>
+                                            <span>{{ $car->car_type }}</span>
+                                        </p>
+                                    @endif
+                                </div>
+
+                                @if ($car->formatted_price)
+                                    <div class="pt-2 border-t border-purple-500/15 flex items-baseline justify-between text-xs">
+                                        <span class="text-[10px] text-zinc-400">Tarif Sewa</span>
+                                        <span class="font-bold text-cyan-300">{{ $car->formatted_price }} <span class="text-[10px] font-normal text-zinc-400">/hari</span></span>
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -156,7 +184,7 @@
                     type="text"
                     wire:model="title"
                     placeholder="Contoh: Perjalanan Nyaman &amp; Sopir Sangat Ramah"
-                    class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition"
+                    class="w-full px-4 py-3 rounded-xl bg-[#0a0c14] border border-purple-500/20 text-white placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition"
                 >
                 <p class="text-xs text-zinc-500">Ringkasan singkat ulasan pengalaman Anda (maksimal 150 karakter).</p>
                 @error('title') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
@@ -171,7 +199,7 @@
                     wire:model="comment"
                     rows="5"
                     placeholder="Ceritakan pengalaman Anda selama menggunakan armada atau layanan Queen Transport. Bagaimana kondisi kendaraan, ketepatan waktu penjemputan, keramahan sopir, hingga kemudahan reservasi..."
-                    class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition leading-relaxed"
+                    class="w-full px-4 py-3 rounded-xl bg-[#0a0c14] border border-purple-500/20 text-white placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition leading-relaxed"
                 ></textarea>
                 <div class="flex items-center justify-between text-xs text-zinc-500">
                     <span>Minimal 5 karakter, maksimal 2.000 karakter.</span>
@@ -181,7 +209,7 @@
             </div>
 
             {{-- 5. FOTO LAMPIRAN --}}
-            <div class="space-y-3 pb-6 border-b border-zinc-800">
+            <div class="space-y-3 pb-6 border-b border-purple-500/20">
                 <label class="block text-sm font-semibold text-zinc-200">
                     Unggah Foto (Opsional)
                 </label>
@@ -193,7 +221,7 @@
                     wire:model="photos"
                     multiple
                     accept="image/*"
-                    class="w-full text-xs text-zinc-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-purple-300 hover:file:bg-zinc-700 cursor-pointer"
+                    class="w-full text-xs text-zinc-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-[#141728] file:text-purple-300 hover:file:bg-[#1a1f35] cursor-pointer"
                 >
                 @error('photos.*') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
 
@@ -203,7 +231,7 @@
                         <span class="text-xs font-medium text-zinc-400 mb-2 block">Foto yang Akan Diunggah ({{ count($photos) }}):</span>
                         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
                             @foreach ($photos as $index => $photo)
-                                <div class="relative group rounded-xl overflow-hidden border border-zinc-700 bg-zinc-950 aspect-square">
+                                <div class="relative group rounded-xl overflow-hidden border border-purple-500/30 bg-[#0a0c14] aspect-square">
                                     <img src="{{ $photo->temporaryUrl() }}" alt="Preview" class="w-full h-full object-cover">
                                     <button
                                         type="button"
@@ -221,7 +249,7 @@
             </div>
 
             {{-- 6. VIDEO LAMPIRAN --}}
-            <div class="space-y-3 pb-6 border-b border-zinc-800">
+            <div class="space-y-3 pb-6 border-b border-purple-500/20">
                 <label class="block text-sm font-semibold text-zinc-200">
                     Unggah Video (Opsional)
                 </label>
@@ -233,7 +261,7 @@
                     wire:model="videos"
                     multiple
                     accept="video/*"
-                    class="w-full text-xs text-zinc-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-purple-300 hover:file:bg-zinc-700 cursor-pointer"
+                    class="w-full text-xs text-zinc-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-[#141728] file:text-purple-300 hover:file:bg-[#1a1f35] cursor-pointer"
                 >
                 @error('videos.*') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
 
@@ -243,7 +271,7 @@
                         <span class="text-xs font-medium text-zinc-400 block">Video yang Akan Diunggah ({{ count($videos) }}):</span>
                         <div class="flex flex-wrap gap-2">
                             @foreach ($videos as $vIndex => $video)
-                                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-800 border border-zinc-700 text-xs text-zinc-300">
+                                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#141728] border border-purple-500/25 text-xs text-zinc-300">
                                     <span>🎥 {{ $video->getClientOriginalName() }}</span>
                                     <button
                                         type="button"
@@ -267,12 +295,12 @@
             </div>
 
             {{-- INFORMASI KEBIJAKAN --}}
-            <div class="rounded-xl bg-purple-500/10 border border-purple-500/20 p-4 text-xs text-purple-300 space-y-1.5">
-                <p class="font-semibold flex items-center gap-1.5">
-                    <span>ℹ️</span> Informasi Moderasi Ulasan:
+            <div class="rounded-2xl bg-purple-950/30 border border-purple-500/30 p-4 sm:p-5 text-xs text-purple-200 space-y-2 backdrop-blur-sm">
+                <p class="font-semibold flex items-center gap-2 text-sm text-cyan-300">
+                    <span>ℹ️</span> Informasi Kebijakan &amp; Moderasi Ulasan:
                 </p>
                 <ul class="list-disc list-inside space-y-1 text-zinc-400">
-                    <li>Setiap ulasan akan diperiksa dan diverifikasi oleh tim kami terlebih dahulu sebelum ditampilkan ke publik.</li>
+                    <li>Setiap ulasan akan diverifikasi terlebih dahulu sebelum ditayangkan ke publik di halaman armada terkait.</li>
                     <li>Sesuai kebijakan layanan, Anda dapat melakukan revisi (edit) atau menghapus ulasan ini maksimal dalam waktu 24 jam setelah dikirim melalui Dashboard.</li>
                 </ul>
             </div>
@@ -281,7 +309,7 @@
             <div class="flex items-center justify-between pt-4">
                 <a
                     href="{{ route('dashboard') }}"
-                    class="px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-zinc-300 text-sm font-medium transition cursor-pointer no-underline"
+                    class="px-5 py-2.5 rounded-xl bg-[#141728] hover:bg-[#1a1f35] border border-purple-500/20 text-zinc-300 text-sm font-medium transition cursor-pointer no-underline"
                 >
                     Batal
                 </a>
@@ -289,7 +317,7 @@
                 <button
                     type="submit"
                     wire:loading.attr="disabled"
-                    class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-purple-600/30 transition-all cursor-pointer disabled:opacity-50"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-500 hover:opacity-95 text-white font-semibold text-sm shadow-[0_0_25px_rgba(124,58,237,0.4)] transition-all cursor-pointer disabled:opacity-50"
                 >
                     <span wire:loading.remove wire:target="submit">🚀 Kirim Ulasan</span>
                     <span wire:loading wire:target="submit">⏳ Mengirim ulasan...</span>

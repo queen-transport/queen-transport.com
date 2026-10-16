@@ -148,6 +148,34 @@ class Armada extends Model
     }
 
     /**
+     * Get primary photo URL for the armada if available.
+     *
+     * @return Attribute<string|null, void>
+     */
+    protected function photoUrl(): Attribute
+    {
+        return Attribute::make(
+            get: function (): ?string {
+                $image = $this->featured_image;
+                if (empty($image)) {
+                    $gallery = $this->gallery ?? [];
+                    $image = ! empty($gallery[0]) ? $gallery[0] : null;
+                }
+
+                if (empty($image)) {
+                    return null;
+                }
+
+                if (Str::startsWith($image, ['http://', 'https://'])) {
+                    return $image;
+                }
+
+                return Storage::disk('public')->url($image);
+            }
+        );
+    }
+
+    /**
      * Reviews related to this armada.
      */
     public function reviews(): BelongsToMany

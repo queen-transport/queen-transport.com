@@ -123,3 +123,24 @@ test('user can upload photos and videos with review', function () {
     $review = Review::where('user_id', $user->id)->first();
     expect($review->getMedia('photos'))->toHaveCount(1);
 });
+
+test('armada photo is displayed when available in review form', function () {
+    $user = User::factory()->create();
+    $armadaWithPhoto = Armada::factory()->create([
+        'title' => 'Alphard Luxury Photo Test',
+        'featured_image' => 'https://example.com/alphard.jpg',
+    ]);
+    $armadaWithoutPhoto = Armada::factory()->create([
+        'title' => 'Innova Tanpa Foto Test',
+        'featured_image' => null,
+        'gallery' => [],
+    ]);
+
+    $this->actingAs($user);
+
+    Livewire::test(CreateReview::class)
+        ->assertSee('https://example.com/alphard.jpg')
+        ->assertSee('Alphard Luxury Photo Test')
+        ->assertSee('Innova Tanpa Foto Test')
+        ->assertSee('Armada Queen');
+});

@@ -18,9 +18,9 @@
     @endif
 
     {{-- HEADER KELOLA ULASAN --}}
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 backdrop-blur-sm">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-[#0f1220]/90 border border-purple-500/25 rounded-2xl p-6 backdrop-blur-xl shadow-lg">
         <div>
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2 font-['Cinzel',serif] tracking-wide">
                 <span>⭐</span> Ulasan &amp; Pengalaman Sewa
             </h2>
             <p class="text-sm text-zinc-400 mt-1">
@@ -29,7 +29,7 @@
         </div>
         <a
             href="{{ route('reviews.create') }}"
-            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-purple-600/20 transition-all cursor-pointer shrink-0 no-underline"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-500 hover:opacity-95 text-white font-semibold text-sm shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all cursor-pointer shrink-0 no-underline"
         >
             <span>✍️</span> Tulis Ulasan Baru
         </a>
@@ -37,8 +37,8 @@
 
     {{-- DAFTAR ULASAN SAYA --}}
     @if ($reviews->isEmpty())
-        <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-12 text-center flex flex-col items-center justify-center">
-            <div class="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-3xl mb-4">
+        <div class="bg-[#0f1220]/60 border border-purple-500/20 rounded-2xl p-12 text-center flex flex-col items-center justify-center backdrop-blur-xl">
+            <div class="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-3xl mb-4 shadow-[0_0_20px_rgba(124,58,237,0.2)]">
                 💬
             </div>
             <h3 class="text-base font-semibold text-zinc-200">Belum ada ulasan yang dibuat</h3>
@@ -47,7 +47,7 @@
             </p>
             <a
                 href="{{ route('reviews.create') }}"
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-sm font-medium transition cursor-pointer no-underline"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:opacity-90 text-white text-sm font-semibold transition shadow-md cursor-pointer no-underline"
             >
                 <span>➕</span> Buat Ulasan Pertama Anda
             </a>
@@ -55,7 +55,7 @@
     @else
         <div class="grid grid-cols-1 gap-5">
             @foreach ($reviews as $rev)
-                <div class="bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-6 transition-colors space-y-4">
+                <div class="bg-[#0f1220]/90 border border-purple-500/20 hover:border-purple-500/40 rounded-2xl p-6 transition-all shadow-lg backdrop-blur-xl space-y-4">
                     {{-- Baris Atas: Rating, Status, Tanggal --}}
                     <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-zinc-800/80">
                         <div class="flex items-center gap-3">
@@ -191,16 +191,16 @@
     @endif
     {{-- MODAL EDIT REVIEW --}}
     @if ($showEditModal && $editingReview)
-        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-            <div class="bg-zinc-900 border border-zinc-700 rounded-2xl w-full max-w-xl p-6 space-y-5 my-8 shadow-2xl">
-                <div class="flex items-center justify-between pb-3 border-b border-zinc-800">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+            <div class="bg-[#0f1220] border border-purple-500/30 rounded-3xl w-full max-w-2xl p-6 sm:p-8 space-y-6 my-8 shadow-[0_25px_60px_rgba(0,0,0,0.8)]">
+                <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2 font-['Cinzel',serif] tracking-wide">
                         <span>✏️</span> Edit Ulasan
                     </h3>
                     <button type="button" wire:click="$set('showEditModal', false)" class="text-zinc-400 hover:text-white text-lg">✕</button>
                 </div>
 
-                <form wire:submit.prevent="submitEdit" class="space-y-4">
+                <form wire:submit.prevent="submitEdit" class="space-y-5">
                     {{-- Rating Bintang --}}
                     <div>
                         <label class="block text-sm font-medium text-zinc-300 mb-2">Penilaian Bintang (1 - 5) <span class="text-rose-400">*</span></label>
@@ -219,19 +219,34 @@
                         @error('rating') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
                     </div>
 
-                    {{-- Pilih Armada --}}
+                    {{-- Pilih Armada (Dengan Foto Bila Ada) --}}
                     <div>
                         <label class="block text-sm font-medium text-zinc-300 mb-1.5">Armada yang Digunakan (Opsional)</label>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-36 overflow-y-auto p-2 rounded-xl bg-zinc-950 border border-zinc-800">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-56 overflow-y-auto p-2.5 rounded-xl bg-[#0a0c14] border border-purple-500/20">
                             @foreach ($availableArmadas as $armada)
-                                <label class="flex items-center gap-2 text-xs text-zinc-300 cursor-pointer hover:text-white">
+                                @php
+                                    $isSelectedArmada = in_array($armada->id, $selectedArmadas);
+                                @endphp
+                                <label class="flex items-center gap-3 p-2.5 rounded-xl border cursor-pointer transition-all {{ $isSelectedArmada ? 'bg-purple-950/40 border-purple-500 text-white shadow-[0_0_12px_rgba(124,58,237,0.2)]' : 'bg-[#141728]/70 border-purple-500/15 hover:border-purple-500/40 text-zinc-300' }}">
                                     <input
                                         type="checkbox"
                                         value="{{ $armada->id }}"
                                         wire:model="selectedArmadas"
-                                        class="rounded bg-zinc-800 border-zinc-700 text-purple-600 focus:ring-purple-500"
+                                        class="rounded bg-[#0a0c14] border-purple-500/40 text-purple-600 focus:ring-purple-500"
                                     >
-                                    <span class="truncate">{{ $armada->title }}</span>
+                                    @if ($armada->photo_url)
+                                        <img src="{{ $armada->photo_url }}" alt="{{ $armada->title }}" class="w-11 h-11 rounded-lg object-cover border border-purple-500/30 shrink-0">
+                                    @else
+                                        <div class="w-11 h-11 rounded-lg bg-purple-950/40 border border-purple-500/20 flex items-center justify-center text-lg shrink-0">
+                                            {{ $armada->car_icon ?: '🚗' }}
+                                        </div>
+                                    @endif
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold truncate">{{ $armada->title }}</div>
+                                        @if ($armada->car_type)
+                                            <div class="text-[10px] text-zinc-400 truncate">{{ $armada->car_type }}</div>
+                                        @endif
+                                    </div>
                                 </label>
                             @endforeach
                         </div>
@@ -243,7 +258,7 @@
                         <input
                             type="text"
                             wire:model="title"
-                            class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-white text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                            class="w-full px-3.5 py-2.5 rounded-xl bg-[#0a0c14] border border-purple-500/20 text-white placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                         >
                         @error('title') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
                     </div>
@@ -254,7 +269,7 @@
                         <textarea
                             wire:model="comment"
                             rows="4"
-                            class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-white text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                            class="w-full px-3.5 py-2.5 rounded-xl bg-[#0a0c14] border border-purple-500/20 text-white placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                         ></textarea>
                         @error('comment') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
                     </div>
@@ -268,11 +283,11 @@
                             <label class="block text-sm font-medium text-zinc-300 mb-1.5">Berkas Media Saat Ini</label>
                             <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
                                 @foreach ($existingMedia as $med)
-                                    <div class="relative rounded-xl overflow-hidden border {{ in_array($med->id, $removeMediaIds) ? 'border-rose-500 opacity-40' : 'border-zinc-700' }} group">
+                                    <div class="relative rounded-xl overflow-hidden border {{ in_array($med->id, $removeMediaIds) ? 'border-rose-500 opacity-40' : 'border-purple-500/20' }} group">
                                         @if (str_starts_with($med->mime_type, 'image/'))
                                             <img src="{{ $med->getUrl() }}" alt="Media" class="w-full h-20 object-cover">
                                         @else
-                                            <div class="w-full h-20 bg-zinc-950 flex items-center justify-center text-xs text-zinc-400">
+                                            <div class="w-full h-20 bg-[#0a0c14] flex items-center justify-center text-xs text-zinc-400">
                                                 🎥 Video
                                             </div>
                                         @endif
@@ -309,7 +324,7 @@
                             wire:model="photos"
                             multiple
                             accept="image/*"
-                            class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-purple-400 hover:file:bg-zinc-700 cursor-pointer"
+                            class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#141728] file:text-purple-300 hover:file:bg-[#1a1f35] cursor-pointer"
                         >
                         @error('photos.*') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
                     </div>
@@ -322,7 +337,7 @@
                             wire:model="videos"
                             multiple
                             accept="video/*"
-                            class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-purple-400 hover:file:bg-zinc-700 cursor-pointer"
+                            class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#141728] file:text-purple-300 hover:file:bg-[#1a1f35] cursor-pointer"
                         >
                         @error('videos.*') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
                     </div>
@@ -332,18 +347,18 @@
                     </div>
 
                     {{-- Tombol Aksi --}}
-                    <div class="flex items-center justify-end gap-3 pt-3 border-t border-zinc-800">
+                    <div class="flex items-center justify-end gap-3 pt-3 border-t border-purple-500/20">
                         <button
                             type="button"
                             wire:click="$set('showEditModal', false)"
-                            class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-sm font-medium transition cursor-pointer"
+                            class="px-4 py-2.5 rounded-xl bg-[#141728] hover:bg-[#1a1f35] text-zinc-300 border border-purple-500/20 text-sm font-medium transition cursor-pointer"
                         >
                             Batal
                         </button>
                         <button
                             type="submit"
                             wire:loading.attr="disabled"
-                            class="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white text-sm font-semibold transition cursor-pointer"
+                            class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:opacity-95 disabled:opacity-50 text-white text-sm font-semibold transition cursor-pointer shadow-[0_0_15px_rgba(124,58,237,0.3)]"
                         >
                             Simpan Perubahan
                         </button>

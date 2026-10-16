@@ -153,7 +153,7 @@ class CreateReview extends Component
         $availableArmadas = Armada::where('is_published', true)
             ->orderBy('sort')
             ->orderBy('title')
-            ->get(['id', 'title', 'slug', 'car_type', 'featured_image']);
+            ->get(['id', 'title', 'slug', 'car_type', 'car_badge', 'car_icon', 'price', 'featured_image', 'gallery']);
 
         return view('livewire.reviews.create-review', [
             'availableArmadas' => $availableArmadas,

@@ -104,3 +104,23 @@ test('visiting dashboard with review_armada redirects to reviews.create', functi
         ->test(ReviewManager::class)
         ->assertRedirect(route('reviews.create', ['armada' => $armada->id]));
 });
+
+test('review manager edit modal displays armada photo when available', function () {
+    $user = User::factory()->create();
+    $armada = Armada::factory()->create([
+        'title' => 'Innova Zenix Hybrid Modal Test',
+        'featured_image' => 'https://example.com/zenix.jpg',
+    ]);
+    $review = Review::factory()->create([
+        'user_id' => $user->id,
+        'created_at' => now()->subHours(2),
+    ]);
+
+    $this->actingAs($user);
+
+    Livewire::test(ReviewManager::class)
+        ->call('openEditModal', $review->id)
+        ->assertSet('showEditModal', true)
+        ->assertSee('https://example.com/zenix.jpg')
+        ->assertSee('Innova Zenix Hybrid Modal Test');
+});
