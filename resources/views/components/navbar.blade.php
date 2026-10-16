@@ -47,11 +47,6 @@
                         Masuk / Daftar
                     </a>
                 @endauth
-
-                <a href="{{ route('kontak') }}"
-                   class="px-5 py-2.5 bg-[image:var(--gradient-btn)] text-white rounded-[var(--radius-xl)] font-semibold text-sm no-underline hover:opacity-95 transition-opacity">
-                    📞 Hubungi Kami
-                </a>
             </div>
 
             <button class="group relative flex md:hidden flex-col items-center justify-center gap-[5px] w-11 h-11 shrink-0 rounded-[var(--radius-sm)] border border-[rgba(124,58,237,0.4)] bg-[rgba(124,58,237,0.08)]"
