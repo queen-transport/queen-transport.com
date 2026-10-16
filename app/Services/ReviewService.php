@@ -5,9 +5,9 @@ namespace App\Services;
 use App\Contracts\ReviewServiceInterface;
 use App\Models\Review;
 use App\Models\User;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ReviewService implements ReviewServiceInterface
@@ -21,6 +21,8 @@ class ReviewService implements ReviewServiceInterface
      */
     public function createReview(User $user, array $data, array $photos = [], array $videos = []): Review
     {
+        Gate::forUser($user)->authorize('create', Review::class);
+
         logger()->info('Attempting to create review for user', [
             'user_id' => $user->id,
             'rating' => $data['rating'] ?? null,
@@ -74,15 +76,7 @@ class ReviewService implements ReviewServiceInterface
      */
     public function updateReview(Review $review, User $user, array $data, array $newPhotos = [], array $newVideos = [], array $removeMediaIds = []): Review
     {
-        if (! $review->canBeEditedOrDeletedBy($user)) {
-            logger()->warning('Unauthorized review update attempt', [
-                'review_id' => $review->id,
-                'user_id' => $user->id,
-                'is_locked' => $review->isLockedForUser(),
-            ]);
-
-            throw new AuthorizationException('Ulasan ini tidak dapat diedit karena telah melewati batas waktu 24 jam atau Anda bukan pemilik ulasan.');
-        }
+        Gate::forUser($user)->authorize('update', $review);
 
         logger()->info('Updating review', [
             'review_id' => $review->id,
@@ -135,15 +129,7 @@ class ReviewService implements ReviewServiceInterface
      */
     public function deleteReview(Review $review, User $user): bool
     {
-        if (! $review->canBeEditedOrDeletedBy($user)) {
-            logger()->warning('Unauthorized review deletion attempt', [
-                'review_id' => $review->id,
-                'user_id' => $user->id,
-                'is_locked' => $review->isLockedForUser(),
-            ]);
-
-            throw new AuthorizationException('Ulasan ini tidak dapat dihapus karena telah melewati batas waktu 24 jam atau Anda bukan pemilik ulasan.');
-        }
+        Gate::forUser($user)->authorize('delete', $review);
 
         logger()->info('Deleting review', [
             'review_id' => $review->id,
@@ -169,6 +155,10 @@ class ReviewService implements ReviewServiceInterface
      */
     public function approveReview(Review $review): Review
     {
+        if (auth()->check()) {
+            Gate::authorize('approve', $review);
+        }
+
         $review->update(['status' => Review::STATUS_APPROVED]);
 
         logger()->info('Review approved', [
@@ -183,6 +173,10 @@ class ReviewService implements ReviewServiceInterface
      */
     public function rejectReview(Review $review): Review
     {
+        if (auth()->check()) {
+            Gate::authorize('reject', $review);
+        }
+
         $review->update(['status' => Review::STATUS_REJECTED]);
 
         logger()->info('Review rejected', [
@@ -201,6 +195,10 @@ class ReviewService implements ReviewServiceInterface
      */
     public function adminCreateReview(array $data, array $photos = [], array $videos = []): Review
     {
+        if (auth()->check()) {
+            Gate::authorize('adminCreate', Review::class);
+        }
+
         logger()->info('Admin creating review', [
             'user_id' => $data['user_id'],
             'rating' => $data['rating'],

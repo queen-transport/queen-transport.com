@@ -1,6 +1,13 @@
 <div class="space-y-6">
     {{-- ALERT / NOTIFIKASI --}}
-    @if ($feedbackMessage)
+    @if (session()->has('feedbackMessage'))
+        <div class="rounded-xl p-4 flex items-center justify-between border {{ session('feedbackType') === 'success' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-rose-500/10 border-rose-500/30 text-rose-400' }}">
+            <div class="flex items-center gap-3">
+                <span class="text-xl">{{ session('feedbackType') === 'success' ? '✅' : '⚠️' }}</span>
+                <span class="text-sm font-medium">{{ session('feedbackMessage') }}</span>
+            </div>
+        </div>
+    @elseif ($feedbackMessage)
         <div class="rounded-xl p-4 flex items-center justify-between border {{ $feedbackType === 'success' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-rose-500/10 border-rose-500/30 text-rose-400' }}">
             <div class="flex items-center gap-3">
                 <span class="text-xl">{{ $feedbackType === 'success' ? '✅' : '⚠️' }}</span>
@@ -20,13 +27,12 @@
                 Bagikan ulasan dan penilaian Anda mengenai armada serta layanan Queen Transport.
             </p>
         </div>
-        <button
-            type="button"
-            wire:click="openCreateModal"
-            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-purple-600/20 transition-all cursor-pointer shrink-0"
+        <a
+            href="{{ route('reviews.create') }}"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-purple-600/20 transition-all cursor-pointer shrink-0 no-underline"
         >
             <span>✍️</span> Tulis Ulasan Baru
-        </button>
+        </a>
     </div>
 
     {{-- DAFTAR ULASAN SAYA --}}
@@ -39,13 +45,12 @@
             <p class="text-sm text-zinc-400 max-w-md mt-1 mb-6">
                 Anda belum pernah memberikan ulasan. Ulasan Anda sangat berharga bagi kami dan pelanggan lain.
             </p>
-            <button
-                type="button"
-                wire:click="openCreateModal"
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-sm font-medium transition cursor-pointer"
+            <a
+                href="{{ route('reviews.create') }}"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-sm font-medium transition cursor-pointer no-underline"
             >
                 <span>➕</span> Buat Ulasan Pertama Anda
-            </button>
+            </a>
         </div>
     @else
         <div class="grid grid-cols-1 gap-5">
@@ -139,10 +144,10 @@
                         </div>
                     @endif
 
-                    {{-- Footer Aksi (Aturan 24 Jam) --}}
+                    {{-- Footer Aksi (Aturan 24 Jam via ReviewPolicy) --}}
                     <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-zinc-800 text-xs">
                         <div>
-                            @if (! $rev->isLockedForUser())
+                            @can('update', $rev)
                                 <span class="text-emerald-400 inline-flex items-center gap-1">
                                     ⏱️ Dapat diedit hingga: <strong class="font-medium text-zinc-300">{{ $rev->created_at?->addHours(24)->translatedFormat('d M Y, H:i') }}</strong>
                                 </span>
@@ -150,11 +155,11 @@
                                 <span class="text-zinc-500 inline-flex items-center gap-1">
                                     🔒 Terkunci (melewati batas waktu 24 jam)
                                 </span>
-                            @endif
+                            @endcan
                         </div>
 
                         <div class="flex items-center gap-2">
-                            @if (! $rev->isLockedForUser())
+                            @can('update', $rev)
                                 <button
                                     type="button"
                                     wire:click="openEditModal('{{ $rev->id }}')"
@@ -162,6 +167,9 @@
                                 >
                                     ✏️ Edit
                                 </button>
+                            @endcan
+
+                            @can('delete', $rev)
                                 <button
                                     type="button"
                                     wire:click="deleteReview('{{ $rev->id }}')"
@@ -170,150 +178,17 @@
                                 >
                                     🗑️ Hapus
                                 </button>
-                            @else
+                            @endcan
+
+                            @cannot('update', $rev)
                                 <span class="text-zinc-600 italic">Tidak dapat diubah/dihapus</span>
-                            @endif
+                            @endcannot
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     @endif
-
-    {{-- MODAL CREATE REVIEW --}}
-    @if ($showCreateModal)
-        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-            <div class="bg-zinc-900 border border-zinc-700 rounded-2xl w-full max-w-xl p-6 space-y-5 my-8 shadow-2xl">
-                <div class="flex items-center justify-between pb-3 border-b border-zinc-800">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                        <span>✍️</span> Tulis Ulasan Queen Transport
-                    </h3>
-                    <button type="button" wire:click="$set('showCreateModal', false)" class="text-zinc-400 hover:text-white text-lg">✕</button>
-                </div>
-
-                <form wire:submit.prevent="submitCreate" class="space-y-4">
-                    {{-- Rating Bintang --}}
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-300 mb-2">Penilaian Bintang (1 - 5) <span class="text-rose-400">*</span></label>
-                        <div class="flex items-center gap-2">
-                            @for ($star = 1; $star <= 5; $star++)
-                                <button
-                                    type="button"
-                                    wire:click="$set('rating', {{ $star }})"
-                                    class="text-3xl transition-transform hover:scale-110 focus:outline-none {{ $star <= $rating ? 'text-amber-400' : 'text-zinc-600' }}"
-                                >
-                                    ★
-                                </button>
-                            @endfor
-                            <span class="text-sm font-semibold text-zinc-300 ml-2">({{ $rating }} Bintang)</span>
-                        </div>
-                        @error('rating') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
-                    </div>
-
-                    {{-- Pilih Armada (Opsional Banyak) --}}
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-300 mb-1.5">Armada yang Digunakan (Opsional)</label>
-                        <p class="text-xs text-zinc-500 mb-2">Centang satu atau beberapa kendaraan yang Anda sewa:</p>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-36 overflow-y-auto p-2 rounded-xl bg-zinc-950 border border-zinc-800">
-                            @foreach ($availableArmadas as $armada)
-                                <label class="flex items-center gap-2 text-xs text-zinc-300 cursor-pointer hover:text-white">
-                                    <input
-                                        type="checkbox"
-                                        value="{{ $armada->id }}"
-                                        wire:model="selectedArmadas"
-                                        class="rounded bg-zinc-800 border-zinc-700 text-purple-600 focus:ring-purple-500"
-                                    >
-                                    <span class="truncate">{{ $armada->title }}</span>
-                                </label>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    {{-- Judul Ulasan --}}
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-300 mb-1">Judul Ulasan (Opsional)</label>
-                        <input
-                            type="text"
-                            wire:model="title"
-                            placeholder="Contoh: Perjalanan Nyaman & Sopir Ramah"
-                            class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
-                        >
-                        @error('title') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
-                    </div>
-
-                    {{-- Komentar / Isi Ulasan --}}
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-300 mb-1">Komentar / Pengalaman Anda <span class="text-rose-400">*</span></label>
-                        <textarea
-                            wire:model="comment"
-                            rows="4"
-                            placeholder="Ceritakan pengalaman Anda selama menggunakan armada atau layanan Queen Transport..."
-                            class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
-                        ></textarea>
-                        @error('comment') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
-                    </div>
-
-                    {{-- Upload Foto --}}
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-300 mb-1">Unggah Foto (Bisa lebih dari satu)</label>
-                        <input
-                            type="file"
-                            wire:model="photos"
-                            multiple
-                            accept="image/*"
-                            class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-purple-400 hover:file:bg-zinc-700 cursor-pointer"
-                        >
-                        @error('photos.*') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
-                    </div>
-
-                    {{-- Upload Video --}}
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-300 mb-1">Unggah Video (Opsional, MP4/MOV, Maks 50MB)</label>
-                        <input
-                            type="file"
-                            wire:model="videos"
-                            multiple
-                            accept="video/*"
-                            class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-purple-400 hover:file:bg-zinc-700 cursor-pointer"
-                        >
-                        @error('videos.*') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
-                    </div>
-
-                    <div wire:loading wire:target="photos,videos" class="text-xs text-purple-400 font-medium">
-                        ⏳ Mengunggah berkas media, mohon tunggu...
-                    </div>
-
-                    {{-- Notice 24 jam & approval --}}
-                    <div class="rounded-xl bg-purple-500/10 border border-purple-500/20 p-3 text-xs text-purple-300 space-y-1">
-                        <p>ℹ️ <strong>Informasi:</strong></p>
-                        <ul class="list-disc list-inside space-y-0.5 text-zinc-400">
-                            <li>Ulasan akan diperiksa dan disetujui admin sebelum tayang publik.</li>
-                            <li>Ulasan dapat Anda edit atau hapus dalam waktu 24 jam setelah dikirim.</li>
-                        </ul>
-                    </div>
-
-                    {{-- Tombol Aksi --}}
-                    <div class="flex items-center justify-end gap-3 pt-3 border-t border-zinc-800">
-                        <button
-                            type="button"
-                            wire:click="$set('showCreateModal', false)"
-                            class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-sm font-medium transition cursor-pointer"
-                        >
-                            Batal
-                        </button>
-                        <button
-                            type="submit"
-                            wire:loading.attr="disabled"
-                            class="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white text-sm font-semibold transition cursor-pointer"
-                        >
-                            Kirim Ulasan
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    @endif
-
     {{-- MODAL EDIT REVIEW --}}
     @if ($showEditModal && $editingReview)
         <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">

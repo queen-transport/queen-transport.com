@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Gate;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -113,8 +114,7 @@ class Review extends Model implements HasMedia
 
     /**
      * Check if a review can be edited or deleted by the given user.
-     * Rule: User can only edit/delete their own review within 24 hours of creation.
-     * Admin can always edit/delete.
+     * Delegates directly to ReviewPolicy via Gate.
      */
     public function canBeEditedOrDeletedBy(?User $user): bool
     {
@@ -122,15 +122,7 @@ class Review extends Model implements HasMedia
             return false;
         }
 
-        if ($user->email === 'admin@queen-transport.com') {
-            return true;
-        }
-
-        if ($this->user_id !== $user->id) {
-            return false;
-        }
-
-        return ! $this->isLockedForUser();
+        return Gate::forUser($user)->allows('update', $this);
     }
 
     /**

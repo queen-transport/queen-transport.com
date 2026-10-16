@@ -6,16 +6,16 @@ use App\Contracts\ReviewServiceInterface;
 use App\Models\Armada;
 use App\Models\Review;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class ReviewManager extends Component
 {
-    use WithFileUploads;
-
-    public bool $showCreateModal = false;
+    use AuthorizesRequests, WithFileUploads;
 
     public bool $showEditModal = false;
 
@@ -46,13 +46,14 @@ class ReviewManager extends Component
 
     public ?int $review_armada = null;
 
-    public function mount(): void
+    public function mount(): mixed
     {
-        $armadaId = $this->review_armada ?: (int) request()->query('review_armada');
+        $armadaId = $this->review_armada ?: (int) (request()->query('armada') ?: request()->query('review_armada'));
         if ($armadaId && Armada::where('id', $armadaId)->exists()) {
-            $this->openCreateModal();
-            $this->selectedArmadas = [$armadaId];
+            return redirect()->route('reviews.create', ['armada' => $armadaId]);
         }
+
+        return null;
     }
 
     protected function rules(): array
@@ -105,6 +106,8 @@ class ReviewManager extends Component
         }
 
         try {
+            $this->authorize('create', Review::class);
+
             $reviewService->createReview(
                 $user,
                 [
@@ -120,6 +123,9 @@ class ReviewManager extends Component
             $this->showCreateModal = false;
             $this->feedbackType = 'success';
             $this->feedbackMessage = 'Ulasan berhasil dikirim! Menunggu persetujuan admin untuk ditayangkan.';
+        } catch (AuthorizationException $e) {
+            $this->feedbackType = 'error';
+            $this->feedbackMessage = $e->getMessage();
         } catch (\Throwable $e) {
             logger()->error('Failed to create review in Livewire', ['error' => $e->getMessage()]);
             $this->feedbackType = 'error';
@@ -132,7 +138,7 @@ class ReviewManager extends Component
         $this->resetValidation();
         $review = Review::with(['armadas', 'media'])->find($reviewId);
 
-        if (! $review || ! $review->canBeEditedOrDeletedBy(auth()->user())) {
+        if (! $review || ! Gate::allows('update', $review)) {
             $this->feedbackType = 'error';
             $this->feedbackMessage = 'Ulasan tidak dapat diedit karena telah melewati 24 jam atau Anda bukan pemilik ulasan.';
 
@@ -174,6 +180,8 @@ class ReviewManager extends Component
         }
 
         try {
+            $this->authorize('update', $review);
+
             $reviewService->updateReview(
                 $review,
                 $user,
@@ -212,6 +220,8 @@ class ReviewManager extends Component
         }
 
         try {
+            $this->authorize('delete', $review);
+
             $reviewService->deleteReview($review, $user);
             $this->feedbackType = 'success';
             $this->feedbackMessage = 'Ulasan berhasil dihapus.';

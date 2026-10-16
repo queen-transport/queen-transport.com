@@ -212,7 +212,7 @@
                                         {{ $armada->cta_text ?: 'Tanya Harga' }}
                                     </a>
                                 </div>
-                                <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-1 text-xs text-amber-400 hover:text-amber-300 font-medium no-underline transition px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40">
+                                <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}" class="inline-flex items-center gap-1 text-xs text-amber-400 hover:text-amber-300 font-medium no-underline transition px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40">
                                     <span>⭐</span> Ulas
                                 </a>
                             </div>

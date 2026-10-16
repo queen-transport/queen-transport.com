@@ -94,7 +94,7 @@ test('livewire review manager blocks edit after 24 hours', function () {
     expect($review->comment)->toBe('Komentar lama terkunci');
 });
 
-test('visiting dashboard with review_armada pre-selects armada and opens create modal', function () {
+test('visiting dashboard with review_armada redirects to reviews.create', function () {
     $user = User::factory()->create();
     $armada = Armada::factory()->create();
 
@@ -102,6 +102,5 @@ test('visiting dashboard with review_armada pre-selects armada and opens create 
 
     Livewire::withQueryParams(['review_armada' => $armada->id])
         ->test(ReviewManager::class)
-        ->assertSet('showCreateModal', true)
-        ->assertSet('selectedArmadas', [$armada->id]);
+        ->assertRedirect(route('reviews.create', ['armada' => $armada->id]));
 });

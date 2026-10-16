@@ -107,12 +107,12 @@
                        target="_blank" rel="noopener noreferrer">
                         💬 {{ $ctaText }}
                     </a>
-                    <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}"
-                       class="inline-flex items-center gap-2 px-6 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 transition">
+                    <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}"
+                        class="inline-flex items-center gap-2 px-6 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 transition">
                         ⭐ Beri Ulasan
                     </a>
                     <a href="{{ route('armada.index') }}"
-                       class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-2 border-[var(--color-accent)] text-[var(--color-accent)]">
+                        class="inline-flex items-center gap-2 px-8 py-3.5 rounded-[32px] font-semibold text-[0.95rem] no-underline border-2 border-[var(--color-accent)] text-[var(--color-accent)]">
                         ← Lihat Armada Lain
                     </a>
                 </div>
@@ -136,7 +136,7 @@
                         </h2>
                     </div>
 
-                    <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[image:var(--gradient-btn)] text-white text-sm font-semibold shadow-[0_0_15px_rgba(124,58,237,0.4)] transition no-underline self-start sm:self-auto hover:opacity-95">
+                    <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[image:var(--gradient-btn)] text-white text-sm font-semibold shadow-[0_0_15px_rgba(124,58,237,0.4)] transition no-underline self-start sm:self-auto hover:opacity-95">
                         ✍️ Tulis Ulasan untuk {{ $armada->title }}
                     </a>
                 </div>
@@ -146,7 +146,7 @@
                         <span class="text-3xl block mb-2">🚗✨</span>
                         <p class="text-white font-semibold">Belum ada ulasan untuk {{ $armada->title }}</p>
                         <p class="text-[var(--color-text-muted)] text-sm mt-1 mb-4">Pernah menyewa kendaraan ini? Bagikan pengalaman Anda kepada pelanggan lain.</p>
-                        <a href="{{ route('dashboard', ['review_armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold no-underline transition">
+                        <a href="{{ route('reviews.create', ['armada' => $armada->id]) }}" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold no-underline transition">
                             Tulis Ulasan Sekarang
                         </a>
                     </div>

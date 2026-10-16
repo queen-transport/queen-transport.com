@@ -47,8 +47,10 @@ Route::controller(BlogController::class)
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::view('reviews/create', 'reviews.create')->name('reviews.create');
+    Route::redirect('ulasan/buat', '/reviews/create');
 });
 
 require __DIR__.'/settings.php';
 
-// Route::get('/{slug}', [BlogController::class, 'showPlain'])->name('blog.show-plain');
+Route::get('/{slug}', [BlogController::class, 'showPlain'])->name('blog.show-plain');
