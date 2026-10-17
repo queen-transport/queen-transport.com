@@ -7,35 +7,35 @@
             <div class="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-cyan-500/10 dark:bg-cyan-500/15 blur-3xl pointer-events-none"></div>
 
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 min-w-0 max-w-full">
                     @if (auth()->user()->avatar)
-                        <img src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/80 object-cover shadow-[0_0_20px_rgba(124,58,237,0.3)] dark:shadow-[0_0_20px_rgba(124,58,237,0.5)] bg-white dark:bg-[#141728]">
+                        <img src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/80 object-cover shadow-[0_0_20px_rgba(124,58,237,0.3)] dark:shadow-[0_0_20px_rgba(124,58,237,0.5)] bg-white dark:bg-[#141728] shrink-0">
                     @else
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 border-2 border-purple-400/80 text-white font-bold text-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.3)] dark:shadow-[0_0_20px_rgba(124,58,237,0.5)]">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 border-2 border-purple-400/80 text-white font-bold text-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.3)] dark:shadow-[0_0_20px_rgba(124,58,237,0.5)] shrink-0">
                             {{ auth()->user()->initials() }}
                         </div>
                     @endif
 
-                    <div>
+                    <div class="min-w-0 flex-1">
                         <div class="flex items-center gap-2.5 flex-wrap">
-                            <h1 class="text-2xl font-bold text-zinc-900 dark:text-white font-['Cinzel',serif] tracking-wide">{{ auth()->user()->name }}</h1>
+                            <h1 class="text-2xl font-bold text-zinc-900 dark:text-white font-['Cinzel',serif] tracking-wide truncate max-w-full sm:max-w-md lg:max-w-xl" title="{{ auth()->user()->name }}">{{ auth()->user()->name }}</h1>
                             @if (auth()->user()->isAdmin())
-                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/15 dark:bg-purple-500/20 border border-purple-400/40 text-purple-700 dark:text-purple-300">Admin</span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/15 dark:bg-purple-500/20 border border-purple-400/40 text-purple-700 dark:text-purple-300 shrink-0">Admin</span>
                             @else
-                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-cyan-500/15 border border-cyan-400/30 text-cyan-700 dark:text-cyan-300 font-['Orbitron',sans-serif] tracking-wider uppercase">Pelanggan VIP</span>
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-cyan-500/15 border border-cyan-400/30 text-cyan-700 dark:text-cyan-300 font-['Orbitron',sans-serif] tracking-wider uppercase shrink-0">Pelanggan VIP</span>
                             @endif
                             @if (auth()->user()->google_id)
-                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-blue-500/15 border border-blue-500/30 text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-blue-500/15 border border-blue-500/30 text-blue-600 dark:text-blue-400 flex items-center gap-1 shrink-0">
                                     <span>G</span> Terhubung Google
                                 </span>
                             @endif
                         </div>
-                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{{ auth()->user()->email }}</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1 truncate" title="{{ auth()->user()->email }}">{{ auth()->user()->email }}</p>
                         <p class="text-xs text-zinc-500 mt-0.5">Bergabung sejak {{ auth()->user()->created_at?->translatedFormat('d F Y') }}</p>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-3 flex-wrap">
+                <div class="flex items-center gap-3 flex-wrap shrink-0">
                     @if (auth()->user()->isAdmin())
                         <a href="{{ url('/admin') }}" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold transition shadow-[0_0_15px_rgba(124,58,237,0.4)] no-underline">
                             ⚙️ Admin Panel

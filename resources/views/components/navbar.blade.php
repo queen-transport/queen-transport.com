@@ -1,12 +1,12 @@
 <header class="sticky top-0 z-[999] py-4 bg-[var(--color-bg)]/95 backdrop-blur-md border-b border-[var(--color-border)] transition-colors duration-200">
     <div class="max-w-[1200px] mx-auto px-6">
         <nav class="flex items-center justify-between gap-6">
-            <a href="{{ route('home') }}" class="flex items-center gap-3 no-underline">
+            <a href="{{ route('home') }}" class="group flex items-center gap-3 no-underline">
                 <img src="{{ asset('apple-touch-icon.png') }}" alt="{{ config('site.brand') }}"
-                     class="w-11 h-11 rounded-full border-2 border-[var(--color-primary)] shadow-[0_0_30px_rgba(124,58,237,0.4)] object-cover bg-[var(--color-surface)]">
+                     class="w-11 h-11 rounded-full border border-purple-200/80 dark:border-[var(--color-primary)] shadow-sm dark:shadow-[0_0_25px_rgba(124,58,237,0.4)] object-cover bg-[var(--color-surface)] transition-transform duration-200 group-hover:scale-105">
                 <div class="flex flex-col">
                     <span class="font-[family-name:var(--font-display)] text-[1rem] font-bold text-zinc-900 dark:text-white leading-[1.1] tracking-[0.05em]">{{ config('site.brand') }}</span>
-                    <span class="font-[family-name:var(--font-accent)] text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] uppercase font-semibold">Premium Transport</span>
+                    <span class="font-[family-name:var(--font-accent)] text-[0.6rem] text-zinc-500 dark:text-[var(--color-accent)] tracking-[0.2em] uppercase font-semibold">Premium Transport</span>
                 </div>
             </a>
 
