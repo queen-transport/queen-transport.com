@@ -1,4 +1,48 @@
-<div class="max-w-4xl mx-auto space-y-6 pb-12">
+<div
+    x-data="{
+        submitting: false,
+        scrollToStatus() {
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    const targets = [
+                        document.getElementById('review-status-alert'),
+                        document.getElementById('review-validation-alert'),
+                        document.querySelector('[data-has-error=\'true\']'),
+                        document.querySelector('.has-error'),
+                        document.querySelector('[aria-invalid=\'true\']'),
+                        document.querySelector('.text-rose-400')
+                    ];
+                    const target = targets.find(el => el && el.offsetParent !== null) || targets.find(el => el);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        const focusable = target.matches('input, textarea, select, button')
+                            ? target
+                            : target.querySelector('input:not([type=\'hidden\']), textarea, select, button');
+                        if (focusable && typeof focusable.focus === 'function' && !target.id?.includes('alert')) {
+                            focusable.focus({ preventScroll: true });
+                        }
+                    }
+                }, 80);
+            });
+        },
+        init() {
+            if (window.Livewire) {
+                Livewire.hook('commit', ({ component, succeed }) => {
+                    if (component.id === this.$wire.$id) {
+                        succeed(() => {
+                            if (this.submitting) {
+                                this.scrollToStatus();
+                                this.submitting = false;
+                            }
+                        });
+                    }
+                });
+            }
+        }
+    }"
+    x-on:scroll-to-status.window="scrollToStatus()"
+    class="max-w-4xl mx-auto space-y-6 pb-12"
+>
     {{-- NAVIGASI KEMBALI --}}
     <div class="flex items-center justify-between">
         <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition">
@@ -12,14 +56,32 @@
         @endif
     </div>
 
-    {{-- ALERT / NOTIFIKASI ERROR --}}
+    {{-- ALERT / NOTIFIKASI STATUS (SUCCESS / ERROR) --}}
     @if ($feedbackMessage)
-        <div class="rounded-xl p-4 flex items-center justify-between border {{ $feedbackType === 'success' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400' : 'bg-rose-500/10 border-rose-500/30 text-rose-600 dark:text-rose-400' }}">
+        <div id="review-status-alert" class="scroll-mt-28 rounded-2xl p-4 sm:p-5 flex items-center justify-between border {{ $feedbackType === 'success' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400' : 'bg-rose-500/10 border-rose-500/30 text-rose-600 dark:text-rose-400' }} shadow-sm backdrop-blur-xl">
             <div class="flex items-center gap-3">
-                <span class="text-xl">{{ $feedbackType === 'success' ? '✅' : '⚠️' }}</span>
-                <span class="text-sm font-medium">{{ $feedbackMessage }}</span>
+                <span class="text-2xl">{{ $feedbackType === 'success' ? '✅' : '⚠️' }}</span>
+                <span class="text-sm font-semibold">{{ $feedbackMessage }}</span>
             </div>
             <button type="button" wire:click="$set('feedbackMessage', null)" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-sm font-bold ml-4">✕</button>
+        </div>
+    @endif
+
+    {{-- ALERT KESALAHAN VALIDASI FORM --}}
+    @if ($errors->any())
+        <div id="review-validation-alert" class="scroll-mt-28 rounded-2xl p-4 sm:p-5 border border-rose-500/30 bg-rose-500/10 text-rose-600 dark:text-rose-400 backdrop-blur-xl shadow-sm space-y-2.5">
+            <div class="flex items-center gap-2.5 font-semibold text-sm">
+                <span class="text-xl">⚠️</span>
+                <span>Terdapat kesalahan pada formulir ulasan:</span>
+            </div>
+            <ul class="list-disc list-inside text-xs space-y-1.5 pl-1 text-rose-700 dark:text-rose-300">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            <p class="text-[11px] text-zinc-500 dark:text-zinc-400 pt-1 border-t border-rose-500/20">
+                Silakan periksa dan lengkapi isian pada kolom formulir di bawah ini.
+            </p>
         </div>
     @endif
 
@@ -47,14 +109,14 @@
 
     {{-- FORM ULASAN --}}
     <div class="bg-white/95 dark:bg-[#0f1220]/95 border border-purple-500/15 dark:border-purple-500/25 rounded-3xl p-6 sm:p-8 space-y-8 backdrop-blur-2xl shadow-sm dark:shadow-[0_16px_50px_rgba(0,0,0,0.7)]">
-        <form wire:submit.prevent="submit" class="space-y-8">
+        <form wire:submit.prevent="submit" @submit="submitting = true" class="space-y-8">
             {{-- 1. PENILAIAN BINTANG --}}
-            <div class="space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20">
+            <div id="field-rating" class="scroll-mt-28 space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20 {{ $errors->has('rating') ? 'has-error' : '' }}" @error('rating') data-has-error="true" @enderror>
                 <label class="block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                     Penilaian Bintang <span class="text-rose-400">*</span>
                 </label>
                 <div class="flex items-center gap-2 flex-wrap">
-                    <div class="flex items-center gap-1 bg-slate-50 dark:bg-[#0a0c14] px-4 py-2 rounded-xl border border-zinc-200 dark:border-purple-500/25 shadow-inner">
+                    <div class="flex items-center gap-1 bg-slate-50 dark:bg-[#0a0c14] px-4 py-2 rounded-xl border {{ $errors->has('rating') ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-zinc-200 dark:border-purple-500/25' }} shadow-inner">
                         @for ($star = 1; $star <= 5; $star++)
                             <button
                                 type="button"
@@ -91,7 +153,7 @@
             </div>
 
             {{-- 2. PILIH ARMADA (DENGAN TAMPILAN FOTO TIAP ARMADA) --}}
-            <div class="space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20">
+            <div id="field-selectedArmadas" class="scroll-mt-28 space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20 {{ $errors->has('selectedArmadas') || $errors->has('selectedArmadas.*') ? 'has-error' : '' }}" @error('selectedArmadas') data-has-error="true" @enderror>
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                     <div>
                         <label class="block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
@@ -156,8 +218,8 @@
                                     </h4>
                                     @if ($car->car_type)
                                         <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 flex items-center gap-1">
-                                            <span>{{ $car->car_icon ?: '🚗' }}</span>
-                                            <span>{{ $car->car_type }}</span>
+                                             <span>{{ $car->car_icon ?: '🚗' }}</span>
+                                             <span>{{ $car->car_type }}</span>
                                         </p>
                                     @endif
                                 </div>
@@ -176,7 +238,7 @@
             </div>
 
             {{-- 3. JUDUL ULASAN --}}
-            <div class="space-y-2">
+            <div id="field-title" class="scroll-mt-28 space-y-2 {{ $errors->has('title') ? 'has-error' : '' }}" @error('title') data-has-error="true" @enderror>
                 <label class="block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                     Judul Ulasan (Opsional)
                 </label>
@@ -184,14 +246,14 @@
                     type="text"
                     wire:model="title"
                     placeholder="Contoh: Perjalanan Nyaman &amp; Sopir Sangat Ramah"
-                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0c14] border border-zinc-300 dark:border-purple-500/20 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0c14] border {{ $errors->has('title') ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-zinc-300 dark:border-purple-500/20 focus:border-purple-500 focus:ring-1 focus:ring-purple-500' }} text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-sm transition"
                 >
                 <p class="text-xs text-zinc-500">Ringkasan singkat ulasan pengalaman Anda (maksimal 150 karakter).</p>
                 @error('title') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
             </div>
 
             {{-- 4. ISI KOMENTAR / ULASAN --}}
-            <div class="space-y-2">
+            <div id="field-comment" class="scroll-mt-28 space-y-2 {{ $errors->has('comment') ? 'has-error' : '' }}" @error('comment') data-has-error="true" @enderror>
                 <label class="block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                     Cerita &amp; Pengalaman Anda <span class="text-rose-400">*</span>
                 </label>
@@ -199,7 +261,7 @@
                     wire:model="comment"
                     rows="5"
                     placeholder="Ceritakan pengalaman Anda selama menggunakan armada atau layanan Queen Transport. Bagaimana kondisi kendaraan, ketepatan waktu penjemputan, keramahan sopir, hingga kemudahan reservasi..."
-                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0c14] border border-zinc-300 dark:border-purple-500/20 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition leading-relaxed"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0c14] border {{ $errors->has('comment') ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-zinc-300 dark:border-purple-500/20 focus:border-purple-500 focus:ring-1 focus:ring-purple-500' }} text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-sm transition leading-relaxed"
                 ></textarea>
                 <div class="flex items-center justify-between text-xs text-zinc-500">
                     <span>Minimal 5 karakter, maksimal 2.000 karakter.</span>
@@ -209,7 +271,7 @@
             </div>
 
             {{-- 5. FOTO LAMPIRAN --}}
-            <div class="space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20">
+            <div id="field-photos" class="scroll-mt-28 space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20 {{ $errors->has('photos') || $errors->has('photos.*') ? 'has-error' : '' }}" @error('photos.*') data-has-error="true" @enderror>
                 <label class="block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                     Unggah Foto (Opsional)
                 </label>
@@ -249,7 +311,7 @@
             </div>
 
             {{-- 6. VIDEO LAMPIRAN --}}
-            <div class="space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20">
+            <div id="field-videos" class="scroll-mt-28 space-y-3 pb-6 border-b border-purple-500/15 dark:border-purple-500/20 {{ $errors->has('videos') || $errors->has('videos.*') ? 'has-error' : '' }}" @error('videos.*') data-has-error="true" @enderror>
                 <label class="block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                     Unggah Video (Opsional)
                 </label>
@@ -316,6 +378,7 @@
 
                 <button
                     type="submit"
+                    @click="submitting = true"
                     wire:loading.attr="disabled"
                     class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-500 hover:opacity-95 text-white font-semibold text-sm shadow-[0_0_25px_rgba(124,58,237,0.4)] transition-all cursor-pointer disabled:opacity-50"
                 >

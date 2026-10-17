@@ -1,5 +1,6 @@
 <?php
 
+use App\Contracts\ReviewServiceInterface;
 use App\Livewire\Reviews\CreateReview;
 use App\Models\Armada;
 use App\Models\Review;
@@ -90,7 +91,7 @@ test('user can successfully submit review and is redirected to dashboard', funct
         ->and($review->armadas->first()->id)->toBe($armada->id);
 });
 
-test('validation prevents submitting invalid reviews', function () {
+test('validation prevents submitting invalid reviews and dispatches scroll-to-status event', function () {
     $user = User::factory()->create();
 
     $this->actingAs($user);
@@ -99,7 +100,28 @@ test('validation prevents submitting invalid reviews', function () {
         ->set('rating', 0)
         ->set('comment', 'abc') // < 5 chars
         ->call('submit')
-        ->assertHasErrors(['rating', 'comment']);
+        ->assertHasErrors(['rating', 'comment'])
+        ->assertDispatched('scroll-to-status')
+        ->assertSee('review-validation-alert')
+        ->assertSee('Terdapat kesalahan pada formulir ulasan');
+});
+
+test('server failure dispatches scroll-to-status event and displays status alert', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user);
+
+    $mockService = Mockery::mock(ReviewServiceInterface::class);
+    $mockService->shouldReceive('createReview')->andThrow(new RuntimeException('Koneksi database bermasalah'));
+    $this->app->instance(ReviewServiceInterface::class, $mockService);
+
+    Livewire::test(CreateReview::class)
+        ->set('rating', 5)
+        ->set('comment', 'Ulasan yang sangat bagus dan memuaskan')
+        ->call('submit')
+        ->assertDispatched('scroll-to-status')
+        ->assertSee('review-status-alert')
+        ->assertSee('Terjadi kesalahan saat menyimpan ulasan: Koneksi database bermasalah');
 });
 
 test('user can upload photos and videos with review', function () {

@@ -6,9 +6,11 @@ use App\Contracts\ReviewServiceInterface;
 use App\Models\Armada;
 use App\Models\Review;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -56,6 +58,9 @@ class CreateReview extends Component
         }
     }
 
+    /**
+     * @return array<string, string|array<mixed>>
+     */
     protected function rules(): array
     {
         return [
@@ -69,6 +74,9 @@ class CreateReview extends Component
         ];
     }
 
+    /**
+     * @return array<string, string>
+     */
     protected function messages(): array
     {
         return [
@@ -109,7 +117,12 @@ class CreateReview extends Component
 
     public function submit(ReviewServiceInterface $reviewService): mixed
     {
-        $this->validate();
+        try {
+            $this->validate();
+        } catch (ValidationException $e) {
+            $this->dispatch('scroll-to-status');
+            throw $e;
+        }
 
         $user = auth()->user();
         if (! $user) {
@@ -138,16 +151,18 @@ class CreateReview extends Component
         } catch (AuthorizationException $e) {
             $this->feedbackType = 'error';
             $this->feedbackMessage = $e->getMessage();
+            $this->dispatch('scroll-to-status');
         } catch (\Throwable $e) {
             logger()->error('Failed to create review in CreateReview component', ['error' => $e->getMessage()]);
             $this->feedbackType = 'error';
             $this->feedbackMessage = 'Terjadi kesalahan saat menyimpan ulasan: '.$e->getMessage();
+            $this->dispatch('scroll-to-status');
         }
 
         return null;
     }
 
-    public function render()
+    public function render(): View
     {
         /** @var Collection<int, Armada> $availableArmadas */
         $availableArmadas = Armada::where('is_published', true)
