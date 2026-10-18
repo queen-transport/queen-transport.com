@@ -65,3 +65,18 @@ test('users can logout', function () {
 
     $this->assertGuest();
 });
+
+test('forgot password feature is disabled and routes return 404', function () {
+    $response = $this->get('/forgot-password');
+
+    $response->assertNotFound();
+});
+
+test('login screen does not display forgot password link and has visible title styling', function () {
+    $response = $this->get(route('login'));
+
+    $response->assertOk();
+    $response->assertDontSee('Lupa sandi?');
+    $response->assertSee('Selamat Datang');
+    $response->assertSee('text-zinc-900 dark:text-white');
+});

@@ -10,6 +10,8 @@ test('registration screen can be rendered', function () {
     $response = $this->get(route('register'));
 
     $response->assertOk();
+    $response->assertSee('Buat Akun Baru');
+    $response->assertSee('text-zinc-900 dark:text-white');
 });
 
 test('new users can register', function () {
