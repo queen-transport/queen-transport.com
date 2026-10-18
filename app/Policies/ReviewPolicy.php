@@ -54,12 +54,12 @@ class ReviewPolicy
             return Response::allow();
         }
 
-        if ($user->id !== $review->user_id) {
-            return Response::deny('Anda bukan pemilik ulasan ini.');
-        }
-
         if ($review->isLockedForUser()) {
             return Response::deny('Ulasan ini tidak dapat diedit karena telah melewati batas waktu 24 jam.');
+        }
+
+        if ($user->id !== $review->user_id) {
+            return Response::deny('Anda bukan pemilik ulasan ini.');
         }
 
         return Response::allow();
@@ -76,12 +76,12 @@ class ReviewPolicy
             return Response::allow();
         }
 
-        if ($user->id !== $review->user_id) {
-            return Response::deny('Anda bukan pemilik ulasan ini.');
-        }
-
         if ($review->isLockedForUser()) {
             return Response::deny('Ulasan ini tidak dapat dihapus karena telah melewati batas waktu 24 jam.');
+        }
+
+        if ($user->id !== $review->user_id) {
+            return Response::deny('Anda bukan pemilik ulasan ini.');
         }
 
         return Response::allow();
