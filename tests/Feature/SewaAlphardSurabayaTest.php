@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Armada;
-use App\Models\Pelanggan;
 use App\Services\ArmadaService;
 
 test('armada service returns expected alphard page data structure', function () {
@@ -13,17 +12,11 @@ test('armada service returns expected alphard page data structure', function () 
         'is_published' => true,
     ]);
 
-    Pelanggan::factory()->create([
-        'name' => 'Budi Santoso',
-        'is_published' => true,
-    ]);
-
     $data = $service->getAlphardPageData();
 
-    expect($data)->toHaveKeys(['alphardArmadas', 'allArmadas', 'pelanggans', 'alphardPrices', 'faqs']);
+    expect($data)->toHaveKeys(['alphardArmadas', 'allArmadas', 'alphardPrices', 'faqs']);
     expect($data['alphardArmadas']->count())->toBeGreaterThan(0);
     expect($data['alphardArmadas']->first()->title)->toBe('Toyota Alphard Transformer Gen 3');
-    expect($data['pelanggans']->count())->toBeGreaterThan(0);
     expect($data['alphardPrices'])->toBeArray();
     expect($data['faqs'])->toBeArray();
 });

@@ -5,7 +5,8 @@
         <!-- Session Status -->
         <x-auth-session-status :status="session('status')" />
 
-        <x-passkey-verify />
+        {{-- Passkeys disabled --}}
+        {{-- <x-passkey-verify /> --}}
 
         <div class="flex flex-col gap-4">
             <x-google-button>

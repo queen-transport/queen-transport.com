@@ -75,6 +75,9 @@ test('user can successfully submit review and is redirected to dashboard', funct
         ->set('rating', 5)
         ->set('title', 'Pelayanan Sangat Memuaskan')
         ->set('comment', 'Mobil sangat bersih, wangi, driver tiba tepat waktu dan sangat ramah.')
+        ->set('carReview', 'Kondisi Alphard mulus, kabin higienis dan wangi.')
+        ->set('driverReview', 'Driver Pak Joko sangat ramah dan sopan.')
+        ->set('facilitiesReview', 'AC dingin, air mineral dan charger tersedia.')
         ->call('submit')
         ->assertHasNoErrors()
         ->assertRedirect(route('dashboard'))
@@ -86,9 +89,23 @@ test('user can successfully submit review and is redirected to dashboard', funct
         ->and($review->rating)->toBe(5)
         ->and($review->title)->toBe('Pelayanan Sangat Memuaskan')
         ->and($review->comment)->toBe('Mobil sangat bersih, wangi, driver tiba tepat waktu dan sangat ramah.')
+        ->and($review->car_review)->toBe('Kondisi Alphard mulus, kabin higienis dan wangi.')
+        ->and($review->driver_review)->toBe('Driver Pak Joko sangat ramah dan sopan.')
+        ->and($review->facilities_review)->toBe('AC dingin, air mineral dan charger tersedia.')
         ->and($review->status)->toBe(Review::STATUS_PENDING)
         ->and($review->armadas)->toHaveCount(1)
         ->and($review->armadas->first()->id)->toBe($armada->id);
+});
+
+test('review create form displays detail review sections for car, driver, and facilities', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user);
+
+    Livewire::test(CreateReview::class)
+        ->assertSee('Tentang Mobil')
+        ->assertSee('Tentang Driver')
+        ->assertSee('Kualitas &amp; Fasilitas', false);
 });
 
 test('validation prevents submitting invalid reviews and dispatches scroll-to-status event', function () {

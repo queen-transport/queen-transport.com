@@ -3,7 +3,6 @@
 namespace App\Contracts;
 
 use App\Models\Armada;
-use App\Models\Pelanggan;
 use Illuminate\Database\Eloquent\Collection;
 
 interface ArmadaServiceInterface
@@ -78,13 +77,6 @@ interface ArmadaServiceInterface
     public function getRelated(Armada $armada, int $limit = 4): Collection;
 
     /**
-     * Get published customer testimonials.
-     *
-     * @return Collection<int, Pelanggan>
-     */
-    public function getPelanggans(): Collection;
-
-    /**
      * Get Hiace variant pricing structure.
      *
      * @return array<int, array{name: string, badge: string, seat: string, price: int, price_label: string, desc: string, features: array<int, string>}>
@@ -115,21 +107,21 @@ interface ArmadaServiceInterface
     /**
      * Gather full data payload for Hiace Folio page.
      *
-     * @return array{hiaceArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, hiacePrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{hiaceArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, hiacePrices: array<int, mixed>, faqs: array<int, mixed>}
      */
     public function getHiacePageData(): array;
 
     /**
      * Gather full data payload for Alphard Folio page.
      *
-     * @return array{alphardArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, alphardPrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{alphardArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, alphardPrices: array<int, mixed>, faqs: array<int, mixed>}
      */
     public function getAlphardPageData(): array;
 
     /**
      * Gather full data payload for luxury car rental Folio page.
      *
-     * @return array{allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, kelasAtasPrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{allArmadas: Collection<int, Armada>, kelasAtasPrices: array<int, mixed>, faqs: array<int, mixed>}
      */
     public function getKelasAtasPageData(): array;
 }

@@ -22,6 +22,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property int $rating
  * @property string|null $title
  * @property string $comment
+ * @property string|null $car_review
+ * @property string|null $driver_review
+ * @property string|null $facilities_review
  * @property string $status
  * @property bool $created_by_admin
  * @property Carbon|null $created_at
@@ -43,6 +46,9 @@ class Review extends Model implements HasMedia
         'rating',
         'title',
         'comment',
+        'car_review',
+        'driver_review',
+        'facilities_review',
         'status',
         'created_by_admin',
     ];

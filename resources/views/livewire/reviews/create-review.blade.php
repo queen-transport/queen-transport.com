@@ -259,8 +259,8 @@
                 </label>
                 <textarea
                     wire:model="comment"
-                    rows="5"
-                    placeholder="Ceritakan pengalaman Anda selama menggunakan armada atau layanan Queen Transport. Bagaimana kondisi kendaraan, ketepatan waktu penjemputan, keramahan sopir, hingga kemudahan reservasi..."
+                    rows="4"
+                    placeholder="Ceritakan pengalaman Anda selama menggunakan armada atau layanan Queen Transport secara umum..."
                     class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0c14] border {{ $errors->has('comment') ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-zinc-300 dark:border-purple-500/20 focus:border-purple-500 focus:ring-1 focus:ring-purple-500' }} text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-sm transition leading-relaxed"
                 ></textarea>
                 <div class="flex items-center justify-between text-xs text-zinc-500">
@@ -268,6 +268,68 @@
                     <span>{{ strlen($comment) }} / 2000</span>
                 </div>
                 @error('comment') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
+            </div>
+
+            {{-- 5. DETAIL ULASAN (PER KATEGORI: MOBIL, DRIVER, FASILITAS) --}}
+            <div class="space-y-4 pt-2 pb-6 border-b border-purple-500/15 dark:border-purple-500/20">
+                <div class="space-y-1">
+                    <h3 class="text-sm font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+                        <span>🔍</span> Ulasan Per Detail Layanan (Opsional)
+                    </h3>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">
+                        Bantu kami dan pelanggan lain memahami pengalaman Anda secara lebih mendalam pada masing-masing aspek berikut:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {{-- 1. Tentang Mobil --}}
+                    <div id="field-carReview" class="space-y-1.5 p-4 rounded-2xl bg-slate-50/80 dark:bg-[#0a0c14]/80 border border-zinc-200 dark:border-purple-500/20 {{ $errors->has('carReview') ? 'has-error' : '' }}" @error('carReview') data-has-error="true" @enderror>
+                        <label class="block text-xs font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
+                            <span class="text-base">🚗</span> 1. Tentang Mobil
+                        </label>
+                        <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Kondisi fisik, kebersihan kabin, keharuman, &amp; kenyamanan AC/suspensi.</p>
+                        <textarea
+                            wire:model="carReview"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="Contoh: Mobil sangat bersih, wangi, AC dingin merata, suspensi nyaman untuk perjalanan jauh..."
+                            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#141728] border {{ $errors->has('carReview') ? 'border-rose-500 ring-1 ring-rose-500/30' : 'border-zinc-300 dark:border-purple-500/20 focus:border-purple-500 focus:ring-1 focus:ring-purple-500' }} text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-xs transition leading-relaxed"
+                        ></textarea>
+                        @error('carReview') <span class="text-[11px] text-rose-400 block">{{ $message }}</span> @enderror
+                    </div>
+
+                    {{-- 2. Tentang Driver --}}
+                    <div id="field-driverReview" class="space-y-1.5 p-4 rounded-2xl bg-slate-50/80 dark:bg-[#0a0c14]/80 border border-zinc-200 dark:border-purple-500/20 {{ $errors->has('driverReview') ? 'has-error' : '' }}" @error('driverReview') data-has-error="true" @enderror>
+                        <label class="block text-xs font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
+                            <span class="text-base">👨‍✈️</span> 2. Tentang Driver
+                        </label>
+                        <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Ketepatan waktu, keramahan, kerapian, penguasaan rute, &amp; etika mengemudi.</p>
+                        <textarea
+                            wire:model="driverReview"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="Contoh: Driver datang tepat waktu, sopan, berseragam rapi, mengemudi dengan sangat hati-hati..."
+                            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#141728] border {{ $errors->has('driverReview') ? 'border-rose-500 ring-1 ring-rose-500/30' : 'border-zinc-300 dark:border-purple-500/20 focus:border-purple-500 focus:ring-1 focus:ring-purple-500' }} text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-xs transition leading-relaxed"
+                        ></textarea>
+                        @error('driverReview') <span class="text-[11px] text-rose-400 block">{{ $message }}</span> @enderror
+                    </div>
+
+                    {{-- 3. Tentang Kualitas & Fasilitas --}}
+                    <div id="field-facilitiesReview" class="space-y-1.5 p-4 rounded-2xl bg-slate-50/80 dark:bg-[#0a0c14]/80 border border-zinc-200 dark:border-purple-500/20 {{ $errors->has('facilitiesReview') ? 'has-error' : '' }}" @error('facilitiesReview') data-has-error="true" @enderror>
+                        <label class="block text-xs font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
+                            <span class="text-base">✨</span> 3. Kualitas &amp; Fasilitas
+                        </label>
+                        <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Respon reservasi, air mineral, charger, keandalan fasilitas pelengkap.</p>
+                        <textarea
+                            wire:model="facilitiesReview"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="Contoh: Admin fast response, fasilitas kabin berfungsi normal, proses serah terima lancar..."
+                            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#141728] border {{ $errors->has('facilitiesReview') ? 'border-rose-500 ring-1 ring-rose-500/30' : 'border-zinc-300 dark:border-purple-500/20 focus:border-purple-500 focus:ring-1 focus:ring-purple-500' }} text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-xs transition leading-relaxed"
+                        ></textarea>
+                        @error('facilitiesReview') <span class="text-[11px] text-rose-400 block">{{ $message }}</span> @enderror
+                    </div>
+                </div>
             </div>
 
             {{-- 5. FOTO LAMPIRAN --}}

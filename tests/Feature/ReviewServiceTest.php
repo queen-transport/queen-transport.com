@@ -28,6 +28,9 @@ test('user can create review with pending status and optional armadas', function
             'rating' => 5,
             'title' => 'Sangat Memuaskan',
             'comment' => 'Mobil sangat bersih dan driver ramah sekali.',
+            'car_review' => 'Mobil Alphard sangat mulus dan wangi.',
+            'driver_review' => 'Driver datang tepat waktu dan ramah.',
+            'facilities_review' => 'Air mineral dingin dan charger HP berfungsi baik.',
             'armada_ids' => [$armada1->id, $armada2->id],
         ],
         [$photo],
@@ -38,6 +41,9 @@ test('user can create review with pending status and optional armadas', function
     expect($review->id)->toBeString();
     expect($review->user_id)->toBe($user->id);
     expect($review->rating)->toBe(5);
+    expect($review->car_review)->toBe('Mobil Alphard sangat mulus dan wangi.');
+    expect($review->driver_review)->toBe('Driver datang tepat waktu dan ramah.');
+    expect($review->facilities_review)->toBe('Air mineral dingin dan charger HP berfungsi baik.');
     expect($review->status)->toBe(Review::STATUS_PENDING);
     expect($review->armadas)->toHaveCount(2);
     expect($review->getMedia('photos'))->toHaveCount(1);
@@ -50,6 +56,9 @@ test('user can update own review within 24 hours', function () {
         'user_id' => $user->id,
         'rating' => 4,
         'comment' => 'Review awal',
+        'car_review' => 'Mobil awal',
+        'driver_review' => 'Driver awal',
+        'facilities_review' => 'Fasilitas awal',
         'created_at' => now()->subHours(5),
     ]);
 
@@ -59,11 +68,17 @@ test('user can update own review within 24 hours', function () {
         [
             'rating' => 5,
             'comment' => 'Review setelah diedit',
+            'car_review' => 'Mobil sangat bagus diedit',
+            'driver_review' => 'Driver sangat ramah diedit',
+            'facilities_review' => 'Fasilitas lengkap diedit',
         ]
     );
 
     expect($updated->rating)->toBe(5);
     expect($updated->comment)->toBe('Review setelah diedit');
+    expect($updated->car_review)->toBe('Mobil sangat bagus diedit');
+    expect($updated->driver_review)->toBe('Driver sangat ramah diedit');
+    expect($updated->facilities_review)->toBe('Fasilitas lengkap diedit');
 });
 
 test('user cannot update review after 24 hours', function () {
@@ -162,11 +177,17 @@ test('admin can create review directly with custom status', function () {
         'rating' => 5,
         'title' => 'Testimoni Khusus',
         'comment' => 'Ulasan dimasukkan langsung oleh admin.',
+        'car_review' => 'Unit bersih terawat.',
+        'driver_review' => 'Driver ramah bintang lima.',
+        'facilities_review' => 'Layanan premium memuaskan.',
         'armada_ids' => [$armada->id],
         'status' => Review::STATUS_APPROVED,
     ]);
 
     expect($review->created_by_admin)->toBeTrue();
     expect($review->status)->toBe(Review::STATUS_APPROVED);
+    expect($review->car_review)->toBe('Unit bersih terawat.');
+    expect($review->driver_review)->toBe('Driver ramah bintang lima.');
+    expect($review->facilities_review)->toBe('Layanan premium memuaskan.');
     expect($review->armadas)->toHaveCount(1);
 });

@@ -50,6 +50,24 @@ class ReviewsTable
                     ->limit(60)
                     ->searchable(),
 
+                TextColumn::make('car_review')
+                    ->label('Ulasan Mobil')
+                    ->limit(40)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->searchable(),
+
+                TextColumn::make('driver_review')
+                    ->label('Ulasan Driver')
+                    ->limit(40)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->searchable(),
+
+                TextColumn::make('facilities_review')
+                    ->label('Ulasan Fasilitas')
+                    ->limit(40)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->searchable(),
+
                 TextColumn::make('status')
                     ->label('Status')
                     ->badge()

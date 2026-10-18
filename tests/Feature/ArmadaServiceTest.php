@@ -93,7 +93,7 @@ test('armada service provides kelas atas page data with surabaya prices and faqs
 
     $data = $service->getKelasAtasPageData();
 
-    expect($data)->toHaveKeys(['allArmadas', 'pelanggans', 'kelasAtasPrices', 'faqs']);
+    expect($data)->toHaveKeys(['allArmadas', 'kelasAtasPrices', 'faqs']);
     expect($data['kelasAtasPrices'])->not->toBeEmpty();
     expect($data['kelasAtasPrices'][0]['note'])->toBe('Surabaya dan sekitarnya');
 });

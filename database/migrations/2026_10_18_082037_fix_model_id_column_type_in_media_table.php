@@ -22,7 +22,9 @@ return new class extends Migration
         });
 
         // Ubah tipe kolom model_id menjadi string (varchar 36) untuk mendukung UUID
-        DB::statement('ALTER TABLE `media` MODIFY `model_id` VARCHAR(36) NOT NULL');
+        if (DB::getDriverName() === 'mysql') {
+            DB::statement('ALTER TABLE `media` MODIFY `model_id` VARCHAR(36) NOT NULL');
+        }
 
         // Buat ulang index morph
         Schema::table('media', function (Blueprint $table) {
@@ -41,7 +43,9 @@ return new class extends Migration
         });
 
         // Kembalikan ke unsignedBigInteger
-        DB::statement('ALTER TABLE `media` MODIFY `model_id` BIGINT UNSIGNED NOT NULL');
+        if (DB::getDriverName() === 'mysql') {
+            DB::statement('ALTER TABLE `media` MODIFY `model_id` BIGINT UNSIGNED NOT NULL');
+        }
 
         // Buat ulang index morph
         Schema::table('media', function (Blueprint $table) {

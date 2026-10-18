@@ -2,7 +2,6 @@
 
 use App\Models\Armada;
 use App\Models\Galeri;
-use App\Models\Pelanggan;
 use App\Models\Post;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -60,16 +59,4 @@ test('deleting a galeri removes its featured image, video, and gallery files fro
     Storage::disk('public')->assertMissing($featuredImage);
     Storage::disk('public')->assertMissing($video);
     Storage::disk('public')->assertMissing($galleryImage);
-});
-
-test('deleting a pelanggan removes its photo from storage', function () {
-    $photo = UploadedFile::fake()->image('photo.jpg')->store('pelanggan', 'public');
-
-    $pelanggan = Pelanggan::factory()->create([
-        'photo' => $photo,
-    ]);
-
-    $pelanggan->delete();
-
-    Storage::disk('public')->assertMissing($photo);
 });

@@ -60,6 +60,24 @@ class ReviewForm
                             ->maxLength(150)
                             ->columnSpanFull(),
 
+                        TextInput::make('car_review')
+                            ->label('Ulasan Tentang Mobil (Opsional)')
+                            ->placeholder('Contoh: Mobil sangat bersih, wangi, dan nyaman dikendarai.')
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+
+                        TextInput::make('driver_review')
+                            ->label('Ulasan Tentang Driver (Opsional)')
+                            ->placeholder('Contoh: Driver ramah, tepat waktu, dan mengemudi dengan halus.')
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+
+                        TextInput::make('facilities_review')
+                            ->label('Ulasan Tentang Kualitas & Fasilitas (Opsional)')
+                            ->placeholder('Contoh: Fasilitas lengkap dan pelayanan admin sangat responsif.')
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+
                         Textarea::make('comment')
                             ->label('Isi Komentar / Ulasan')
                             ->placeholder('Tulis ulasan pelanggan...')

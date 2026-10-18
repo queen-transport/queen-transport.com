@@ -4,7 +4,6 @@ use App\Filament\Widgets\BusinessOverview;
 use App\Filament\Widgets\LatestPosts;
 use App\Filament\Widgets\PostsPerMonthChart;
 use App\Models\Armada;
-use App\Models\Pelanggan;
 use App\Models\Post;
 use App\Models\User;
 use Livewire\Livewire;
@@ -22,17 +21,15 @@ test('admin dashboard loads with the project widgets', function () {
     $response->assertSeeLivewire(LatestPosts::class);
 });
 
-test('business overview widget reports fleet, article and testimonial stats', function () {
+test('business overview widget reports fleet and article stats', function () {
     Armada::factory()->count(2)->create(['is_published' => true]);
     Armada::factory()->create(['is_published' => false]);
     Post::factory()->create(['status' => 'published', 'published_at' => now()]);
     Post::factory()->create(['status' => 'draft', 'published_at' => null]);
-    Pelanggan::factory()->create(['is_published' => true, 'bintang' => 5]);
 
     Livewire::test(BusinessOverview::class)
         ->assertSee('Armada Aktif')
-        ->assertSee('Artikel Terpublikasi')
-        ->assertSee('Testimoni Pelanggan');
+        ->assertSee('Artikel Terpublikasi');
 });
 
 test('latest posts widget lists recently created posts', function () {

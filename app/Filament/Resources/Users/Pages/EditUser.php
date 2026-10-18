@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Pelanggans\Pages;
+namespace App\Filament\Resources\Users\Pages;
 
-use App\Filament\Resources\Pelanggans\PelangganResource;
+use App\Filament\Resources\Users\UserResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditPelanggan extends EditRecord
+class EditUser extends EditRecord
 {
-    protected static string $resource = PelangganResource::class;
+    protected static string $resource = UserResource::class;
 
     protected function getHeaderActions(): array
     {

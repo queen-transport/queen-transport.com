@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Contracts\ArmadaServiceInterface;
 use App\Models\Armada;
-use App\Models\Pelanggan;
 use Database\Seeders\ArmadaSeeder;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -128,19 +127,6 @@ class ArmadaService implements ArmadaServiceInterface
         return $this->queryPublished()
             ->where('id', '!=', $armada->id)
             ->limit($limit)
-            ->get();
-    }
-
-    /**
-     * Get published customer testimonials.
-     *
-     * @return Collection<int, Pelanggan>
-     */
-    public function getPelanggans(): Collection
-    {
-        return Pelanggan::query()
-            ->where('is_published', true)
-            ->orderBy('sort')
             ->get();
     }
 
@@ -275,14 +261,13 @@ class ArmadaService implements ArmadaServiceInterface
     /**
      * Gather full data payload for Hiace Folio page.
      *
-     * @return array{hiaceArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, hiacePrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{hiaceArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, hiacePrices: array<int, mixed>, faqs: array<int, mixed>}
      */
     public function getHiacePageData(): array
     {
         return [
             'hiaceArmadas' => $this->getHiace(),
             'allArmadas' => $this->getPublished(),
-            'pelanggans' => $this->getPelanggans(),
             'hiacePrices' => $this->getHiacePrices(),
             'faqs' => $this->getHiaceFaqs(),
         ];
@@ -291,14 +276,13 @@ class ArmadaService implements ArmadaServiceInterface
     /**
      * Gather full data payload for Alphard Folio page.
      *
-     * @return array{alphardArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, alphardPrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{alphardArmadas: Collection<int, Armada>, allArmadas: Collection<int, Armada>, alphardPrices: array<int, mixed>, faqs: array<int, mixed>}
      */
     public function getAlphardPageData(): array
     {
         return [
             'alphardArmadas' => $this->getAlphard(),
             'allArmadas' => $this->getPublished(),
-            'pelanggans' => $this->getPelanggans(),
             'alphardPrices' => $this->getAlphardPrices(),
             'faqs' => $this->getAlphardFaqs(),
         ];
@@ -380,13 +364,12 @@ class ArmadaService implements ArmadaServiceInterface
     /**
      * Gather full data payload for luxury car rental Folio page.
      *
-     * @return array{allArmadas: Collection<int, Armada>, pelanggans: Collection<int, Pelanggan>, kelasAtasPrices: array<int, mixed>, faqs: array<int, mixed>}
+     * @return array{allArmadas: Collection<int, Armada>, kelasAtasPrices: array<int, mixed>, faqs: array<int, mixed>}
      */
     public function getKelasAtasPageData(): array
     {
         return [
             'allArmadas' => $this->getPublished(),
-            'pelanggans' => $this->getPelanggans(),
             'kelasAtasPrices' => $this->getKelasAtasPrices(),
             'faqs' => $this->getKelasAtasFaqs(),
         ];

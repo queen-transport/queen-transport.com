@@ -33,9 +33,6 @@ $faqs = [
     ],
 ];
 
-$armadaService = app(\App\Contracts\ArmadaServiceInterface::class);
-$pelanggans = $armadaService->getPelanggans();
-
 $title = 'Sewa Mobil Expander Ultimate Surabaya Murah + Driver | ' . config('site.brand');
 $description = 'Sewa mobil Mitsubishi Xpander Ultimate di Surabaya termurah include driver profesional. Kabin 7-seater luas, suspensi empuk, bersih & irit. Cocok untuk dinas kantor, keluarga & wisata.';
 @endphp
@@ -358,41 +355,6 @@ $description = 'Sewa mobil Mitsubishi Xpander Ultimate di Surabaya termurah incl
             </div>
         </div>
     </section>
-
-    {{-- TESTIMONI PELANGGAN --}}
-    @if ($pelanggans->isNotEmpty())
-    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Testimoni Klien</span>
-                <h2 class="text-white text-2xl font-bold">Apa Kata Pelanggan Setia Kami?</h2>
-                <p class="text-[var(--color-text-muted)] text-sm max-w-[550px] mx-auto mt-2">Kepuasan dan kenyamanan perjalanan Anda adalah prioritas utama kami.</p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-6 max-lg:grid-cols-1">
-                @foreach ($pelanggans->take(3) as $pelanggan)
-                    <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 flex flex-col justify-between">
-                        <div class="mb-4">
-                            <div class="text-amber-400 text-sm mb-3">★★★★★</div>
-                            <p class="text-[var(--color-text-light)] text-xs leading-relaxed italic">
-                                &ldquo;{{ $pelanggan->content }}&rdquo;
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-3 pt-4 border-t border-[var(--color-border)]">
-                            <div class="w-9 h-9 rounded-full bg-[rgba(124,58,237,0.3)] flex items-center justify-center font-bold text-[var(--color-accent)] text-sm">
-                                {{ substr($pelanggan->name, 0, 1) }}
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xs">{{ $pelanggan->name }}</h4>
-                                <p class="text-[var(--color-text-muted)] text-[11px]">{{ $pelanggan->title ?? 'Pelanggan Setia' }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    @endif
 
     {{-- FAQ SECTION --}}
     <section class="py-[90px] bg-[var(--color-bg)]" id="faq">

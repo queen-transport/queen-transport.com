@@ -321,49 +321,6 @@
         </div>
     </section>
 
-    {{-- TESTIMONIALS / PELANGGAN --}}
-    @if ($pelanggans->isNotEmpty())
-        <section class="py-[100px]" id="pelanggan-kami">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <div class="text-center">
-                    <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block font-semibold">Kepercayaan Pelanggan</span>
-                    <h2 class="text-[clamp(1.4rem,2.5vw,2rem)] font-bold text-zinc-900 dark:text-white">Mereka yang Telah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mempercayai Kami</span></h2>
-                    <p class="text-[var(--color-text-muted)] max-w-[600px] mx-auto mt-3">
-                        Ratusan pelanggan dari berbagai kalangan telah merasakan layanan prima {{ config('site.brand') }}.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-3 gap-6 mt-12 max-lg:grid-cols-2 max-md:grid-cols-1">
-                    @foreach ($pelanggans as $p)
-                        <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 flex flex-col gap-4 relative overflow-hidden shadow-sm">
-                            @if ($p->kutipan)
-                                <p class="relative z-10 text-[var(--color-text-light)] text-sm leading-relaxed italic">"{{ $p->kutipan }}"</p>
-                            @endif
-                            <div class="flex items-center gap-3 mt-2">
-                                <div class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-[var(--color-border)] bg-[var(--color-surface)] flex items-center justify-center">
-                                    @if ($p->photo)
-                                        <img src="{{ Storage::disk('public')->url($p->photo) }}" alt="{{ $p->name }}" class="w-full h-full object-cover">
-                                    @else
-                                        <span class="text-[var(--color-accent)] text-lg font-bold">{{ mb_substr($p->name, 0, 1) }}</span>
-                                    @endif
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="text-zinc-900 dark:text-white font-semibold text-sm">{{ $p->name }}</div>
-                                    @if ($p->jabatan || $p->instansi)
-                                        <div class="text-[var(--color-text-muted)] text-xs">
-                                            {{ $p->jabatan }}{{ $p->jabatan && $p->instansi ? ' · ' : '' }}
-                                            <span class="text-[var(--color-accent)]">{{ $p->instansi }}</span>
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="text-sm flex-shrink-0">{{ str_repeat('⭐', $p->bintang) }}</div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
 
     {{-- CTA --}}
     <section class="relative py-[100px]" id="hubungi-kami">

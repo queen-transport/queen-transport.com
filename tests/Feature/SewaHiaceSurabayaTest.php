@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Armada;
-use App\Models\Pelanggan;
 use App\Services\ArmadaService;
 
 test('armada service returns expected hiace page data structure', function () {
@@ -13,17 +12,11 @@ test('armada service returns expected hiace page data structure', function () {
         'is_published' => true,
     ]);
 
-    Pelanggan::factory()->create([
-        'name' => 'Ahmad Fauzi',
-        'is_published' => true,
-    ]);
-
     $data = $service->getHiacePageData();
 
-    expect($data)->toHaveKeys(['hiaceArmadas', 'allArmadas', 'pelanggans', 'hiacePrices', 'faqs']);
+    expect($data)->toHaveKeys(['hiaceArmadas', 'allArmadas', 'hiacePrices', 'faqs']);
     expect($data['hiaceArmadas']->count())->toBeGreaterThan(0);
     expect($data['hiaceArmadas']->first()->title)->toBe('Toyota Hiace Commuter 14 Seat');
-    expect($data['pelanggans']->count())->toBeGreaterThan(0);
     expect($data['hiacePrices'])->toBeArray();
     expect($data['faqs'])->toBeArray();
 });

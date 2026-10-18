@@ -24,6 +24,12 @@ class CreateReview extends Component
 
     public string $comment = '';
 
+    public ?string $carReview = '';
+
+    public ?string $driverReview = '';
+
+    public ?string $facilitiesReview = '';
+
     /** @var array<int> */
     public array $selectedArmadas = [];
 
@@ -67,6 +73,9 @@ class CreateReview extends Component
             'rating' => 'required|integer|min:1|max:5',
             'title' => 'nullable|string|max:150',
             'comment' => 'required|string|min:5|max:2000',
+            'carReview' => 'nullable|string|max:500',
+            'driverReview' => 'nullable|string|max:500',
+            'facilitiesReview' => 'nullable|string|max:500',
             'selectedArmadas' => 'array',
             'selectedArmadas.*' => 'integer|exists:armadas,id',
             'photos.*' => 'nullable|image|max:10240',
@@ -83,6 +92,9 @@ class CreateReview extends Component
             'comment.required' => 'Ulasan atau komentar wajib diisi.',
             'comment.min' => 'Ulasan minimal 5 karakter.',
             'rating.required' => 'Rating bintang wajib dipilih (1-5).',
+            'carReview.max' => 'Ulasan tentang mobil maksimal 500 karakter.',
+            'driverReview.max' => 'Ulasan tentang driver maksimal 500 karakter.',
+            'facilitiesReview.max' => 'Ulasan tentang fasilitas maksimal 500 karakter.',
             'photos.*.image' => 'File foto harus berupa gambar valid (JPG, PNG, WebP).',
             'photos.*.max' => 'Ukuran foto maksimal 10MB per berkas.',
             'videos.*.mimes' => 'Video harus berformat MP4, MOV, WebM, atau AVI.',
@@ -138,6 +150,9 @@ class CreateReview extends Component
                     'rating' => $this->rating,
                     'title' => $this->title,
                     'comment' => $this->comment,
+                    'car_review' => $this->carReview ?: null,
+                    'driver_review' => $this->driverReview ?: null,
+                    'facilities_review' => $this->facilitiesReview ?: null,
                     'armada_ids' => $this->selectedArmadas,
                 ],
                 $this->photos,

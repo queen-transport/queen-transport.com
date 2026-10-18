@@ -5,7 +5,6 @@ namespace App\Console\Commands\MediaLibrary;
 use App\Models\Armada;
 use App\Models\Attachment;
 use App\Models\Galeri;
-use App\Models\Pelanggan;
 use App\Models\Post;
 use App\Models\Setting;
 use Illuminate\Console\Attributes\Description;
@@ -15,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 
 /**
  * One-time import of every file uploaded before the Media Library existed
- * (Armada/Galeri/Pelanggan/Post/Setting upload columns, including gallery
+ * (Armada/Galeri/Post/Setting upload columns, including gallery
  * JSON arrays and inline RichEditor images) into an Attachment record, so
  * they show up in the Media Library and can be reused elsewhere.
  *
@@ -47,10 +46,6 @@ class ImportExistingMedia extends Command
             foreach (($galeri->gallery ?? []) as $path) {
                 $this->importPath($path, "Galeri: {$galeri->title} (tambahan)");
             }
-        });
-
-        Pelanggan::query()->each(function (Pelanggan $pelanggan): void {
-            $this->importPath($pelanggan->photo, "Pelanggan: {$pelanggan->name}");
         });
 
         Post::query()->each(function (Post $post): void {

@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\Armada;
 use App\Models\Galeri;
-use App\Models\Pelanggan;
 use App\Models\Post;
 use App\Models\Setting;
 use Database\Seeders\ArmadaSeeder;
@@ -31,11 +30,6 @@ class BaseService
             ->where('is_published', true)
             ->orderBy('sort')
             ->limit(7)
-            ->get();
-
-        $pelanggans = Pelanggan::query()
-            ->where('is_published', true)
-            ->orderBy('sort')
             ->get();
 
         $posts = Post::query()
@@ -79,7 +73,7 @@ class BaseService
             ['q' => 'Bagaimana cara melakukan pemesanan?', 'a' => 'Pemesanan dilakukan melalui WhatsApp. Cukup klik tombol "Pesan Sekarang" atau "Chat WhatsApp", lalu sampaikan kebutuhan perjalanan Anda dan tim kami akan segera merespons.'],
         ];
 
-        return compact('setting', 'armadas', 'galleries', 'pelanggans', 'posts', 'priceList', 'faqs');
+        return compact('setting', 'armadas', 'galleries', 'posts', 'priceList', 'faqs');
     }
 
     public function getSitemap(): Response

@@ -25,6 +25,9 @@ class ReviewFactory extends Factory
             'rating' => fake()->numberBetween(4, 5),
             'title' => fake()->sentence(4),
             'comment' => fake()->paragraph(),
+            'car_review' => fake()->optional(0.7)->sentence(6),
+            'driver_review' => fake()->optional(0.7)->sentence(6),
+            'facilities_review' => fake()->optional(0.7)->sentence(6),
             'status' => Review::STATUS_APPROVED,
             'created_by_admin' => false,
         ];

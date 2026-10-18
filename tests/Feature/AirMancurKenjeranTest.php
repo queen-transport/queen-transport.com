@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Armada;
-use App\Models\Pelanggan;
 use App\Services\ArmadaService;
 
 test('armada service retrieves published armadas for air mancur kenjeran page', function () {
@@ -10,11 +9,6 @@ test('armada service retrieves published armadas for air mancur kenjeran page', 
     Armada::factory()->create([
         'title' => 'Toyota Hiace Premio Luxury',
         'car_type' => 'Hiace',
-        'is_published' => true,
-    ]);
-
-    Pelanggan::factory()->create([
-        'name' => 'Siti Rahma',
         'is_published' => true,
     ]);
 

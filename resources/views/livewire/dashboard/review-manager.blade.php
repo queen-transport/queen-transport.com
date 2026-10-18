@@ -101,11 +101,35 @@
                     @endif
 
                     {{-- Konten Review --}}
-                    <div>
+                    <div class="space-y-3">
                         @if ($rev->title)
                             <h4 class="text-base font-semibold text-zinc-900 dark:text-white mb-1.5">{{ $rev->title }}</h4>
                         @endif
                         <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">{{ $rev->comment }}</p>
+
+                        {{-- Detail Ulasan (Mobil, Driver, Fasilitas) --}}
+                        @if ($rev->car_review || $rev->driver_review || $rev->facilities_review)
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-1 text-xs">
+                                @if ($rev->car_review)
+                                    <div class="p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/30 border border-purple-500/15 dark:border-purple-500/20">
+                                        <span class="font-semibold text-purple-700 dark:text-purple-300 block mb-0.5">🚗 Tentang Mobil:</span>
+                                        <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">{{ $rev->car_review }}</span>
+                                    </div>
+                                @endif
+                                @if ($rev->driver_review)
+                                    <div class="p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/30 border border-purple-500/15 dark:border-purple-500/20">
+                                        <span class="font-semibold text-purple-700 dark:text-purple-300 block mb-0.5">👨‍✈️ Tentang Driver:</span>
+                                        <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">{{ $rev->driver_review }}</span>
+                                    </div>
+                                @endif
+                                @if ($rev->facilities_review)
+                                    <div class="p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/30 border border-purple-500/15 dark:border-purple-500/20">
+                                        <span class="font-semibold text-purple-700 dark:text-purple-300 block mb-0.5">✨ Kualitas &amp; Fasilitas:</span>
+                                        <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">{{ $rev->facilities_review }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                        @endif
                     </div>
 
                     {{-- Foto Lampiran --}}
@@ -268,10 +292,50 @@
                         <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Komentar / Ulasan <span class="text-rose-400">*</span></label>
                         <textarea
                             wire:model="comment"
-                            rows="4"
+                            rows="3"
                             class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0a0c14] border border-zinc-300 dark:border-purple-500/20 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-sm focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                         ></textarea>
                         @error('comment') <span class="text-xs text-rose-400 mt-1 block">{{ $message }}</span> @enderror
+                    </div>
+
+                    {{-- Detail Ulasan (Mobil, Driver, Fasilitas) --}}
+                    <div class="space-y-3 pt-1">
+                        <label class="block text-xs font-bold text-zinc-800 dark:text-zinc-200">Ulasan Detail Layanan (Opsional)</label>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">🚗 1. Tentang Mobil</label>
+                                <textarea
+                                    wire:model="carReview"
+                                    rows="2"
+                                    maxlength="500"
+                                    placeholder="Kondisi mobil, kebersihan, AC, kenyamanan suspensi..."
+                                    class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0a0c14] border border-zinc-300 dark:border-purple-500/20 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-xs focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                                ></textarea>
+                                @error('carReview') <span class="text-xs text-rose-400 mt-0.5 block">{{ $message }}</span> @enderror
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">👨‍✈️ 2. Tentang Driver</label>
+                                <textarea
+                                    wire:model="driverReview"
+                                    rows="2"
+                                    maxlength="500"
+                                    placeholder="Ketepatan waktu, keramahan sopir, penguasaan jalan..."
+                                    class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0a0c14] border border-zinc-300 dark:border-purple-500/20 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-xs focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                                ></textarea>
+                                @error('driverReview') <span class="text-xs text-rose-400 mt-0.5 block">{{ $message }}</span> @enderror
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">✨ 3. Kualitas &amp; Fasilitas</label>
+                                <textarea
+                                    wire:model="facilitiesReview"
+                                    rows="2"
+                                    maxlength="500"
+                                    placeholder="Kemudahan pemesanan, fasilitas kabin, respon pelayanan..."
+                                    class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0a0c14] border border-zinc-300 dark:border-purple-500/20 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 text-xs focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                                ></textarea>
+                                @error('facilitiesReview') <span class="text-xs text-rose-400 mt-0.5 block">{{ $message }}</span> @enderror
+                            </div>
+                        </div>
                     </div>
 
                     {{-- Media yang Sudah Ada --}}
