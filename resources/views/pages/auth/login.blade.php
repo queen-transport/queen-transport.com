@@ -29,7 +29,6 @@
                     :value="old('email')"
                     type="email"
                     required
-                    autofocus
                     autocomplete="email"
                     placeholder="nama@email.com"
                 />
