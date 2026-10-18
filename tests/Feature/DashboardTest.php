@@ -56,7 +56,7 @@ test('livewire review manager can submit a new review', function () {
     expect($review->armadas)->toHaveCount(1);
 });
 
-test('livewire review manager allows edit within 24 hours', function () {
+test('livewire review manager redirects to standalone edit page within 24 hours', function () {
     $user = User::factory()->create();
     $review = Review::factory()->create([
         'user_id' => $user->id,
@@ -69,14 +69,9 @@ test('livewire review manager allows edit within 24 hours', function () {
     $this->actingAs($user);
 
     Livewire::test(ReviewManager::class)
+        ->assertSee(route('reviews.edit', $review))
         ->call('openEditModal', $review->id)
-        ->set('carReview', 'Komentar baru setelah diedit')
-        ->call('submitEdit')
-        ->assertHasNoErrors()
-        ->assertSet('showEditModal', false);
-
-    $review->refresh();
-    expect($review->car_review)->toBe('Komentar baru setelah diedit');
+        ->assertRedirect(route('reviews.edit', ['review' => $review->id]));
 });
 
 test('livewire review manager blocks edit after 24 hours', function () {
@@ -92,12 +87,10 @@ test('livewire review manager blocks edit after 24 hours', function () {
     $this->actingAs($user);
 
     Livewire::test(ReviewManager::class)
+        ->assertDontSee(route('reviews.edit', $review))
+        ->assertSee('Terkunci (melewati batas waktu 24 jam)')
         ->call('openEditModal', $review->id)
-        ->assertSet('showEditModal', false)
         ->assertSet('feedbackType', 'error');
-
-    $review->refresh();
-    expect($review->car_review)->toBe('Komentar lama terkunci');
 });
 
 test('visiting dashboard with review_armada redirects to reviews.create', function () {
@@ -109,24 +102,4 @@ test('visiting dashboard with review_armada redirects to reviews.create', functi
     Livewire::withQueryParams(['review_armada' => $armada->id])
         ->test(ReviewManager::class)
         ->assertRedirect(route('reviews.create', ['armada' => $armada->id]));
-});
-
-test('review manager edit modal displays armada photo when available', function () {
-    $user = User::factory()->create();
-    $armada = Armada::factory()->create([
-        'title' => 'Innova Zenix Hybrid Modal Test',
-        'featured_image' => 'https://example.com/zenix.jpg',
-    ]);
-    $review = Review::factory()->create([
-        'user_id' => $user->id,
-        'created_at' => now()->subHours(2),
-    ]);
-
-    $this->actingAs($user);
-
-    Livewire::test(ReviewManager::class)
-        ->call('openEditModal', $review->id)
-        ->assertSet('showEditModal', true)
-        ->assertSee('https://example.com/zenix.jpg')
-        ->assertSee('Innova Zenix Hybrid Modal Test');
 });

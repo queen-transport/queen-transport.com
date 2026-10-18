@@ -145,28 +145,18 @@ class ReviewManager extends Component
         }
     }
 
-    public function openEditModal(string $reviewId): void
+    public function openEditModal(string $reviewId): mixed
     {
-        $this->resetValidation();
-        $review = Review::with(['armadas', 'media'])->find($reviewId);
+        $review = Review::find($reviewId);
 
         if (! $review || ! Gate::allows('update', $review)) {
             $this->feedbackType = 'error';
             $this->feedbackMessage = 'Ulasan tidak dapat diedit karena telah melewati 24 jam atau Anda bukan pemilik ulasan.';
 
-            return;
+            return null;
         }
 
-        $this->editingReviewId = $review->id;
-        $this->rating = $review->rating;
-        $this->carReview = $review->car_review ?? '';
-        $this->driverReview = $review->driver_review ?? '';
-        $this->facilitiesReview = $review->facilities_review ?? '';
-        $this->selectedArmadas = $review->armadas->pluck('id')->all();
-        $this->photos = [];
-        $this->videos = [];
-        $this->removeMediaIds = [];
-        $this->showEditModal = true;
+        return redirect()->route('reviews.edit', ['review' => $review->id]);
     }
 
     public function markMediaForRemoval(int $mediaId): void
@@ -266,14 +256,9 @@ class ReviewManager extends Component
             ->orderBy('title')
             ->get(['id', 'title', 'slug', 'car_type', 'car_badge', 'car_icon', 'price', 'featured_image', 'gallery']);
 
-        $editingReview = $this->editingReviewId
-            ? Review::with('media')->find($this->editingReviewId)
-            : null;
-
         return view('livewire.dashboard.review-manager', [
             'reviews' => $reviews,
             'availableArmadas' => $availableArmadas,
-            'editingReview' => $editingReview,
         ]);
     }
 }

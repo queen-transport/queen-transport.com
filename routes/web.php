@@ -4,6 +4,7 @@ use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\BlogController;
+use App\Models\Review;
 use Illuminate\Support\Facades\Route;
 
 // ======
@@ -48,6 +49,9 @@ Route::controller(BlogController::class)
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
     Route::view('reviews/create', 'reviews.create')->name('reviews.create');
+    Route::get('reviews/{review}/edit', function (Review $review) {
+        return view('reviews.edit', ['review' => $review]);
+    })->name('reviews.edit');
     Route::redirect('ulasan/buat', '/reviews/create');
 });
 
