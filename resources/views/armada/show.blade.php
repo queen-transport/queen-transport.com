@@ -177,14 +177,7 @@
                                         </div>
                                     </div>
 
-                                    @if ($rev->title)
-                                        <h5 class="text-zinc-900 dark:text-white font-medium text-sm">{{ $rev->title }}</h5>
-                                    @endif
-
-                                    <p class="text-[var(--color-text-light)] text-sm leading-relaxed">{{ $rev->comment }}</p>
-
-                                    @if ($rev->car_review || $rev->driver_review || $rev->facilities_review)
-                                        <div class="space-y-1.5 pt-2 text-xs">
+                                    <div class="space-y-1.5 pt-1 text-xs">
                                             @if ($rev->car_review)
                                                 <div class="flex items-start gap-1.5 text-zinc-600 dark:text-zinc-300 bg-purple-500/5 dark:bg-purple-950/30 p-2 rounded-lg border border-purple-500/15">
                                                     <span class="font-semibold text-purple-700 dark:text-purple-300 shrink-0">🚗 Mobil:</span>
@@ -203,8 +196,7 @@
                                                     <span>{{ $rev->facilities_review }}</span>
                                                 </div>
                                             @endif
-                                        </div>
-                                    @endif
+                                    </div>
 
                                     @php
                                         $revPhotos = $rev->getMedia('photos');

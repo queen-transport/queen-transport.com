@@ -20,15 +20,11 @@ class CreateReview extends Component
 
     public int $rating = 5;
 
-    public ?string $title = '';
+    public string $carReview = '';
 
-    public string $comment = '';
+    public string $driverReview = '';
 
-    public ?string $carReview = '';
-
-    public ?string $driverReview = '';
-
-    public ?string $facilitiesReview = '';
+    public string $facilitiesReview = '';
 
     /** @var array<int> */
     public array $selectedArmadas = [];
@@ -71,11 +67,9 @@ class CreateReview extends Component
     {
         return [
             'rating' => 'required|integer|min:1|max:5',
-            'title' => 'nullable|string|max:150',
-            'comment' => 'required|string|min:5|max:2000',
-            'carReview' => 'nullable|string|max:500',
-            'driverReview' => 'nullable|string|max:500',
-            'facilitiesReview' => 'nullable|string|max:500',
+            'carReview' => 'required|string|min:5|max:500',
+            'driverReview' => 'required|string|min:5|max:500',
+            'facilitiesReview' => 'required|string|min:5|max:500',
             'selectedArmadas' => 'array',
             'selectedArmadas.*' => 'integer|exists:armadas,id',
             'photos.*' => 'nullable|image|max:10240',
@@ -89,11 +83,15 @@ class CreateReview extends Component
     protected function messages(): array
     {
         return [
-            'comment.required' => 'Ulasan atau komentar wajib diisi.',
-            'comment.min' => 'Ulasan minimal 5 karakter.',
             'rating.required' => 'Rating bintang wajib dipilih (1-5).',
+            'carReview.required' => 'Ulasan tentang mobil wajib diisi.',
+            'carReview.min' => 'Ulasan tentang mobil minimal 5 karakter.',
             'carReview.max' => 'Ulasan tentang mobil maksimal 500 karakter.',
+            'driverReview.required' => 'Ulasan tentang driver wajib diisi.',
+            'driverReview.min' => 'Ulasan tentang driver minimal 5 karakter.',
             'driverReview.max' => 'Ulasan tentang driver maksimal 500 karakter.',
+            'facilitiesReview.required' => 'Ulasan tentang kualitas & fasilitas wajib diisi.',
+            'facilitiesReview.min' => 'Ulasan tentang kualitas & fasilitas minimal 5 karakter.',
             'facilitiesReview.max' => 'Ulasan tentang fasilitas maksimal 500 karakter.',
             'photos.*.image' => 'File foto harus berupa gambar valid (JPG, PNG, WebP).',
             'photos.*.max' => 'Ukuran foto maksimal 10MB per berkas.',
@@ -148,11 +146,9 @@ class CreateReview extends Component
                 $user,
                 [
                     'rating' => $this->rating,
-                    'title' => $this->title,
-                    'comment' => $this->comment,
-                    'car_review' => $this->carReview ?: null,
-                    'driver_review' => $this->driverReview ?: null,
-                    'facilities_review' => $this->facilitiesReview ?: null,
+                    'car_review' => $this->carReview,
+                    'driver_review' => $this->driverReview,
+                    'facilities_review' => $this->facilitiesReview,
                     'armada_ids' => $this->selectedArmadas,
                 ],
                 $this->photos,

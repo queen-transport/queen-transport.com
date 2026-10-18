@@ -23,11 +23,9 @@ class ReviewFactory extends Factory
         return [
             'user_id' => User::factory(),
             'rating' => fake()->numberBetween(4, 5),
-            'title' => fake()->sentence(4),
-            'comment' => fake()->paragraph(),
-            'car_review' => fake()->optional(0.7)->sentence(6),
-            'driver_review' => fake()->optional(0.7)->sentence(6),
-            'facilities_review' => fake()->optional(0.7)->sentence(6),
+            'car_review' => fake()->sentence(8),
+            'driver_review' => fake()->sentence(8),
+            'facilities_review' => fake()->sentence(8),
             'status' => Review::STATUS_APPROVED,
             'created_by_admin' => false,
         ];

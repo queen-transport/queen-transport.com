@@ -17,8 +17,9 @@ test('authenticated users can visit the dashboard and see their reviews', functi
 
     $review = Review::factory()->create([
         'user_id' => $user->id,
-        'title' => 'Perjalanan Sangat Berkesan',
-        'comment' => 'Unit bersih dan nyaman sekali.',
+        'car_review' => 'Unit bersih dan nyaman sekali.',
+        'driver_review' => 'Driver ramah dan profesional.',
+        'facilities_review' => 'Fasilitas sangat memuaskan.',
         'status' => Review::STATUS_APPROVED,
     ]);
     $review->armadas()->attach($armada);
@@ -28,7 +29,7 @@ test('authenticated users can visit the dashboard and see their reviews', functi
     $response = $this->get(route('dashboard'));
     $response->assertOk()
         ->assertSee('Toyota Alphard VIP')
-        ->assertSee('Perjalanan Sangat Berkesan');
+        ->assertSee('Unit bersih dan nyaman sekali.');
 });
 
 test('livewire review manager can submit a new review', function () {
@@ -40,8 +41,9 @@ test('livewire review manager can submit a new review', function () {
     Livewire::test(ReviewManager::class)
         ->call('openCreateModal')
         ->set('rating', 5)
-        ->set('title', 'Layanan Bintang Lima')
-        ->set('comment', 'Sopir sangat ramah dan armada sangat prima.')
+        ->set('carReview', 'Kondisi mobil sangat prima dan wangi.')
+        ->set('driverReview', 'Sopir sangat ramah dan tiba tepat waktu.')
+        ->set('facilitiesReview', 'Fasilitas kabin lengkap dan nyaman.')
         ->set('selectedArmadas', [$armada->id])
         ->call('submitCreate')
         ->assertHasNoErrors()
@@ -49,7 +51,7 @@ test('livewire review manager can submit a new review', function () {
 
     $review = Review::where('user_id', $user->id)->first();
     expect($review)->not->toBeNull();
-    expect($review->title)->toBe('Layanan Bintang Lima');
+    expect($review->car_review)->toBe('Kondisi mobil sangat prima dan wangi.');
     expect($review->status)->toBe(Review::STATUS_PENDING);
     expect($review->armadas)->toHaveCount(1);
 });
@@ -58,7 +60,9 @@ test('livewire review manager allows edit within 24 hours', function () {
     $user = User::factory()->create();
     $review = Review::factory()->create([
         'user_id' => $user->id,
-        'comment' => 'Komentar awal sebelum diedit',
+        'car_review' => 'Komentar awal sebelum diedit',
+        'driver_review' => 'Driver awal',
+        'facilities_review' => 'Fasilitas awal',
         'created_at' => now()->subHours(6),
     ]);
 
@@ -66,20 +70,22 @@ test('livewire review manager allows edit within 24 hours', function () {
 
     Livewire::test(ReviewManager::class)
         ->call('openEditModal', $review->id)
-        ->set('comment', 'Komentar baru setelah diedit')
+        ->set('carReview', 'Komentar baru setelah diedit')
         ->call('submitEdit')
         ->assertHasNoErrors()
         ->assertSet('showEditModal', false);
 
     $review->refresh();
-    expect($review->comment)->toBe('Komentar baru setelah diedit');
+    expect($review->car_review)->toBe('Komentar baru setelah diedit');
 });
 
 test('livewire review manager blocks edit after 24 hours', function () {
     $user = User::factory()->create();
     $review = Review::factory()->create([
         'user_id' => $user->id,
-        'comment' => 'Komentar lama terkunci',
+        'car_review' => 'Komentar lama terkunci',
+        'driver_review' => 'Driver lama',
+        'facilities_review' => 'Fasilitas lama',
         'created_at' => now()->subHours(26),
     ]);
 
@@ -91,7 +97,7 @@ test('livewire review manager blocks edit after 24 hours', function () {
         ->assertSet('feedbackType', 'error');
 
     $review->refresh();
-    expect($review->comment)->toBe('Komentar lama terkunci');
+    expect($review->car_review)->toBe('Komentar lama terkunci');
 });
 
 test('visiting dashboard with review_armada redirects to reviews.create', function () {

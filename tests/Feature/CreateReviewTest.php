@@ -73,8 +73,6 @@ test('user can successfully submit review and is redirected to dashboard', funct
     Livewire::withQueryParams(['armada' => $armada->id])
         ->test(CreateReview::class)
         ->set('rating', 5)
-        ->set('title', 'Pelayanan Sangat Memuaskan')
-        ->set('comment', 'Mobil sangat bersih, wangi, driver tiba tepat waktu dan sangat ramah.')
         ->set('carReview', 'Kondisi Alphard mulus, kabin higienis dan wangi.')
         ->set('driverReview', 'Driver Pak Joko sangat ramah dan sopan.')
         ->set('facilitiesReview', 'AC dingin, air mineral dan charger tersedia.')
@@ -87,8 +85,6 @@ test('user can successfully submit review and is redirected to dashboard', funct
     $review = Review::where('user_id', $user->id)->first();
     expect($review)->not->toBeNull()
         ->and($review->rating)->toBe(5)
-        ->and($review->title)->toBe('Pelayanan Sangat Memuaskan')
-        ->and($review->comment)->toBe('Mobil sangat bersih, wangi, driver tiba tepat waktu dan sangat ramah.')
         ->and($review->car_review)->toBe('Kondisi Alphard mulus, kabin higienis dan wangi.')
         ->and($review->driver_review)->toBe('Driver Pak Joko sangat ramah dan sopan.')
         ->and($review->facilities_review)->toBe('AC dingin, air mineral dan charger tersedia.')
@@ -115,9 +111,11 @@ test('validation prevents submitting invalid reviews and dispatches scroll-to-st
 
     Livewire::test(CreateReview::class)
         ->set('rating', 0)
-        ->set('comment', 'abc') // < 5 chars
+        ->set('carReview', 'abc') // < 5 chars
+        ->set('driverReview', '') // required
+        ->set('facilitiesReview', '') // required
         ->call('submit')
-        ->assertHasErrors(['rating', 'comment'])
+        ->assertHasErrors(['rating', 'carReview', 'driverReview', 'facilitiesReview'])
         ->assertDispatched('scroll-to-status')
         ->assertSee('review-validation-alert')
         ->assertSee('Terdapat kesalahan pada formulir ulasan');
@@ -134,7 +132,9 @@ test('server failure dispatches scroll-to-status event and displays status alert
 
     Livewire::test(CreateReview::class)
         ->set('rating', 5)
-        ->set('comment', 'Ulasan yang sangat bagus dan memuaskan')
+        ->set('carReview', 'Mobil sangat bagus dan nyaman')
+        ->set('driverReview', 'Driver sangat profesional')
+        ->set('facilitiesReview', 'Fasilitas sangat memuaskan')
         ->call('submit')
         ->assertDispatched('scroll-to-status')
         ->assertSee('review-status-alert')
@@ -153,7 +153,9 @@ test('user can upload photos and videos with review', function () {
     Livewire::withQueryParams(['armada' => $armada->id])
         ->test(CreateReview::class)
         ->set('rating', 4)
-        ->set('comment', 'Perjalanan dinas lancar sekali dan armada nyaman.')
+        ->set('carReview', 'Perjalanan dinas lancar sekali dan armada nyaman.')
+        ->set('driverReview', 'Driver selalu mengutamakan keselamatan.')
+        ->set('facilitiesReview', 'Fasilitas lengkap dan bersih.')
         ->set('photos', [$photo])
         ->call('submit')
         ->assertHasNoErrors()

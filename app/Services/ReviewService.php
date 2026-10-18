@@ -15,7 +15,7 @@ class ReviewService implements ReviewServiceInterface
     /**
      * Create a review submitted by a regular user.
      *
-     * @param  array{rating: int, comment: string, title?: string|null, car_review?: string|null, driver_review?: string|null, facilities_review?: string|null, armada_ids?: array<int>}  $data
+     * @param  array{rating: int, car_review: string, driver_review: string, facilities_review: string, armada_ids?: array<int>}  $data
      * @param  array<UploadedFile>  $photos
      * @param  array<UploadedFile>  $videos
      */
@@ -34,11 +34,9 @@ class ReviewService implements ReviewServiceInterface
             $review = Review::create([
                 'user_id' => $user->id,
                 'rating' => $data['rating'],
-                'title' => $data['title'] ?? null,
-                'comment' => $data['comment'],
-                'car_review' => $data['car_review'] ?? null,
-                'driver_review' => $data['driver_review'] ?? null,
-                'facilities_review' => $data['facilities_review'] ?? null,
+                'car_review' => $data['car_review'],
+                'driver_review' => $data['driver_review'],
+                'facilities_review' => $data['facilities_review'],
                 'status' => Review::STATUS_PENDING,
                 'created_by_admin' => false,
             ]);
@@ -72,7 +70,7 @@ class ReviewService implements ReviewServiceInterface
     /**
      * Update an existing review, enforcing the 24-hour limit and ownership.
      *
-     * @param  array{rating?: int, comment?: string, title?: string|null, armada_ids?: array<int>}  $data
+     * @param  array{rating?: int, car_review?: string, driver_review?: string, facilities_review?: string, armada_ids?: array<int>}  $data
      * @param  array<UploadedFile>  $newPhotos
      * @param  array<UploadedFile>  $newVideos
      * @param  array<int>  $removeMediaIds
@@ -87,7 +85,7 @@ class ReviewService implements ReviewServiceInterface
         ]);
 
         return DB::transaction(function () use ($review, $data, $newPhotos, $newVideos, $removeMediaIds) {
-            $fillable = array_intersect_key($data, array_flip(['rating', 'title', 'comment', 'car_review', 'driver_review', 'facilities_review']));
+            $fillable = array_intersect_key($data, array_flip(['rating', 'car_review', 'driver_review', 'facilities_review']));
             if (! empty($fillable)) {
                 $review->update($fillable);
             }
@@ -212,11 +210,9 @@ class ReviewService implements ReviewServiceInterface
             $review = Review::create([
                 'user_id' => $data['user_id'],
                 'rating' => $data['rating'],
-                'title' => $data['title'] ?? null,
-                'comment' => $data['comment'],
-                'car_review' => $data['car_review'] ?? null,
-                'driver_review' => $data['driver_review'] ?? null,
-                'facilities_review' => $data['facilities_review'] ?? null,
+                'car_review' => $data['car_review'],
+                'driver_review' => $data['driver_review'],
+                'facilities_review' => $data['facilities_review'],
                 'status' => $data['status'] ?? Review::STATUS_APPROVED,
                 'created_by_admin' => true,
             ]);

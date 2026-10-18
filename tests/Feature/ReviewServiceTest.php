@@ -26,8 +26,6 @@ test('user can create review with pending status and optional armadas', function
         $user,
         [
             'rating' => 5,
-            'title' => 'Sangat Memuaskan',
-            'comment' => 'Mobil sangat bersih dan driver ramah sekali.',
             'car_review' => 'Mobil Alphard sangat mulus dan wangi.',
             'driver_review' => 'Driver datang tepat waktu dan ramah.',
             'facilities_review' => 'Air mineral dingin dan charger HP berfungsi baik.',
@@ -55,7 +53,6 @@ test('user can update own review within 24 hours', function () {
     $review = Review::factory()->create([
         'user_id' => $user->id,
         'rating' => 4,
-        'comment' => 'Review awal',
         'car_review' => 'Mobil awal',
         'driver_review' => 'Driver awal',
         'facilities_review' => 'Fasilitas awal',
@@ -67,7 +64,6 @@ test('user can update own review within 24 hours', function () {
         $user,
         [
             'rating' => 5,
-            'comment' => 'Review setelah diedit',
             'car_review' => 'Mobil sangat bagus diedit',
             'driver_review' => 'Driver sangat ramah diedit',
             'facilities_review' => 'Fasilitas lengkap diedit',
@@ -75,7 +71,6 @@ test('user can update own review within 24 hours', function () {
     );
 
     expect($updated->rating)->toBe(5);
-    expect($updated->comment)->toBe('Review setelah diedit');
     expect($updated->car_review)->toBe('Mobil sangat bagus diedit');
     expect($updated->driver_review)->toBe('Driver sangat ramah diedit');
     expect($updated->facilities_review)->toBe('Fasilitas lengkap diedit');
@@ -86,14 +81,16 @@ test('user cannot update review after 24 hours', function () {
     $review = Review::factory()->create([
         'user_id' => $user->id,
         'rating' => 4,
-        'comment' => 'Review lama',
+        'car_review' => 'Mobil lama',
+        'driver_review' => 'Driver lama',
+        'facilities_review' => 'Fasilitas lama',
         'created_at' => now()->subHours(25),
     ]);
 
     expect(fn () => $this->reviewService->updateReview(
         $review,
         $user,
-        ['comment' => 'Coba edit review lama']
+        ['car_review' => 'Coba edit review lama']
     ))->toThrow(AuthorizationException::class);
 });
 
@@ -109,7 +106,7 @@ test('non-owner cannot update review', function () {
     expect(fn () => $this->reviewService->updateReview(
         $review,
         $stranger,
-        ['comment' => 'Edit oleh orang lain']
+        ['car_review' => 'Edit oleh orang lain']
     ))->toThrow(AuthorizationException::class);
 });
 
@@ -149,10 +146,10 @@ test('admin can update and delete reviews even after 24 hours', function () {
     $updated = $this->reviewService->updateReview(
         $review,
         $admin,
-        ['comment' => 'Diedit oleh admin setelah 5 hari']
+        ['car_review' => 'Diedit oleh admin setelah 5 hari']
     );
 
-    expect($updated->comment)->toBe('Diedit oleh admin setelah 5 hari');
+    expect($updated->car_review)->toBe('Diedit oleh admin setelah 5 hari');
 
     $deleted = $this->reviewService->deleteReview($review, $admin);
     expect($deleted)->toBeTrue();
@@ -175,8 +172,6 @@ test('admin can create review directly with custom status', function () {
     $review = $this->reviewService->adminCreateReview([
         'user_id' => $user->id,
         'rating' => 5,
-        'title' => 'Testimoni Khusus',
-        'comment' => 'Ulasan dimasukkan langsung oleh admin.',
         'car_review' => 'Unit bersih terawat.',
         'driver_review' => 'Driver ramah bintang lima.',
         'facilities_review' => 'Layanan premium memuaskan.',

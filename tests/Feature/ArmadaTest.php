@@ -99,8 +99,9 @@ test('armada show displays approved reviews for that armada', function () {
 
     $review = Review::factory()->create([
         'user_id' => $user->id,
-        'title' => 'Perjalanan Luar Kota Menyenangkan',
-        'comment' => 'Mobil bersih dan nyaman untuk keluarga.',
+        'car_review' => 'Mobil Alphard sangat bersih dan terawat.',
+        'driver_review' => 'Driver ramah dan sopan.',
+        'facilities_review' => 'Fasilitas sangat memuaskan.',
         'status' => Review::STATUS_APPROVED,
     ]);
     $review->armadas()->attach($armada);
@@ -110,5 +111,5 @@ test('armada show displays approved reviews for that armada', function () {
     $response->assertOk()
         ->assertSee('Ulasan Pelanggan')
         ->assertSee('Pak Bambang')
-        ->assertSee('Perjalanan Luar Kota Menyenangkan');
+        ->assertSee('Mobil Alphard sangat bersih dan terawat.');
 });

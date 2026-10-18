@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Reviews\Schemas;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -54,35 +53,28 @@ class ReviewForm
                             ->default('approved')
                             ->required(),
 
-                        TextInput::make('title')
-                            ->label('Judul Ulasan (Opsional)')
-                            ->placeholder('Contoh: Layanan Alphard Sangat Nyaman')
-                            ->maxLength(150)
-                            ->columnSpanFull(),
-
-                        TextInput::make('car_review')
-                            ->label('Ulasan Tentang Mobil (Opsional)')
+                        Textarea::make('car_review')
+                            ->label('Ulasan Tentang Mobil')
                             ->placeholder('Contoh: Mobil sangat bersih, wangi, dan nyaman dikendarai.')
-                            ->maxLength(500)
-                            ->columnSpanFull(),
-
-                        TextInput::make('driver_review')
-                            ->label('Ulasan Tentang Driver (Opsional)')
-                            ->placeholder('Contoh: Driver ramah, tepat waktu, dan mengemudi dengan halus.')
-                            ->maxLength(500)
-                            ->columnSpanFull(),
-
-                        TextInput::make('facilities_review')
-                            ->label('Ulasan Tentang Kualitas & Fasilitas (Opsional)')
-                            ->placeholder('Contoh: Fasilitas lengkap dan pelayanan admin sangat responsif.')
-                            ->maxLength(500)
-                            ->columnSpanFull(),
-
-                        Textarea::make('comment')
-                            ->label('Isi Komentar / Ulasan')
-                            ->placeholder('Tulis ulasan pelanggan...')
                             ->required()
-                            ->rows(4)
+                            ->maxLength(500)
+                            ->rows(3)
+                            ->columnSpanFull(),
+
+                        Textarea::make('driver_review')
+                            ->label('Ulasan Tentang Driver')
+                            ->placeholder('Contoh: Driver ramah, tepat waktu, dan mengemudi dengan halus.')
+                            ->required()
+                            ->maxLength(500)
+                            ->rows(3)
+                            ->columnSpanFull(),
+
+                        Textarea::make('facilities_review')
+                            ->label('Ulasan Tentang Kualitas & Fasilitas')
+                            ->placeholder('Contoh: Fasilitas lengkap dan pelayanan admin sangat responsif.')
+                            ->required()
+                            ->maxLength(500)
+                            ->rows(3)
                             ->columnSpanFull(),
                     ]),
 

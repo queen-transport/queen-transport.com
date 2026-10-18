@@ -45,27 +45,22 @@ class ReviewsTable
                     ->color('warning')
                     ->sortable(),
 
-                TextColumn::make('comment')
-                    ->label('Komentar')
-                    ->limit(60)
-                    ->searchable(),
-
                 TextColumn::make('car_review')
                     ->label('Ulasan Mobil')
-                    ->limit(40)
-                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->limit(35)
+                    ->tooltip(fn (Review $record): string => $record->car_review)
                     ->searchable(),
 
                 TextColumn::make('driver_review')
                     ->label('Ulasan Driver')
-                    ->limit(40)
-                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->limit(35)
+                    ->tooltip(fn (Review $record): string => $record->driver_review)
                     ->searchable(),
 
                 TextColumn::make('facilities_review')
                     ->label('Ulasan Fasilitas')
-                    ->limit(40)
-                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->limit(35)
+                    ->tooltip(fn (Review $record): string => $record->facilities_review)
                     ->searchable(),
 
                 TextColumn::make('status')

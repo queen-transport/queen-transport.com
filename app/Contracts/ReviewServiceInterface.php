@@ -11,7 +11,7 @@ interface ReviewServiceInterface
     /**
      * Create a review submitted by a regular user.
      *
-     * @param  array{rating: int, comment: string, title?: string|null, car_review?: string|null, driver_review?: string|null, facilities_review?: string|null, armada_ids?: array<int>}  $data
+     * @param  array{rating: int, car_review: string, driver_review: string, facilities_review: string, armada_ids?: array<int>}  $data
      * @param  array<UploadedFile>  $photos
      * @param  array<UploadedFile>  $videos
      */
@@ -20,7 +20,7 @@ interface ReviewServiceInterface
     /**
      * Update an existing review, enforcing the 24-hour limit and ownership.
      *
-     * @param  array{rating?: int, comment?: string, title?: string|null, car_review?: string|null, driver_review?: string|null, facilities_review?: string|null, armada_ids?: array<int>}  $data
+     * @param  array{rating?: int, car_review?: string, driver_review?: string, facilities_review?: string, armada_ids?: array<int>}  $data
      * @param  array<UploadedFile>  $newPhotos
      * @param  array<UploadedFile>  $newVideos
      * @param  array<int>  $removeMediaIds
@@ -45,7 +45,7 @@ interface ReviewServiceInterface
     /**
      * Create a review directly by an admin.
      *
-     * @param  array{user_id: int, rating: int, comment: string, title?: string|null, car_review?: string|null, driver_review?: string|null, facilities_review?: string|null, armada_ids?: array<int>, status?: string}  $data
+     * @param  array{user_id: int, rating: int, car_review: string, driver_review: string, facilities_review: string, armada_ids?: array<int>, status?: string}  $data
      * @param  array<UploadedFile>  $photos
      * @param  array<UploadedFile>  $videos
      */

@@ -42,8 +42,6 @@ class ReviewSeeder extends Seeder
         $reviewsData = [
             [
                 'rating' => 5,
-                'title' => 'Layanan Alphard Sangat Nyaman & Memuaskan',
-                'comment' => 'Sewa Alphard untuk tamu VIP kantor dari Bandara Juanda ke hotel. Driver sangat tepat waktu, rapi, dan mengemudi dengan sangat halus. Mobil wangi dan bersih sekali. Sangat direkomendasikan!',
                 'car_review' => 'Mobil Alphard sangat bersih, wangi, dan terawat. Interior mewah, AC dingin, dan kursi sangat nyaman.',
                 'driver_review' => 'Driver sangat profesional, tepat waktu, berpenampilan rapi, dan ramah selama perjalanan.',
                 'facilities_review' => 'Fasilitas lengkap, kondisi prima. Proses pemesanan mudah dan admin responsif.',
@@ -51,8 +49,6 @@ class ReviewSeeder extends Seeder
             ],
             [
                 'rating' => 5,
-                'title' => 'Hiace Premio Terbaik untuk Rombongan Keluarga',
-                'comment' => 'Kami sewa Hiace Premio untuk liburan keluarga ke Malang dan Bromo. Kabin sangat lega, AC dingin merata, dan driver sangat ramah serta hafal jalan alternatif. Pasti pesan di Queen Transport lagi.',
                 'car_review' => 'Kabin Hiace Premio sangat lega untuk rombongan 10 orang, AC merata ke seluruh penumpang.',
                 'driver_review' => 'Driver hafal banyak rute alternatif, sabar, dan komunikatif sepanjang perjalanan.',
                 'facilities_review' => 'Kualitas kendaraan sangat terjaga, fasilitas bersih dan nyaman selama perjalanan jauh.',
@@ -60,8 +56,6 @@ class ReviewSeeder extends Seeder
             ],
             [
                 'rating' => 4,
-                'title' => 'Innova Zenix Prima, Sangat Irit & Nyaman',
-                'comment' => 'Unit Innova Zenix Hybrid sangat nyaman untuk perjalanan luar kota Surabaya - Solo. Suspensi empuk dan pelayanan admin sangat responsif saat pemesanan.',
                 'car_review' => 'Innova Zenix Hybrid sangat irit dan suspensi empuk untuk perjalanan jarak jauh.',
                 'driver_review' => 'Driver berpengalaman dan mengemudi dengan tenang, membuat penumpang nyaman.',
                 'facilities_review' => 'Pelayanan admin sangat responsif saat pemesanan, proses booking mudah.',
@@ -69,8 +63,6 @@ class ReviewSeeder extends Seeder
             ],
             [
                 'rating' => 5,
-                'title' => 'Driver Profesional & Tepat Waktu',
-                'comment' => 'Sangat terbantu untuk acara pernikahan saudara. Driver stand by lebih awal dari jadwal yang disepakati. Terima kasih banyak Queen Transport!',
                 'car_review' => 'Mobil tampil elegan dan bersih, sangat sesuai untuk acara pernikahan.',
                 'driver_review' => 'Driver stand by lebih awal dari jadwal, berpenampilan rapi dan sopan selama acara.',
                 'facilities_review' => 'Semua fasilitas berfungsi dengan baik, tidak ada kendala selama hari acara berlangsung.',
@@ -78,11 +70,9 @@ class ReviewSeeder extends Seeder
             ],
             [
                 'rating' => 5,
-                'title' => 'Review Menunggu Moderasi',
-                'comment' => 'Pengalaman menyewa mobil di Queen Transport sangat mudah dan transparan. Pelayanan memuaskan.',
-                'car_review' => null,
-                'driver_review' => null,
-                'facilities_review' => null,
+                'car_review' => 'Unit kendaraan terawat dengan baik, bersih, dan harum.',
+                'driver_review' => 'Sopir sangat ramah, santun, dan tiba tepat waktu sesuai jadwal.',
+                'facilities_review' => 'Kemudahan proses booking dan transparansi harga sangat memuaskan.',
                 'status' => Review::STATUS_PENDING,
             ],
         ];
@@ -101,11 +91,9 @@ class ReviewSeeder extends Seeder
                 $review = Review::create([
                     'user_id' => $user->id,
                     'rating' => $reviewsData[$idx]['rating'],
-                    'title' => $reviewsData[$idx]['title'],
-                    'comment' => $reviewsData[$idx]['comment'],
-                    'car_review' => $reviewsData[$idx]['car_review'] ?? null,
-                    'driver_review' => $reviewsData[$idx]['driver_review'] ?? null,
-                    'facilities_review' => $reviewsData[$idx]['facilities_review'] ?? null,
+                    'car_review' => $reviewsData[$idx]['car_review'],
+                    'driver_review' => $reviewsData[$idx]['driver_review'],
+                    'facilities_review' => $reviewsData[$idx]['facilities_review'],
                     'status' => $reviewsData[$idx]['status'],
                     'created_by_admin' => false,
                 ]);
