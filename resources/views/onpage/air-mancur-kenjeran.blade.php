@@ -115,7 +115,7 @@ $canonical = url()->current();
                         ✦ Wisata Malam Ikonik Surabaya &bull; Kenjeran East Coast VIP
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Air Mancur Kenjeran Surabaya: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Pesona Air Mancur Menari &amp; Perjalanan VIP</span>
                     </h1>
 
@@ -148,7 +148,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Info Terkini</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Ringkasan Wisata Air Mancur Kenjeran</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Ringkasan Wisata Air Mancur Kenjeran</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Atraksi lampu menari berlatar Selat Madura &amp; pesona pesisir timur Surabaya.
                         </p>
@@ -184,28 +184,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⛲</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Pertunjukan Menari</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Pertunjukan Menari</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Lampu LED &amp; alunan musik</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🌉</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Jembatan Ikonik</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Jembatan Ikonik</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Desain megah melingkar 800 meter</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🚘</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Armada Steril &amp; Mewah</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Armada Steril &amp; Mewah</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Alphard, Hiace &amp; Zenix ready</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Antar-Jemput Door to Door</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Antar-Jemput Door to Door</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Driver ramah &amp; hafal lokasi</p>
                     </div>
                 </div>
@@ -218,7 +218,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[760px] mx-auto mb-16">
                 <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Keindahan Pesisir Timur Surabaya</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Daya Tarik Utama Air Mancur Menari Kenjeran</h2>
+                <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2">Daya Tarik Utama Air Mancur Menari Kenjeran</h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
                     Air Mancur Kenjeran yang terletak di sepanjang arsitektur megah Jembatan Suroboyo menjadi salah satu destinasi wisata malam paling populer bagi wisatawan lokal maupun mancanegara.
                 </p>
@@ -227,7 +227,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-3 gap-8 max-md:grid-cols-1">
                 <div class="p-8 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[rgba(34,211,238,0.4)] transition-all">
                     <div class="text-4xl mb-4">🎶</div>
-                    <h3 class="text-white text-xl font-bold mb-3">Air Mancur Menari Musikalisasi</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Air Mancur Menari Musikalisasi</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Atraksi puluhan nozzle air yang menyemburkan tarian dinamis berganti arah dan tinggi, bergerak selaras dengan alunan lagu daerah Surabaya seperti <em>"Rek Ayo Rek"</em> dan musik instrumental modern.
                     </p>
@@ -235,7 +235,7 @@ $canonical = url()->current();
 
                 <div class="p-8 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[rgba(34,211,238,0.4)] transition-all">
                     <div class="text-4xl mb-4">💡</div>
-                    <h3 class="text-white text-xl font-bold mb-3">Tata Lampu LED Warna-Warni</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Tata Lampu LED Warna-Warni</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Sorotan lampu LED khusus menghasilkan gradasi warna merah, hijau, biru, hingga keemasan yang berkilau indah tercermin di permukaan perairan pesisir pantai malam hari.
                     </p>
@@ -243,7 +243,7 @@ $canonical = url()->current();
 
                 <div class="p-8 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[rgba(34,211,238,0.4)] transition-all">
                     <div class="text-4xl mb-4">📸</div>
-                    <h3 class="text-white text-xl font-bold mb-3">Spot Foto &amp; View Selat Madura</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Spot Foto &amp; View Selat Madura</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Dari anjungan pedestrian Jembatan Suroboyo, pengunjung dapat bersua foto dengan latar belakang pertunjukan air mancur serta gemerlap kelap-kelip lampu Jembatan Suramadu dari kejauhan.
                     </p>
@@ -258,13 +258,13 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-center max-md:grid-cols-1">
                 <div>
                     <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Panduan Kunjungan</span>
-                    <h2 class="text-white text-3xl font-bold mt-2 mb-6">Jadwal Pertunjukan &amp; Akses Lokasi</h2>
+                    <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2 mb-6">Jadwal Pertunjukan &amp; Akses Lokasi</h2>
 
                     <div class="space-y-4 text-sm">
                         <div class="p-4 rounded-[var(--radius-md)] bg-[var(--color-surface)] border border-[var(--color-border)] flex gap-4 items-start">
                             <span class="text-2xl">📍</span>
                             <div>
-                                <h4 class="text-white font-bold">Lokasi Utama</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold">Lokasi Utama</h4>
                                 <p class="text-[var(--color-text-muted)] mt-1">Jembatan Suroboyo, Kenjeran, Kecamatan Bulak, Kota Surabaya, Jawa Timur 60124.</p>
                             </div>
                         </div>
@@ -272,7 +272,7 @@ $canonical = url()->current();
                         <div class="p-4 rounded-[var(--radius-md)] bg-[var(--color-surface)] border border-[var(--color-border)] flex gap-4 items-start">
                             <span class="text-2xl">⏰</span>
                             <div>
-                                <h4 class="text-white font-bold">Jadwal Pertunjukan</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold">Jadwal Pertunjukan</h4>
                                 <p class="text-[var(--color-text-muted)] mt-1">Sabtu &amp; Minggu Malam (Weekend) | Pukul 18.30 – 21.00 WIB (Berlangsung dalam beberapa sesi durasi 30-45 menit).</p>
                             </div>
                         </div>
@@ -280,7 +280,7 @@ $canonical = url()->current();
                         <div class="p-4 rounded-[var(--radius-md)] bg-[var(--color-surface)] border border-[var(--color-border)] flex gap-4 items-start">
                             <span class="text-2xl">🎟️</span>
                             <div>
-                                <h4 class="text-white font-bold">Tiket Masuk Area</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold">Tiket Masuk Area</h4>
                                 <p class="text-[var(--color-text-muted)] mt-1">Gratis (Bebas biaya masuk kawasan pedestrian jembatan).</p>
                             </div>
                         </div>
@@ -288,7 +288,7 @@ $canonical = url()->current();
                         <div class="p-4 rounded-[var(--radius-md)] bg-[var(--color-surface)] border border-[var(--color-border)] flex gap-4 items-start">
                             <span class="text-2xl">🚗</span>
                             <div>
-                                <h4 class="text-white font-bold">Akses &amp; Layanan Transportasi</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold">Akses &amp; Layanan Transportasi</h4>
                                 <p class="text-[var(--color-text-muted)] mt-1">Hindari kerumunan &amp; kesulitan parkir akhir pekan dengan menyewa mobil VIP include driver dari Queen Transport.</p>
                             </div>
                         </div>
@@ -297,7 +297,7 @@ $canonical = url()->current();
 
                 {{-- Map / Location Card --}}
                 <div class="bg-[var(--gradient-card)] border-2 border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
-                    <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-4 flex items-center gap-2">
                         <span>🗺️</span> Rute &amp; Tips Terbaik Melihat Pertunjukan
                     </h3>
                     <ul class="space-y-3 text-sm text-[var(--color-text-light)] leading-relaxed">
@@ -336,7 +336,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[760px] mx-auto mb-16">
                 <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Surabaya East Coast Tour</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Destinasi Populer Sekitar Air Mancur Kenjeran</h2>
+                <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2">Destinasi Populer Sekitar Air Mancur Kenjeran</h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
                     Sempurnakan perjalanan wisata malam Anda dengan mengunjungi berbagai destinasi menarik yang berdekatan di wilayah Kenjeran.
                 </p>
@@ -345,7 +345,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-4 gap-6 max-md:grid-cols-2 max-sm:grid-cols-1">
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">⛩️</div>
-                    <h4 class="text-white font-bold text-base mb-2">Klenteng Sanggar Agung</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Klenteng Sanggar Agung</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Terkenal dengan patung Maha Guan Yin setinggi 20 meter dan gerbang naga di tepi laut Kenjeran Park.
                     </p>
@@ -353,7 +353,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🦈</div>
-                    <h4 class="text-white font-bold text-base mb-2">Taman Suroboyo</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Taman Suroboyo</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Taman publik cantik yang memiliki Ikon Patung Suro &amp; Boyo terbesar di Surabaya berlatar belakang lautan.
                     </p>
@@ -361,7 +361,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🏖️</div>
-                    <h4 class="text-white font-bold text-base mb-2">Pantai Ria Kenjeran</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Pantai Ria Kenjeran</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Kawasan wisata pesisir pantai keluarga yang dilengkapi aneka spot foto, wahana permainan, dan belanja souvenir.
                     </p>
@@ -369,7 +369,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🦐</div>
-                    <h4 class="text-white font-bold text-base mb-2">Sentra Ikan Bulak (SIB)</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Sentra Ikan Bulak (SIB)</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Pusat kuliner olahan hasil laut segar dan tempat membeli kerupuk ikan khas Kenjeran Surabaya.
                     </p>
@@ -392,13 +392,13 @@ $canonical = url()->current();
         <div class="max-w-[900px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Tanya Jawab</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Pertanyaan Seputar Air Mancur Kenjeran</h2>
+                <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2">Pertanyaan Seputar Air Mancur Kenjeran</h2>
             </div>
 
             <div class="space-y-4">
                 @foreach ($faqs as $index => $faq)
                     <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
-                        <h3 class="text-white font-bold text-lg mb-2 flex items-start gap-3">
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2 flex items-start gap-3">
                             <span class="text-[var(--color-accent)] font-bold">Q:</span>
                             <span>{{ $faq['q'] }}</span>
                         </h3>
@@ -412,9 +412,9 @@ $canonical = url()->current();
     </section>
 
     {{-- SECTION 6: CTA BANNER --}}
-    <section class="py-16 bg-[var(--gradient-hero)] border-t border-[var(--color-border)]">
+    <section class="py-20 relative overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[900px] mx-auto px-6 text-center">
-            <h2 class="text-white text-3xl font-bold mb-4">Siap Nikmati Pesona Air Mancur Kenjeran?</h2>
+            <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mb-4">Siap Nikmati Pesona Air Mancur Kenjeran?</h2>
             <p class="text-[var(--color-text-light)] text-base mb-8 leading-relaxed max-w-[680px] mx-auto">
                 Hubungi customer service <strong>{{ config('site.brand') }}</strong> sekarang untuk pemesanan armada sewa mobil mewah di Surabaya. Layanan cepat 24 jam nonstop!
             </p>

@@ -60,7 +60,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                         ✦ Rental Mobil Mewah Surabaya — Standar VIP &amp; Eksekutif
                     </div>
 
-                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-white">
+                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-zinc-900 dark:text-white">
                         Sewa &amp; Rental Mobil Mewah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Surabaya</span>
                     </h1>
 
@@ -93,7 +93,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Armada Premium Terlengkap</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Standar Layanan Mewah {{ config('site.brand') }}</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Standar Layanan Mewah {{ config('site.brand') }}</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Setiap detail dirancang untuk memberikan pengalaman perjalanan terbaik — selayaknya layanan first-class.
                         </p>
@@ -129,28 +129,28 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👔</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Standar VIP</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Standar VIP</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Berseragam rapi, terlatih &amp; profesional</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💺</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Interior Luxury</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Interior Luxury</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Captain seat, kabin senyap, full AC</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🛡️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Armada Prima &amp; Terawat</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Armada Prima &amp; Terawat</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Servis rutin bengkel resmi Toyota</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⭐</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Terpercaya &amp; Berpengalaman</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Terpercaya &amp; Berpengalaman</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Ratusan klien VIP &amp; korporasi puas</p>
                     </div>
                 </div>
@@ -161,6 +161,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
     {{-- ARMADA CATALOG --}}
     <div id="katalog-mewah">
         <x-armada-list
+            bg=""
             subtitle="Koleksi Armada Premium"
             title="Katalog Rental Mobil Mewah Surabaya"
             description="Pilihan armada mewah terlengkap di Surabaya — Toyota Alphard, Hiace Premio VIP, Fortuner, Innova Zenix Hybrid — semua include driver profesional standar VIP."
@@ -173,7 +174,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Kategori Armada</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Pilih <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Armada Mewah</span> Sesuai Kebutuhan
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -216,7 +217,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                         @endif
 
                         <div class="text-4xl mb-4">{{ $cat['emoji'] }}</div>
-                        <h3 class="text-white text-xl font-bold mb-1">{{ $cat['name'] }}</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-1">{{ $cat['name'] }}</h3>
                         <span class="inline-block mb-4 px-3 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">{{ $cat['tag'] }}</span>
                         <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6">{{ $cat['desc'] }}</p>
 
@@ -251,7 +252,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                     <div class="flex items-start gap-4 p-5 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[rgba(124,58,237,0.4)] transition-all">
                         <span class="text-3xl flex-shrink-0">{{ $emoji }}</span>
                         <div>
-                            <h4 class="text-white font-bold text-sm mb-0.5">{{ $name }}</h4>
+                            <h4 class="text-zinc-900 dark:text-white font-bold text-sm mb-0.5">{{ $name }}</h4>
                             <span class="inline-block mb-2 px-2 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs">{{ $tag }}</span>
                             <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</p>
                         </div>
@@ -267,7 +268,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transparansi Harga</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tarif Rental <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mobil Mewah Surabaya</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -286,7 +287,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
 
                         <div>
                             <div class="mb-4">
-                                <h3 class="text-white text-xl font-bold">{{ $price['name'] }}</h3>
+                                <h3 class="text-zinc-900 dark:text-white text-xl font-bold">{{ $price['name'] }}</h3>
                                 <span class="inline-block mt-1 px-3 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">
                                     {{ $price['seat'] }}
                                 </span>
@@ -296,7 +297,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
 
                             <div class="mb-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div class="text-[var(--color-text-muted)] text-xs mb-1">Mulai dari</div>
-                                <div class="text-white font-bold text-2xl flex items-baseline gap-1">
+                                <div class="text-zinc-900 dark:text-white font-bold text-2xl flex items-baseline gap-1">
                                     <span class="text-sm font-normal text-[var(--color-accent)]">Rp</span>
                                     <span>{{ $price['price_label'] }}</span>
                                     <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
@@ -334,7 +335,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Peruntukan Layanan</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Rental Mobil Mewah Surabaya untuk <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Setiap Momen Penting</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -356,7 +357,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                             {!! $icon !!}
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-base mb-2">{!! $title !!}</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">{!! $title !!}</h3>
                             <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-3">{{ $desc }}</p>
                             <span class="inline-block px-3 py-1 rounded-full bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.2)] text-[var(--color-accent)] text-xs">
                                 🚗 {{ $note }}
@@ -374,7 +375,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
             <div class="grid grid-cols-2 gap-16 items-center max-md:grid-cols-1">
                 <div>
                     <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Mengapa Memilih Kami</span>
-                    <h2 class="text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold mb-6 text-white leading-snug">
+                    <h2 class="text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold mb-6 text-zinc-900 dark:text-white leading-snug">
                         Standar Rental Mobil Mewah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">{{ config('site.brand') }}</span>
                     </h2>
                     <p class="text-[var(--color-text-muted)] mb-8 text-sm leading-relaxed">
@@ -391,7 +392,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                             <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                                 <div class="text-2xl flex-shrink-0 w-11 h-11 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] flex items-center justify-center">{{ $icon }}</div>
                                 <div>
-                                    <h4 class="text-white font-semibold mb-1 text-sm">{!! $title !!}</h4>
+                                    <h4 class="text-zinc-900 dark:text-white font-semibold mb-1 text-sm">{!! $title !!}</h4>
                                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</p>
                                 </div>
                             </div>
@@ -401,7 +402,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
 
                 <div>
                     <div class="bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8">
-                        <h3 class="text-white text-lg font-bold mb-6 border-b border-[var(--color-border)] pb-4">Fasilitas Standar Semua Armada Mewah</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-6 border-b border-[var(--color-border)] pb-4">Fasilitas Standar Semua Armada Mewah</h3>
 
                         <div class="grid grid-cols-1 gap-4 mb-8">
                             @foreach ([
@@ -440,7 +441,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Cara Pemesanan</span>
-                <h2 class="text-white text-2xl font-bold">Proses Rental Mobil Mewah di Surabaya yang Mudah</h2>
+                <h2 class="text-zinc-900 dark:text-white text-2xl font-bold">Proses Rental Mobil Mewah di Surabaya yang Mudah</h2>
                 <p class="text-[var(--color-text-muted)] mt-3 text-sm max-w-[500px] mx-auto">Tidak perlu aplikasi khusus atau proses yang rumit — cukup WhatsApp dan armada mewah Anda siap.</p>
             </div>
 
@@ -448,28 +449,28 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">01</span>
                     <div class="text-2xl mb-4">💬</div>
-                    <h3 class="text-white font-bold text-base mb-2">Chat via WhatsApp</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Chat via WhatsApp</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Hubungi tim kami dan sampaikan tanggal, lokasi jemput, tujuan, serta tipe mobil mewah yang Anda inginkan.</p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">02</span>
                     <div class="text-2xl mb-4">💎</div>
-                    <h3 class="text-white font-bold text-base mb-2">Pilih Armada Mewah</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Pilih Armada Mewah</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Tim kami membantu mencarikan armada paling sesuai dengan kebutuhan, jumlah tamu, dan anggaran Anda.</p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">03</span>
                     <div class="text-2xl mb-4">💳</div>
-                    <h3 class="text-white font-bold text-base mb-2">Konfirmasi &amp; DP</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Konfirmasi &amp; DP</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Bayar DP ke rekening resmi kami untuk mengunci ketersediaan armada. Pelunasan fleksibel sesuai kesepakatan.</p>
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">04</span>
                     <div class="text-2xl mb-4">🚀</div>
-                    <h3 class="text-white font-bold text-base mb-2">Driver &amp; Armada Siap</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Driver &amp; Armada Siap</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Armada mewah bersih &amp; driver berseragam rapi tiba di lokasi Anda 10–15 menit sebelum jadwal keberangkatan.</p>
                 </div>
             </div>
@@ -477,18 +478,18 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
     </section>
 
     {{-- FAQ SECTION --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)]" id="faq">
+    <section class="py-[90px]" id="faq">
         <div class="max-w-[900px] mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-2xl font-bold">FAQ Sewa &amp; Rental Mobil Mewah Surabaya</h2>
+                <h2 class="text-zinc-900 dark:text-white text-2xl font-bold">FAQ Sewa &amp; Rental Mobil Mewah Surabaya</h2>
                 <p class="text-[var(--color-text-muted)] mt-3 text-sm">Temukan jawaban atas pertanyaan seputar layanan rental mobil mewah kami di Surabaya.</p>
             </div>
 
             <div class="flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                     <details class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 transition-all hover:border-[rgba(124,58,237,0.4)]">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-base max-sm:text-sm">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-zinc-900 dark:text-white text-base max-sm:text-sm">
                             <span>{{ $faq['q'] }}</span>
                             <span class="ml-4 text-[var(--color-accent)] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">▼</span>
                         </summary>
@@ -507,7 +508,7 @@ $description = 'Sewa & rental mobil mewah Surabaya terbaik ✓ Toyota Alphard, F
             <span class="px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-6 inline-block">
                 ✦ Reservasi Rental Mobil Mewah Surabaya
             </span>
-            <h2 class="text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
                 Siap Rasakan Perjalanan Berkelas di Surabaya?
             </h2>
             <p class="text-[var(--color-text-muted)] text-base mb-8 max-w-[620px] mx-auto leading-relaxed">

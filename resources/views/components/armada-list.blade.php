@@ -7,6 +7,7 @@
     'subtitle' => 'Layanan Sewa Mobil Terpercaya',
     'description' => 'Setiap unit dipelihara secara presisi, rutin disterilisasi, dan dikemudikan oleh driver profesional berpengalaman.',
     'waText' => null,
+    'bg' => 'bg-[var(--color-bg-2)]',
     'class' => '',
 ])
 
@@ -31,7 +32,7 @@
     };
 @endphp
 
-<section class="py-20 bg-[var(--color-bg-2)] border-t border-[var(--color-border)] {{ $class }}">
+<section class="py-20 {{ $bg }} border-t border-[var(--color-border)] {{ $class }}">
     <div class="max-w-[1200px] mx-auto px-6">
         @if ($title || $subtitle)
             <div class="text-center max-w-[760px] mx-auto mb-16">

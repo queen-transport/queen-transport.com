@@ -57,7 +57,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                         ✦ Harga Transparan — No Hidden Fees
                     </div>
 
-                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-white">
+                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-zinc-900 dark:text-white">
                         Tarif Sewa Mobil Mewah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Surabaya Murah</span>
                     </h1>
 
@@ -90,7 +90,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Harga Transparan</span>
                         </div>
 
-                        <h3 class="text-white text-lg font-bold mb-1">Apa Saja yang Sudah Termasuk?</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-1">Apa Saja yang Sudah Termasuk?</h3>
                         <p class="text-[var(--color-text-muted)] text-xs mb-5 leading-relaxed">Semua tarif yang kami berikan sudah mencakup komponen berikut untuk area Surabaya &amp; sekitarnya:</p>
 
                         <div class="flex flex-col gap-3">
@@ -121,28 +121,28 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💰</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Harga Transparan</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Harga Transparan</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Tidak ada biaya tersembunyi</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Include Driver</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Include Driver</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Profesional standar VIP</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">📋</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Tarif Resmi</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Tarif Resmi</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Dari database armada aktif</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🤝</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Harga Bisa Nego</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Harga Bisa Nego</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Multi-hari &amp; kontrak lebih hemat</p>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Tarif Armada VIP</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tarif Sewa <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Toyota Alphard Surabaya</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -175,13 +175,13 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                         <div>
                             <div class="mb-4">
                                 <div class="text-3xl mb-3">👑</div>
-                                <h3 class="text-white text-xl font-bold">{{ $price['name'] }}</h3>
+                                <h3 class="text-zinc-900 dark:text-white text-xl font-bold">{{ $price['name'] }}</h3>
                                 <span class="inline-block mt-1 px-3 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">{{ $price['seat'] }}</span>
                             </div>
                             <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">{{ $price['desc'] }}</p>
                             <div class="mb-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div class="text-[var(--color-text-muted)] text-xs mb-1">Tarif mulai dari</div>
-                                <div class="text-white font-bold text-2xl flex items-baseline gap-1">
+                                <div class="text-zinc-900 dark:text-white font-bold text-2xl flex items-baseline gap-1">
                                     <span class="text-sm font-normal text-[var(--color-accent)]">Rp</span>
                                     <span>{{ $price['price_label'] }}</span>
                                     <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
@@ -215,7 +215,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Tarif Armada Rombongan Premium</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tarif Sewa <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Hiace Premio Surabaya</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -234,13 +234,13 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                         <div>
                             <div class="mb-4">
                                 <div class="text-3xl mb-3">🚐</div>
-                                <h3 class="text-white text-xl font-bold">{{ $price['name'] }}</h3>
+                                <h3 class="text-zinc-900 dark:text-white text-xl font-bold">{{ $price['name'] }}</h3>
                                 <span class="inline-block mt-1 px-3 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">{{ $price['seat'] }}</span>
                             </div>
                             <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">{{ $price['desc'] }}</p>
                             <div class="mb-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div class="text-[var(--color-text-muted)] text-xs mb-1">Tarif mulai dari</div>
-                                <div class="text-white font-bold text-2xl flex items-baseline gap-1">
+                                <div class="text-zinc-900 dark:text-white font-bold text-2xl flex items-baseline gap-1">
                                     <span class="text-sm font-normal text-[var(--color-accent)]">Rp</span>
                                     <span>{{ $price['price_label'] }}</span>
                                     <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
@@ -274,7 +274,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Daftar Harga Lengkap</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tarif Semua <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Armada Mewah Surabaya</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -287,18 +287,18 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                 <table class="w-full text-sm">
                     <thead>
                         <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)]">
-                            <th class="text-left py-4 px-6 text-white font-bold">Armada</th>
+                            <th class="text-left py-4 px-6 text-zinc-900 dark:text-white font-bold">Armada</th>
                             <th class="text-center py-4 px-4 text-[var(--color-accent)] font-bold">Kapasitas</th>
                             <th class="text-center py-4 px-4 text-[var(--color-accent)] font-bold">Tarif / Hari</th>
-                            <th class="text-center py-4 px-4 text-white font-bold">Wilayah</th>
-                            <th class="text-center py-4 px-4 text-white font-bold">Pesan</th>
+                            <th class="text-center py-4 px-4 text-zinc-900 dark:text-white font-bold">Wilayah</th>
+                            <th class="text-center py-4 px-4 text-zinc-900 dark:text-white font-bold">Pesan</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($kelasAtasPrices as $i => $price)
                             <tr class="border-b border-[var(--color-border)] {{ $i % 2 === 0 ? 'bg-[var(--gradient-card)]' : 'bg-[rgba(124,58,237,0.04)]' }} hover:bg-[rgba(124,58,237,0.08)] transition-colors">
                                 <td class="py-4 px-6">
-                                    <div class="font-semibold text-white text-sm">{{ $price['name'] }}</div>
+                                    <div class="font-semibold text-zinc-900 dark:text-white text-sm">{{ $price['name'] }}</div>
                                     @if ($price['badge'])
                                         <span class="inline-block mt-1 px-2 py-0.5 rounded-full bg-[image:var(--gradient-btn)] text-white text-xs font-bold">{{ $price['badge'] }}</span>
                                     @endif
@@ -307,7 +307,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                                     <span class="px-2 py-1 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">{{ $price['seat'] }}</span>
                                 </td>
                                 <td class="py-4 px-4 text-center">
-                                    <div class="text-white font-bold text-base">
+                                    <div class="text-zinc-900 dark:text-white font-bold text-base">
                                         Rp {{ $price['price_label'] }}
                                     </div>
                                     <div class="text-[var(--color-text-muted)] text-xs">include driver</div>
@@ -344,7 +344,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transparansi Biaya</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Rincian Komponen <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Tarif Sewa Mobil Mewah</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -357,7 +357,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                 <div class="bg-[var(--gradient-card)] border border-[rgba(34,211,238,0.25)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[var(--color-border)]">
                         <span class="text-2xl">✅</span>
-                        <h3 class="text-white font-bold text-lg">Sudah Termasuk dalam Tarif</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg">Sudah Termasuk dalam Tarif</h3>
                     </div>
                     <div class="flex flex-col gap-4">
                         @foreach ([
@@ -370,7 +370,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                             <div class="flex items-start gap-4">
                                 <span class="text-xl flex-shrink-0 w-9 h-9 rounded-[var(--radius-md)] bg-[rgba(34,211,238,0.1)] flex items-center justify-center">{{ $icon }}</span>
                                 <div>
-                                    <div class="text-white font-semibold text-sm">{!! $item !!}</div>
+                                    <div class="text-zinc-900 dark:text-white font-semibold text-sm">{!! $item !!}</div>
                                     <div class="text-[var(--color-text-muted)] text-xs mt-0.5">{!! $note !!}</div>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                 <div class="bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.25)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[var(--color-border)]">
                         <span class="text-2xl">📋</span>
-                        <h3 class="text-white font-bold text-lg">Komponen Biaya Tambahan</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg">Komponen Biaya Tambahan</h3>
                     </div>
                     <div class="flex flex-col gap-4">
                         @foreach ([
@@ -395,7 +395,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                             <div class="flex items-start gap-4">
                                 <span class="text-xl flex-shrink-0 w-9 h-9 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.1)] flex items-center justify-center">{{ $icon }}</span>
                                 <div>
-                                    <div class="text-white font-semibold text-sm">{!! $item !!}</div>
+                                    <div class="text-zinc-900 dark:text-white font-semibold text-sm">{!! $item !!}</div>
                                     <div class="text-[var(--color-text-muted)] text-xs mt-0.5">{{ $note }}</div>
                                 </div>
                             </div>
@@ -404,7 +404,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
 
                     <div class="mt-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
-                            💡 <span class="text-white font-semibold">Tips:</span> Untuk perjalanan luar kota, minta tim kami untuk menyiapkan <strong class="text-[var(--color-accent)]">simulasi biaya all-in</strong> — satu angka untuk seluruh perjalanan tanpa perhitungan manual.
+                            💡 <span class="text-zinc-900 dark:text-white font-semibold">Tips:</span> Untuk perjalanan luar kota, minta tim kami untuk menyiapkan <strong class="text-[var(--color-accent)]">simulasi biaya all-in</strong> — satu angka untuk seluruh perjalanan tanpa perhitungan manual.
                         </p>
                     </div>
                 </div>
@@ -417,7 +417,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Estimasi Tarif Perjalanan</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Estimasi Tarif Sewa Mobil Mewah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Luar Kota dari Surabaya</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -436,7 +436,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                 ] as [$icon, $route, $duration, $desc, $suggested])
                     <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 hover:border-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300">
                         <div class="text-3xl mb-3">{{ $icon }}</div>
-                        <h3 class="text-white font-bold text-sm mb-1">{{ $route }}</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-sm mb-1">{{ $route }}</h3>
                         <p class="text-[var(--color-accent)] text-xs font-semibold mb-2">🕐 {{ $duration }}</p>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-3">{{ $desc }}</p>
                         <div class="flex items-center gap-2">
@@ -466,12 +466,12 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
     />
 
     {{-- TIPS HEMAT --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)]" id="tips-hemat">
+    <section class="py-[90px]" id="tips-hemat">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="grid grid-cols-2 gap-16 items-center max-md:grid-cols-1">
                 <div>
                     <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Tips &amp; Panduan</span>
-                    <h2 class="text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold mb-6 text-white leading-snug">
+                    <h2 class="text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold mb-6 text-zinc-900 dark:text-white leading-snug">
                         Tips Mendapatkan Tarif Sewa Mobil Mewah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Paling Hemat</span>
                     </h2>
                     <p class="text-[var(--color-text-muted)] mb-8 text-sm leading-relaxed">
@@ -488,7 +488,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                             <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                                 <div class="text-2xl flex-shrink-0 w-11 h-11 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] flex items-center justify-center">{{ $icon }}</div>
                                 <div>
-                                    <h4 class="text-white font-semibold mb-1 text-sm">{{ $title }}</h4>
+                                    <h4 class="text-zinc-900 dark:text-white font-semibold mb-1 text-sm">{{ $title }}</h4>
                                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</p>
                                 </div>
                             </div>
@@ -499,7 +499,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
                 <div>
                     <div class="bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8">
                         <span class="text-5xl block mb-4">💡</span>
-                        <h3 class="text-white text-xl font-bold mb-4">Cara Pilih Armada yang Tepat</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-4">Cara Pilih Armada yang Tepat</h3>
 
                         <div class="flex flex-col gap-5 text-sm">
                             <div class="p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
@@ -538,14 +538,14 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
         <div class="max-w-[900px] mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-2xl font-bold">FAQ Tarif Sewa Mobil Mewah Surabaya</h2>
+                <h2 class="text-zinc-900 dark:text-white text-2xl font-bold">FAQ Tarif Sewa Mobil Mewah Surabaya</h2>
                 <p class="text-[var(--color-text-muted)] mt-3 text-sm">Jawaban atas pertanyaan seputar tarif &amp; harga sewa mobil mewah di Surabaya.</p>
             </div>
 
             <div class="flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                     <details class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 transition-all hover:border-[rgba(124,58,237,0.4)]">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-base max-sm:text-sm">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-zinc-900 dark:text-white text-base max-sm:text-sm">
                             <span>{{ $faq['q'] }}</span>
                             <span class="ml-4 text-[var(--color-accent)] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">▼</span>
                         </summary>
@@ -564,7 +564,7 @@ $description = 'Cek tarif sewa mobil mewah Surabaya termurah 2025 ✓ Alphard, F
             <span class="px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-6 inline-block">
                 ✦ Dapatkan Penawaran Tarif Terbaik Hari Ini
             </span>
-            <h2 class="text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
                 Cek Tarif &amp; Booking Mobil Mewah Surabaya Sekarang
             </h2>
             <p class="text-[var(--color-text-muted)] text-base mb-8 max-w-[620px] mx-auto leading-relaxed">

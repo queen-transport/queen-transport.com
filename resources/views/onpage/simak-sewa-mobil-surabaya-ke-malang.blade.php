@@ -133,7 +133,7 @@ $canonical = url()->current();
                         ✦ Rental &amp; Carter Mobil Surabaya ke Malang #1 VIP + Driver
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Simak Sewa Mobil Surabaya ke Malang: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Drop Off, Carter PP &amp; Wisata Batu</span>
                     </h1>
 
@@ -166,7 +166,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Fakta Cepat Rute</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Surabaya &rarr; Malang &amp; Batu</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Surabaya &rarr; Malang &amp; Batu</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Rute favorit perjalanan dinas kantor, liburan keluarga, dan kunjungan wisata udara sejuk Malang Raya.
                         </p>
@@ -192,7 +192,7 @@ $canonical = url()->current();
 
                         <div class="mt-6 pt-4 border-t border-[var(--color-border)] text-xs text-[var(--color-text-muted)] flex items-center justify-between">
                             <span>Gerbang Keluar Rekomendasi:</span>
-                            <span class="text-white font-semibold">GT Singosari / Madyopuro</span>
+                            <span class="text-zinc-900 dark:text-white font-semibold">GT Singosari / Madyopuro</span>
                         </div>
                         <div class="mt-2 text-[0.68rem] text-[var(--color-text-muted)] italic text-right">
                             *Tarif resmi saat data diambil (Sep 2026) &amp; dapat berubah sewaktu-waktu.
@@ -210,28 +210,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🛣️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Rute Cepat Full Tol</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Rute Cepat Full Tol</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Tol Pandaan - Malang tanpa macet</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Ahli Jalur Batu</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Ahli Jalur Batu</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Fasih tanjakan &amp; rute wisata pegunungan</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">📍</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Layanan Door-to-Door</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Layanan Door-to-Door</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Jemput Juanda / Stasiun / Hotel</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🥤</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Fasilitas segar di hari pertama</p>
                     </div>
                 </div>
@@ -244,7 +244,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[800px] mx-auto mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Skema Layanan Fleksibel</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
                     Pilihan Paket Sewa Mobil <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Surabaya ke Malang &amp; Batu</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -260,7 +260,7 @@ $canonical = url()->current();
                             ✈️
                         </div>
                         <span class="px-2.5 py-1 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-[0.7rem] font-bold uppercase tracking-wider block w-fit mb-2">One Way Trip</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Drop Off Surabaya – Malang</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Drop Off Surabaya – Malang</h3>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                             Layanan antar langsung satu arah dari Bandara Juanda, Stasiun Surabaya, atau hotel menuju hotel/kediaman di Malang atau Kota Batu.
                         </p>
@@ -271,7 +271,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin pesan layanan Drop Off Surabaya ke Malang') }}"
-                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
+                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
                        target="_blank" rel="noopener noreferrer">
                         Pesan Drop Off
                     </a>
@@ -284,7 +284,7 @@ $canonical = url()->current();
                             💼
                         </div>
                         <span class="px-2.5 py-1 rounded-full bg-[rgba(124,58,237,0.15)] text-[var(--color-accent)] text-[0.7rem] font-bold uppercase tracking-wider block w-fit mb-2">Perjalanan Dinas</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Sewa Harian + Driver</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Sewa Harian + Driver</h3>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                             Sewa mobil harian (12 Jam / Fullday) untuk agenda dinas kerja, rapat instansi, kunjungan proyek pabrik, atau agenda bisnis di Malang Raya.
                         </p>
@@ -295,7 +295,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin konsultasi Sewa Mobil Harian Surabaya ke Malang') }}"
-                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
+                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
                        target="_blank" rel="noopener noreferrer">
                         Pesan Sewa Harian
                     </a>
@@ -308,7 +308,7 @@ $canonical = url()->current();
                             🎡
                         </div>
                         <span class="px-2.5 py-1 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-[0.7rem] font-bold uppercase tracking-wider block w-fit mb-2">Wisata Keluarga</span>
-                        <h3 class="text-white text-xl font-bold mb-2">Paket Wisata Batu - Malang</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Paket Wisata Batu - Malang</h3>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                             Jelajahi keindahan destinasi wisata hits Batu &amp; Malang: Jatim Park 1-2-3, Museum Angkut, Coban Rondo, Petik Apel hingga kuliner malam.
                         </p>
@@ -319,7 +319,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya ingin paket sewa mobil wisata Batu Malang dari Surabaya') }}"
-                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
+                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
                        target="_blank" rel="noopener noreferrer">
                         Pesan Paket Wisata
                     </a>
@@ -332,7 +332,7 @@ $canonical = url()->current();
                             👑
                         </div>
                         <span class="px-2.5 py-1 rounded-full bg-[rgba(124,58,237,0.15)] text-[var(--color-accent)] text-[0.7rem] font-bold uppercase tracking-wider block w-fit mb-2">VVIP Executive</span>
-                        <h3 class="text-white text-xl font-bold mb-2">VIP Carter Alphard &amp; Hiace</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">VIP Carter Alphard &amp; Hiace</h3>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                             Kemewahan armada flagship Toyota Alphard Transformer &amp; Hiace Premio Luxury untuk tamu kehormatan, direksi, pejabat, dan acara penting.
                         </p>
@@ -343,7 +343,7 @@ $canonical = url()->current();
                         </ul>
                     </div>
                     <a href="{{ \App\Support\WhatsApp::link('Halo '.config('site.brand').', saya butuh sewa Alphard / Hiace Luxury Surabaya ke Malang') }}"
-                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
+                       class="w-full py-2.5 px-4 rounded-[var(--radius-lg)] bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-semibold text-xs text-center no-underline hover:opacity-90 transition-opacity block"
                        target="_blank" rel="noopener noreferrer">
                         Pesan VIP Carter
                     </a>
@@ -357,7 +357,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[800px] mx-auto mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transparansi Harga Sewa</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
                     Daftar Harga Sewa Mobil <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Surabaya ke Malang &amp; Batu</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -369,7 +369,7 @@ $canonical = url()->current();
             <div class="overflow-x-auto rounded-[var(--radius-xl)] border border-[var(--color-border)] shadow-xl mb-10">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-white text-sm">
+                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-zinc-900 dark:text-white text-sm">
                             <th class="p-4 font-bold">Jenis Armada Mobil</th>
                             <th class="p-4 font-bold">Kapasitas</th>
                             <th class="p-4 font-bold">Karakteristik &amp; Keunggulan</th>
@@ -380,7 +380,7 @@ $canonical = url()->current();
                     <tbody class="divide-y divide-[var(--color-border)] text-sm text-[var(--color-text-light)]">
                         {{-- Row Innova Reborn --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)] bg-[rgba(34,211,238,0.02)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">🚗</span> Toyota Innova Reborn
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">7 Penumpang</td>
@@ -397,7 +397,7 @@ $canonical = url()->current();
 
                         {{-- Row Innova Zenix Hybrid --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">🚘</span> Toyota Innova Zenix Hybrid
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">7 Penumpang</td>
@@ -414,7 +414,7 @@ $canonical = url()->current();
 
                         {{-- Row Zenix Type Q Hybrid --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">✨</span> Zenix Type Q Hybrid (Captain Seat)
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">7 Penumpang (VIP)</td>
@@ -431,7 +431,7 @@ $canonical = url()->current();
 
                         {{-- Row Toyota Fortuner --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">🚙</span> Toyota Fortuner VRZ / GR Sport
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">7 Penumpang</td>
@@ -448,7 +448,7 @@ $canonical = url()->current();
 
                         {{-- Row Hiace Commuter --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">🚐</span> Toyota Hiace Commuter
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">14 – 15 Penumpang</td>
@@ -465,7 +465,7 @@ $canonical = url()->current();
 
                         {{-- Row Hiace Premio Luxury --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">🌟</span> Toyota Hiace Premio Luxury VIP
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">9 Seat VIP Captain</td>
@@ -482,7 +482,7 @@ $canonical = url()->current();
 
                         {{-- Row Alphard Transformer --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">👑</span> Toyota Alphard Transformer (Gen 3)
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">6 VIP Seat</td>
@@ -499,7 +499,7 @@ $canonical = url()->current();
 
                         {{-- Row All New Alphard HEV --}}
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">💎</span> All New Alphard HEV (Gen 4 Hybrid)
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">6 VVIP Seat</td>
@@ -520,7 +520,7 @@ $canonical = url()->current();
             {{-- Price Notes & Inclusions --}}
             <div class="grid grid-cols-2 gap-6 max-md:grid-cols-1">
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.3)]">
-                    <h3 class="text-white font-bold text-base mb-3 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-3 flex items-center gap-2">
                         <span class="text-emerald-400">✓</span> Fasilitas Sewa Termasuk (Include):
                     </h3>
                     <ul class="space-y-2 text-xs text-[var(--color-text-light)]">
@@ -532,7 +532,7 @@ $canonical = url()->current();
                 </div>
 
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.3)]">
-                    <h3 class="text-white font-bold text-base mb-3 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-3 flex items-center gap-2">
                         <span class="text-[var(--color-accent)]">💡</span> Mau Paket All-In (BBM, Tol &amp; Parkir)?
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-3">
@@ -554,7 +554,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-start max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Navigasi Jalan Bebas Hambatan</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Panduan Rute <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Tol Pandaan – Malang (Mapan)</span>
                     </h2>
 
@@ -566,7 +566,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">1</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Masuk Gerbang Tol di Surabaya / Sidoarjo</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Masuk Gerbang Tol di Surabaya / Sidoarjo</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Dari Surabaya Selatan atau Bandara Juanda, kendaraan langsung masuk melalui <strong>GT Waru</strong> atau <strong>GT Kejapanan</strong> menyusuri ruas Tol Surabaya – Gempol.
                                 </p>
@@ -576,7 +576,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">2</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Ruas Tol Gempol – Pandaan</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Ruas Tol Gempol – Pandaan</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Melanjutkan perjalanan menuju Interchange Gempol ke arah Pandaan. Jalur ini mulus dan menyuguhkan panorama Gunung Penanggungan di sisi kanan.
                                 </p>
@@ -586,7 +586,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">3</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Tol Pandaan – Malang (Tol Mapan)</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Tol Pandaan – Malang (Tol Mapan)</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Membentang melewati Purwodadi, Lawang, dan Singosari dengan suguhan pemandangan menakjubkan Gunung Arjuno-Welirang. Melintasi Rest Area KM 66 Pandaan yang megah.
                                 </p>
@@ -596,7 +596,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.3)]">
                             <span class="w-8 h-8 rounded-full bg-[var(--color-accent)] text-[var(--color-bg)] font-bold flex items-center justify-center flex-shrink-0 text-sm">4</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Pilihan Gerbang Keluar (Exit Tol) Malang</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Pilihan Gerbang Keluar (Exit Tol) Malang</h4>
                                 <p class="text-[var(--color-text-light)] text-xs mt-1 leading-relaxed">
                                     • <strong>GT Singosari (Karanglo):</strong> Paling direkomendasikan menuju Kota Batu &amp; pusat perkantoran Kota Malang.<br>
                                     • <strong>GT Pakis:</strong> Akses tercepat ke Bandara Abdulrachman Saleh Malang &amp; jalur Bromo via Tumpang.<br>
@@ -611,7 +611,7 @@ $canonical = url()->current();
                 <div class="flex flex-col gap-6">
                     <div class="bg-[var(--gradient-card)] border-2 border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8 shadow-xl">
                         <div class="flex items-center justify-between pb-4 mb-6 border-b border-[var(--color-border)]">
-                            <h3 class="text-white text-xl font-bold flex items-center gap-2">
+                            <h3 class="text-zinc-900 dark:text-white text-xl font-bold flex items-center gap-2">
                                 💳 Rincian Tarif Tol Surabaya – Malang
                             </h3>
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold">Golongan I</span>
@@ -627,25 +627,25 @@ $canonical = url()->current();
                                     <div class="text-[var(--color-text-light)] font-medium">1. Tol Surabaya – Gempol (Waru - Kejapanan)</div>
                                     <div class="text-[var(--color-text-muted)] text-[0.7rem]">Operator: PT Jasa Marga (Persero) Tbk</div>
                                 </div>
-                                <span class="font-bold text-white">Rp 10.500</span>
+                                <span class="font-bold text-zinc-900 dark:text-white">Rp 10.500</span>
                             </div>
                             <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div>
                                     <div class="text-[var(--color-text-light)] font-medium">2. Tol Gempol – Pandaan (Gempol IC - Pandaan)</div>
                                     <div class="text-[var(--color-text-muted)] text-[0.7rem]">Operator: PT Jasamarga Pandaan Tol</div>
                                 </div>
-                                <span class="font-bold text-white">Rp 13.000</span>
+                                <span class="font-bold text-zinc-900 dark:text-white">Rp 13.000</span>
                             </div>
                             <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div>
                                     <div class="text-[var(--color-text-light)] font-medium">3. Tol Pandaan – Malang (Exit Singosari)</div>
                                     <div class="text-[var(--color-text-muted)] text-[0.7rem]">Operator: PT Jasamarga Pandaan Malang</div>
                                 </div>
-                                <span class="font-bold text-white">Rp 35.500</span>
+                                <span class="font-bold text-zinc-900 dark:text-white">Rp 35.500</span>
                             </div>
                             <div class="flex items-center justify-between p-4 rounded-[var(--radius-md)] bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]">
                                 <div>
-                                    <span class="text-white font-bold text-base block">Total Akumulasi Tarif Tol:</span>
+                                    <span class="text-zinc-900 dark:text-white font-bold text-base block">Total Akumulasi Tarif Tol:</span>
                                     <span class="text-[var(--color-text-muted)] text-xs">Surabaya (Waru) &rarr; Exit Tol Singosari</span>
                                 </div>
                                 <span class="text-[var(--color-accent)] font-bold text-xl">Rp 59.000</span>
@@ -669,7 +669,7 @@ $canonical = url()->current();
 
                     {{-- Rest Area & Rujukan Data --}}
                     <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6">
-                        <h4 class="text-white font-bold text-base mb-3 flex items-center gap-2">
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-3 flex items-center gap-2">
                             ☕ Rest Area Favorit Sepanjang Perjalanan
                         </h4>
                         <p class="text-xs text-[var(--color-text-muted)] leading-relaxed mb-3">
@@ -690,7 +690,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-center max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Efisiensi Waktu &amp; Tenaga</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Lewat Tol vs Non-Tol: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mengapa Sewa Mobil via Tol Lebih Unggul?</span>
                     </h2>
                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
@@ -706,7 +706,7 @@ $canonical = url()->current();
 
                 {{-- Titik Kemacetan Arteri Card --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
-                    <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-4 flex items-center gap-2">
                         🛑 Titik Rawan Macet Jalur Arteri Non-Tol
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
@@ -741,7 +741,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[800px] mx-auto mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Eksplorasi Malang Raya</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
                     Destinasi Populer di Malang &amp; Batu yang <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Wajib Anda Kunjungi</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -753,7 +753,7 @@ $canonical = url()->current();
                 {{-- Wisata 1 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🦒</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Jatim Park 1, 2, &amp; 3</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Jatim Park 1, 2, &amp; 3</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Kota Wisata Batu</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Destinasi rekreasi keluarga nomor satu di Jawa Timur. Nikmati Batu Secret Zoo, Museum Satwa, Eco Green Park, hingga Dino Park di Jatim Park 3 dengan wahana modern ramah anak.
@@ -763,7 +763,7 @@ $canonical = url()->current();
                 {{-- Wisata 2 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🏎️</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Museum Angkut &amp; Pasar Apung</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Museum Angkut &amp; Pasar Apung</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Kecamatan Batu</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Museum transportasi interaktif terbesar di Asia Tenggara yang menampilkan koleksi ratusan mobil antik legendaris dari berbagai belahan dunia lengkap dengan suasana perkotaan tematik.
@@ -773,7 +773,7 @@ $canonical = url()->current();
                 {{-- Wisata 3 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🌋</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Wisata Sunrise Bromo (Via Malang)</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Wisata Sunrise Bromo (Via Malang)</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Tumpang / Gubugklakah</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Jalur favorit wisatawan menuju lautan pasir dan kawah Bromo. Queen Transport melayani drop-off hingga transit point Jeep di Tumpang dengan unit Innova atau Hiace yang nyaman.
@@ -783,7 +783,7 @@ $canonical = url()->current();
                 {{-- Kuliner 1 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🍲</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Bakso President Malang</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Bakso President Malang</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Kuliner Legendaris Pinggir Rel Kereta</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Menikmati semangkuk bakso kuah gurih segar, bakso bakar pedas, bakwan renyah, dan siomay basah tepat di samping perlintasan rel kereta api aktif di tengah Kota Malang.
@@ -793,7 +793,7 @@ $canonical = url()->current();
                 {{-- Kuliner 2 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🍧</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Toko Oen &amp; Rawon Nguling</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Toko Oen &amp; Rawon Nguling</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Kawasan Heritage Alun-Alun Malang</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Nostalgia es krim tempo doeloe resep Belanda sejak 1930 di Toko Oen, dilanjutkan santap rawon daging empuk kuah kluwek pekat khas Rawon Nguling di Jl. Zainul Arifin Malang.
@@ -803,7 +803,7 @@ $canonical = url()->current();
                 {{-- Kuliner 3 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🍵</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Pos Ketan Legenda 1967 Batu</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Pos Ketan Legenda 1967 Batu</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Alun-Alun Kota Wisata Batu</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Kuliner malam legendaris di jantung Alun-Alun Kota Batu. Ketan pulen hangat disajikan aneka topping manis dan gurih, mulai dari keju, meses, durian susu, hingga bubuk kedelai.
@@ -819,7 +819,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-center max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Standar Pelayanan Prima</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Mengapa Memilih Sewa Mobil <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Surabaya ke Malang di Queen Transport?</span>
                     </h2>
                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
@@ -830,28 +830,28 @@ $canonical = url()->current();
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Penjemputan Door-to-Door Tepat Waktu</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Penjemputan Door-to-Door Tepat Waktu</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Driver kami standby sebelum jadwal penerbangan Anda tiba di Bandara Juanda atau jadwal kereta di Stasiun Surabaya.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Driver Ramah &amp; Paham Karakter Medan</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Ramah &amp; Paham Karakter Medan</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Sopir menguasai etika hospitality, ramah terhadap keluarga dan anak-anak, serta berpengalaman menghadapi rute tanjakan curam di Batu dan Pujon.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Unit Mobil Bersih, Wangi &amp; Rutin Diservis</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Unit Mobil Bersih, Wangi &amp; Rutin Diservis</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Setiap kendaraan melewati inspeksi rutin mesin, ban, rem, dan AC sebelum melayani perjalanan luar kota.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Gratis Snack &amp; Air Mineral Hari Pertama</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Gratis Snack &amp; Air Mineral Hari Pertama</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Sebagai bentuk sambutan hangat kami, tersedia air mineral botol dan camilan gratis di dalam kabin mobil.</p>
                             </div>
                         </div>
@@ -866,7 +866,7 @@ $canonical = url()->current();
 
                 {{-- Area Matrix Card --}}
                 <div class="bg-[var(--gradient-card)] border-2 border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8 shadow-xl">
-                    <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-4 flex items-center gap-2">
                         📍 Estimasi Waktu &amp; Jarak ke Titik Malang Raya
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-xs mb-6 leading-relaxed">
@@ -876,7 +876,7 @@ $canonical = url()->current();
                     <div class="space-y-3 text-sm">
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Pusat Kota Malang / Stasiun Kotabaru</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Pusat Kota Malang / Stasiun Kotabaru</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Klojen, Alun-Alun &amp; Kampus UB</div>
                             </div>
                             <div class="text-right">
@@ -887,7 +887,7 @@ $canonical = url()->current();
 
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Singosari &amp; Kawasan Ekonomi Khusus</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Singosari &amp; Kawasan Ekonomi Khusus</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Underpass Karanglo &amp; Exit Tol</div>
                             </div>
                             <div class="text-right">
@@ -898,7 +898,7 @@ $canonical = url()->current();
 
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Kota Wisata Batu (Jatim Park / Museum Angkut)</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Kota Wisata Batu (Jatim Park / Museum Angkut)</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Via Jalur Tembus Karangploso</div>
                             </div>
                             <div class="text-right">
@@ -909,7 +909,7 @@ $canonical = url()->current();
 
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Transit Jeep Bromo (Tumpang)</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Transit Jeep Bromo (Tumpang)</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Exit Tol Pakis &rarr; Jalur Tumpang</div>
                             </div>
                             <div class="text-right">
@@ -928,7 +928,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[800px] mx-auto mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Proses Cepat &amp; Praktis</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
                     3 Langkah Mudah Pemesanan <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Sewa Mobil ke Malang</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -942,7 +942,7 @@ $canonical = url()->current();
                     <div class="w-14 h-14 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] text-xl font-bold flex items-center justify-center mx-auto mb-5">
                         1
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Konsultasi via WhatsApp</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Konsultasi via WhatsApp</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Hubungi admin kami dan sebutkan tanggal perjalanan, jumlah penumpang, lokasi jemput, dan destinasi tujuan Anda di Malang/Batu.
                     </p>
@@ -953,7 +953,7 @@ $canonical = url()->current();
                     <div class="w-14 h-14 rounded-full bg-[rgba(124,58,237,0.2)] text-[var(--color-accent)] text-xl font-bold flex items-center justify-center mx-auto mb-5">
                         2
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Pilih Armada &amp; Konfirmasi</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Pilih Armada &amp; Konfirmasi</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Tentukan tipe unit yang Anda kehendaki (Innova, Hiace, Fortuner, atau Alphard). Admin akan mengirimkan invoice konfirmasi reservasi unit Anda.
                     </p>
@@ -964,7 +964,7 @@ $canonical = url()->current();
                     <div class="w-14 h-14 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] text-xl font-bold flex items-center justify-center mx-auto mb-5">
                         3
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Penjemputan Tepat Waktu</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Penjemputan Tepat Waktu</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Driver kami tiba di titik penjemputan sesuai jadwal, siap membantu koper Anda dan mengantarkan perjalanan hingga ke tujuan dengan aman.
                     </p>
@@ -978,7 +978,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     FAQ Sewa Mobil Surabaya ke Malang <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">&amp; Kota Batu</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3">
@@ -989,7 +989,7 @@ $canonical = url()->current();
             <div class="max-w-[900px] mx-auto flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
-                    <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 flex items-center gap-3">
                         <span class="text-[var(--color-accent)]">❓</span> {{ $faq['q'] }}
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed pl-8">
@@ -1003,6 +1003,7 @@ $canonical = url()->current();
 
     {{-- SECTION 9: ARMADA REKOMENDASI UNTUK PERJALANAN LUAR KOTA --}}
     <x-armada-list
+        bg=""
         subtitle="Pilihan Armada Eksekutif"
         title="Pilihan Mobil Sewa Terbaik <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Surabaya ke Malang &amp; Batu</span>"
         description="Temukan kendaraan paling pas untuk kebutuhan rombongan, liburan keluarga, maupun kunjungan dinas ke Malang Raya. Semua unit include driver profesional."
@@ -1016,7 +1017,7 @@ $canonical = url()->current();
             <span class="px-4 py-2 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs uppercase tracking-widest font-semibold mb-6 inline-block">
                 ✦ Perjalanan Cepat, Aman &amp; Nyaman
             </span>
-            <h2 class="text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
                 Siap Berangkat ke Malang &amp; Batu? <br class="hidden sm:block">
                 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Pesan Sewa Mobil di Queen Transport Sekarang!</span>
             </h2>

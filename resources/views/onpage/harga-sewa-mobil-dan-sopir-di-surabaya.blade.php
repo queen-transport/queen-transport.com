@@ -56,7 +56,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                         ✦ Rental Mobil + Driver Surabaya #1 Terpercaya
                     </div>
 
-                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-white">
+                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-zinc-900 dark:text-white">
                         Harga Sewa Mobil dan Sopir <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">di Surabaya</span>
                     </h1>
 
@@ -89,7 +89,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Paket Mobil + Driver</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Kenapa Sewa Bersama Sopir?</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Kenapa Sewa Bersama Sopir?</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Bebas lelah mengemudi di tengah kemacetan Surabaya. Anda cukup duduk santai dan tiba tepat waktu di tujuan.
                         </p>
@@ -125,28 +125,28 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Sopir Berpengalaman</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Sopir Berpengalaman</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Sopan, rapi &amp; hafal rute jalan</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💰</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Tarif Resmi &amp; Jelas</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Tarif Resmi &amp; Jelas</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Tanpa markup &amp; biaya siluman</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🧼</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Kabin Bersih &amp; Wangi</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Kabin Bersih &amp; Wangi</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Unit disanitasi sebelum jemput</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⏰</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Penjemputan Tepat Waktu</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Penjemputan Tepat Waktu</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Standby sebelum jadwal berangkat</p>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transparansi Harga Resmi</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Daftar Harga <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Sewa Mobil dan Sopir Surabaya</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -171,18 +171,18 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                 <table class="w-full text-sm">
                     <thead>
                         <tr class="bg-[rgba(124,58,237,0.18)] border-b border-[var(--color-border)] text-left">
-                            <th class="py-4 px-6 text-white font-bold">Armada Mobil</th>
+                            <th class="py-4 px-6 text-zinc-900 dark:text-white font-bold">Armada Mobil</th>
                             <th class="py-4 px-4 text-center text-[var(--color-accent)] font-bold">Kapasitas Kursi</th>
-                            <th class="py-4 px-4 text-center text-white font-bold">Layanan Driver</th>
+                            <th class="py-4 px-4 text-center text-zinc-900 dark:text-white font-bold">Layanan Driver</th>
                             <th class="py-4 px-4 text-center text-[var(--color-accent)] font-bold">Tarif Sewa / Hari</th>
-                            <th class="py-4 px-6 text-center text-white font-bold">Aksi</th>
+                            <th class="py-4 px-6 text-center text-zinc-900 dark:text-white font-bold">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($kelasAtasPrices as $index => $item)
                             <tr class="border-b border-[var(--color-border)] last:border-0 {{ $index % 2 === 0 ? 'bg-[var(--gradient-card)]' : 'bg-[rgba(124,58,237,0.04)]' }} hover:bg-[rgba(124,58,237,0.12)] transition-colors">
                                 <td class="py-4 px-6">
-                                    <div class="font-bold text-white text-base">{{ $item['name'] }}</div>
+                                    <div class="font-bold text-zinc-900 dark:text-white text-base">{{ $item['name'] }}</div>
                                     @if (!empty($item['badge']))
                                         <span class="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-[rgba(34,211,238,0.12)] border border-[rgba(34,211,238,0.25)] text-[var(--color-accent)] text-[0.72rem] font-medium">
                                             {{ $item['badge'] }}
@@ -190,7 +190,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                                     @endif
                                 </td>
                                 <td class="py-4 px-4 text-center">
-                                    <span class="inline-block px-3 py-1 rounded-full bg-[rgba(124,58,237,0.15)] text-white text-xs font-semibold">
+                                    <span class="inline-block px-3 py-1 rounded-full bg-[rgba(124,58,237,0.15)] text-zinc-900 dark:text-white text-xs font-semibold">
                                         {{ $item['seat'] }}
                                     </span>
                                 </td>
@@ -200,7 +200,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                                     </span>
                                 </td>
                                 <td class="py-4 px-4 text-center">
-                                    <div class="text-white font-bold text-lg">
+                                    <div class="text-zinc-900 dark:text-white font-bold text-lg">
                                         Rp {{ $item['price_label'] }}
                                     </div>
                                     <div class="text-[var(--color-text-muted)] text-[0.75rem]">/ hari (Surabaya &amp; Sekitar)</div>
@@ -237,11 +237,11 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
     />
 
     {{-- RINCIAN INCLUDED VS EXCLUDED --}}
-    <section class="py-[90px] bg-[var(--color-bg-2)]" id="rincian">
+    <section class="py-[90px]" id="rincian">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Transparansi Layanan</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Apa yang Anda Dapatkan dalam <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Harga Sewa Kami?</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -254,7 +254,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                 <div class="bg-[var(--gradient-card)] border border-[rgba(34,211,238,0.25)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[var(--color-border)]">
                         <span class="text-2xl">✅</span>
-                        <h3 class="text-white font-bold text-lg">Sudah Termasuk (Free of Charge)</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg">Sudah Termasuk (Free of Charge)</h3>
                     </div>
 
                     <div class="flex flex-col gap-4">
@@ -268,7 +268,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                             <div class="flex items-start gap-4">
                                 <span class="text-xl flex-shrink-0 w-10 h-10 rounded-[var(--radius-md)] bg-[rgba(34,211,238,0.1)] flex items-center justify-center">{{ $icon }}</span>
                                 <div>
-                                    <div class="text-white font-semibold text-sm">{{ $title }}</div>
+                                    <div class="text-zinc-900 dark:text-white font-semibold text-sm">{{ $title }}</div>
                                     <div class="text-[var(--color-text-muted)] text-xs mt-0.5 leading-relaxed">{{ $desc }}</div>
                                 </div>
                             </div>
@@ -280,7 +280,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                 <div class="bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.25)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[var(--color-border)]">
                         <span class="text-2xl">📋</span>
-                        <h3 class="text-white font-bold text-lg">Komponen Operasional Tambahan</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg">Komponen Operasional Tambahan</h3>
                     </div>
 
                     <div class="flex flex-col gap-4">
@@ -294,7 +294,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                             <div class="flex items-start gap-4">
                                 <span class="text-xl flex-shrink-0 w-10 h-10 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.1)] flex items-center justify-center">{{ $icon }}</span>
                                 <div>
-                                    <div class="text-white font-semibold text-sm">{{ $title }}</div>
+                                    <div class="text-zinc-900 dark:text-white font-semibold text-sm">{{ $title }}</div>
                                     <div class="text-[var(--color-text-muted)] text-xs mt-0.5 leading-relaxed">{{ $desc }}</div>
                                 </div>
                             </div>
@@ -303,7 +303,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
 
                     <div class="mt-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
-                            💡 <span class="text-white font-semibold">Mau Lebih Praktis?</span> Minta <strong class="text-[var(--color-accent)]">Paket All-In (Mobil + Sopir + BBM + Tol)</strong> kepada tim admin kami agar Anda tidak perlu repot menghitung biaya di jalan.
+                            💡 <span class="text-zinc-900 dark:text-white font-semibold">Mau Lebih Praktis?</span> Minta <strong class="text-[var(--color-accent)]">Paket All-In (Mobil + Sopir + BBM + Tol)</strong> kepada tim admin kami agar Anda tidak perlu repot menghitung biaya di jalan.
                         </p>
                     </div>
                 </div>
@@ -312,11 +312,11 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
     </section>
 
     {{-- KEBUTUHAN PERJALANAN / USE CASES --}}
-    <section class="py-[90px]" id="layanan">
+    <section class="py-[90px] bg-[var(--color-bg-2)]" id="layanan">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Solusi Mobilitas Anda</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Sewa Mobil dan Sopir Surabaya untuk <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Segala Keperluan</span>
                 </h2>
             </div>
@@ -332,7 +332,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
                 ] as [$icon, $title, $desc])
                     <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[rgba(124,58,237,0.4)] hover:-translate-y-1 transition-all duration-300">
                         <div class="text-3xl mb-4">{{ $icon }}</div>
-                        <h3 class="text-white font-bold text-sm mb-2">{{ $title }}</h3>
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-sm mb-2">{{ $title }}</h3>
                         <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</p>
                     </div>
                 @endforeach
@@ -341,36 +341,36 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
     </section>
 
     {{-- CARA PEMESANAN --}}
-    <section class="py-[80px] bg-[var(--color-bg-2)]">
+    <section class="py-[80px]">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Panduan Reservasi</span>
-                <h2 class="text-white text-2xl font-bold">4 Langkah Mudah Sewa Mobil dan Sopir di Surabaya</h2>
+                <h2 class="text-zinc-900 dark:text-white text-2xl font-bold">4 Langkah Mudah Sewa Mobil dan Sopir di Surabaya</h2>
             </div>
 
             <div class="grid grid-cols-4 gap-6 max-md:grid-cols-2 max-sm:grid-cols-1">
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">01</span>
                     <div class="text-2xl mb-4">💬</div>
-                    <h3 class="text-white font-bold text-base mb-2">Hubungi Admin WA</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Hubungi Admin WA</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Klik tombol WhatsApp dan sampaikan tanggal sewa, titik penjemputan, serta rencana rute perjalanan Anda.</p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">02</span>
                     <div class="text-2xl mb-4">🚘</div>
-                    <h3 class="text-white font-bold text-base mb-2">Pilih Tipe Mobil</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Pilih Tipe Mobil</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Pilih jenis kendaraan sesuai kapasitas dan preferensi Anda. Sopir profesional otomatis sudah termasuk.</p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">03</span>
                     <div class="text-2xl mb-4">💳</div>
-                    <h3 class="text-white font-bold text-base mb-2">Konfirmasi &amp; DP</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Konfirmasi &amp; DP</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Lakukan pembayaran uang muka (DP) resmi untuk mengunci jadwal armada dan ketersediaan sopir.</p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 relative">
                     <span class="text-4xl font-bold text-[rgba(124,58,237,0.3)] absolute top-4 right-4">04</span>
                     <div class="text-2xl mb-4">🚀</div>
-                    <h3 class="text-white font-bold text-base mb-2">Sopir Siap Menjemput</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Sopir Siap Menjemput</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">Sopir dan unit mobil bersih siap menjemput Anda tepat waktu di lokasi yang telah disepakati.</p>
                 </div>
             </div>
@@ -382,14 +382,14 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
         <div class="max-w-[900px] mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Tanya Jawab Populer</span>
-                <h2 class="text-white text-2xl font-bold">FAQ Sewa Mobil dan Sopir di Surabaya</h2>
+                <h2 class="text-zinc-900 dark:text-white text-2xl font-bold">FAQ Sewa Mobil dan Sopir di Surabaya</h2>
                 <p class="text-[var(--color-text-muted)] mt-3 text-sm">Pertanyaan yang sering diajukan mengenai sewa mobil dengan sopir di Queen Transport.</p>
             </div>
 
             <div class="flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                     <details class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 transition-all hover:border-[rgba(124,58,237,0.4)]">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-base max-sm:text-sm">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-zinc-900 dark:text-white text-base max-sm:text-sm">
                             <span>{{ $faq['q'] }}</span>
                             <span class="ml-4 text-[var(--color-accent)] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">▼</span>
                         </summary>
@@ -408,7 +408,7 @@ $description = 'Daftar harga sewa mobil dan sopir di Surabaya terbaru ✓ Mulai 
             <span class="px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-6 inline-block">
                 ✦ Reservasi Sewa Mobil + Sopir di Surabaya
             </span>
-            <h2 class="text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
                 Dapatkan Penawaran Harga Sewa Mobil &amp; Sopir Terbaik Hari Ini!
             </h2>
             <p class="text-[var(--color-text-muted)] text-base mb-8 max-w-[620px] mx-auto leading-relaxed">

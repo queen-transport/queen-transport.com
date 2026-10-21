@@ -115,7 +115,7 @@ $canonical = url()->current();
                         ✦ Pesona Wisata Malam Ikonik Surabaya &bull; Luxury Travel VIP
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Air Mancur Menari Surabaya: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Nikmati Perjalanan Mewah &amp; Eksklusif</span>
                     </h1>
 
@@ -148,7 +148,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">VIP Night Tour</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Mengapa Pilih Night Tour {{ config('site.brand') }}?</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Mengapa Pilih Night Tour {{ config('site.brand') }}?</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Nikmati gemerlap malam Kota Surabaya tanpa stres kemacetan dan kepedatan parkir di lokasi wisata.
                         </p>
@@ -184,28 +184,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⛲</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Visual Tarian Air &amp; Lampu</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Visual Tarian Air &amp; Lampu</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Pertunjukan spektakuler malam</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🚘</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Armada Kelas Atas</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Armada Kelas Atas</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Alphard, Hiace Premio &amp; Zenix</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Berstandar VIP</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Berstandar VIP</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Sopan, rapi &amp; paham rute</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🥂</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Paket Night Cruise Custom</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Paket Night Cruise Custom</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Kombinasi tempat dinner &amp; wisata</p>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ $canonical = url()->current();
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-4">
                         ✦ Mahakarya Pesisir Surabaya
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                    <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
                         Keindahan Magis <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Air Mancur Menari Jembatan Suroboyo</span>
                     </h2>
                     <div class="flex flex-col gap-4 text-[var(--color-text-light)] text-sm leading-relaxed">
@@ -238,35 +238,35 @@ $canonical = url()->current();
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8 shadow-xl">
-                    <h3 class="text-white text-xl font-bold mb-6 flex items-center gap-3 border-b border-[var(--color-border)] pb-4">
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-6 flex items-center gap-3 border-b border-[var(--color-border)] pb-4">
                         <span class="text-2xl">📋</span> Informasi Ringkas Pertunjukan
                     </h3>
                     <ul class="flex flex-col gap-4 text-sm text-[var(--color-text-light)]">
                         <li class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] font-bold text-base mt-0.5">📍</span>
                             <div>
-                                <strong class="text-white block">Lokasi Utama:</strong>
+                                <strong class="text-zinc-900 dark:text-white block">Lokasi Utama:</strong>
                                 Jembatan Suroboyo, Kecamatan Bulak, Kenjeran, Kota Surabaya, Jawa Timur.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] font-bold text-base mt-0.5">🕒</span>
                             <div>
-                                <strong class="text-white block">Waktu Pertunjukan:</strong>
+                                <strong class="text-zinc-900 dark:text-white block">Waktu Pertunjukan:</strong>
                                 Akhir pekan (Sabtu malam) mulai pukul 18.30 &ndash; 21.00 WIB (dibagi dalam beberapa sesi atraksi).
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] font-bold text-base mt-0.5">🎶</span>
                             <div>
-                                <strong class="text-white block">Daya Tarik Utama:</strong>
+                                <strong class="text-zinc-900 dark:text-white block">Daya Tarik Utama:</strong>
                                 Kombinasi tarian air mancur high-pressure, lighting LED 3D efek, musik aransemen khas Surabaya, dan embusan angin laut yang menyegarkan.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] font-bold text-base mt-0.5">💡</span>
                             <div>
-                                <strong class="text-white block">Tips Kunjungan Mewah:</strong>
+                                <strong class="text-zinc-900 dark:text-white block">Tips Kunjungan Mewah:</strong>
                                 Tiba 30 menit sebelum acara dengan kendaraan private VIP agar terhindar dari antrean jalanan dan langsung ditempatkan di titik drop-off paling strategis oleh driver Anda.
                             </div>
                         </li>
@@ -283,7 +283,7 @@ $canonical = url()->current();
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
                     ✦ Kenyamanan Tanpa Kompromi
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
                     Mengapa Memilih Perjalanan Mewah Bersama {{ config('site.brand') }}?
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
@@ -296,7 +296,7 @@ $canonical = url()->current();
                     <div class="w-14 h-14 rounded-2xl bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] flex items-center justify-center text-2xl mb-6">
                         🚗💨
                     </div>
-                    <h3 class="text-white text-xl font-bold mb-3">Bebas Stres Parkir &amp; Kemacetan</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Bebas Stres Parkir &amp; Kemacetan</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Anda dan rombongan cukup turun tepat di titik pemandangan terbaik (drop-off VIP). Driver profesional kami akan mengurus tempat parkir dan siap menjemput sewaktu-waktu saat Anda selesai menikmati pertunjukan.
                     </p>
@@ -306,7 +306,7 @@ $canonical = url()->current();
                     <div class="w-14 h-14 rounded-2xl bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] flex items-center justify-center text-2xl mb-6">
                         👑🛋️
                     </div>
-                    <h3 class="text-white text-xl font-bold mb-3">Kemewahan Kabin Kelas VIP</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Kemewahan Kabin Kelas VIP</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Rasakan kesejukan AC ganda, jok kulit empuk berfasilitas <em>Captain Seat &amp; Legrest</em> (pada Alphard &amp; Hiace Luxury), kekedapan suara tingkat tinggi, serta fasilitas audio premium untuk melengkapi suasana malam.
                     </p>
@@ -316,9 +316,73 @@ $canonical = url()->current();
                     <div class="w-14 h-14 rounded-2xl bg-[rgba(124,58,237,0.15)] border border-[rgba(124,58,237,0.3)] flex items-center justify-center text-2xl mb-6">
                         🍷📍
                     </div>
-                    <h3 class="text-white text-xl font-bold mb-3">Fleksibilitas Night Tour Surabaya</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Fleksibilitas Night Tour Surabaya</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Tidak hanya berhenti di Jembatan Suroboyo, Anda dapat melanjutkan perjalanan malam ke restoran fine dining, cafe rooftop Surabaya Barat, atau wisata sejarah malam seperti Kawasan Wisata Ampel dan Tunjangan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- SECTION 4: ITINERARY REKOMENDASI NIGHT TOUR SURABAYA --}}
+    <section class="py-20">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center max-w-[700px] mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
+                    ✦ Rencana Perjalanan Ideal
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
+                    Rangkaian Rute Surabaya Night Tour VIP
+                </h2>
+                <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                    Berikut adalah rekomendasi jadwal perjalanan eksklusif untuk memaksimalkan momen indah malam akhir pekan Anda di Surabaya:
+                </p>
+            </div>
+
+            <div class="relative border-l-2 border-[rgba(124,58,237,0.4)] ml-4 md:ml-12 pl-6 md:pl-10 space-y-10">
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
+                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">16:30 &ndash; 17:30 WIB</div>
+                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-2">Penjemputan Eksklusif (Door-to-Door Pick Up)</h3>
+                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                        Driver VIP kami menjemput Anda tepat waktu di lobby hotel bintang lima, Bandara Juanda, atau kediaman pribadi Anda dengan armada bersih dan wangi.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
+                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">17:30 &ndash; 19:00 WIB</div>
+                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-2">Fine Dining / Dinner Kuliner Khas Surabaya</h3>
+                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                        Menikmati santap malam elegan di restoran seafood favorit kawasan Kenjeran/Surabaya Timur atau resto fine dining pilihan Anda sebelum menyaksikan atraksi utama.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
+                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">19:15 &ndash; 20:30 WIB</div>
+                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-2">Menyaksikan Pertunjukan Air Mancur Menari Jembatan Suroboyo</h3>
+                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                        Tiba di lokasi Jembatan Suroboyo. Driver Anda mengantar ke akses terdekat. Anda dapat mengabadikan momen foto &amp; video berlatar tarian air warna-warni dan hembusan laut Kenjeran yang mempesona.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
+                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">20:30 &ndash; 21:45 WIB</div>
+                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-2">City Cruise Malam (Iconic Landmarks of Surabaya)</h3>
+                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                        Perjalanan berlanjut menyusuri sudut gemerlap malam Surabaya: Gedung Grahadi, Taman Apsari, Monumen Bambu Runcing, hingga suasana romantis kawasan Jalan Tunjungan.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
+                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">22:00 WIB</div>
+                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold mb-2">Drop Off Kembali ke Hotel / Kediaman</h3>
+                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                        Driver mengantarkan Anda kembali ke lokasi tujuan akhir dengan aman, nyaman, dan penuh kesan manis.
                     </p>
                 </div>
             </div>
@@ -334,70 +398,6 @@ $canonical = url()->current();
         :limit="6"
     />
 
-    {{-- SECTION 4: ITINERARY REKOMENDASI NIGHT TOUR SURABAYA --}}
-    <section class="py-20 bg-[var(--color-bg-2)] border-y border-[var(--color-border)]">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center max-w-[700px] mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
-                    ✦ Rencana Perjalanan Ideal
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Rangkaian Rute Surabaya Night Tour VIP
-                </h2>
-                <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                    Berikut adalah rekomendasi jadwal perjalanan eksklusif untuk memaksimalkan momen indah malam akhir pekan Anda di Surabaya:
-                </p>
-            </div>
-
-            <div class="relative border-l-2 border-[rgba(124,58,237,0.4)] ml-4 md:ml-12 pl-6 md:pl-10 space-y-10">
-                <div class="relative">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
-                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">16:30 &ndash; 17:30 WIB</div>
-                    <h3 class="text-white text-lg font-bold mb-2">Penjemputan Eksklusif (Door-to-Door Pick Up)</h3>
-                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                        Driver VIP kami menjemput Anda tepat waktu di lobby hotel bintang lima, Bandara Juanda, atau kediaman pribadi Anda dengan armada bersih dan wangi.
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
-                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">17:30 &ndash; 19:00 WIB</div>
-                    <h3 class="text-white text-lg font-bold mb-2">Fine Dining / Dinner Kuliner Khas Surabaya</h3>
-                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                        Menikmati santap malam elegan di restoran seafood favorit kawasan Kenjeran/Surabaya Timur atau resto fine dining pilihan Anda sebelum menyaksikan atraksi utama.
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
-                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">19:15 &ndash; 20:30 WIB</div>
-                    <h3 class="text-white text-lg font-bold mb-2">Menyaksikan Pertunjukan Air Mancur Menari Jembatan Suroboyo</h3>
-                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                        Tiba di lokasi Jembatan Suroboyo. Driver Anda mengantar ke akses terdekat. Anda dapat mengabadikan momen foto &amp; video berlatar tarian air warna-warni dan hembusan laut Kenjeran yang mempesona.
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
-                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">20:30 &ndash; 21:45 WIB</div>
-                    <h3 class="text-white text-lg font-bold mb-2">City Cruise Malam (Iconic Landmarks of Surabaya)</h3>
-                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                        Perjalanan berlanjut menyusuri sudut gemerlap malam Surabaya: Gedung Grahadi, Taman Apsari, Monumen Bambu Runcing, hingga suasana romantis kawasan Jalan Tunjungan.
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-[var(--color-accent)] border-4 border-[var(--color-bg-2)]"></div>
-                    <div class="text-[var(--color-accent)] font-bold text-sm uppercase tracking-wider mb-1">22:00 WIB</div>
-                    <h3 class="text-white text-lg font-bold mb-2">Drop Off Kembali ke Hotel / Kediaman</h3>
-                    <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                        Driver mengantarkan Anda kembali ke lokasi tujuan akhir dengan aman, nyaman, dan penuh kesan manis.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     {{-- SECTION 5: FAQ SECTION --}}
     <section class="py-20" id="faq">
         <div class="max-w-[1000px] mx-auto px-6">
@@ -405,7 +405,7 @@ $canonical = url()->current();
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
                     ✦ FAQ &bull; Pertanyaan Umum
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
                     Pertanyaan Seputar Wisata &amp; Rental Mobil VIP
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm">
@@ -416,7 +416,7 @@ $canonical = url()->current();
             <div class="flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                     <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 shadow-md">
-                        <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 flex items-center gap-3">
                             <span class="text-[var(--color-accent)] font-semibold">Q:</span>
                             {{ $faq['q'] }}
                         </h3>
@@ -430,12 +430,12 @@ $canonical = url()->current();
     </section>
 
     {{-- BOTTOM CTA SECTION --}}
-    <section class="py-20 bg-[var(--color-bg-2)] border-t border-[var(--color-border)] relative overflow-hidden">
+    <section class="py-20 relative overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[1000px] mx-auto px-6 text-center relative z-10">
             <span class="px-4 py-2 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-4 inline-block">
                 ✦ Wujudkan Momen Spesial Malam Ini
             </span>
-            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-zinc-900 dark:text-white mb-6 leading-tight">
                 Siap Menikmati Keindahan Air Mancur Menari Surabaya dengan Gaya Mewah?
             </h2>
             <p class="text-[var(--color-text-light)] text-base max-w-[650px] mx-auto mb-8 leading-relaxed">

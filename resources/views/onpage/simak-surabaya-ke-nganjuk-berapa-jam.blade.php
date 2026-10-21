@@ -113,7 +113,7 @@ $canonical = url()->current();
                         ✦ Panduan Rute &amp; Transportasi Jawa Timur
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Simak Surabaya ke Nganjuk Berapa Jam: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Estimasi Waktu, Rute Tol &amp; Non-Tol</span>
                     </h1>
 
@@ -146,7 +146,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Fakta Cepat Rute</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Surabaya &rarr; Nganjuk</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Surabaya &rarr; Nganjuk</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Akses penghubung Kota Pahlawan menuju Kabupaten Nganjuk (Kota Angin) di lereng Gunung Wilis.
                         </p>
@@ -172,7 +172,7 @@ $canonical = url()->current();
 
                         <div class="mt-6 pt-4 border-t border-[var(--color-border)] text-xs text-[var(--color-text-muted)] flex items-center justify-between">
                             <span>Gerbang Keluar:</span>
-                            <span class="text-white font-semibold">GT Nganjuk (Begadung)</span>
+                            <span class="text-zinc-900 dark:text-white font-semibold">GT Nganjuk (Begadung)</span>
                         </div>
                         <div class="mt-2 text-[0.68rem] text-[var(--color-text-muted)] italic text-right">
                             *Tarif resmi saat data diambil (Sep 2026) &amp; dapat berubah sewaktu-waktu.
@@ -190,28 +190,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🛣️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Rute Tercepat via Tol</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Rute Tercepat via Tol</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Tol Sumo &amp; Kertosono tanpa macet</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Berpengalaman</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Berpengalaman</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Menguasai rute jalan tol &amp; non-tol</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">📍</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Layanan Door-to-Door</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Layanan Door-to-Door</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Jemput Juanda / Stasiun / Rumah</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🥤</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Fasilitas gratis di hari pertama</p>
                     </div>
                 </div>
@@ -224,7 +224,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[800px] mx-auto mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Perbandingan Moda Transportasi</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
                     Berapa Jam Surabaya ke Nganjuk? <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Tabel Perbandingan Rute</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -236,7 +236,7 @@ $canonical = url()->current();
             <div class="overflow-x-auto rounded-[var(--radius-xl)] border border-[var(--color-border)] shadow-xl mb-12">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-white text-sm">
+                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-zinc-900 dark:text-white text-sm">
                             <th class="p-4 font-bold">Moda / Pilihan Rute</th>
                             <th class="p-4 font-bold">Estimasi Jarak</th>
                             <th class="p-4 font-bold">Waktu Tempuh</th>
@@ -246,7 +246,7 @@ $canonical = url()->current();
                     </thead>
                     <tbody class="divide-y divide-[var(--color-border)] text-sm text-[var(--color-text-light)]">
                         <tr class="hover:bg-[rgba(124,58,237,0.05)] bg-[rgba(34,211,238,0.03)]">
-                            <td class="p-4 font-bold text-white flex items-center gap-2">
+                            <td class="p-4 font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                                 <span class="text-xl">🚗</span> Mobil Pribadi / Rental (Via Tol)
                             </td>
                             <td class="p-4 font-semibold text-[var(--color-accent)]">± 115 – 125 km</td>
@@ -255,7 +255,7 @@ $canonical = url()->current();
                             <td class="p-4 text-[var(--color-text-muted)]">Perlu saldo e-Toll (± Rp 125.000).</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">
                                 <span class="text-xl inline-block mr-1">🛵</span> Mobil / Motor (Non-Tol Arteri)
                             </td>
                             <td class="p-4">± 110 – 120 km</td>
@@ -264,7 +264,7 @@ $canonical = url()->current();
                             <td class="p-4 text-[var(--color-text-muted)]">Sering macet di Mengkreng, Krian &amp; pasar tumpah; melelahkan bagi sopir.</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">
                                 <span class="text-xl inline-block mr-1">🚆</span> Kereta Api (Stasiun Surabaya &rarr; Nganjuk)
                             </td>
                             <td class="p-4">Jalur Rel</td>
@@ -273,7 +273,7 @@ $canonical = url()->current();
                             <td class="p-4 text-[var(--color-text-muted)]">Terikat jadwal jam tiket; tidak door-to-door (harus oper angkutan lagi dari stasiun).</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">
                                 <span class="text-xl inline-block mr-1">🚌</span> Bus Antar Kota (Bungurasih &rarr; Nganjuk)
                             </td>
                             <td class="p-4">± 115 – 120 km</td>
@@ -289,7 +289,7 @@ $canonical = url()->current();
             <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.3)] flex items-start gap-4">
                 <span class="text-3xl flex-shrink-0">💡</span>
                 <div>
-                    <h3 class="text-white font-bold text-base mb-1">Kesimpulan Waktu Tempuh:</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-1">Kesimpulan Waktu Tempuh:</h3>
                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed">
                         Jika Anda mengutamakan <strong>kecepatan, kenyamanan keluarga, dan efisiensi waktu</strong>, perjalanan via <strong>Jalan Tol Trans Jawa</strong> dengan mobil pribadi atau rental mobil plus driver adalah opsi paling direkomendasikan. Anda menghemat waktu hingga <strong>2 jam penuh</strong> dibandingkan jalur non-tol, tanpa risiko terjebak antrean kemacetan Simpang Mengkreng Kertosono.
                     </p>
@@ -304,7 +304,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-start max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Rute Tol Trans Jawa</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Panduan Lengkap <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Rute Tol Surabaya – Nganjuk</span>
                     </h2>
 
@@ -316,7 +316,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">1</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Masuk Gerbang Tol di Surabaya</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Masuk Gerbang Tol di Surabaya</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Dari Surabaya Selatan / Sidoarjo / Juanda masuk melalui <strong>GT Waru</strong>. Jika dari arah pusat/barat Surabaya, Anda bisa masuk lewat <strong>GT Gunungsari</strong> atau <strong>GT Romokalisari</strong>.
                                 </p>
@@ -326,7 +326,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">2</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Tol Surabaya – Mojokerto (Tol Sumo - 36,27 km)</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Tol Surabaya – Mojokerto (Tol Sumo - 36,27 km)</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Melintasi jembatan megah Kalimas dan kawasan Driyorejo, Krian, hingga interchange Mojokerto (Penompo). Waktu tempuh di ruas ini sekitar 25–30 menit.
                                 </p>
@@ -336,7 +336,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">3</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Tol Mojokerto – Kertosono (Tol Moker - 40,5 km)</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Tol Mojokerto – Kertosono (Tol Moker - 40,5 km)</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Menyusuri wilayah Jombang Utara hingga interchange Bandar Kedungmulyo. Melintasi Rest Area KM 695 dengan fasilitas SPBU dan tempat makan lengkap. Waktu tempuh sekitar 25–30 menit.
                                 </p>
@@ -346,7 +346,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                             <span class="w-8 h-8 rounded-full bg-[rgba(34,211,238,0.2)] text-[var(--color-accent)] font-bold flex items-center justify-center flex-shrink-0 text-sm">4</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Tol Kertosono – Nganjuk (Seksi Kertosono - Ngawi)</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Tol Kertosono – Nganjuk (Seksi Kertosono - Ngawi)</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-1 leading-relaxed">
                                     Melintasi jembatan Sungai Brantas menuju Nganjuk. Laju kendaraan konstan dengan kondisi jalan mulus. Waktu tempuh ruas ini hanya sekitar 20 menit.
                                 </p>
@@ -356,7 +356,7 @@ $canonical = url()->current();
                         <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[rgba(34,211,238,0.08)] border border-[rgba(34,211,238,0.3)]">
                             <span class="w-8 h-8 rounded-full bg-[var(--color-accent)] text-[var(--color-bg)] font-bold flex items-center justify-center flex-shrink-0 text-sm">5</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Keluar di Gerbang Tol Nganjuk (Begadung)</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Keluar di Gerbang Tol Nganjuk (Begadung)</h4>
                                 <p class="text-[var(--color-text-light)] text-xs mt-1 leading-relaxed">
                                     Ambil lajur keluar menuju <strong>Exit GT Nganjuk</strong> di Begadung. Begitu keluar gerbang tol, Anda langsung terhubung ke Jalan Lingkar Luar (Ring Road) Nganjuk, hanya butuh <strong>5–10 menit</strong> ke Alun-Alun Nganjuk.
                                 </p>
@@ -369,7 +369,7 @@ $canonical = url()->current();
                 <div class="flex flex-col gap-6">
                     <div class="bg-[var(--gradient-card)] border-2 border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8 shadow-xl">
                         <div class="flex items-center justify-between pb-4 mb-6 border-b border-[var(--color-border)]">
-                            <h3 class="text-white text-xl font-bold flex items-center gap-2">
+                            <h3 class="text-zinc-900 dark:text-white text-xl font-bold flex items-center gap-2">
                                 💳 Rincian Tarif Tol (Golongan I)
                             </h3>
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold">Mobil Pribadi</span>
@@ -385,25 +385,25 @@ $canonical = url()->current();
                                     <div class="text-[var(--color-text-light)] font-medium">1. Tol Surabaya – Mojokerto (Tol Sumo)</div>
                                     <div class="text-[var(--color-text-muted)] text-[0.7rem]">Operator: PT Jasamarga Surabaya Mojokerto</div>
                                 </div>
-                                <span class="font-bold text-white">Rp 43.500</span>
+                                <span class="font-bold text-zinc-900 dark:text-white">Rp 43.500</span>
                             </div>
                             <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div>
                                     <div class="text-[var(--color-text-light)] font-medium">2. Tol Mojokerto – Kertosono (Tol Moker)</div>
                                     <div class="text-[var(--color-text-muted)] text-[0.7rem]">Operator: PT Astra Tol Nusantara (MHI)</div>
                                 </div>
-                                <span class="font-bold text-white">Rp 55.000</span>
+                                <span class="font-bold text-zinc-900 dark:text-white">Rp 55.000</span>
                             </div>
                             <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div>
                                     <div class="text-[var(--color-text-light)] font-medium">3. Tol Kertosono – Nganjuk (Begadung)</div>
                                     <div class="text-[var(--color-text-muted)] text-[0.7rem]">Operator: PT Jasamarga Ngawi Kertosono Kediri</div>
                                 </div>
-                                <span class="font-bold text-white">Rp 27.000</span>
+                                <span class="font-bold text-zinc-900 dark:text-white">Rp 27.000</span>
                             </div>
                             <div class="flex items-center justify-between p-4 rounded-[var(--radius-md)] bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]">
                                 <div>
-                                    <span class="text-white font-bold text-base block">Total Akumulasi Tarif Tol:</span>
+                                    <span class="text-zinc-900 dark:text-white font-bold text-base block">Total Akumulasi Tarif Tol:</span>
                                     <span class="text-[var(--color-text-muted)] text-xs">Surabaya (Waru) &rarr; Exit Tol Nganjuk</span>
                                 </div>
                                 <span class="text-[var(--color-accent)] font-bold text-xl">Rp 125.500</span>
@@ -430,7 +430,7 @@ $canonical = url()->current();
                         <div class="flex items-center gap-2 mb-4 pb-3 border-b border-[var(--color-border)]">
                             <span class="text-xl">📚</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Referensi &amp; Sumber Rujukan Data</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Referensi &amp; Sumber Rujukan Data</h4>
                                 <p class="text-[var(--color-text-muted)] text-[0.7rem]">Data tarif, jarak, dan rute dihimpun dari publikasi resmi dan portal terpercaya:</p>
                             </div>
                         </div>
@@ -439,7 +439,7 @@ $canonical = url()->current();
                             <li class="flex items-start gap-2.5">
                                 <span class="text-[var(--color-accent)] font-bold flex-shrink-0">1.</span>
                                 <div>
-                                    <strong class="text-white">Badan Pengatur Jalan Tol (BPJT) Kementerian PUPR RI:</strong>
+                                    <strong class="text-zinc-900 dark:text-white">Badan Pengatur Jalan Tol (BPJT) Kementerian PUPR RI:</strong>
                                     Laman resmi kalkulator tarif tol dan ketetapan tarif jalan tol Trans Jawa.
                                     <br>
                                     <a href="https://bpjt.pu.go.id/cek-tarif-tol" target="_blank" rel="nofollow noopener noreferrer" class="text-[var(--color-accent)] hover:underline inline-flex items-center gap-1 mt-0.5">
@@ -450,7 +450,7 @@ $canonical = url()->current();
                             <li class="flex items-start gap-2.5">
                                 <span class="text-[var(--color-accent)] font-bold flex-shrink-0">2.</span>
                                 <div>
-                                    <strong class="text-white">PT Jasa Marga (Persero) Tbk &amp; Aplikasi Travoy:</strong>
+                                    <strong class="text-zinc-900 dark:text-white">PT Jasa Marga (Persero) Tbk &amp; Aplikasi Travoy:</strong>
                                     Publikasi tarif resmi ruas Tol Surabaya-Mojokerto dan Tol Ngawi-Kertosono serta peta jaringan tol operasional.
                                     <br>
                                     <a href="https://www.jasamarga.com" target="_blank" rel="nofollow noopener noreferrer" class="text-[var(--color-accent)] hover:underline inline-flex items-center gap-1 mt-0.5">
@@ -461,7 +461,7 @@ $canonical = url()->current();
                             <li class="flex items-start gap-2.5">
                                 <span class="text-[var(--color-accent)] font-bold flex-shrink-0">3.</span>
                                 <div>
-                                    <strong class="text-white">PT Astra Tol Nusantara (Astra Tol Jombang-Mojokerto):</strong>
+                                    <strong class="text-zinc-900 dark:text-white">PT Astra Tol Nusantara (Astra Tol Jombang-Mojokerto):</strong>
                                     Informasi penyesuaian tarif berkala pada Seksi Tol Mojokerto–Kertosono (40,5 km).
                                     <br>
                                     <a href="https://www.astratol.co.id" target="_blank" rel="nofollow noopener noreferrer" class="text-[var(--color-accent)] hover:underline inline-flex items-center gap-1 mt-0.5">
@@ -472,14 +472,14 @@ $canonical = url()->current();
                             <li class="flex items-start gap-2.5">
                                 <span class="text-[var(--color-accent)] font-bold flex-shrink-0">4.</span>
                                 <div>
-                                    <strong class="text-white">Direktorat Jenderal Bina Marga Kementerian PUPR &amp; Google Maps Navigation:</strong>
+                                    <strong class="text-zinc-900 dark:text-white">Direktorat Jenderal Bina Marga Kementerian PUPR &amp; Google Maps Navigation:</strong>
                                     Data jarak tempuh geografis (±114 – 118 km via tol, ±110 – 116 km via Jalur Nasional Arteri Rute 15) dan pemetaan rute darat Surabaya – Nganjuk.
                                 </div>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <span class="text-[var(--color-accent)] font-bold flex-shrink-0">5.</span>
                                 <div>
-                                    <strong class="text-white">Publikasi Media Nasional (Kompas.com, Detik.com Jatim &amp; Astra Otoshop):</strong>
+                                    <strong class="text-zinc-900 dark:text-white">Publikasi Media Nasional (Kompas.com, Detik.com Jatim &amp; Astra Otoshop):</strong>
                                     Laporan berkala mengenai <em>"Rincian Tarif Tol Trans Jawa Ruas Surabaya Menuju Kertosono dan Nganjuk untuk Kendaraan Golongan I"</em>.
                                 </div>
                             </li>
@@ -488,7 +488,7 @@ $canonical = url()->current();
 
                     {{-- Rest Area Card --}}
                     <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6">
-                        <h4 class="text-white font-bold text-base mb-3 flex items-center gap-2">
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-3 flex items-center gap-2">
                             ☕ Rest Area Rekomendasi di Sepanjang Rute
                         </h4>
                         <div class="space-y-3 text-xs text-[var(--color-text-muted)] leading-relaxed">
@@ -511,7 +511,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-center max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Jalur Arteri Nasional</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Bagaimana Jika Lewat <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Jalur Biasa (Non-Tol)?</span>
                     </h2>
                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
@@ -527,7 +527,7 @@ $canonical = url()->current();
 
                 {{-- Card Titik Rawan Macet --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
-                    <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-4 flex items-center gap-2">
                         🛑 Titik Rawan Macet Jalur Non-Tol
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
@@ -562,7 +562,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[800px] mx-auto mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Eksplorasi Kota Angin</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight">
                     Destinasi Populer di Nganjuk yang <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Wajib Anda Kunjungi</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
@@ -574,7 +574,7 @@ $canonical = url()->current();
                 {{-- Wisata 1 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🌊</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Air Terjun Sedudo</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Air Terjun Sedudo</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Kec. Sawahan (Lereng Gunung Wilis)</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Ikon wisata Nganjuk di ketinggian 1.438 mdpl dengan ketinggian air terjun 105 meter. Berhawa sejuk asri dan terkenal dengan tradisi ritual siraman setiap bulan Suro. Waktu tempuh dari exit tol Nganjuk sekitar 50 menit.
@@ -584,7 +584,7 @@ $canonical = url()->current();
                 {{-- Wisata 2 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🌲</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Air Terjun Roro Kuning</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Air Terjun Roro Kuning</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Desa Bajulan, Kec. Loceret</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Air terjun berundak alami yang mengalir di sela bebatuan padas dan rimbunnya hutan pinus. Terdapat kolam renang alami dan monumen perjuangan Panglima Besar Jenderal Sudirman saat perang gerilya.
@@ -594,7 +594,7 @@ $canonical = url()->current();
                 {{-- Wisata 3 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🏛️</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Candi Lor &amp; Anjuk Ladang</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Candi Lor &amp; Anjuk Ladang</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Desa Candirejo, Kec. Loceret</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Situs candi bata merah abad ke-10 yang dibangun Mpu Sindok dari Kerajaan Medang Mataram Kuno. Tempat ditemukannya Prasasti Anjuk Ladang (937 M) yang menandai berdirinya nama Nganjuk.
@@ -604,7 +604,7 @@ $canonical = url()->current();
                 {{-- Kuliner 1 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🍲</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Nasi Becek Nganjuk</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Nasi Becek Nganjuk</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Kuliner Khas Nasi + Gulai Kambing</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Kuliner legendaris Nganjuk mirip kare/gulai kambing kental dengan kuah santan berempah, dipadukan irisan kubis segar, kecambah, dan taburan bawang goreng yang gurih menggugah selera.
@@ -614,7 +614,7 @@ $canonical = url()->current();
                 {{-- Kuliner 2 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🍬</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Dumbleg Khas Gondang</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Dumbleg Khas Gondang</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Oleh-Oleh Tradisional Manis Legendaris</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Kue tradisional kenyal beraroma gula kelapa dan ketan yang dibungkus pelepah pohon jambe (pinang). Makanan khas ini hanya diproduksi di daerah Gondang Nganjuk.
@@ -624,7 +624,7 @@ $canonical = url()->current();
                 {{-- Kuliner 3 --}}
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-accent)] transition-all">
                     <span class="text-3xl mb-4 block">🌶️</span>
-                    <h3 class="text-white font-bold text-lg mb-2">Nasi Pecel Bledek</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Nasi Pecel Bledek</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Pedas Menggelegar Khas Nganjuk</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Nasi pecel khas Kota Angin dengan sambal kacang racikan pedas ekstra cabai rawit merah, disajikan bersama krupuk upil (goreng pasir) dan aneka jeroan serta tempe kemul hangat.
@@ -640,7 +640,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-center max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Solusi Transportasi Eksekutif</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Mengapa Memilih Sewa Mobil <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Surabaya ke Nganjuk di Queen Transport?</span>
                     </h2>
                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
@@ -651,28 +651,28 @@ $canonical = url()->current();
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Penjemputan Door-to-Door</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Penjemputan Door-to-Door</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Jemput di lobi Bandara Juanda, stasiun, hotel, atau rumah tinggal di Surabaya &amp; Sidoarjo langsung antar ke alamat tujuan Nganjuk.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Driver Berpengalaman &amp; Ramah</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Berpengalaman &amp; Ramah</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Driver kami sangat menguasai navigasi jalan tol, rest area, serta rute tanjakan pegunungan menuju Air Terjun Sedudo.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Armada Terawat &amp; Higienis</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Armada Terawat &amp; Higienis</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Setiap unit selalu dicuci bersih, interior wangi, AC dingin merata, dan suspensi nyaman.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
                             <div>
-                                <h4 class="text-white font-bold text-sm">Bonus Snack &amp; Air Mineral</h4>
+                                <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Bonus Snack &amp; Air Mineral</h4>
                                 <p class="text-[var(--color-text-muted)] text-xs mt-0.5">Gratis air mineral dan aneka snack segar di dalam mobil pada hari pertama sewa untuk menemani perjalanan Anda.</p>
                             </div>
                         </div>
@@ -687,7 +687,7 @@ $canonical = url()->current();
 
                 {{-- Distance matrix card --}}
                 <div class="bg-[var(--gradient-card)] border-2 border-[rgba(124,58,237,0.3)] rounded-[var(--radius-xl)] p-8 shadow-xl">
-                    <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-4 flex items-center gap-2">
                         📍 Estimasi Jarak &amp; Waktu ke Area Nganjuk
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-xs mb-6 leading-relaxed">
@@ -697,7 +697,7 @@ $canonical = url()->current();
                     <div class="space-y-3 text-sm">
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Pusat Kota / Alun-Alun Nganjuk</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Pusat Kota / Alun-Alun Nganjuk</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Kecamatan Nganjuk</div>
                             </div>
                             <div class="text-right">
@@ -708,7 +708,7 @@ $canonical = url()->current();
 
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Kertosono (Stasiun / Kota)</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Kertosono (Stasiun / Kota)</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Kecamatan Kertosono</div>
                             </div>
                             <div class="text-right">
@@ -719,7 +719,7 @@ $canonical = url()->current();
 
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Tanjunganom / Warujayeng</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Tanjunganom / Warujayeng</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Kecamatan Tanjunganom</div>
                             </div>
                             <div class="text-right">
@@ -730,7 +730,7 @@ $canonical = url()->current();
 
                         <div class="flex items-center justify-between p-3 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                             <div>
-                                <div class="text-white font-semibold text-xs">Wisata Air Terjun Sedudo</div>
+                                <div class="text-zinc-900 dark:text-white font-semibold text-xs">Wisata Air Terjun Sedudo</div>
                                 <div class="text-[var(--color-text-muted)] text-[0.7rem]">Kecamatan Sawahan (Wilis)</div>
                             </div>
                             <div class="text-right">
@@ -749,7 +749,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     FAQ Surabaya ke Nganjuk <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Berapa Jam</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3">
@@ -760,7 +760,7 @@ $canonical = url()->current();
             <div class="max-w-[900px] mx-auto flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
-                    <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 flex items-center gap-3">
                         <span class="text-[var(--color-accent)]">❓</span> {{ $faq['q'] }}
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed pl-8">
@@ -774,6 +774,7 @@ $canonical = url()->current();
 
     {{-- SECTION 7: ARMADA REKOMENDASI UNTUK PERJALANAN LUAR KOTA --}}
     <x-armada-list
+        bg=""
         subtitle="Armada Luar Kota VIP"
         title="Pilihan Mobil Sewa Nyaman untuk Perjalanan <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Surabaya ke Nganjuk</span>"
         description="Pilih armada favorit Anda untuk perjalanan keluarga, dinas kerja, maupun wisata ke Nganjuk. Semua unit dalam kondisi prima include driver profesional."
@@ -787,7 +788,7 @@ $canonical = url()->current();
             <span class="px-4 py-2 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs uppercase tracking-widest font-semibold mb-6 inline-block">
                 ✦ Perjalanan Cepat, Aman &amp; Nyaman
             </span>
-            <h2 class="text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
                 Rencanakan Perjalanan Anda ke <br class="hidden sm:block">
                 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Nganjuk Bersama Queen Transport!</span>
             </h2>

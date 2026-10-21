@@ -170,7 +170,7 @@ $canonical = url()->current();
                         ✦ Rental Mobil Mewah Jawa Timur #1 Standar VIP &amp; Eksekutif
                     </div>
 
-                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-white">
+                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-zinc-900 dark:text-white">
                         Rental Mobil Mewah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Jawa Timur</span>
                     </h1>
 
@@ -203,7 +203,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Executive VIP Class</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Mengapa {{ config('site.brand') }} di Jatim?</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Mengapa {{ config('site.brand') }} di Jatim?</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Penyedia transportasi eksekutif terdepan dengan reputasi bintang lima di Jawa Timur yang mengutamakan prestise, kenyamanan, dan keselamatan prima.
                         </p>
@@ -239,28 +239,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💺</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Captain Seats VIP</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Captain Seats VIP</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Kabin lapang &amp; empuk</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Rapi &amp; Beretika</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Rapi &amp; Beretika</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Standar protokoler VIP</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🛣️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Rute Tol Se-Jawa Timur</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Rute Tol Se-Jawa Timur</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Hafal jalur Trans Jawa</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⭐</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Layanan Bintang Lima</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Layanan Bintang Lima</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Pilihan instansi &amp; korporasi</p>
                     </div>
                 </div>
@@ -268,23 +268,13 @@ $canonical = url()->current();
         </div>
     </section>
 
-    {{-- REUSABLE ARMADA LIST COMPONENT --}}
-    <div id="katalog-mewah-jatim">
-        <x-armada-list 
-            subtitle="Katalog Unit Mewah Jawa Timur"
-            title="Pilihan Rental Mobil Mewah di Jawa Timur"
-            description="Lini kendaraan eksekutif terlengkap untuk menunjang mobilitas berkelas Anda di seluruh kota Jawa Timur, mencakup Toyota Alphard, Hiace Premio Luxury, Fortuner, dan Innova Zenix VIP."
-            wa-text="rental mobil mewah di Jawa Timur"
-        />
-    </div>
-
     {{-- PRICING SUMMARY SECTION --}}
     @if (!empty($kelasAtasPrices))
-    <section class="py-[90px] bg-[var(--color-bg-2)] border-t border-[var(--color-border)]" id="daftar-harga">
+    <section class="py-[90px]" id="daftar-harga">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Paket &amp; Estimasi Tarif</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tarif Rental <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mobil Mewah Jawa Timur</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -304,7 +294,7 @@ $canonical = url()->current();
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <h3 class="text-white text-xl font-bold">{{ $price['name'] }}</h3>
+                                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold">{{ $price['name'] }}</h3>
                                     <span class="inline-block mt-1 px-3 py-0.5 rounded-full bg-[rgba(34,211,238,0.1)] text-[var(--color-accent)] text-xs font-semibold">
                                         {{ $price['seat'] }}
                                     </span>
@@ -317,7 +307,7 @@ $canonical = url()->current();
 
                             <div class="mb-6 p-4 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.08)] border border-[rgba(124,58,237,0.2)]">
                                 <div class="text-[var(--color-text-muted)] text-xs mb-1">Mulai dari</div>
-                                <div class="text-white font-bold text-2xl flex items-baseline gap-1">
+                                <div class="text-zinc-900 dark:text-white font-bold text-2xl flex items-baseline gap-1">
                                     <span class="text-sm font-normal text-[var(--color-accent)]">Rp</span>
                                     <span>{{ $price['price_label'] }}</span>
                                     <span class="text-xs font-normal text-[var(--color-text-muted)]">/ hari</span>
@@ -352,13 +342,23 @@ $canonical = url()->current();
     </section>
     @endif
 
+    {{-- REUSABLE ARMADA LIST COMPONENT --}}
+    <div id="katalog-mewah-jatim">
+        <x-armada-list 
+            subtitle="Katalog Unit Mewah Jawa Timur"
+            title="Pilihan Rental Mobil Mewah di Jawa Timur"
+            description="Lini kendaraan eksekutif terlengkap untuk menunjang mobilitas berkelas Anda di seluruh kota Jawa Timur, mencakup Toyota Alphard, Hiace Premio Luxury, Fortuner, dan Innova Zenix VIP."
+            wa-text="rental mobil mewah di Jawa Timur"
+        />
+    </div>
+
     {{-- SERVICES SECTION (USE CASES) --}}
     <section class="py-[90px]" id="layanan-mewah-jatim">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="grid grid-cols-2 gap-16 items-center max-md:grid-cols-1">
                 <div>
                     <span class="text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-4 block">Peruntukan Layanan</span>
-                    <h2 class="text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold mb-6 text-white leading-snug">
+                    <h2 class="text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold mb-6 text-zinc-900 dark:text-white leading-snug">
                         Solusi Rental Mobil Mewah Jawa Timur untuk <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Kebutuhan Eksklusif</span>
                     </h2>
                     <p class="text-[var(--color-text-muted)] mb-8 text-sm leading-relaxed">
@@ -376,7 +376,7 @@ $canonical = url()->current();
                             <div class="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] bg-[var(--gradient-card)] border border-[var(--color-border)]">
                                 <div class="text-2xl flex-shrink-0 w-11 h-11 rounded-[var(--radius-md)] bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.2)] flex items-center justify-center">{{ $icon }}</div>
                                 <div>
-                                    <h4 class="text-white font-semibold mb-1 text-sm">{{ $titleService }}</h4>
+                                    <h4 class="text-zinc-900 dark:text-white font-semibold mb-1 text-sm">{{ $titleService }}</h4>
                                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">{{ $desc }}</p>
                                 </div>
                             </div>
@@ -386,7 +386,7 @@ $canonical = url()->current();
 
                 {{-- Feature box right side --}}
                 <div class="flex flex-col gap-6 p-8 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[rgba(124,58,237,0.3)] shadow-2xl">
-                    <h3 class="text-white text-xl font-bold border-b border-[var(--color-border)] pb-4">
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold border-b border-[var(--color-border)] pb-4">
                         Standar Keunggulan {{ config('site.brand') }}
                     </h3>
 
@@ -434,7 +434,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Jangkauan Wilayah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Cakupan Layanan <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Rental Mobil Mewah se-Jawa Timur</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -445,7 +445,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1">
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all">
                     <div class="text-2xl mb-3">🏙️</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Gerbangkertosusila</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Gerbangkertosusila</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Surabaya, Sidoarjo, Gresik, &amp; Mojokerto. Meliputi pusat perkantoran, perhotelan bintang lima, pabrik JIIPE, dan Bandara Internasional Juanda.
                     </p>
@@ -454,7 +454,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all">
                     <div class="text-2xl mb-3">🏔️</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Malang Raya &amp; Kota Batu</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Malang Raya &amp; Kota Batu</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Akses cepat via Tol Pandaan–Malang. Sangat diminati untuk seminar eksekutif, liburan keluarga mewah, dan wisata resor pegunungan Batu.
                     </p>
@@ -463,7 +463,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all">
                     <div class="text-2xl mb-3">🌋</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Pasuruan, Probolinggo &amp; Bromo</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Pasuruan, Probolinggo &amp; Bromo</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Menjangkau kawasan industri PIER Pasuruan dan destinasi wisata dunia Taman Nasional Bromo Tengger Semeru dengan kenyamanan maksimal.
                     </p>
@@ -472,7 +472,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all">
                     <div class="text-2xl mb-3">🚆</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Mataraman &amp; Tol Barat Jatim</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Mataraman &amp; Tol Barat Jatim</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Madiun, Ngawi, Magetan, Nganjuk, Kediri, Blitar, &amp; Tulungagung. Akses mulus Tol Trans Jawa untuk kunjungan dinas dan bisnis rokok/pabrik.
                     </p>
@@ -481,7 +481,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all">
                     <div class="text-2xl mb-3">🌊</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Tapal Kuda &amp; Banyuwangi</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Tapal Kuda &amp; Banyuwangi</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Jember, Lumajang, Situbondo, Bondowoso, hingga Banyuwangi (Kawah Ijen &amp; Pelabuhan Ketapang penyeberangan menuju Pulau Bali).
                     </p>
@@ -490,7 +490,7 @@ $canonical = url()->current();
 
                 <div class="p-6 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all">
                     <div class="text-2xl mb-3">🌉</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Pulau Madura Raya</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Pulau Madura Raya</h3>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed mb-4">
                         Bangkalan, Sampang, Pamekasan, &amp; Sumenep via Jembatan Nasional Suramadu untuk kebutuhan kunjungan dinas, ziarah, dan silaturahmi keluarga.
                     </p>
@@ -505,7 +505,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Panduan Reservasi</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     3 Langkah Mudah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Pesan Rental Mobil Mewah</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -515,30 +515,30 @@ $canonical = url()->current();
 
             <div class="grid grid-cols-3 gap-8 max-md:grid-cols-1">
                 <div class="p-8 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] relative">
-                    <div class="w-12 h-12 rounded-full bg-[image:var(--gradient-btn)] text-white font-bold text-lg flex items-center justify-center mb-6 shadow-md">
+                    <div class="w-12 h-12 rounded-full bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-bold text-lg flex items-center justify-center mb-6 shadow-md">
                         1
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Konsultasi Jadwal &amp; Armada</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Konsultasi Jadwal &amp; Armada</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Hubungi tim kami via WhatsApp. Tentukan tipe armada mewah yang Anda perlukan (Alphard, Hiace Luxury, Fortuner, atau Zenix), tanggal penggunaan, serta rute tujuan di Jawa Timur.
                     </p>
                 </div>
 
                 <div class="p-8 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] relative">
-                    <div class="w-12 h-12 rounded-full bg-[image:var(--gradient-btn)] text-white font-bold text-lg flex items-center justify-center mb-6 shadow-md">
+                    <div class="w-12 h-12 rounded-full bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-bold text-lg flex items-center justify-center mb-6 shadow-md">
                         2
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Konfirmasi Penawaran &amp; DP</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Konfirmasi Penawaran &amp; DP</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Tim admin akan memberikan invoice konfirmasi dan rincian pemesanan resmi. Amankan jadwal sewa dengan membayarkan Down Payment (DP) secara mudah via transfer perbankan.
                     </p>
                 </div>
 
                 <div class="p-8 rounded-[var(--radius-xl)] bg-[var(--gradient-card)] border border-[var(--color-border)] relative">
-                    <div class="w-12 h-12 rounded-full bg-[image:var(--gradient-btn)] text-white font-bold text-lg flex items-center justify-center mb-6 shadow-md">
+                    <div class="w-12 h-12 rounded-full bg-[image:var(--gradient-btn)] text-zinc-900 dark:text-white font-bold text-lg flex items-center justify-center mb-6 shadow-md">
                         3
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Driver Standby Tepat Waktu</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Driver Standby Tepat Waktu</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Pada hari keberangkatan, driver profesional berseragam rapi dan mobil mewah yang telah bersih steril akan siap menjemput Anda tepat waktu di lokasi yang telah disepakati.
                     </p>
@@ -552,7 +552,7 @@ $canonical = url()->current();
         <div class="max-w-[850px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Tanya Jawab</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     FAQ <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Rental Mobil Mewah Jawa Timur</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] mt-3 text-sm">
@@ -563,7 +563,7 @@ $canonical = url()->current();
             <div class="flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                     <details class="group bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6 [&_summary::-webkit-details-marker]:hidden transition-all hover:border-[rgba(124,58,237,0.4)]">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-base max-sm:text-sm">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-zinc-900 dark:text-white text-base max-sm:text-sm">
                             <span>{{ $faq['q'] }}</span>
                             <span class="ml-4 text-[var(--color-accent)] transition-transform duration-200 group-open:rotate-180">▼</span>
                         </summary>
@@ -582,7 +582,7 @@ $canonical = url()->current();
             <span class="px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase mb-6 inline-block">
                 ✦ Tempat Rental Mobil Mewah Terbaik di Jawa Timur
             </span>
-            <h2 class="text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,3.5vw,3rem)] font-bold mb-6 leading-tight">
                 Pesan Rental Mobil Mewah Jawa Timur Sekarang
             </h2>
             <p class="text-[var(--color-text-muted)] text-base mb-8 max-w-[650px] mx-auto leading-relaxed">

@@ -51,7 +51,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                         ✦ Rental Mobil Kelas Atas Surabaya &bull; Luar Kota VIP
                     </div>
 
-                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-white">
+                    <h1 class="text-[clamp(2.2rem,4.5vw,3.6rem)] font-bold leading-[1.15] tracking-[0.03em] text-zinc-900 dark:text-white">
                         Harga Sewa Mobil Surabaya <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Luar Kota Kelas Atas</span>
                     </h1>
 
@@ -84,7 +84,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Luar Kota Ready</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Mengapa Pilih Armada {{ config('site.brand') }}?</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Mengapa Pilih Armada {{ config('site.brand') }}?</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Standar pelayanan eksekutif dengan armada kelas atas terbaru dan driver profesional berpengalaman antar kota.
                         </p>
@@ -120,47 +120,39 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🛡️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Keamanan &amp; Kenyamanan</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Keamanan &amp; Kenyamanan</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Unit rutin servis &amp; bersih</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Rute Luar Kota</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Rute Luar Kota</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Paham tol, wisata &amp; jalan antar provinsi</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💎</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Kabin Kelas Atas</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Kabin Kelas Atas</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Captain Seat &amp; Full AC Dingin</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⚡</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Pemesanan Cepat</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Pemesanan Cepat</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Proses praktis via WhatsApp</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {{-- DAFTAR HARGA SECTION --}}
-    <x-armada-list 
-        subtitle="Tarif Resmi &amp; Transparan"
-        title="Harga Sewa Mobil Luar Kota Kelas Atas"
-        description="Daftar tarif resmi rental mobil. Semua harga berlaku untuk Surabaya dan sekitarnya."
-        wa-text="(Surabaya &amp; sekitarnya / luar kota)"
-    />
-
     {{-- DESTINASI LUAR KOTA POPULER --}}
-    <section class="py-16 bg-[var(--color-bg-2)] border-y border-[var(--color-border)]">
+    <section class="py-16">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[700px] mx-auto mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-3">
                     Destinasi Luar Kota Favorit Dari Surabaya
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm">
@@ -171,7 +163,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🏔️</div>
-                    <h4 class="text-white font-bold text-base mb-2">Malang &amp; Kota Batu</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Malang &amp; Kota Batu</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Perjalanan dinas, liburan keluarga VIP, dan kunjungan kerja ke kawasan dingin Malang Raya &amp; Kota Wisata Batu.
                     </p>
@@ -179,7 +171,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
 
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🌋</div>
-                    <h4 class="text-white font-bold text-base mb-2">Bromo &amp; Banyuwangi</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Bromo &amp; Banyuwangi</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Tour sunrise Bromo, Kawah Ijen, dan destinasi eksotis di ujung timur Pulau Jawa dengan kenyamanan maksimal.
                     </p>
@@ -187,7 +179,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
 
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🏛️</div>
-                    <h4 class="text-white font-bold text-base mb-2">Solo, Jogja &amp; Semarang</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Solo, Jogja &amp; Semarang</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Rute tol Trans-Jawa menuju Jawa Tengah &amp; DIY untuk keperluan dinas kantor, pernikahan, atau trip budaya.
                     </p>
@@ -195,7 +187,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
 
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                     <div class="text-3xl mb-3">🏖️</div>
-                    <h4 class="text-white font-bold text-base mb-2">Overland Tour Bali</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">Overland Tour Bali</h4>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Perjalanan antar pulau Surabaya &ndash; Bali dengan armada Hiace Premio Luxury atau Alphard include penyeberangan.
                     </p>
@@ -204,6 +196,14 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
         </div>
     </section>
 
+    {{-- DAFTAR HARGA SECTION --}}
+    <x-armada-list 
+        subtitle="Tarif Resmi &amp; Transparan"
+        title="Harga Sewa Mobil Luar Kota Kelas Atas"
+        description="Daftar tarif resmi rental mobil. Semua harga berlaku untuk Surabaya dan sekitarnya."
+        wa-text="(Surabaya &amp; sekitarnya / luar kota)"
+    />
+
     {{-- FAQ SECTION --}}
     <section class="py-20">
         <div class="max-w-[900px] mx-auto px-6">
@@ -211,7 +211,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-3">
                     ✦ Informasi Penting
                 </div>
-                <h2 class="text-3xl font-bold text-white mb-3">
+                <h2 class="text-3xl font-bold text-zinc-900 dark:text-white mb-3">
                     Pertanyaan Umum (FAQ) Sewa Luar Kota
                 </h2>
                 <p class="text-[var(--color-text-muted)] text-sm">
@@ -222,7 +222,7 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
             <div class="flex flex-col gap-4">
                 @foreach($faqs as $faq)
                     <details class="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-5 [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold text-base">
+                        <summary class="flex items-center justify-between cursor-pointer text-zinc-900 dark:text-white font-semibold text-base">
                             <span>{{ $faq['q'] }}</span>
                             <span class="text-[var(--color-accent)] group-open:rotate-180 transition-transform">▼</span>
                         </summary>
@@ -236,9 +236,9 @@ $description = 'Daftar harga sewa mobil luar kota kelas atas terlengkap di Surab
     </section>
 
     {{-- BOTTOM CTA SECTION --}}
-    <section class="py-20 border-t border-[var(--color-border)] bg-[var(--gradient-card)]">
+    <section class="py-20 relative overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
                 Rencanakan Perjalanan Luar Kota Anda Bersama {{ config('site.brand') }}
             </h2>
             <p class="text-[var(--color-text-light)] text-base max-w-[600px] mx-auto mb-8 leading-relaxed">

@@ -183,7 +183,7 @@ $canonical = url()->current();
                         🏛️ Wisata Edukasi &amp; Sejarah Kota Pahlawan
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Museum di Surabaya: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Yuk Belajar Sejarah &amp; Perjuangan</span>
                     </h1>
 
@@ -216,7 +216,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Surabaya Heritage</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Ringkasan Wisata Museum Surabaya</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Ringkasan Wisata Museum Surabaya</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Panduan lengkap destinasi edukasi bersejarah terbaik di Kota Pahlawan.
                         </p>
@@ -252,28 +252,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🏛️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Koleksi Artefak Berharga</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Koleksi Artefak Berharga</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Saksi bisu kemerdekaan RI</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🏢</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Arsitektur Kolonial Menawan</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Arsitektur Kolonial Menawan</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Spot foto estetik klasik</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🚘</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Sewa Mobilinclude Driver</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Sewa Mobilinclude Driver</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Bebas ribet macet &amp; parkir</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍👩‍👧‍👦</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Wisata Edukasi Keluarga</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Wisata Edukasi Keluarga</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Seru &amp; menginspirasi</p>
                     </div>
                 </div>
@@ -289,7 +289,7 @@ $canonical = url()->current();
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs tracking-wider uppercase mb-4">
                         ✦ Mengapa Surabaya Disebut Kota Pahlawan?
                     </div>
-                    <h2 class="text-white text-3xl font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-3xl font-bold leading-tight mb-6">
                         Menelusuri Jejak Kejayaan &amp; Perjuangan Pertempuran 10 Nopember
                     </h2>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
@@ -298,7 +298,7 @@ $canonical = url()->current();
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6">
                         Mengunjungi museum-museum di Surabaya memberikan pengalaman belajar sejarah secara langsung dan mendalam. Anak-anak dan generasi muda dapat menyaksikan diorama pertempuran, rekaman asli suara Bung Tomo yang membakar semangat pahlawan, hingga artefak perbankan dan industri yang membentuk identitas bangsa.
                     </p>
-                    <div class="grid grid-cols-2 gap-4 text-xs font-semibold text-white">
+                    <div class="grid grid-cols-2 gap-4 text-xs font-semibold text-zinc-900 dark:text-white">
                         <div class="flex items-center gap-2 p-3 rounded-[var(--radius-md)] bg-[var(--color-surface)] border border-[var(--color-border)]">
                             <span class="text-[var(--color-accent)]">✓</span> Diorama &amp; Suara Bung Tomo
                         </div>
@@ -317,7 +317,7 @@ $canonical = url()->current();
                 {{-- Right Card / Callout --}}
                 <div class="bg-[var(--color-surface)] border border-[var(--color-border)] p-8 rounded-[var(--radius-xl)] shadow-xl">
                     <span class="text-4xl mb-4 block">🎓</span>
-                    <h3 class="text-white text-xl font-bold mb-3">Keuntungan Tour Museum Bersama {{ config('site.brand') }}</h3>
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-3">Keuntungan Tour Museum Bersama {{ config('site.brand') }}</h3>
                     <ul class="space-y-3 text-sm text-[var(--color-text-muted)]">
                         <li class="flex items-start gap-2">
                             <span class="text-[var(--color-accent)] font-bold">1.</span>
@@ -354,7 +354,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[760px] mx-auto mb-16">
                 <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Destinasi Bersejarah Wajib Kunjung</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Daftar Museum Bersejarah Terbaik di Surabaya</h2>
+                <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2">Daftar Museum Bersejarah Terbaik di Surabaya</h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
                     Berikut adalah deretan museum paling ikonik di Surabaya yang menawarkan pengalaman belajar sejarah yang seru, edukatif, dan penuh inspirasi.
                 </p>
@@ -371,7 +371,7 @@ $canonical = url()->current();
                                 <span class="text-[var(--color-text-muted)] text-xs font-mono">Surabaya Heritage</span>
                             </div>
 
-                            <h3 class="text-white font-bold text-xl mb-2">{{ $museum['name'] }}</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">{{ $museum['name'] }}</h3>
 
                             <p class="text-[var(--color-accent)] text-xs mb-3 font-medium flex items-center gap-1.5">
                                 📍 {{ $museum['location'] }}
@@ -411,7 +411,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center max-w-[760px] mx-auto mb-16">
                 <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Rencana Perjalanan Efisien</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Rekomendasi Itinerary City Tour Museum 1 Hari</h2>
+                <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2">Rekomendasi Itinerary City Tour Museum 1 Hari</h2>
                 <p class="text-[var(--color-text-muted)] text-sm mt-3 leading-relaxed">
                     Manfaatkan waktu perjalanan Anda di Surabaya dengan rute rekomendasi efisien yang telah disusun oleh tim driver profesional kami.
                 </p>
@@ -422,7 +422,7 @@ $canonical = url()->current();
                     <div class="w-10 h-10 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] font-bold flex items-center justify-center text-base mb-4">
                         01
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Sesi Pagi (08.30 - 12.00)</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Sesi Pagi (08.30 - 12.00)</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Tugu Pahlawan &amp; De Javasche Bank</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Diawali penjemputan dari hotel/stasiun/bandara. Menjelajahi museum bawah tanah Tugu Pahlawan, disusul mengagumi keindahan arsitektur kolonial dan brankas kuno Bank Indonesia di De Javasche Bank.
@@ -433,7 +433,7 @@ $canonical = url()->current();
                     <div class="w-10 h-10 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] font-bold flex items-center justify-center text-base mb-4">
                         02
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Sesi Siang (12.00 - 15.30)</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Sesi Siang (12.00 - 15.30)</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">Makan Siang &amp; Museum Siola / Monkasel</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Nikmati makan siang kuliner khas Rawon Setan / Rujak Cingur. Lanjutkan ke Museum Surabaya di Gedung Siola Jalan Tunjungan, lalu mengeksplorasi dalam kapal selam perang asli Monkasel di tepi Kalimas.
@@ -444,7 +444,7 @@ $canonical = url()->current();
                     <div class="w-10 h-10 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] font-bold flex items-center justify-center text-base mb-4">
                         03
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Sesi Sore (15.30 - 18.00)</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Sesi Sore (15.30 - 18.00)</h3>
                     <p class="text-[var(--color-accent)] text-xs font-semibold mb-3">House of Sampoerna &amp; Tunjungan Walk</p>
                     <p class="text-[var(--color-text-muted)] text-xs leading-relaxed">
                         Kunjungan ke House of Sampoerna di kawasan Krembangan. Ditutup dengan santai malam dan berfoto di Jalan Tunjungan yang syahdu sebelum diantar kembali ke lokasi penjemputan.
@@ -468,13 +468,13 @@ $canonical = url()->current();
         <div class="max-w-[900px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-[var(--color-accent)] text-xs tracking-[0.2em] uppercase font-semibold">Tanya Jawab</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Pertanyaan Seputar Museum di Surabaya</h2>
+                <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mt-2">Pertanyaan Seputar Museum di Surabaya</h2>
             </div>
 
             <div class="space-y-4">
                 @foreach ($faqs as $index => $faq)
                     <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
-                        <h3 class="text-white font-bold text-lg mb-2 flex items-start gap-3">
+                        <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2 flex items-start gap-3">
                             <span class="text-[var(--color-accent)] font-bold">Q:</span>
                             <span>{{ $faq['q'] }}</span>
                         </h3>
@@ -488,9 +488,9 @@ $canonical = url()->current();
     </section>
 
     {{-- SECTION 6: CTA BANNER --}}
-    <section class="py-16 bg-[var(--gradient-hero)] border-t border-[var(--color-border)]">
+    <section class="py-20 relative overflow-hidden" style="background:var(--gradient-hero);">
         <div class="max-w-[900px] mx-auto px-6 text-center">
-            <h2 class="text-white text-3xl font-bold mb-4">Siap Belajar Sejarah di Museum Surabaya?</h2>
+            <h2 class="text-zinc-900 dark:text-white text-3xl font-bold mb-4">Siap Belajar Sejarah di Museum Surabaya?</h2>
             <p class="text-[var(--color-text-light)] text-base mb-8 leading-relaxed max-w-[680px] mx-auto">
                 Rencanakan wisata edukasi bersejarah Anda sekarang! Tim <strong>{{ config('site.brand') }}</strong> siap menyediakan armada sewa mobil terbaik lengkap dengan driver ramah dan profesional.
             </p>

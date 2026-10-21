@@ -157,7 +157,7 @@ $canonical = url()->current();
                         ✦ Panduan Wisata Religi Jawa Timur
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Rute Ziarah Wali 5 di Jawa Timur: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Menyusuri Jejak Lima Wali</span>
                     </h1>
 
@@ -190,7 +190,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Paket Ziarah Religi</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Ringkasan Perjalanan Ziarah</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Ringkasan Perjalanan Ziarah</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Rute yang dirancang efisien dan nyaman untuk rombongan majelis taklim, keluarga, maupun organisasi.
                         </p>
@@ -226,28 +226,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Paham Parkir Ziarah</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Paham Parkir Ziarah</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Hafal lokasi drop-off &amp; titik parkir</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🚐</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Kabin Luas &amp; Reclining</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Kabin Luas &amp; Reclining</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Perjalanan istirahat makin nyaman</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">📍</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Penjemputan Bebas</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Penjemputan Bebas</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Juanda, Stasiun &amp; Hotel Surabaya</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💧</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Fasilitas gratis di hari pertama</p>
                     </div>
                 </div>
@@ -260,7 +260,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Jejak Spiritual Wali Songo</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.6rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.6rem)] font-bold">
                     Urutan Rute <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ziarah Wali 5 Jawa Timur</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[700px] mx-auto mt-3 text-sm leading-relaxed">
@@ -277,7 +277,7 @@ $canonical = url()->current();
                         </div>
                         <div class="flex flex-col justify-center">
                             <div class="flex items-center gap-3 flex-wrap mb-2">
-                                <h3 class="text-2xl text-white font-bold">Sunan Ampel (Raden Rahmat)</h3>
+                                <h3 class="text-2xl text-zinc-900 dark:text-white font-bold">Sunan Ampel (Raden Rahmat)</h3>
                                 <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-semibold">📍 Surabaya</span>
                             </div>
                             <p class="text-[var(--color-text-light)] text-sm mb-4 leading-relaxed">
@@ -303,7 +303,7 @@ $canonical = url()->current();
                         </div>
                         <div class="flex flex-col justify-center">
                             <div class="flex items-center gap-3 flex-wrap mb-2">
-                                <h3 class="text-2xl text-white font-bold">Sunan Maulana Malik Ibrahim (Sunan Gresik)</h3>
+                                <h3 class="text-2xl text-zinc-900 dark:text-white font-bold">Sunan Maulana Malik Ibrahim (Sunan Gresik)</h3>
                                 <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-semibold">📍 Gresik</span>
                             </div>
                             <p class="text-[var(--color-text-light)] text-sm mb-4 leading-relaxed">
@@ -329,7 +329,7 @@ $canonical = url()->current();
                         </div>
                         <div class="flex flex-col justify-center">
                             <div class="flex items-center gap-3 flex-wrap mb-2">
-                                <h3 class="text-2xl text-white font-bold">Sunan Giri (Raden Paku / Prabu Satmata)</h3>
+                                <h3 class="text-2xl text-zinc-900 dark:text-white font-bold">Sunan Giri (Raden Paku / Prabu Satmata)</h3>
                                 <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-semibold">📍 Kebomas, Gresik</span>
                             </div>
                             <p class="text-[var(--color-text-light)] text-sm mb-4 leading-relaxed">
@@ -355,7 +355,7 @@ $canonical = url()->current();
                         </div>
                         <div class="flex flex-col justify-center">
                             <div class="flex items-center gap-3 flex-wrap mb-2">
-                                <h3 class="text-2xl text-white font-bold">Sunan Drajat (Raden Qasim)</h3>
+                                <h3 class="text-2xl text-zinc-900 dark:text-white font-bold">Sunan Drajat (Raden Qasim)</h3>
                                 <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-semibold">📍 Paciran, Lamongan</span>
                             </div>
                             <p class="text-[var(--color-text-light)] text-sm mb-4 leading-relaxed">
@@ -381,7 +381,7 @@ $canonical = url()->current();
                         </div>
                         <div class="flex flex-col justify-center">
                             <div class="flex items-center gap-3 flex-wrap mb-2">
-                                <h3 class="text-2xl text-white font-bold">Sunan Bonang (Raden Makhdum Ibrahim)</h3>
+                                <h3 class="text-2xl text-zinc-900 dark:text-white font-bold">Sunan Bonang (Raden Makhdum Ibrahim)</h3>
                                 <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-semibold">📍 Kutorejo, Tuban</span>
                             </div>
                             <p class="text-[var(--color-text-light)] text-sm mb-4 leading-relaxed">
@@ -407,7 +407,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Estimasi Perjalanan</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tabel Jarak &amp; Waktu Tempuh <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ziarah Wali 5 Jatim</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -418,7 +418,7 @@ $canonical = url()->current();
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse bg-[var(--color-surface)] rounded-[var(--radius-lg)] border border-[var(--color-border)]">
                     <thead>
-                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-white text-sm">
+                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-zinc-900 dark:text-white text-sm">
                             <th class="p-4 font-bold">Segmen Rute Perjalanan</th>
                             <th class="p-4 font-bold">Estimasi Jarak</th>
                             <th class="p-4 font-bold">Waktu Perjalanan</th>
@@ -427,37 +427,37 @@ $canonical = url()->current();
                     </thead>
                     <tbody class="divide-y divide-[var(--color-border)] text-sm text-[var(--color-text-light)]">
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Start Surabaya (Juanda/Stasiun) &rarr; Sunan Ampel</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Start Surabaya (Juanda/Stasiun) &rarr; Sunan Ampel</td>
                             <td class="p-4">± 20 – 25 km</td>
                             <td class="p-4">35 – 50 Menit</td>
                             <td class="p-4">60 – 90 Menit</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Sunan Ampel &rarr; Sunan Maulana Malik Ibrahim (Gresik)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Sunan Ampel &rarr; Sunan Maulana Malik Ibrahim (Gresik)</td>
                             <td class="p-4">± 25 km</td>
                             <td class="p-4">40 – 50 Menit</td>
                             <td class="p-4">45 – 60 Menit</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Sunan Maulana Malik Ibrahim &rarr; Sunan Giri (Gresik)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Sunan Maulana Malik Ibrahim &rarr; Sunan Giri (Gresik)</td>
                             <td class="p-4">± 4 km</td>
                             <td class="p-4">15 – 20 Menit</td>
                             <td class="p-4">60 – 90 Menit</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Sunan Giri &rarr; Sunan Drajat (Paciran, Lamongan)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Sunan Giri &rarr; Sunan Drajat (Paciran, Lamongan)</td>
                             <td class="p-4">± 58 km</td>
                             <td class="p-4">1 Jam 30 Menit</td>
                             <td class="p-4">60 – 90 Menit</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Sunan Drajat &rarr; Sunan Bonang (Tuban)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Sunan Drajat &rarr; Sunan Bonang (Tuban)</td>
                             <td class="p-4">± 40 km</td>
                             <td class="p-4">1 Jam</td>
                             <td class="p-4">60 – 90 Menit</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Sunan Bonang (Tuban) &rarr; Kembali ke Surabaya</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Sunan Bonang (Tuban) &rarr; Kembali ke Surabaya</td>
                             <td class="p-4">± 105 km</td>
                             <td class="p-4">2.5 – 3 Jam</td>
                             <td class="p-4">Selesai / Drop Point</td>
@@ -468,13 +468,13 @@ $canonical = url()->current();
 
             <div class="grid grid-cols-2 gap-6 mt-8 max-md:grid-cols-1">
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
-                    <h4 class="text-white font-bold text-base mb-2">⚡ Opsi 1: Ziarah Express (1 Hari Selesai)</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">⚡ Opsi 1: Ziarah Express (1 Hari Selesai)</h4>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Berangkat pukul 06.00 WIB dari Surabaya, menyusuri 5 makam secara marathon hingga malam hari pukul 21.00 WIB tiba kembali di Surabaya. Cocok untuk rombongan yang memiliki keterbatasan waktu.
                     </p>
                 </div>
                 <div class="p-6 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)]">
-                    <h4 class="text-white font-bold text-base mb-2">🌙 Opsi 2: Ziarah Santai &amp; Khusyuk (2 Hari 1 Malam)</h4>
+                    <h4 class="text-zinc-900 dark:text-white font-bold text-base mb-2">🌙 Opsi 2: Ziarah Santai &amp; Khusyuk (2 Hari 1 Malam)</h4>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Hari pertama ziarah Ampel, Maulana Malik Ibrahim &amp; Sunan Giri, kemudian menginap di Tuban / Paciran. Hari kedua dilanjutkan ke Sunan Drajat &amp; Sunan Bonang serta wisata oleh-oleh sebelum kembali ke Surabaya.
                     </p>
@@ -488,7 +488,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Panduan Peziarah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tips Ziarah Wali 5 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Agar Khusyuk &amp; Nyaman</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[650px] mx-auto mt-3 text-sm">
@@ -499,21 +499,21 @@ $canonical = url()->current();
             <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="text-4xl mb-4">👔</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Pakaian Sopan &amp; Alat Shalat</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Pakaian Sopan &amp; Alat Shalat</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Gunakan pakaian muslim yang rapi, bersih, dan menutup aurat. Bawalah sajadah pribadi, mukena/sarung tambahan, serta alas kaki yang mudah dilepas saat memasuki area makam dan masjid.
                     </p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="text-4xl mb-4">🕒</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Pilih Jam Kunjungan yang Tepat</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Pilih Jam Kunjungan yang Tepat</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Jika menyukai suasana sepi dan khusyuk, disarankan berziarah pada pagi hari atau setelah waktu Isya. Hindari jam puncak libur nasional jika ingin berdo'a tanpa terburu-buru.
                     </p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="text-4xl mb-4">🚐</div>
-                    <h3 class="text-white font-bold text-lg mb-2">Gunakan Armada Van / Bus Luas</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">Gunakan Armada Van / Bus Luas</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Perjalanan antarkota membutuhkan kendaraan dengan legroom lega, suspensi empuk, dan AC dingin agar stamina rombongan tetap terjaga sepanjang hari ziarah.
                     </p>
@@ -527,7 +527,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     FAQ Ziarah Wali 5 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Jawa Timur</span>
                 </h2>
             </div>
@@ -535,7 +535,7 @@ $canonical = url()->current();
             <div class="max-w-[900px] mx-auto flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
-                    <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 flex items-center gap-3">
                         <span class="text-[var(--color-accent)]">❓</span> {{ $faq['q'] }}
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed pl-8">
@@ -548,6 +548,7 @@ $canonical = url()->current();
     </section>
 
     <x-armada-list
+        bg=""
         subtitle="Transportasi Ziarah"
         title="Pilihan Armada Terbaik <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Rute Ziarah Wali 5</span>"
         description="Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda."
@@ -561,7 +562,7 @@ $canonical = url()->current();
             <span class="px-4 py-2 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs uppercase tracking-widest font-semibold mb-6 inline-block">
                 ✦ Rencanakan Perjalanan Religi Anda Sekarang
             </span>
-            <h2 class="text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
                 Siap Berziarah Menyusuri <br class="hidden sm:block">
                 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Jejak Lima Wali di Jawa Timur?</span>
             </h2>

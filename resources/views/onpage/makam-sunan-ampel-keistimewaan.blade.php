@@ -115,7 +115,7 @@ $canonical = url()->current();
                         ✦ Panduan Religi &amp; Wisata Cagar Budaya Surabaya
                     </div>
 
-                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-white">
+                    <h1 class="text-[clamp(2.1rem,4.2vw,3.5rem)] font-bold leading-[1.18] tracking-[0.02em] text-zinc-900 dark:text-white">
                         Makam Sunan Ampel Surabaya: <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Keistimewaan, Sejarah &amp; Panduan Ziarah</span>
                     </h1>
 
@@ -148,7 +148,7 @@ $canonical = url()->current();
                             <span class="px-3 py-1 rounded-full bg-[rgba(34,211,238,0.15)] text-[var(--color-accent)] text-xs font-bold tracking-wider uppercase">Ringkasan Situs Makam</span>
                         </div>
 
-                        <h3 class="text-white text-xl font-bold mb-2">Situs Makam Sunan Ampel</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-2">Situs Makam Sunan Ampel</h3>
                         <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
                             Peristirahatan agung pembina Wali Songo di sebelah barat Masjid Ampel Surabaya.
                         </p>
@@ -184,28 +184,28 @@ $canonical = url()->current();
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">👨‍✈️</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Driver Paham Parkir Ampel</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Driver Paham Parkir Ampel</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Hafal titik drop-off &amp; Terminal Pegirian</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">🚐</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Armada Nyaman &amp; AC Dingin</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Armada Nyaman &amp; AC Dingin</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Hiace Premio, Zenix &amp; Alphard</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">📍</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Penjemputan Bebas</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Penjemputan Bebas</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Juanda, Stasiun Gubeng &amp; Pasar Turi</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">💧</span>
                     <div>
-                        <h4 class="text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
+                        <h4 class="text-zinc-900 dark:text-white font-bold text-sm">Free Snack &amp; Air Mineral</h4>
                         <p class="text-[var(--color-text-muted)] text-xs">Fasilitas gratis di hari pertama</p>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ $canonical = url()->current();
             <div class="grid grid-cols-2 gap-12 items-center max-md:grid-cols-1">
                 <div>
                     <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Sosok Penyebar Islam Agung</span>
-                    <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
+                    <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-tight mb-6">
                         Siapakah <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Sunan Ampel (Raden Rahmat)?</span>
                     </h2>
                     <p class="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
@@ -234,7 +234,7 @@ $canonical = url()->current();
                 </div>
 
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
-                    <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+                    <h3 class="text-zinc-900 dark:text-white text-xl font-bold mb-4 flex items-center gap-2">
                         📜 Falsafah Dakwah Moh Limo
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm mb-6 leading-relaxed">
@@ -268,7 +268,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Detail Bangunan &amp; Karomah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.6rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.6rem)] font-bold">
                     Anatomi &amp; Keistimewaan <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Kompleks Makam Sunan Ampel</span>
                 </h2>
                 <p class="text-[var(--color-text-muted)] max-w-[750px] mx-auto mt-3 text-sm leading-relaxed">
@@ -281,7 +281,7 @@ $canonical = url()->current();
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="text-3xl">🕌</span>
-                        <h3 class="text-white text-xl font-bold">Makam Utama Sunan Ampel &amp; Istri</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold">Makam Utama Sunan Ampel &amp; Istri</h3>
                     </div>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
                         Makam Raden Rahmat (Sunan Ampel) terletak persis di sebelah barat Masjid Agung Ampel dalam pelataran khusus. Nisannya terbuat dari batu ukir bersejarah dan dipagari oleh cangkup ukir kayu jati kuno bernilai estetika tinggi.
@@ -295,7 +295,7 @@ $canonical = url()->current();
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="text-3xl">✨</span>
-                        <h3 class="text-white text-xl font-bold">Fenomena 9 Makam Mbah Sholeh</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold">Fenomena 9 Makam Mbah Sholeh</h3>
                     </div>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
                         Salah satu keunikan paling populer di kompleks makam ini adalah keberadaan <strong>9 nisan makam Mbah Sholeh</strong> di pelataran sebelah utara makam utama. Mbah Sholeh adalah murid Sunan Ampel yang sangat rajin membersihkan Masjid Ampel.
@@ -309,7 +309,7 @@ $canonical = url()->current();
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="text-3xl">🧭</span>
-                        <h3 class="text-white text-xl font-bold">Makam Mbah Sonhaji (Mbah Bolong)</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold">Makam Mbah Sonhaji (Mbah Bolong)</h3>
                     </div>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
                         Di kompleks makam ini juga terdapat makam <strong>Mbah Sonhaji</strong> yang bergelar <em>Mbah Bolong</em>. Beliau adalah sahabat sekaligus arsitek pembantu Sunan Ampel dalam menentukan keakuratan arah kiblat Masjid Ampel.
@@ -323,7 +323,7 @@ $canonical = url()->current();
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="text-3xl">💧</span>
-                        <h3 class="text-white text-xl font-bold">Sumur Berkah Peninggalan Ampel</h3>
+                        <h3 class="text-zinc-900 dark:text-white text-xl font-bold">Sumur Berkah Peninggalan Ampel</h3>
                     </div>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
                         Di area kompleks makam terdapat sumur bersejarah peninggalan Sunan Ampel dari abad ke-15. Air dari sumur ini dikenal sangat jernih, segar, dan dipercaya memiliki khasiat serta keberkahan mirip dengan air Zam-Zam di Tanah Suci.
@@ -341,7 +341,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Daya Tarik Utama</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.6rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.6rem)] font-bold">
                     7 Keistimewaan Utama <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Makam Sunan Ampel</span>
                 </h2>
             </div>
@@ -353,7 +353,7 @@ $canonical = url()->current();
                             01
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Peristirahatan Guru &amp; Pembina Utama Para Wali Songo</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Peristirahatan Guru &amp; Pembina Utama Para Wali Songo</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Berziarah ke Makam Sunan Ampel ibarat sowan ke tempat peristirahatan "Ayah Spiritual" penyebar Islam Jawa. Beliau mendidik Sunan Giri, Sunan Bonang, Sunan Drajat, Sunan Kalijaga, hingga Raden Patah. Tempat ini menjadi poros peradaban Islam tertua di pesisir Jawa.
                             </p>
@@ -367,7 +367,7 @@ $canonical = url()->current();
                             02
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Keunikan Arsitektur Cagar Budaya 5 Gapura</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Keunikan Arsitektur Cagar Budaya 5 Gapura</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Memasuki kawasan makam, peziarah melintasi 5 gapura bersejarah yang merepresentasikan 5 Rukun Islam: <em>Gapura Ngadep</em> (Syahadat), <em>Gapura Poso</em> (Puasa), <em>Gapura Kunci</em> (Zakat), <em>Gapura Munggah</em> (Haji), dan <em>Gapura Hening</em> (Kesucian Hati).
                             </p>
@@ -381,7 +381,7 @@ $canonical = url()->current();
                             03
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Karomah Fenomenal 9 Nisan Mbah Sholeh &amp; Mbah Bolong</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Karomah Fenomenal 9 Nisan Mbah Sholeh &amp; Mbah Bolong</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Keberadaan 9 nisan makam Mbah Sholeh dan makam Mbah Sonhaji di satu lokasi menjadi bukti karomah para kekasih Allah SWT yang menginspirasi peziarah tentang keikhlasan berkhidmat pada agama.
                             </p>
@@ -395,7 +395,7 @@ $canonical = url()->current();
                             04
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Sumur Kuno Abad 15 Berair Jernih Mirip Zam-Zam</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Sumur Kuno Abad 15 Berair Jernih Mirip Zam-Zam</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Sumur tua peninggalan Sunan Ampel yang tak pernah kering selama 5 abad lebih menjadi sarana penawar dahaga dan pemenuh hajat keberkahan bagi para pengunjung dari seluruh penjuru daerah.
                             </p>
@@ -409,7 +409,7 @@ $canonical = url()->current();
                             05
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Atmosphere Dzikir Sepanjang Hari Nonstop &amp; Malam Sanga</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Atmosphere Dzikir Sepanjang Hari Nonstop &amp; Malam Sanga</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Kompleks makam terbuka sepanjang hari nonstop dengan gema shalawat dan lantunan Al-Qur'an tiada henti. Puncak spiritualitas terjadi pada tradisi <em>Malam Sanga</em> (malam ke-29 Ramadhan) dan Haul Agung Sunan Ampel.
                             </p>
@@ -423,7 +423,7 @@ $canonical = url()->current();
                             06
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Wisata Religi &amp; Pesona Heritage Kampung Arab Ampel</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Wisata Religi &amp; Pesona Heritage Kampung Arab Ampel</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Lorong Pasar Ampel menyuguhkan nuansa otentik Timur Tengah di Kota Surabaya. Peziarah dapat berbelanja minyak wangi, busana muslim, kurma, serta mencicipi kuliner khas Nasi Kebuli &amp; Kambing Oven.
                             </p>
@@ -437,7 +437,7 @@ $canonical = url()->current();
                             07
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-xl mb-2">Akses Strategis sebagai Gerbang Utama Ziarah Wali 5 Jatim</h3>
+                            <h3 class="text-zinc-900 dark:text-white font-bold text-xl mb-2">Akses Strategis sebagai Gerbang Utama Ziarah Wali 5 Jatim</h3>
                             <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                                 Terletak di Surabaya Utara dekat Stasiun Pasar Turi &amp; Gubeng, Makam Sunan Ampel merupakan rute pertama yang ideal sebelum melanjutkan perjalanan ziarah ke Gresik, Lamongan, dan Tuban.
                             </p>
@@ -453,7 +453,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Panduan Peziarah</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Adab &amp; Tata Cara <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Berziarah ke Makam Sunan Ampel</span>
                 </h2>
             </div>
@@ -461,21 +461,21 @@ $canonical = url()->current();
             <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-1">
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="text-4xl mb-4">🧼</div>
-                    <h3 class="text-white font-bold text-lg mb-2">1. Bersuci &amp; Berpakaian Muslim</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">1. Bersuci &amp; Berpakaian Muslim</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Pastikan dalam keadaan suci dari hadats kecil dan besar (berwudhu). Pakailah busana muslim yang rapi, harum, dan sopan saat memasuki area kompleks masjid &amp; makam.
                     </p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="text-4xl mb-4">🤲</div>
-                    <h3 class="text-white font-bold text-lg mb-2">2. Membaca Salam &amp; Tahlil</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">2. Membaca Salam &amp; Tahlil</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Ucapkan salam kepada Sunan Ampel &amp; para wali Allah. Duduklah di area yang disediakan (pria &amp; wanita terpisah) untuk membaca Yasin, Tahlil, serta berdoa tawasul hanya kepada Allah SWT.
                     </p>
                 </div>
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-8">
                     <div class="text-4xl mb-4">💧</div>
-                    <h3 class="text-white font-bold text-lg mb-2">3. Meminum Air Sumur Berkah</h3>
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-lg mb-2">3. Meminum Air Sumur Berkah</h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
                         Sebelum kembali, sempatkan mengambil dan meminum air dari keran sumur peninggalan Sunan Ampel sambil berdoa memohon kesehatan, keselamatan, dan keberkahan hidup.
                     </p>
@@ -489,7 +489,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Panduan Perjalanan</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     Tabel Jarak &amp; Estimasi Waktu Tempuh <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ke Makam Sunan Ampel</span>
                 </h2>
             </div>
@@ -497,7 +497,7 @@ $canonical = url()->current();
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse bg-[var(--color-surface)] rounded-[var(--radius-lg)] border border-[var(--color-border)]">
                     <thead>
-                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-white text-sm">
+                        <tr class="bg-[rgba(124,58,237,0.15)] border-b border-[var(--color-border)] text-zinc-900 dark:text-white text-sm">
                             <th class="p-4 font-bold">Titik Penjemputan / Keberangkatan</th>
                             <th class="p-4 font-bold">Estimasi Jarak</th>
                             <th class="p-4 font-bold">Waktu Tempuh Mobil</th>
@@ -506,31 +506,31 @@ $canonical = url()->current();
                     </thead>
                     <tbody class="divide-y divide-[var(--color-border)] text-sm text-[var(--color-text-light)]">
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Bandara Internasional Juanda (SUB)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Bandara Internasional Juanda (SUB)</td>
                             <td class="p-4">± 25 km</td>
                             <td class="p-4">40 – 50 Menit (via Tol Dupak)</td>
                             <td class="p-4">Hiace Premio / Innova Zenix / Alphard</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Stasiun Surabaya Gubeng (SGU)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Stasiun Surabaya Gubeng (SGU)</td>
                             <td class="p-4">± 7 km</td>
                             <td class="p-4">15 – 25 Menit</td>
                             <td class="p-4">Innova Reborn / Hiace Commuter</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Stasiun Surabaya Pasar Turi (SBI)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Stasiun Surabaya Pasar Turi (SBI)</td>
                             <td class="p-4">± 4 km</td>
                             <td class="p-4">10 – 15 Menit</td>
                             <td class="p-4">Avanza / Innova / Hiace</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Pelabuhan Tanjung Perak Surabaya</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Pelabuhan Tanjung Perak Surabaya</td>
                             <td class="p-4">± 5 km</td>
                             <td class="p-4">10 – 15 Menit</td>
                             <td class="p-4">Hiace Commuter / Premio</td>
                         </tr>
                         <tr class="hover:bg-[rgba(124,58,237,0.05)]">
-                            <td class="p-4 font-semibold text-white">Lanjut Ke: Sunan Maulana Malik Ibrahim (Gresik)</td>
+                            <td class="p-4 font-semibold text-zinc-900 dark:text-white">Lanjut Ke: Sunan Maulana Malik Ibrahim (Gresik)</td>
                             <td class="p-4">± 25 km</td>
                             <td class="p-4">40 – 50 Menit</td>
                             <td class="p-4">Hiace Commuter / Premio / Bus</td>
@@ -546,7 +546,7 @@ $canonical = url()->current();
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-14">
                 <span class="font-[family-name:var(--font-accent)] text-[0.75rem] tracking-[0.25em] uppercase text-[var(--color-accent)] mb-3 block">Pertanyaan Umum</span>
-                <h2 class="text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
+                <h2 class="text-zinc-900 dark:text-white text-[clamp(1.8rem,3vw,2.5rem)] font-bold">
                     FAQ Ziarah &amp; Keistimewaan <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Makam Sunan Ampel</span>
                 </h2>
             </div>
@@ -554,7 +554,7 @@ $canonical = url()->current();
             <div class="max-w-[900px] mx-auto flex flex-col gap-4">
                 @foreach ($faqs as $faq)
                 <div class="bg-[var(--gradient-card)] border border-[var(--color-border)] rounded-[var(--radius-lg)] p-6">
-                    <h3 class="text-white font-bold text-base mb-2 flex items-center gap-3">
+                    <h3 class="text-zinc-900 dark:text-white font-bold text-base mb-2 flex items-center gap-3">
                         <span class="text-[var(--color-accent)]">❓</span> {{ $faq['q'] }}
                     </h3>
                     <p class="text-[var(--color-text-muted)] text-sm leading-relaxed pl-8">
@@ -568,6 +568,7 @@ $canonical = url()->current();
 
     {{-- SECTION 7: ARMADA REKOMENDASI UNTUK ZIARAH --}}
     <x-armada-list 
+        bg=""
         subtitle="Transportasi Ziarah"
         title="Pilihan Armada Sewa Mobil <span style='background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'>Ziarah Sunan Ampel</span>"
         description="Queen Transport menyediakan armada sewa mobil &amp; van terbaik siap include driver profesional untuk mendampingi ziarah Anda."
@@ -581,7 +582,7 @@ $canonical = url()->current();
             <span class="px-4 py-2 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.08)] text-[var(--color-accent)] text-xs uppercase tracking-widest font-semibold mb-6 inline-block">
                 ✦ Rencanakan Perjalanan Religi Anda Sekarang
             </span>
-            <h2 class="text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
+            <h2 class="text-zinc-900 dark:text-white text-[clamp(2rem,4vw,3rem)] font-bold mb-4 leading-tight">
                 Siap Berziarah ke <br class="hidden sm:block">
                 <span style="background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Makam Sunan Ampel Surabaya?</span>
             </h2>
